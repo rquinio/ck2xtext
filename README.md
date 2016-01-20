@@ -1,8 +1,8 @@
-# Ck2Xtext
+# Ck2Xtext [![Build Status](https://travis-ci.org/rquinio/ck2xtext.svg)](https://travis-ci.org/rquinio/ck2xtext)
 
 ### An [Xtext](http://www.eclipse.org/Xtext/) grammar for Crusader Kings 2 modding files.
 
-From a [grammar file](Ck2.xtext), the project generates:
+From a [grammar file](ck2xtext/src/Ck2.xtext), the project generates:
 
 - a bidirectional parser
 - a Java bean model, based on the parsed AST
