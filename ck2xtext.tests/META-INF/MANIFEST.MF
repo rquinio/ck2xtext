@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ck2xtext.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ck2xtext.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: ck2xtext,
+ org.junit;bundle-version="4.7.0",
+ org.eclipse.xtext.junit4,
+ org.eclipse.xtext.xbase.junit,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ck2xtext.tests,
+ ck2xtext.tests.vanilla,
+ ck2xtext.tests.vanilla.common
+Import-Package: org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0",
+ org.hamcrest.core,
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit;version="4.5.0",
+ org.junit.runner;version="4.5.0"
+

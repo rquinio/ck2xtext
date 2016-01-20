@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="ck2xtext.feature" version="1.0.0.qualifier">
+      <category name="CK2Xtext"/>
+   </feature>
+   <category-def name="CK2Xtext" label="ck2xtext"/>
+</site>
