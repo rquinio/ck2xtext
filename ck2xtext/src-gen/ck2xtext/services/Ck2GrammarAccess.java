@@ -821,15 +821,15 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal fragment NON_ASCII_CAP:
-	//	'À' | 'Á' | 'Â' | 'Ã' | 'Ä' | 'Å' | 'Æ' | 'Ç' | 'È' | 'É' | 'Ê' | 'Ë' | 'Ì' | 'Í' | 'Î' | 'Ï' | 'Ð' | 'Ñ' | 'Ò' | 'Ó'
-	//	| 'Ô' | 'Õ' | 'Ö' | 'Ø' | 'Š' | 'Ù' | 'Ú' | 'Û' | 'Ü' | 'Ý' | 'Ÿ' | 'Þ' | 'ß' | 'Œ';
+	//	'Ã€' | 'Ã' | 'Ã‚' | 'Ãƒ' | 'Ã„' | 'Ã…' | 'Ã†' | 'Ã‡' | 'Ãˆ' | 'Ã‰' | 'ÃŠ' | 'Ã‹' | 'ÃŒ' | 'Ã' | 'ÃŽ' | 'Ã' | 'Ã' | 'Ã‘' | 'Ã’' | 'Ã“'
+	//	| 'Ã”' | 'Ã•' | 'Ã–' | 'Ã˜' | 'Å ' | 'Ã™' | 'Ãš' | 'Ã›' | 'Ãœ' | 'Ã' | 'Å¸' | 'Ãž' | 'ÃŸ' | 'Å’';
 	public TerminalRule getNON_ASCII_CAPRule() {
 		return tNON_ASCII_CAP;
 	}
 	
 	//terminal fragment NON_ASCII_LOW:
-	//	'à' | 'á' | 'â' | 'ã' | 'ä' | 'å' | 'æ' | 'ç' | 'è' | 'é' | 'ê' | 'ë' | 'ì' | 'í' | 'î' | 'ï' | 'ð' | 'ñ' | 'ò' | 'ó'
-	//	| 'ô' | 'õ' | 'ö' | 'ø' | 'š' | 'ù' | 'ú' | 'û' | 'ü' | 'ý' | 'ÿ' | 'ž' | 'þ' | 'œ';
+	//	'Ã ' | 'Ã¡' | 'Ã¢' | 'Ã£' | 'Ã¤' | 'Ã¥' | 'Ã¦' | 'Ã§' | 'Ã¨' | 'Ã©' | 'Ãª' | 'Ã«' | 'Ã¬' | 'Ã­' | 'Ã®' | 'Ã¯' | 'Ã°' | 'Ã±' | 'Ã²' | 'Ã³'
+	//	| 'Ã´' | 'Ãµ' | 'Ã¶' | 'Ã¸' | 'Å¡' | 'Ã¹' | 'Ãº' | 'Ã»' | 'Ã¼' | 'Ã½' | 'Ã¿' | 'Å¾' | 'Ã¾' | 'Å“';
 	public TerminalRule getNON_ASCII_LOWRule() {
 		return tNON_ASCII_LOW;
 	}
@@ -841,7 +841,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ID:
-	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | '’' | ':' | '.' | '>')*;
+	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | 'â€™' | ':' | '.' | '>')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}

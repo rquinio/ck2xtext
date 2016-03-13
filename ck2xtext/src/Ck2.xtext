@@ -19,8 +19,8 @@ terminal fragment DIGIT : ('0'..'9');
 terminal BOOL returns ecore::EBoolean: ('yes' | 'no');
 terminal INT returns ecore::EInt: (DIGIT)+;
 
-terminal fragment NON_ASCII_CAP : 'À'|'Á'|'Â'|'Ã'|'Ä'|'Å'|'Æ'|'Ç'|'È'|'É'|'Ê'|'Ë'|'Ì'|'Í'|'Î'|'Ï'|'Ğ'|'Ñ'|'Ò'|'Ó'|'Ô'|'Õ'|'Ö'|'Ø'|'Š'|'Ù'|'Ú'|'Û'|'Ü'|'İ'|'Ÿ'|'Ş'|'ß'|'Œ';
-terminal fragment NON_ASCII_LOW : 'à'|'á'|'â'|'ã'|'ä'|'å'|'æ'|'ç'|'è'|'é'|'ê'|'ë'|'ì'|'í'|'î'|'ï'|'ğ'|'ñ'|'ò'|'ó'|'ô'|'õ'|'ö'|'ø'|'š'|'ù'|'ú'|'û'|'ü'|'ı'|'ÿ'|''|'ş'|'œ';
+terminal fragment NON_ASCII_CAP : 'Ã€'|'Ã'|'Ã‚'|'Ãƒ'|'Ã„'|'Ã…'|'Ã†'|'Ã‡'|'Ãˆ'|'Ã‰'|'ÃŠ'|'Ã‹'|'ÃŒ'|'Ã'|'Ã'|'Ã'|'Ã'|'Ã‘'|'Ã’'|'Ã“'|'Ã”'|'Ã•'|'Ã–'|'Ã˜'|'Å '|'Ã™'|'Ãš'|'Ã›'|'Ãœ'|'Ã'|'Å¸'|'Ã'|'ÃŸ'|'Å’';
+terminal fragment NON_ASCII_LOW : 'Ã '|'Ã¡'|'Ã¢'|'Ã£'|'Ã¤'|'Ã¥'|'Ã¦'|'Ã§'|'Ã¨'|'Ã©'|'Ãª'|'Ã«'|'Ã¬'|'Ã­'|'Ã®'|'Ã¯'|'Ã°'|'Ã±'|'Ã²'|'Ã³'|'Ã´'|'Ãµ'|'Ã¶'|'Ã¸'|'Å¡'|'Ã¹'|'Ãº'|'Ã»'|'Ã¼'|'Ã½'|'Ã¿'|'Å¾'|'Ã¾'|'Å“';
 
 terminal fragment ID_PART: ('a'..'z'|'A'..'Z'|NON_ASCII_LOW|NON_ASCII_CAP|'<');
 
@@ -31,7 +31,7 @@ terminal fragment ID_PART: ('a'..'z'|'A'..'Z'|NON_ASCII_LOW|NON_ASCII_CAP|'<');
  * May be namespaced (namespace.id)
  * Note: Caret is used to escape an identifier if there are conflicts with existing keywords. It is removed by the ID rule's ValueConverter. 
  */
-terminal ID : ('^')?ID_PART (ID_PART|DIGIT|'_'|'-'|'\''|'’'|':'|'.'|'>')*;
+terminal ID : ('^')?ID_PART (ID_PART|DIGIT|'_'|'-'|'\''|'â€™'|':'|'.'|'>')*;
 
 terminal STRING	: '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|'\\' */ | !('\\'|'"') )* '"';
 

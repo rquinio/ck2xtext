@@ -94,8 +94,8 @@ public class Ck2FormatterTest {
 	def public void longListsShouldWrap() throws Exception {
 		val String source = '''
 		male_names = {
-			Yngvi Fjˆlnir Sveigder VVanlade Visburr Domalde Domarr Dyggve Dag Agne Erik Alrik Alf Hugleik Haki Jorund Aun Ale
-			Egil Ottar Onela ¡li ÷sten Anund Ingjald Adils Ingvar Sˆlve
+			Yngvi Fj√∂lnir Sveigder VVanlade Visburr Domalde Domarr Dyggve Dag Agne Erik Alrik Alf Hugleik Haki Jorund Aun Ale
+			Egil Ottar Onela √Åli √ñsten Anund Ingjald Adils Ingvar S√∂lve
 		}''';
 
 		assertEquals(source, format(source));
