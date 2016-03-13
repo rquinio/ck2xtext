@@ -6,22 +6,22 @@ package ck2xtext.ck2;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Numeric Property</b></em>'.
+ * A representation of the model object '<em><b>Double Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ck2xtext.ck2.NumericProperty#getKey <em>Key</em>}</li>
- *   <li>{@link ck2xtext.ck2.NumericProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link ck2xtext.ck2.DoubleProperty#getKey <em>Key</em>}</li>
+ *   <li>{@link ck2xtext.ck2.DoubleProperty#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see ck2xtext.ck2.Ck2Package#getNumericProperty()
+ * @see ck2xtext.ck2.Ck2Package#getDoubleProperty()
  * @model
  * @generated
  */
-public interface NumericProperty extends Property
+public interface DoubleProperty extends Property
 {
   /**
    * Returns the value of the '<em><b>Key</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface NumericProperty extends Property
    * <!-- end-user-doc -->
    * @return the value of the '<em>Key</em>' attribute.
    * @see #setKey(String)
-   * @see ck2xtext.ck2.Ck2Package#getNumericProperty_Key()
+   * @see ck2xtext.ck2.Ck2Package#getDoubleProperty_Key()
    * @model
    * @generated
    */
   String getKey();
 
   /**
-   * Sets the value of the '{@link ck2xtext.ck2.NumericProperty#getKey <em>Key</em>}' attribute.
+   * Sets the value of the '{@link ck2xtext.ck2.DoubleProperty#getKey <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Key</em>' attribute.
@@ -59,14 +59,14 @@ public interface NumericProperty extends Property
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(double)
-   * @see ck2xtext.ck2.Ck2Package#getNumericProperty_Value()
+   * @see ck2xtext.ck2.Ck2Package#getDoubleProperty_Value()
    * @model
    * @generated
    */
   double getValue();
 
   /**
-   * Sets the value of the '{@link ck2xtext.ck2.NumericProperty#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link ck2xtext.ck2.DoubleProperty#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -75,4 +75,4 @@ public interface NumericProperty extends Property
    */
   void setValue(double value);
 
-} // NumericProperty
+} // DoubleProperty

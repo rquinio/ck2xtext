@@ -10,13 +10,14 @@ import ck2xtext.ck2.Clause;
 import ck2xtext.ck2.CommandProperty;
 import ck2xtext.ck2.DateClauseProperty;
 import ck2xtext.ck2.DateProperty;
+import ck2xtext.ck2.DoubleProperty;
 import ck2xtext.ck2.IdClauseProperty;
 import ck2xtext.ck2.IdProperty;
 import ck2xtext.ck2.IntClauseProperty;
+import ck2xtext.ck2.IntegerProperty;
 import ck2xtext.ck2.List;
 import ck2xtext.ck2.ListProperty;
 import ck2xtext.ck2.Model;
-import ck2xtext.ck2.NumericProperty;
 import ck2xtext.ck2.ProbabilityProperty;
 import ck2xtext.ck2.Property;
 import ck2xtext.ck2.StringProperty;
@@ -104,7 +105,14 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass numericPropertyEClass = null;
+  private EClass integerPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doublePropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -439,9 +447,9 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNumericProperty()
+  public EClass getIntegerProperty()
   {
-    return numericPropertyEClass;
+    return integerPropertyEClass;
   }
 
   /**
@@ -449,9 +457,9 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNumericProperty_Key()
+  public EAttribute getIntegerProperty_Key()
   {
-    return (EAttribute)numericPropertyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)integerPropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -459,9 +467,39 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNumericProperty_Value()
+  public EAttribute getIntegerProperty_Value()
   {
-    return (EAttribute)numericPropertyEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)integerPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDoubleProperty()
+  {
+    return doublePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDoubleProperty_Key()
+  {
+    return (EAttribute)doublePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDoubleProperty_Value()
+  {
+    return (EAttribute)doublePropertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -646,9 +684,13 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     createEAttribute(datePropertyEClass, DATE_PROPERTY__KEY);
     createEAttribute(datePropertyEClass, DATE_PROPERTY__VALUE);
 
-    numericPropertyEClass = createEClass(NUMERIC_PROPERTY);
-    createEAttribute(numericPropertyEClass, NUMERIC_PROPERTY__KEY);
-    createEAttribute(numericPropertyEClass, NUMERIC_PROPERTY__VALUE);
+    integerPropertyEClass = createEClass(INTEGER_PROPERTY);
+    createEAttribute(integerPropertyEClass, INTEGER_PROPERTY__KEY);
+    createEAttribute(integerPropertyEClass, INTEGER_PROPERTY__VALUE);
+
+    doublePropertyEClass = createEClass(DOUBLE_PROPERTY);
+    createEAttribute(doublePropertyEClass, DOUBLE_PROPERTY__KEY);
+    createEAttribute(doublePropertyEClass, DOUBLE_PROPERTY__VALUE);
 
     listPropertyEClass = createEClass(LIST_PROPERTY);
     createEAttribute(listPropertyEClass, LIST_PROPERTY__KEY);
@@ -703,7 +745,8 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     commandPropertyEClass.getESuperTypes().add(this.getProperty());
     boolPropertyEClass.getESuperTypes().add(this.getProperty());
     datePropertyEClass.getESuperTypes().add(this.getProperty());
-    numericPropertyEClass.getESuperTypes().add(this.getProperty());
+    integerPropertyEClass.getESuperTypes().add(this.getProperty());
+    doublePropertyEClass.getESuperTypes().add(this.getProperty());
     listPropertyEClass.getESuperTypes().add(this.getProperty());
     idClausePropertyEClass.getESuperTypes().add(this.getClause());
     intClausePropertyEClass.getESuperTypes().add(this.getClause());
@@ -743,9 +786,13 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     initEAttribute(getDateProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, DateProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDateProperty_Value(), ecorePackage.getEDate(), "value", null, 0, 1, DateProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(numericPropertyEClass, NumericProperty.class, "NumericProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNumericProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, NumericProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNumericProperty_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, NumericProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(integerPropertyEClass, IntegerProperty.class, "IntegerProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntegerProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, IntegerProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntegerProperty_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doublePropertyEClass, DoubleProperty.class, "DoubleProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDoubleProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, DoubleProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDoubleProperty_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listPropertyEClass, ListProperty.class, "ListProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getListProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, ListProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

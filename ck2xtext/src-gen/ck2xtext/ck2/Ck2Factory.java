@@ -105,13 +105,22 @@ public interface Ck2Factory extends EFactory
   DateProperty createDateProperty();
 
   /**
-   * Returns a new object of class '<em>Numeric Property</em>'.
+   * Returns a new object of class '<em>Integer Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Numeric Property</em>'.
+   * @return a new object of class '<em>Integer Property</em>'.
    * @generated
    */
-  NumericProperty createNumericProperty();
+  IntegerProperty createIntegerProperty();
+
+  /**
+   * Returns a new object of class '<em>Double Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Property</em>'.
+   * @generated
+   */
+  DoubleProperty createDoubleProperty();
 
   /**
    * Returns a new object of class '<em>List Property</em>'.

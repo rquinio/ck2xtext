@@ -37,9 +37,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DateProperty/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DateProperty/value"/>
     </genClasses>
-    <genClasses ecoreClass="Ck2.ecore#//NumericProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//NumericProperty/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//NumericProperty/value"/>
+    <genClasses ecoreClass="Ck2.ecore#//IntegerProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//IntegerProperty/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//IntegerProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Ck2.ecore#//DoubleProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DoubleProperty/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DoubleProperty/value"/>
     </genClasses>
     <genClasses ecoreClass="Ck2.ecore#//ListProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//ListProperty/key"/>

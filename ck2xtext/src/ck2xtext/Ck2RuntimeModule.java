@@ -4,19 +4,31 @@
 package ck2xtext;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.formatting.IFormatter;
 
 import ck2xtext.conversion.Ck2ValueConverterService;
+import ck2xtext.formatting.Ck2Formatter;
 
 /**
- * Use this class to register components to be used at runtime / without the
- * Equinox extension registry.
+ * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class Ck2RuntimeModule extends AbstractCk2RuntimeModule {
 
+	/**
+	 * Override {@link org.eclipse.xtext.common.services.DefaultTerminalConverters}
+	 */
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
-		// return DefaultTerminalConverters.class;
 		return Ck2ValueConverterService.class;
 
 	}
+
+	/**
+	 * Override {@link org.eclipse.xtext.formatting.impl.OneWhitespaceFormatter}
+	 */
+	@Override
+	public Class<? extends IFormatter> bindIFormatter() {
+		return Ck2Formatter.class;
+	}
+
 }

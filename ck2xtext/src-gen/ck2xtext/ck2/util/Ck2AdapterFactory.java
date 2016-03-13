@@ -121,9 +121,14 @@ public class Ck2AdapterFactory extends AdapterFactoryImpl
         return createDatePropertyAdapter();
       }
       @Override
-      public Adapter caseNumericProperty(NumericProperty object)
+      public Adapter caseIntegerProperty(IntegerProperty object)
       {
-        return createNumericPropertyAdapter();
+        return createIntegerPropertyAdapter();
+      }
+      @Override
+      public Adapter caseDoubleProperty(DoubleProperty object)
+      {
+        return createDoublePropertyAdapter();
       }
       @Override
       public Adapter caseListProperty(ListProperty object)
@@ -308,16 +313,31 @@ public class Ck2AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link ck2xtext.ck2.NumericProperty <em>Numeric Property</em>}'.
+   * Creates a new adapter for an object of class '{@link ck2xtext.ck2.IntegerProperty <em>Integer Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see ck2xtext.ck2.NumericProperty
+   * @see ck2xtext.ck2.IntegerProperty
    * @generated
    */
-  public Adapter createNumericPropertyAdapter()
+  public Adapter createIntegerPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ck2xtext.ck2.DoubleProperty <em>Double Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ck2xtext.ck2.DoubleProperty
+   * @generated
+   */
+  public Adapter createDoublePropertyAdapter()
   {
     return null;
   }

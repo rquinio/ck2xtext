@@ -355,14 +355,14 @@ public interface Ck2Package extends EPackage
   int DATE_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link ck2xtext.ck2.impl.NumericPropertyImpl <em>Numeric Property</em>}' class.
+   * The meta object id for the '{@link ck2xtext.ck2.impl.IntegerPropertyImpl <em>Integer Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see ck2xtext.ck2.impl.NumericPropertyImpl
-   * @see ck2xtext.ck2.impl.Ck2PackageImpl#getNumericProperty()
+   * @see ck2xtext.ck2.impl.IntegerPropertyImpl
+   * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIntegerProperty()
    * @generated
    */
-  int NUMERIC_PROPERTY = 9;
+  int INTEGER_PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -371,7 +371,7 @@ public interface Ck2Package extends EPackage
    * @generated
    * @ordered
    */
-  int NUMERIC_PROPERTY__KEY = PROPERTY_FEATURE_COUNT + 0;
+  int INTEGER_PROPERTY__KEY = PROPERTY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -380,16 +380,53 @@ public interface Ck2Package extends EPackage
    * @generated
    * @ordered
    */
-  int NUMERIC_PROPERTY__VALUE = PROPERTY_FEATURE_COUNT + 1;
+  int INTEGER_PROPERTY__VALUE = PROPERTY_FEATURE_COUNT + 1;
 
   /**
-   * The number of structural features of the '<em>Numeric Property</em>' class.
+   * The number of structural features of the '<em>Integer Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMERIC_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
+  int INTEGER_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link ck2xtext.ck2.impl.DoublePropertyImpl <em>Double Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ck2xtext.ck2.impl.DoublePropertyImpl
+   * @see ck2xtext.ck2.impl.Ck2PackageImpl#getDoubleProperty()
+   * @generated
+   */
+  int DOUBLE_PROPERTY = 10;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_PROPERTY__KEY = PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_PROPERTY__VALUE = PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Double Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link ck2xtext.ck2.impl.ListPropertyImpl <em>List Property</em>}' class.
@@ -399,7 +436,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getListProperty()
    * @generated
    */
-  int LIST_PROPERTY = 10;
+  int LIST_PROPERTY = 11;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -436,7 +473,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIdClauseProperty()
    * @generated
    */
-  int ID_CLAUSE_PROPERTY = 11;
+  int ID_CLAUSE_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -482,7 +519,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIntClauseProperty()
    * @generated
    */
-  int INT_CLAUSE_PROPERTY = 12;
+  int INT_CLAUSE_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -528,7 +565,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getDateClauseProperty()
    * @generated
    */
-  int DATE_CLAUSE_PROPERTY = 13;
+  int DATE_CLAUSE_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -574,7 +611,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getProbabilityProperty()
    * @generated
    */
-  int PROBABILITY_PROPERTY = 14;
+  int PROBABILITY_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -849,36 +886,68 @@ public interface Ck2Package extends EPackage
   EAttribute getDateProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link ck2xtext.ck2.NumericProperty <em>Numeric Property</em>}'.
+   * Returns the meta object for class '{@link ck2xtext.ck2.IntegerProperty <em>Integer Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Numeric Property</em>'.
-   * @see ck2xtext.ck2.NumericProperty
+   * @return the meta object for class '<em>Integer Property</em>'.
+   * @see ck2xtext.ck2.IntegerProperty
    * @generated
    */
-  EClass getNumericProperty();
+  EClass getIntegerProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link ck2xtext.ck2.NumericProperty#getKey <em>Key</em>}'.
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.IntegerProperty#getKey <em>Key</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Key</em>'.
-   * @see ck2xtext.ck2.NumericProperty#getKey()
-   * @see #getNumericProperty()
+   * @see ck2xtext.ck2.IntegerProperty#getKey()
+   * @see #getIntegerProperty()
    * @generated
    */
-  EAttribute getNumericProperty_Key();
+  EAttribute getIntegerProperty_Key();
 
   /**
-   * Returns the meta object for the attribute '{@link ck2xtext.ck2.NumericProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.IntegerProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see ck2xtext.ck2.NumericProperty#getValue()
-   * @see #getNumericProperty()
+   * @see ck2xtext.ck2.IntegerProperty#getValue()
+   * @see #getIntegerProperty()
    * @generated
    */
-  EAttribute getNumericProperty_Value();
+  EAttribute getIntegerProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link ck2xtext.ck2.DoubleProperty <em>Double Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double Property</em>'.
+   * @see ck2xtext.ck2.DoubleProperty
+   * @generated
+   */
+  EClass getDoubleProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.DoubleProperty#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see ck2xtext.ck2.DoubleProperty#getKey()
+   * @see #getDoubleProperty()
+   * @generated
+   */
+  EAttribute getDoubleProperty_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.DoubleProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see ck2xtext.ck2.DoubleProperty#getValue()
+   * @see #getDoubleProperty()
+   * @generated
+   */
+  EAttribute getDoubleProperty_Value();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.ck2.ListProperty <em>List Property</em>}'.
@@ -1233,14 +1302,14 @@ public interface Ck2Package extends EPackage
     EAttribute DATE_PROPERTY__VALUE = eINSTANCE.getDateProperty_Value();
 
     /**
-     * The meta object literal for the '{@link ck2xtext.ck2.impl.NumericPropertyImpl <em>Numeric Property</em>}' class.
+     * The meta object literal for the '{@link ck2xtext.ck2.impl.IntegerPropertyImpl <em>Integer Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see ck2xtext.ck2.impl.NumericPropertyImpl
-     * @see ck2xtext.ck2.impl.Ck2PackageImpl#getNumericProperty()
+     * @see ck2xtext.ck2.impl.IntegerPropertyImpl
+     * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIntegerProperty()
      * @generated
      */
-    EClass NUMERIC_PROPERTY = eINSTANCE.getNumericProperty();
+    EClass INTEGER_PROPERTY = eINSTANCE.getIntegerProperty();
 
     /**
      * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -1248,7 +1317,7 @@ public interface Ck2Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMERIC_PROPERTY__KEY = eINSTANCE.getNumericProperty_Key();
+    EAttribute INTEGER_PROPERTY__KEY = eINSTANCE.getIntegerProperty_Key();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1256,7 +1325,33 @@ public interface Ck2Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMERIC_PROPERTY__VALUE = eINSTANCE.getNumericProperty_Value();
+    EAttribute INTEGER_PROPERTY__VALUE = eINSTANCE.getIntegerProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link ck2xtext.ck2.impl.DoublePropertyImpl <em>Double Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ck2xtext.ck2.impl.DoublePropertyImpl
+     * @see ck2xtext.ck2.impl.Ck2PackageImpl#getDoubleProperty()
+     * @generated
+     */
+    EClass DOUBLE_PROPERTY = eINSTANCE.getDoubleProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE_PROPERTY__KEY = eINSTANCE.getDoubleProperty_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE_PROPERTY__VALUE = eINSTANCE.getDoubleProperty_Value();
 
     /**
      * The meta object literal for the '{@link ck2xtext.ck2.impl.ListPropertyImpl <em>List Property</em>}' class.

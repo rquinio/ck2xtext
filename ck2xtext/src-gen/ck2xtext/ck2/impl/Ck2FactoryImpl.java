@@ -74,7 +74,8 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
       case Ck2Package.COMMAND_PROPERTY: return createCommandProperty();
       case Ck2Package.BOOL_PROPERTY: return createBoolProperty();
       case Ck2Package.DATE_PROPERTY: return createDateProperty();
-      case Ck2Package.NUMERIC_PROPERTY: return createNumericProperty();
+      case Ck2Package.INTEGER_PROPERTY: return createIntegerProperty();
+      case Ck2Package.DOUBLE_PROPERTY: return createDoubleProperty();
       case Ck2Package.LIST_PROPERTY: return createListProperty();
       case Ck2Package.ID_CLAUSE_PROPERTY: return createIdClauseProperty();
       case Ck2Package.INT_CLAUSE_PROPERTY: return createIntClauseProperty();
@@ -189,10 +190,21 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumericProperty createNumericProperty()
+  public IntegerProperty createIntegerProperty()
   {
-    NumericPropertyImpl numericProperty = new NumericPropertyImpl();
-    return numericProperty;
+    IntegerPropertyImpl integerProperty = new IntegerPropertyImpl();
+    return integerProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DoubleProperty createDoubleProperty()
+  {
+    DoublePropertyImpl doubleProperty = new DoublePropertyImpl();
+    return doubleProperty;
   }
 
   /**

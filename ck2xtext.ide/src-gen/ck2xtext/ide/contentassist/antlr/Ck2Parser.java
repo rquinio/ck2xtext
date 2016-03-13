@@ -35,20 +35,21 @@ public class Ck2Parser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getDoubleAccess().getAlternatives_0(), "rule__Double__Alternatives_0");
+					put(grammarAccess.getIntegerAccess().getAlternatives_0(), "rule__Integer__Alternatives_0");
 					put(grammarAccess.getListElemAccess().getAlternatives(), "rule__ListElem__Alternatives");
 					put(grammarAccess.getPropertyAccess().getAlternatives(), "rule__Property__Alternatives");
 					put(grammarAccess.getClauseAccess().getAlternatives(), "rule__Clause__Alternatives");
 					put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
+					put(grammarAccess.getIntegerAccess().getGroup(), "rule__Integer__Group__0");
 					put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
-					put(grammarAccess.getDoubleAccess().getGroup_2(), "rule__Double__Group_2__0");
 					put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
 					put(grammarAccess.getStringPropertyAccess().getGroup(), "rule__StringProperty__Group__0");
 					put(grammarAccess.getIdPropertyAccess().getGroup(), "rule__IdProperty__Group__0");
 					put(grammarAccess.getCommandPropertyAccess().getGroup(), "rule__CommandProperty__Group__0");
 					put(grammarAccess.getBoolPropertyAccess().getGroup(), "rule__BoolProperty__Group__0");
 					put(grammarAccess.getDatePropertyAccess().getGroup(), "rule__DateProperty__Group__0");
-					put(grammarAccess.getNumericPropertyAccess().getGroup(), "rule__NumericProperty__Group__0");
+					put(grammarAccess.getIntegerPropertyAccess().getGroup(), "rule__IntegerProperty__Group__0");
+					put(grammarAccess.getDoublePropertyAccess().getGroup(), "rule__DoubleProperty__Group__0");
 					put(grammarAccess.getListPropertyAccess().getGroup(), "rule__ListProperty__Group__0");
 					put(grammarAccess.getIdClausePropertyAccess().getGroup(), "rule__IdClauseProperty__Group__0");
 					put(grammarAccess.getIntClausePropertyAccess().getGroup(), "rule__IntClauseProperty__Group__0");
@@ -66,8 +67,10 @@ public class Ck2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getBoolPropertyAccess().getValueAssignment_2(), "rule__BoolProperty__ValueAssignment_2");
 					put(grammarAccess.getDatePropertyAccess().getKeyAssignment_0(), "rule__DateProperty__KeyAssignment_0");
 					put(grammarAccess.getDatePropertyAccess().getValueAssignment_2(), "rule__DateProperty__ValueAssignment_2");
-					put(grammarAccess.getNumericPropertyAccess().getKeyAssignment_0(), "rule__NumericProperty__KeyAssignment_0");
-					put(grammarAccess.getNumericPropertyAccess().getValueAssignment_2(), "rule__NumericProperty__ValueAssignment_2");
+					put(grammarAccess.getIntegerPropertyAccess().getKeyAssignment_0(), "rule__IntegerProperty__KeyAssignment_0");
+					put(grammarAccess.getIntegerPropertyAccess().getValueAssignment_2(), "rule__IntegerProperty__ValueAssignment_2");
+					put(grammarAccess.getDoublePropertyAccess().getKeyAssignment_0(), "rule__DoubleProperty__KeyAssignment_0");
+					put(grammarAccess.getDoublePropertyAccess().getValueAssignment_2(), "rule__DoubleProperty__ValueAssignment_2");
 					put(grammarAccess.getListPropertyAccess().getKeyAssignment_0(), "rule__ListProperty__KeyAssignment_0");
 					put(grammarAccess.getListPropertyAccess().getValueAssignment_2(), "rule__ListProperty__ValueAssignment_2");
 					put(grammarAccess.getIdClausePropertyAccess().getNameAssignment_0(), "rule__IdClauseProperty__NameAssignment_0");

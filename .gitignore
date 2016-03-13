@@ -1,6 +1,6 @@
 # Directories #
-/build/
-/bin/
+build/
+bin/
 target/
  
 # OS Files #
@@ -8,6 +8,8 @@ target/
 
 # Xtext / Xtend
 *.xtendbin
+*.xtextbin
+xtend-gen/
 
 # Java
 *.class

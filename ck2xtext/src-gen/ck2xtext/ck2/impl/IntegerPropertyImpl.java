@@ -4,7 +4,7 @@
 package ck2xtext.ck2.impl;
 
 import ck2xtext.ck2.Ck2Package;
-import ck2xtext.ck2.NumericProperty;
+import ck2xtext.ck2.IntegerProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Numeric Property</b></em>'.
+ * An implementation of the model object '<em><b>Integer Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ck2xtext.ck2.impl.NumericPropertyImpl#getKey <em>Key</em>}</li>
- *   <li>{@link ck2xtext.ck2.impl.NumericPropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link ck2xtext.ck2.impl.IntegerPropertyImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link ck2xtext.ck2.impl.IntegerPropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
+public class IntegerPropertyImpl extends PropertyImpl implements IntegerProperty
 {
   /**
    * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
@@ -56,7 +56,7 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
    * @generated
    * @ordered
    */
-  protected static final double VALUE_EDEFAULT = 0.0;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -66,14 +66,14 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
    * @generated
    * @ordered
    */
-  protected double value = VALUE_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NumericPropertyImpl()
+  protected IntegerPropertyImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
   @Override
   protected EClass eStaticClass()
   {
-    return Ck2Package.Literals.NUMERIC_PROPERTY;
+    return Ck2Package.Literals.INTEGER_PROPERTY;
   }
 
   /**
@@ -109,7 +109,7 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
     String oldKey = key;
     key = newKey;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2Package.NUMERIC_PROPERTY__KEY, oldKey, key));
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2Package.INTEGER_PROPERTY__KEY, oldKey, key));
   }
 
   /**
@@ -117,7 +117,7 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
    * <!-- end-user-doc -->
    * @generated
    */
-  public double getValue()
+  public int getValue()
   {
     return value;
   }
@@ -127,12 +127,12 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(double newValue)
+  public void setValue(int newValue)
   {
-    double oldValue = value;
+    int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2Package.NUMERIC_PROPERTY__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2Package.INTEGER_PROPERTY__VALUE, oldValue, value));
   }
 
   /**
@@ -145,9 +145,9 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
   {
     switch (featureID)
     {
-      case Ck2Package.NUMERIC_PROPERTY__KEY:
+      case Ck2Package.INTEGER_PROPERTY__KEY:
         return getKey();
-      case Ck2Package.NUMERIC_PROPERTY__VALUE:
+      case Ck2Package.INTEGER_PROPERTY__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -163,11 +163,11 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
   {
     switch (featureID)
     {
-      case Ck2Package.NUMERIC_PROPERTY__KEY:
+      case Ck2Package.INTEGER_PROPERTY__KEY:
         setKey((String)newValue);
         return;
-      case Ck2Package.NUMERIC_PROPERTY__VALUE:
-        setValue((Double)newValue);
+      case Ck2Package.INTEGER_PROPERTY__VALUE:
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,10 +183,10 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
   {
     switch (featureID)
     {
-      case Ck2Package.NUMERIC_PROPERTY__KEY:
+      case Ck2Package.INTEGER_PROPERTY__KEY:
         setKey(KEY_EDEFAULT);
         return;
-      case Ck2Package.NUMERIC_PROPERTY__VALUE:
+      case Ck2Package.INTEGER_PROPERTY__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -203,9 +203,9 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
   {
     switch (featureID)
     {
-      case Ck2Package.NUMERIC_PROPERTY__KEY:
+      case Ck2Package.INTEGER_PROPERTY__KEY:
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-      case Ck2Package.NUMERIC_PROPERTY__VALUE:
+      case Ck2Package.INTEGER_PROPERTY__VALUE:
         return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -230,4 +230,4 @@ public class NumericPropertyImpl extends PropertyImpl implements NumericProperty
     return result.toString();
   }
 
-} //NumericPropertyImpl
+} //IntegerPropertyImpl

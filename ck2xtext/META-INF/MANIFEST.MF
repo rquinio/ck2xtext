@@ -16,16 +16,17 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: 
- ck2xtext.serializer,
- ck2xtext.ck2,
- ck2xtext.parser.antlr.internal,
- ck2xtext.generator,
- ck2xtext.ck2.impl,
- ck2xtext.parser.antlr,
- ck2xtext.scoping,
  ck2xtext,
- ck2xtext.services,
+ ck2xtext.ck2,
+ ck2xtext.ck2.impl,
+ ck2xtext.ck2.util,
  ck2xtext.conversion,
- ck2xtext.validation,
- ck2xtext.ck2.util
+ ck2xtext.formatting,
+ ck2xtext.generator,
+ ck2xtext.parser.antlr,
+ ck2xtext.parser.antlr.internal,
+ ck2xtext.scoping,
+ ck2xtext.serializer,
+ ck2xtext.services,
+ ck2xtext.validation
 Import-Package: org.apache.log4j

@@ -8,13 +8,14 @@ import ck2xtext.ck2.Ck2Package;
 import ck2xtext.ck2.CommandProperty;
 import ck2xtext.ck2.DateClauseProperty;
 import ck2xtext.ck2.DateProperty;
+import ck2xtext.ck2.DoubleProperty;
 import ck2xtext.ck2.IdClauseProperty;
 import ck2xtext.ck2.IdProperty;
 import ck2xtext.ck2.IntClauseProperty;
+import ck2xtext.ck2.IntegerProperty;
 import ck2xtext.ck2.List;
 import ck2xtext.ck2.ListProperty;
 import ck2xtext.ck2.Model;
-import ck2xtext.ck2.NumericProperty;
 import ck2xtext.ck2.ProbabilityProperty;
 import ck2xtext.ck2.StringProperty;
 import ck2xtext.services.Ck2GrammarAccess;
@@ -56,6 +57,9 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Ck2Package.DATE_PROPERTY:
 				sequence_DateProperty(context, (DateProperty) semanticObject); 
 				return; 
+			case Ck2Package.DOUBLE_PROPERTY:
+				sequence_DoubleProperty(context, (DoubleProperty) semanticObject); 
+				return; 
 			case Ck2Package.ID_CLAUSE_PROPERTY:
 				sequence_IdClauseProperty(context, (IdClauseProperty) semanticObject); 
 				return; 
@@ -65,6 +69,9 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case Ck2Package.INT_CLAUSE_PROPERTY:
 				sequence_IntClauseProperty(context, (IntClauseProperty) semanticObject); 
 				return; 
+			case Ck2Package.INTEGER_PROPERTY:
+				sequence_IntegerProperty(context, (IntegerProperty) semanticObject); 
+				return; 
 			case Ck2Package.LIST:
 				sequence_List(context, (List) semanticObject); 
 				return; 
@@ -73,9 +80,6 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case Ck2Package.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
-				return; 
-			case Ck2Package.NUMERIC_PROPERTY:
-				sequence_NumericProperty(context, (NumericProperty) semanticObject); 
 				return; 
 			case Ck2Package.PROBABILITY_PROPERTY:
 				sequence_ProbabilityProperty(context, (ProbabilityProperty) semanticObject); 
@@ -170,6 +174,28 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Property returns DoubleProperty
+	 *     DoubleProperty returns DoubleProperty
+	 *
+	 * Constraint:
+	 *     (key=ID value=Double)
+	 */
+	protected void sequence_DoubleProperty(ISerializationContext context, DoubleProperty semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__KEY));
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Property returns IdClauseProperty
 	 *     Clause returns IdClauseProperty
 	 *     IdClauseProperty returns IdClauseProperty
@@ -220,6 +246,28 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Property returns IntegerProperty
+	 *     IntegerProperty returns IntegerProperty
+	 *
+	 * Constraint:
+	 *     (key=ID value=Integer)
+	 */
+	protected void sequence_IntegerProperty(ISerializationContext context, IntegerProperty semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__KEY));
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Property returns ListProperty
 	 *     ListProperty returns ListProperty
 	 *
@@ -261,28 +309,6 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Property returns NumericProperty
-	 *     NumericProperty returns NumericProperty
-	 *
-	 * Constraint:
-	 *     (key=ID value=Double)
-	 */
-	protected void sequence_NumericProperty(ISerializationContext context, NumericProperty semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.NUMERIC_PROPERTY__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.NUMERIC_PROPERTY__KEY));
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.NUMERIC_PROPERTY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.NUMERIC_PROPERTY__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNumericPropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getNumericPropertyAccess().getValueDoubleParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
 	}
 	
 	

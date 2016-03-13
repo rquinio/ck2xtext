@@ -38,37 +38,54 @@ terminal STRING	: '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|'\\' */ | !('\\'|'
 terminal SL_COMMENT : '#' !('\n'|'\r')* ('\r'? '\n')?;
 terminal WS			: (' '|'\t'|'\r'|'\n')+;
 
+/**
+ * See ck2xtext.conversion.DateValueConverter
+ */
 Date returns ecore::EDate : INT'.'INT'.'INT;
-Double returns ecore::EDouble : ('-'|'+')?INT('.'INT)?;
+
+Integer returns ecore::EInt : ('-'|'+')?INT;
 
 /**
- * data={0 0 0 3 0 2 2}
+ * Note: Double do not match integers, for proper formatting
+ */
+Double returns ecore::EDouble : Integer'.'INT;
+
+/**
+ * data = {0 0 0 3 0 2 2}
  * color = { 0.3 0.55 0.8 }
  */
 List:
-	'{' (elems+= ListElem)+'}'
+	'{' (elems+= ListElem)+ '}'
 ;
 
-ListElem returns ecore::EString : ID | STRING | Double;
+ListElem returns ecore::EString : ID | STRING | Integer | Double;
 
+/**
+ * Properties follow the pattern: propertyName = propertyValue
+ */
 Property:
 	StringProperty |
 	IdProperty |
 	CommandProperty |
 	BoolProperty |
 	DateProperty |
-	NumericProperty |
+	IntegerProperty |
+	DoubleProperty |
 	ListProperty |
 	//NumericListProperty |
 	Clause |
 	ProbabilityProperty
 ;
 
+/**
+ * Complex/nested properties
+ */
 Clause:
 	IdClauseProperty |
 	IntClauseProperty |
 	DateClauseProperty
 ;
+
 /**
  * from_dynasty_prefix = "af "
  */
@@ -93,10 +110,22 @@ CommandProperty:
 BoolProperty:
 	key=ID '=' value=BOOL
 ;
+
 DateProperty:
 	key=ID '=' value=Date
 ;
-NumericProperty:
+/**
+ * year = 1000
+ * Note: need to split int vs double, so that formatter doesn't add .0 to int
+ */
+IntegerProperty:
+	key=ID '=' value=Integer
+;
+
+/**
+ * factor = 0.9
+ */
+DoubleProperty:
 	key=ID '=' value=Double
 ;
 
@@ -106,12 +135,22 @@ NumericProperty:
 ListProperty:
 	key=ID '=' value=List
 ;
+
+/**
+ * option = { ... }
+ */
 IdClauseProperty:
 	name=ID '=' value= '{' (properties+= Property)* '}'
 ;
+/**
+ * 123 = { ... }
+ */
 IntClauseProperty:
 	name=INT '=' value= '{' (properties+= Property)* '}'
 ;
+/**
+ * 769.1.1 = { ... }
+ */
 DateClauseProperty:
 	name=Date '=' value= '{' (properties+= Property)* '}'
 ;

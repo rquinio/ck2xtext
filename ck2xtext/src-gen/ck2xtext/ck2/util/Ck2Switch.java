@@ -142,11 +142,19 @@ public class Ck2Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case Ck2Package.NUMERIC_PROPERTY:
+      case Ck2Package.INTEGER_PROPERTY:
       {
-        NumericProperty numericProperty = (NumericProperty)theEObject;
-        T result = caseNumericProperty(numericProperty);
-        if (result == null) result = caseProperty(numericProperty);
+        IntegerProperty integerProperty = (IntegerProperty)theEObject;
+        T result = caseIntegerProperty(integerProperty);
+        if (result == null) result = caseProperty(integerProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case Ck2Package.DOUBLE_PROPERTY:
+      {
+        DoubleProperty doubleProperty = (DoubleProperty)theEObject;
+        T result = caseDoubleProperty(doubleProperty);
+        if (result == null) result = caseProperty(doubleProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -342,17 +350,33 @@ public class Ck2Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Numeric Property</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Integer Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Numeric Property</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Integer Property</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumericProperty(NumericProperty object)
+  public T caseIntegerProperty(IntegerProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDoubleProperty(DoubleProperty object)
   {
     return null;
   }

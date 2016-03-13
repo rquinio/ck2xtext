@@ -45,7 +45,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//Date ecore::EDate:
+		/// **
+		// * See ck2xtext.conversion.DateValueConverter
+		// * / Date ecore::EDate:
 		//	INT '.' INT '.' INT
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -67,22 +69,19 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_4() { return cINTTerminalRuleCall_4; }
 	}
-	public class DoubleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Double");
+	public class IntegerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Integer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cPlusSignKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
-		//Double ecore::EDouble:
-		//	('-' | '+')? INT ('.' INT)?
+		//Integer ecore::EInt:
+		//	('-' | '+')? INT
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('-' | '+')? INT ('.' INT)?
+		//('-' | '+')? INT
 		public Group getGroup() { return cGroup; }
 		
 		//('-' | '+')?
@@ -96,15 +95,31 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+	public class DoubleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Double");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIntegerParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
-		//('.' INT)?
-		public Group getGroup_2() { return cGroup_2; }
+		/// **
+		// * Note: Double do not match integers, for proper formatting
+		// * / Double ecore::EDouble:
+		//	Integer '.' INT
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Integer '.' INT
+		public Group getGroup() { return cGroup; }
+		
+		//Integer
+		public RuleCall getIntegerParserRuleCall_0() { return cIntegerParserRuleCall_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_2_1() { return cINTTerminalRuleCall_2_1; }
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.List");
@@ -115,7 +130,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		/// **
-		// * data={0 0 0 3 0 2 2}
+		// * data = {0 0 0 3 0 2 2}
 		// * color = { 0.3 0.55 0.8 }
 		// * / List:
 		//	'{' elems+=ListElem+ '}';
@@ -141,13 +156,14 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDoubleParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cIntegerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDoubleParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//ListElem:
-		//	ID | STRING | Double;
+		//	ID | STRING | Integer | Double;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID | STRING | Double
+		//ID | STRING | Integer | Double
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ID
@@ -156,8 +172,11 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
 		
+		//Integer
+		public RuleCall getIntegerParserRuleCall_2() { return cIntegerParserRuleCall_2; }
+		
 		//Double
-		public RuleCall getDoubleParserRuleCall_2() { return cDoubleParserRuleCall_2; }
+		public RuleCall getDoubleParserRuleCall_3() { return cDoubleParserRuleCall_3; }
 	}
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Property");
@@ -167,18 +186,21 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCommandPropertyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cBoolPropertyParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cDatePropertyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cNumericPropertyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cListPropertyParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cClauseParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cProbabilityPropertyParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cIntegerPropertyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cDoublePropertyParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cListPropertyParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cClauseParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cProbabilityPropertyParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
-		//Property:
-		//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | NumericProperty | ListProperty | Clause
-		//	| ProbabilityProperty;
+		/// **
+		// * Properties follow the pattern: propertyName = propertyValue
+		// * / Property:
+		//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
+		//	ListProperty | Clause | ProbabilityProperty;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | NumericProperty | ListProperty | Clause |
-		//ProbabilityProperty
+		//StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
+		//ListProperty | Clause | ProbabilityProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//StringProperty
@@ -196,18 +218,21 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//DateProperty
 		public RuleCall getDatePropertyParserRuleCall_4() { return cDatePropertyParserRuleCall_4; }
 		
-		//NumericProperty
-		public RuleCall getNumericPropertyParserRuleCall_5() { return cNumericPropertyParserRuleCall_5; }
+		//IntegerProperty
+		public RuleCall getIntegerPropertyParserRuleCall_5() { return cIntegerPropertyParserRuleCall_5; }
+		
+		//DoubleProperty
+		public RuleCall getDoublePropertyParserRuleCall_6() { return cDoublePropertyParserRuleCall_6; }
 		
 		//ListProperty
-		public RuleCall getListPropertyParserRuleCall_6() { return cListPropertyParserRuleCall_6; }
+		public RuleCall getListPropertyParserRuleCall_7() { return cListPropertyParserRuleCall_7; }
 		
 		////NumericListProperty |
 		//Clause
-		public RuleCall getClauseParserRuleCall_7() { return cClauseParserRuleCall_7; }
+		public RuleCall getClauseParserRuleCall_8() { return cClauseParserRuleCall_8; }
 		
 		//ProbabilityProperty
-		public RuleCall getProbabilityPropertyParserRuleCall_8() { return cProbabilityPropertyParserRuleCall_8; }
+		public RuleCall getProbabilityPropertyParserRuleCall_9() { return cProbabilityPropertyParserRuleCall_9; }
 	}
 	public class ClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Clause");
@@ -216,7 +241,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIntClausePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cDateClausePropertyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//Clause:
+		/// **
+		// * Complex/nested properties
+		// * / Clause:
 		//	IdClauseProperty | IntClauseProperty | DateClauseProperty;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -403,8 +430,42 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//Date
 		public RuleCall getValueDateParserRuleCall_2_0() { return cValueDateParserRuleCall_2_0; }
 	}
-	public class NumericPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.NumericProperty");
+	public class IntegerPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.IntegerProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		/// **
+		// * year = 1000
+		// * Note: need to split int vs double, so that formatter doesn't add .0 to int
+		// * / IntegerProperty:
+		//	key=ID '=' value=Integer;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//key=ID '=' value=Integer
+		public Group getGroup() { return cGroup; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_2_0() { return cValueIntegerParserRuleCall_2_0; }
+	}
+	public class DoublePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.DoubleProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
@@ -412,7 +473,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueDoubleParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
-		//NumericProperty:
+		/// **
+		// * factor = 0.9
+		// * / DoubleProperty:
 		//	key=ID '=' value=Double;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -479,7 +542,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//IdClauseProperty:
+		/// **
+		// * option = { ... }
+		// * / IdClauseProperty:
 		//	name=ID '=' value='{' properties+=Property* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -522,7 +587,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//IntClauseProperty:
+		/// **
+		// * 123 = { ... }
+		// * / IntClauseProperty:
 		//	name=INT '=' value='{' properties+=Property* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -565,7 +632,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//DateClauseProperty:
+		/// **
+		// * 769.1.1 = { ... }
+		// * / DateClauseProperty:
 		//	name=Date '=' value='{' properties+=Property* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -644,6 +713,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tWS;
 	private final DateElements pDate;
+	private final IntegerElements pInteger;
 	private final DoubleElements pDouble;
 	private final ListElements pList;
 	private final ListElemElements pListElem;
@@ -654,7 +724,8 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	private final CommandPropertyElements pCommandProperty;
 	private final BoolPropertyElements pBoolProperty;
 	private final DatePropertyElements pDateProperty;
-	private final NumericPropertyElements pNumericProperty;
+	private final IntegerPropertyElements pIntegerProperty;
+	private final DoublePropertyElements pDoubleProperty;
 	private final ListPropertyElements pListProperty;
 	private final IdClausePropertyElements pIdClauseProperty;
 	private final IntClausePropertyElements pIntClauseProperty;
@@ -678,6 +749,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.SL_COMMENT");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.WS");
 		this.pDate = new DateElements();
+		this.pInteger = new IntegerElements();
 		this.pDouble = new DoubleElements();
 		this.pList = new ListElements();
 		this.pListElem = new ListElemElements();
@@ -688,7 +760,8 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		this.pCommandProperty = new CommandPropertyElements();
 		this.pBoolProperty = new BoolPropertyElements();
 		this.pDateProperty = new DatePropertyElements();
-		this.pNumericProperty = new NumericPropertyElements();
+		this.pIntegerProperty = new IntegerPropertyElements();
+		this.pDoubleProperty = new DoublePropertyElements();
 		this.pListProperty = new ListPropertyElements();
 		this.pIdClauseProperty = new IdClausePropertyElements();
 		this.pIntClauseProperty = new IntClausePropertyElements();
@@ -791,7 +864,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return tWS;
 	}
 	
-	//Date ecore::EDate:
+	/// **
+	// * See ck2xtext.conversion.DateValueConverter
+	// * / Date ecore::EDate:
 	//	INT '.' INT '.' INT
 	public DateElements getDateAccess() {
 		return pDate;
@@ -801,8 +876,20 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getDateAccess().getRule();
 	}
 	
-	//Double ecore::EDouble:
-	//	('-' | '+')? INT ('.' INT)?
+	//Integer ecore::EInt:
+	//	('-' | '+')? INT
+	public IntegerElements getIntegerAccess() {
+		return pInteger;
+	}
+	
+	public ParserRule getIntegerRule() {
+		return getIntegerAccess().getRule();
+	}
+	
+	/// **
+	// * Note: Double do not match integers, for proper formatting
+	// * / Double ecore::EDouble:
+	//	Integer '.' INT
 	public DoubleElements getDoubleAccess() {
 		return pDouble;
 	}
@@ -812,7 +899,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	/// **
-	// * data={0 0 0 3 0 2 2}
+	// * data = {0 0 0 3 0 2 2}
 	// * color = { 0.3 0.55 0.8 }
 	// * / List:
 	//	'{' elems+=ListElem+ '}';
@@ -825,7 +912,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ListElem:
-	//	ID | STRING | Double;
+	//	ID | STRING | Integer | Double;
 	public ListElemElements getListElemAccess() {
 		return pListElem;
 	}
@@ -834,9 +921,11 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getListElemAccess().getRule();
 	}
 	
-	//Property:
-	//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | NumericProperty | ListProperty | Clause
-	//	| ProbabilityProperty;
+	/// **
+	// * Properties follow the pattern: propertyName = propertyValue
+	// * / Property:
+	//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
+	//	ListProperty | Clause | ProbabilityProperty;
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}
@@ -845,7 +934,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getPropertyAccess().getRule();
 	}
 	
-	//Clause:
+	/// **
+	// * Complex/nested properties
+	// * / Clause:
 	//	IdClauseProperty | IntClauseProperty | DateClauseProperty;
 	public ClauseElements getClauseAccess() {
 		return pClause;
@@ -913,14 +1004,29 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getDatePropertyAccess().getRule();
 	}
 	
-	//NumericProperty:
-	//	key=ID '=' value=Double;
-	public NumericPropertyElements getNumericPropertyAccess() {
-		return pNumericProperty;
+	/// **
+	// * year = 1000
+	// * Note: need to split int vs double, so that formatter doesn't add .0 to int
+	// * / IntegerProperty:
+	//	key=ID '=' value=Integer;
+	public IntegerPropertyElements getIntegerPropertyAccess() {
+		return pIntegerProperty;
 	}
 	
-	public ParserRule getNumericPropertyRule() {
-		return getNumericPropertyAccess().getRule();
+	public ParserRule getIntegerPropertyRule() {
+		return getIntegerPropertyAccess().getRule();
+	}
+	
+	/// **
+	// * factor = 0.9
+	// * / DoubleProperty:
+	//	key=ID '=' value=Double;
+	public DoublePropertyElements getDoublePropertyAccess() {
+		return pDoubleProperty;
+	}
+	
+	public ParserRule getDoublePropertyRule() {
+		return getDoublePropertyAccess().getRule();
 	}
 	
 	/// **
@@ -935,7 +1041,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getListPropertyAccess().getRule();
 	}
 	
-	//IdClauseProperty:
+	/// **
+	// * option = { ... }
+	// * / IdClauseProperty:
 	//	name=ID '=' value='{' properties+=Property* '}';
 	public IdClausePropertyElements getIdClausePropertyAccess() {
 		return pIdClauseProperty;
@@ -945,7 +1053,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getIdClausePropertyAccess().getRule();
 	}
 	
-	//IntClauseProperty:
+	/// **
+	// * 123 = { ... }
+	// * / IntClauseProperty:
 	//	name=INT '=' value='{' properties+=Property* '}';
 	public IntClausePropertyElements getIntClausePropertyAccess() {
 		return pIntClauseProperty;
@@ -955,7 +1065,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getIntClausePropertyAccess().getRule();
 	}
 	
-	//DateClauseProperty:
+	/// **
+	// * 769.1.1 = { ... }
+	// * / DateClauseProperty:
 	//	name=Date '=' value='{' properties+=Property* '}';
 	public DateClausePropertyElements getDateClausePropertyAccess() {
 		return pDateClauseProperty;
