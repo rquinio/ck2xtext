@@ -43,8 +43,8 @@ class Ck2ParsingTest{
 					
 					color = { 0 0 0 }
 					
-					male_names = { � � }
-					female_names = { � � }
+					male_names = { ä â }
+					female_names = { ä â }
 					
 					dukes_called_kings = yes
 					
