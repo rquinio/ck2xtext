@@ -123,6 +123,15 @@ public interface Ck2Factory extends EFactory
   DoubleProperty createDoubleProperty();
 
   /**
+   * Returns a new object of class '<em>Hexadecimal Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hexadecimal Property</em>'.
+   * @generated
+   */
+  HexadecimalProperty createHexadecimalProperty();
+
+  /**
    * Returns a new object of class '<em>List Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

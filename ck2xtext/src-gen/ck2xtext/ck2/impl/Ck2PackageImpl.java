@@ -11,6 +11,7 @@ import ck2xtext.ck2.CommandProperty;
 import ck2xtext.ck2.DateClauseProperty;
 import ck2xtext.ck2.DateProperty;
 import ck2xtext.ck2.DoubleProperty;
+import ck2xtext.ck2.HexadecimalProperty;
 import ck2xtext.ck2.IdClauseProperty;
 import ck2xtext.ck2.IdProperty;
 import ck2xtext.ck2.IntClauseProperty;
@@ -113,6 +114,13 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * @generated
    */
   private EClass doublePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hexadecimalPropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -507,6 +515,36 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getHexadecimalProperty()
+  {
+    return hexadecimalPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHexadecimalProperty_Key()
+  {
+    return (EAttribute)hexadecimalPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHexadecimalProperty_Value()
+  {
+    return (EAttribute)hexadecimalPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getListProperty()
   {
     return listPropertyEClass;
@@ -692,6 +730,10 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     createEAttribute(doublePropertyEClass, DOUBLE_PROPERTY__KEY);
     createEAttribute(doublePropertyEClass, DOUBLE_PROPERTY__VALUE);
 
+    hexadecimalPropertyEClass = createEClass(HEXADECIMAL_PROPERTY);
+    createEAttribute(hexadecimalPropertyEClass, HEXADECIMAL_PROPERTY__KEY);
+    createEAttribute(hexadecimalPropertyEClass, HEXADECIMAL_PROPERTY__VALUE);
+
     listPropertyEClass = createEClass(LIST_PROPERTY);
     createEAttribute(listPropertyEClass, LIST_PROPERTY__KEY);
     createEReference(listPropertyEClass, LIST_PROPERTY__VALUE);
@@ -747,6 +789,7 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     datePropertyEClass.getESuperTypes().add(this.getProperty());
     integerPropertyEClass.getESuperTypes().add(this.getProperty());
     doublePropertyEClass.getESuperTypes().add(this.getProperty());
+    hexadecimalPropertyEClass.getESuperTypes().add(this.getProperty());
     listPropertyEClass.getESuperTypes().add(this.getProperty());
     idClausePropertyEClass.getESuperTypes().add(this.getClause());
     intClausePropertyEClass.getESuperTypes().add(this.getClause());
@@ -793,6 +836,10 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     initEClass(doublePropertyEClass, DoubleProperty.class, "DoubleProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDoubleProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, DoubleProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDoubleProperty_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(hexadecimalPropertyEClass, HexadecimalProperty.class, "HexadecimalProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHexadecimalProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, HexadecimalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHexadecimalProperty_Value(), ecorePackage.getEInt(), "value", null, 0, 1, HexadecimalProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listPropertyEClass, ListProperty.class, "ListProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getListProperty_Key(), ecorePackage.getEString(), "key", null, 0, 1, ListProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

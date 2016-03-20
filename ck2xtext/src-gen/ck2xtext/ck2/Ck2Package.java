@@ -429,6 +429,43 @@ public interface Ck2Package extends EPackage
   int DOUBLE_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link ck2xtext.ck2.impl.HexadecimalPropertyImpl <em>Hexadecimal Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ck2xtext.ck2.impl.HexadecimalPropertyImpl
+   * @see ck2xtext.ck2.impl.Ck2PackageImpl#getHexadecimalProperty()
+   * @generated
+   */
+  int HEXADECIMAL_PROPERTY = 11;
+
+  /**
+   * The feature id for the '<em><b>Key</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEXADECIMAL_PROPERTY__KEY = PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEXADECIMAL_PROPERTY__VALUE = PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Hexadecimal Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEXADECIMAL_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link ck2xtext.ck2.impl.ListPropertyImpl <em>List Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -436,7 +473,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getListProperty()
    * @generated
    */
-  int LIST_PROPERTY = 11;
+  int LIST_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -473,7 +510,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIdClauseProperty()
    * @generated
    */
-  int ID_CLAUSE_PROPERTY = 12;
+  int ID_CLAUSE_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -519,7 +556,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getIntClauseProperty()
    * @generated
    */
-  int INT_CLAUSE_PROPERTY = 13;
+  int INT_CLAUSE_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -565,7 +602,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getDateClauseProperty()
    * @generated
    */
-  int DATE_CLAUSE_PROPERTY = 14;
+  int DATE_CLAUSE_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -611,7 +648,7 @@ public interface Ck2Package extends EPackage
    * @see ck2xtext.ck2.impl.Ck2PackageImpl#getProbabilityProperty()
    * @generated
    */
-  int PROBABILITY_PROPERTY = 15;
+  int PROBABILITY_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -948,6 +985,38 @@ public interface Ck2Package extends EPackage
    * @generated
    */
   EAttribute getDoubleProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link ck2xtext.ck2.HexadecimalProperty <em>Hexadecimal Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hexadecimal Property</em>'.
+   * @see ck2xtext.ck2.HexadecimalProperty
+   * @generated
+   */
+  EClass getHexadecimalProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.HexadecimalProperty#getKey <em>Key</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see ck2xtext.ck2.HexadecimalProperty#getKey()
+   * @see #getHexadecimalProperty()
+   * @generated
+   */
+  EAttribute getHexadecimalProperty_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.ck2.HexadecimalProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see ck2xtext.ck2.HexadecimalProperty#getValue()
+   * @see #getHexadecimalProperty()
+   * @generated
+   */
+  EAttribute getHexadecimalProperty_Value();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.ck2.ListProperty <em>List Property</em>}'.
@@ -1352,6 +1421,32 @@ public interface Ck2Package extends EPackage
      * @generated
      */
     EAttribute DOUBLE_PROPERTY__VALUE = eINSTANCE.getDoubleProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link ck2xtext.ck2.impl.HexadecimalPropertyImpl <em>Hexadecimal Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ck2xtext.ck2.impl.HexadecimalPropertyImpl
+     * @see ck2xtext.ck2.impl.Ck2PackageImpl#getHexadecimalProperty()
+     * @generated
+     */
+    EClass HEXADECIMAL_PROPERTY = eINSTANCE.getHexadecimalProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEXADECIMAL_PROPERTY__KEY = eINSTANCE.getHexadecimalProperty_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEXADECIMAL_PROPERTY__VALUE = eINSTANCE.getHexadecimalProperty_Value();
 
     /**
      * The meta object literal for the '{@link ck2xtext.ck2.impl.ListPropertyImpl <em>List Property</em>}' class.

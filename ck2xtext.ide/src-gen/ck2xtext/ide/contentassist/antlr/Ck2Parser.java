@@ -50,6 +50,7 @@ public class Ck2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatePropertyAccess().getGroup(), "rule__DateProperty__Group__0");
 					put(grammarAccess.getIntegerPropertyAccess().getGroup(), "rule__IntegerProperty__Group__0");
 					put(grammarAccess.getDoublePropertyAccess().getGroup(), "rule__DoubleProperty__Group__0");
+					put(grammarAccess.getHexadecimalPropertyAccess().getGroup(), "rule__HexadecimalProperty__Group__0");
 					put(grammarAccess.getListPropertyAccess().getGroup(), "rule__ListProperty__Group__0");
 					put(grammarAccess.getIdClausePropertyAccess().getGroup(), "rule__IdClauseProperty__Group__0");
 					put(grammarAccess.getIntClausePropertyAccess().getGroup(), "rule__IntClauseProperty__Group__0");
@@ -71,6 +72,8 @@ public class Ck2Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getIntegerPropertyAccess().getValueAssignment_2(), "rule__IntegerProperty__ValueAssignment_2");
 					put(grammarAccess.getDoublePropertyAccess().getKeyAssignment_0(), "rule__DoubleProperty__KeyAssignment_0");
 					put(grammarAccess.getDoublePropertyAccess().getValueAssignment_2(), "rule__DoubleProperty__ValueAssignment_2");
+					put(grammarAccess.getHexadecimalPropertyAccess().getKeyAssignment_0(), "rule__HexadecimalProperty__KeyAssignment_0");
+					put(grammarAccess.getHexadecimalPropertyAccess().getValueAssignment_2(), "rule__HexadecimalProperty__ValueAssignment_2");
 					put(grammarAccess.getListPropertyAccess().getKeyAssignment_0(), "rule__ListProperty__KeyAssignment_0");
 					put(grammarAccess.getListPropertyAccess().getValueAssignment_2(), "rule__ListProperty__ValueAssignment_2");
 					put(grammarAccess.getIdClausePropertyAccess().getNameAssignment_0(), "rule__IdClauseProperty__NameAssignment_0");

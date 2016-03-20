@@ -21,4 +21,9 @@ public class Ck2ValueConverterService extends AbstractDeclarativeValueConverterS
 		return new DateValueConverter();
 	}
 
+	@ValueConverter(rule = "HEX")
+	public IValueConverter<Integer> HEX() {
+		return new HexadecimalValueConverter();
+	}
+
 }

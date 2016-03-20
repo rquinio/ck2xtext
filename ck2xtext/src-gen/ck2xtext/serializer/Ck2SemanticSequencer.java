@@ -9,6 +9,7 @@ import ck2xtext.ck2.CommandProperty;
 import ck2xtext.ck2.DateClauseProperty;
 import ck2xtext.ck2.DateProperty;
 import ck2xtext.ck2.DoubleProperty;
+import ck2xtext.ck2.HexadecimalProperty;
 import ck2xtext.ck2.IdClauseProperty;
 import ck2xtext.ck2.IdProperty;
 import ck2xtext.ck2.IntClauseProperty;
@@ -59,6 +60,9 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case Ck2Package.DOUBLE_PROPERTY:
 				sequence_DoubleProperty(context, (DoubleProperty) semanticObject); 
+				return; 
+			case Ck2Package.HEXADECIMAL_PROPERTY:
+				sequence_HexadecimalProperty(context, (HexadecimalProperty) semanticObject); 
 				return; 
 			case Ck2Package.ID_CLAUSE_PROPERTY:
 				sequence_IdClauseProperty(context, (IdClauseProperty) semanticObject); 
@@ -190,6 +194,28 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
 		feeder.accept(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Property returns HexadecimalProperty
+	 *     HexadecimalProperty returns HexadecimalProperty
+	 *
+	 * Constraint:
+	 *     (key=ID value=HEX)
+	 */
+	protected void sequence_HexadecimalProperty(ISerializationContext context, HexadecimalProperty semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.HEXADECIMAL_PROPERTY__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.HEXADECIMAL_PROPERTY__KEY));
+			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.HEXADECIMAL_PROPERTY__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.HEXADECIMAL_PROPERTY__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHexadecimalPropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getHexadecimalPropertyAccess().getValueHEXTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

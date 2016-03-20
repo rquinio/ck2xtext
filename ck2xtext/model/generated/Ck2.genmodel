@@ -45,6 +45,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DoubleProperty/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//DoubleProperty/value"/>
     </genClasses>
+    <genClasses ecoreClass="Ck2.ecore#//HexadecimalProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//HexadecimalProperty/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//HexadecimalProperty/value"/>
+    </genClasses>
     <genClasses ecoreClass="Ck2.ecore#//ListProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//ListProperty/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ck2.ecore#//ListProperty/value"/>

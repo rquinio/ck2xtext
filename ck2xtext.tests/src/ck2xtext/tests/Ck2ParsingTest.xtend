@@ -17,6 +17,7 @@ import org.eclipse.xtext.junit4.util.ResourceHelper
 import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.Ignore
 import org.eclipse.emf.ecore.resource.Resource
+import ck2xtext.tests.Ck2InjectorProvider
 
 @RunWith(XtextRunner)
 @InjectWith(Ck2InjectorProvider)
@@ -31,6 +32,35 @@ class Ck2ParsingTest{
 	@Inject
 	ValidationTestHelper validationHelper;
 	
+	@Test
+	def void floatValueShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''scale = 1.0''');
+		
+		validationHelper.assertNoIssues(resource);
+	}
+	
+	@Test
+	def void floatValueWithSuffixShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''scale = 1.0f''');
+		
+		validationHelper.assertNoIssues(resource);
+	}
+	
+	@Test
+	def void hexadecimalValueShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''color = 0xff0000''');
+		
+		validationHelper.assertNoIssues(resource);
+	}
+	
+	@Ignore("FIXME")
+	@Test
+	def void valueStartingWithZeroShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''properties = 0c0cbd000000''');
+		
+		validationHelper.assertNoIssues(resource);
+	}
+
 	@Ignore
 	@Test
 	def void test2(){

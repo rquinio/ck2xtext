@@ -158,6 +158,14 @@ public class Ck2Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case Ck2Package.HEXADECIMAL_PROPERTY:
+      {
+        HexadecimalProperty hexadecimalProperty = (HexadecimalProperty)theEObject;
+        T result = caseHexadecimalProperty(hexadecimalProperty);
+        if (result == null) result = caseProperty(hexadecimalProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case Ck2Package.LIST_PROPERTY:
       {
         ListProperty listProperty = (ListProperty)theEObject;
@@ -377,6 +385,22 @@ public class Ck2Switch<T> extends Switch<T>
    * @generated
    */
   public T caseDoubleProperty(DoubleProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hexadecimal Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hexadecimal Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHexadecimalProperty(HexadecimalProperty object)
   {
     return null;
   }

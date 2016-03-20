@@ -223,6 +223,13 @@ ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		{
 			newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_2());
 		}
+		(
+			kw='f'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getDoubleAccess().getFKeyword_3());
+			}
+		)?
 	)
 ;
 
@@ -408,29 +415,38 @@ ruleProperty returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPropertyAccess().getListPropertyParserRuleCall_7());
+			newCompositeNode(grammarAccess.getPropertyAccess().getHexadecimalPropertyParserRuleCall_7());
 		}
-		this_ListProperty_7=ruleListProperty
+		this_HexadecimalProperty_7=ruleHexadecimalProperty
 		{
-			$current = $this_ListProperty_7.current;
+			$current = $this_HexadecimalProperty_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPropertyAccess().getClauseParserRuleCall_8());
+			newCompositeNode(grammarAccess.getPropertyAccess().getListPropertyParserRuleCall_8());
 		}
-		this_Clause_8=ruleClause
+		this_ListProperty_8=ruleListProperty
 		{
-			$current = $this_Clause_8.current;
+			$current = $this_ListProperty_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getPropertyAccess().getProbabilityPropertyParserRuleCall_9());
+			newCompositeNode(grammarAccess.getPropertyAccess().getClauseParserRuleCall_9());
 		}
-		this_ProbabilityProperty_9=ruleProbabilityProperty
+		this_Clause_9=ruleClause
 		{
-			$current = $this_ProbabilityProperty_9.current;
+			$current = $this_Clause_9.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPropertyAccess().getProbabilityPropertyParserRuleCall_10());
+		}
+		this_ProbabilityProperty_10=ruleProbabilityProperty
+		{
+			$current = $this_ProbabilityProperty_10.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -905,6 +921,65 @@ ruleDoubleProperty returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleHexadecimalProperty
+entryRuleHexadecimalProperty returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHexadecimalPropertyRule()); }
+	iv_ruleHexadecimalProperty=ruleHexadecimalProperty
+	{ $current=$iv_ruleHexadecimalProperty.current; }
+	EOF;
+
+// Rule HexadecimalProperty
+ruleHexadecimalProperty returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_key_0_0=RULE_ID
+				{
+					newLeafNode(lv_key_0_0, grammarAccess.getHexadecimalPropertyAccess().getKeyIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHexadecimalPropertyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"key",
+						lv_key_0_0,
+						"ck2xtext.Ck2.ID");
+				}
+			)
+		)
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getHexadecimalPropertyAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				lv_value_2_0=RULE_HEX
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getHexadecimalPropertyAccess().getValueHEXTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHexadecimalPropertyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_2_0,
+						"ck2xtext.Ck2.HEX");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleListProperty
 entryRuleListProperty returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getListPropertyRule()); }
@@ -1263,6 +1338,8 @@ ruleProbabilityProperty returns [EObject current=null]
 fragment RULE_DIGIT : '0'..'9';
 
 RULE_BOOL : ('yes'|'no');
+
+RULE_HEX : '0x' (RULE_DIGIT|'a'|'b'|'c'|'d'|'e'|'f')+;
 
 RULE_INT : RULE_DIGIT+;
 

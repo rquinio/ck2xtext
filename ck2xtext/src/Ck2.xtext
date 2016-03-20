@@ -17,6 +17,7 @@ Model:
 terminal fragment DIGIT : ('0'..'9');
 
 terminal BOOL returns ecore::EBoolean: ('yes' | 'no');
+terminal HEX returns ecore::EInt: '0x'(DIGIT|'a'|'b'|'c'|'d'|'e'|'f')+;
 terminal INT returns ecore::EInt: (DIGIT)+;
 
 terminal fragment NON_ASCII_CAP : 'À'|'Á'|'Â'|'Ã'|'Ä'|'Å'|'Æ'|'Ç'|'È'|'É'|'Ê'|'Ë'|'Ì'|'Í'|'Î'|'Ï'|'Ð'|'Ñ'|'Ò'|'Ó'|'Ô'|'Õ'|'Ö'|'Ø'|'Š'|'Ù'|'Ú'|'Û'|'Ü'|'Ý'|'Ÿ'|'Þ'|'ß'|'Œ';
@@ -27,7 +28,7 @@ terminal fragment ID_PART: ('a'..'z'|'A'..'Z'|NON_ASCII_LOW|NON_ASCII_CAP|'<');
 /**
  * IDs of entities
  * Used in named definitions (<id> = {}), or as an 'id' property on the entity.
- * Cannot start with a digit, nor special characters _,-, etc.
+ * Cannot start with a digit (would match doubles), nor special characters _,-, etc.
  * May be namespaced (namespace.id)
  * Note: Caret is used to escape an identifier if there are conflicts with existing keywords. It is removed by the ID rule's ValueConverter. 
  */
@@ -47,8 +48,10 @@ Integer returns ecore::EInt : ('-'|'+')?INT;
 
 /**
  * Note: Double do not match integers, for proper formatting
+ * 
+ * May end with 'f' in some cases
  */
-Double returns ecore::EDouble : Integer'.'INT;
+Double returns ecore::EDouble : Integer'.'INT('f')?;
 
 /**
  * data = {0 0 0 3 0 2 2}
@@ -71,6 +74,7 @@ Property:
 	DateProperty |
 	IntegerProperty |
 	DoubleProperty |
+	HexadecimalProperty |
 	ListProperty |
 	//NumericListProperty |
 	Clause |
@@ -127,6 +131,13 @@ IntegerProperty:
  */
 DoubleProperty:
 	key=ID '=' value=Double
+;
+
+/**
+ * color = 0xff0000
+ */
+HexadecimalProperty:
+	key=ID '=' value=HEX
 ;
 
 /**

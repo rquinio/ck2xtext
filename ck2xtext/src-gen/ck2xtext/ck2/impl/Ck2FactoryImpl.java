@@ -76,6 +76,7 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
       case Ck2Package.DATE_PROPERTY: return createDateProperty();
       case Ck2Package.INTEGER_PROPERTY: return createIntegerProperty();
       case Ck2Package.DOUBLE_PROPERTY: return createDoubleProperty();
+      case Ck2Package.HEXADECIMAL_PROPERTY: return createHexadecimalProperty();
       case Ck2Package.LIST_PROPERTY: return createListProperty();
       case Ck2Package.ID_CLAUSE_PROPERTY: return createIdClauseProperty();
       case Ck2Package.INT_CLAUSE_PROPERTY: return createIntClauseProperty();
@@ -205,6 +206,17 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
   {
     DoublePropertyImpl doubleProperty = new DoublePropertyImpl();
     return doubleProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HexadecimalProperty createHexadecimalProperty()
+  {
+    HexadecimalPropertyImpl hexadecimalProperty = new HexadecimalPropertyImpl();
+    return hexadecimalProperty;
   }
 
   /**
