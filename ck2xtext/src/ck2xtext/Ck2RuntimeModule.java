@@ -5,6 +5,7 @@ package ck2xtext;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.formatting.IFormatter;
+import org.eclipse.xtext.formatting2.IFormatter2;
 
 import ck2xtext.conversion.Ck2ValueConverterService;
 import ck2xtext.formatting.Ck2Formatter;
@@ -20,7 +21,6 @@ public class Ck2RuntimeModule extends AbstractCk2RuntimeModule {
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return Ck2ValueConverterService.class;
-
 	}
 
 	/**
@@ -31,4 +31,11 @@ public class Ck2RuntimeModule extends AbstractCk2RuntimeModule {
 		return Ck2Formatter.class;
 	}
 
+	/**
+	 * Disable {@link ck2xtext.formatting2.Ck2Formatter} for now
+	 */
+	@Override
+	public Class<? extends IFormatter2> bindIFormatter2() {
+		return null;
+	}
 }

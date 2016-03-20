@@ -49,9 +49,9 @@ Workflow {
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
-			/*fragment = DebugAntlrGeneratorFragment {
-				options = auto-inject {}
-			}*/
+			
+			// formatter API 
+			fragment = formatting.Formatter2Fragment2 {}
 		}
 	}
 }

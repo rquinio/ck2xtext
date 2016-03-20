@@ -43,7 +43,8 @@ public class Ck2FormatterTest {
 	@Test
 	def public void badIdentationShouldBeCorrected() throws Exception {
 		val String source = '''
-		def = {
+		def = 
+		{
 		 property1 = value1 
 		         property2 = value2
 		}  ''';
@@ -62,6 +63,29 @@ public class Ck2FormatterTest {
 		val String source = '''def = { property = value }''';
 
 		assertEquals(source, format(source));
+	}
+	
+	@Test
+	def public void singlePropertiesShouldBeFormatted() throws Exception {
+		val String source = '''def = {  property = value}''';
+		val String expected = '''def = { property = value }''';
+
+		assertEquals(expected, format(source));
+	}
+	
+	@Test
+	def public void singlePropertiesShouldStatyWrapped() throws Exception {
+		val String source = '''
+		def = {
+		property = value
+		}''';
+		
+		val String expected = '''
+		def = {
+			property = value
+		}''';
+
+		assertEquals(expected, format(source));
 	}
 	
 	@Test
