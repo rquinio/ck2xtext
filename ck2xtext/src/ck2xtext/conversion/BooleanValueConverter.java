@@ -6,11 +6,15 @@ import org.eclipse.xtext.nodemodel.INode;
 
 public class BooleanValueConverter implements IValueConverter<Boolean> {
 
+	private static final String NO = "no";
+
+	private static final String YES = "yes";
+
 	@Override
 	public Boolean toValue(String string, INode node) throws ValueConverterException {
-		if ("yes".equals(string)) {
+		if (YES.equals(string)) {
 			return Boolean.TRUE;
-		} else if ("no".equals(string)) {
+		} else if (NO.equals(string)) {
 			return Boolean.FALSE;
 		} else {
 			throw new ValueConverterException(string, node, null);
@@ -19,7 +23,9 @@ public class BooleanValueConverter implements IValueConverter<Boolean> {
 
 	@Override
 	public String toString(Boolean value) throws ValueConverterException {
-		return value.toString();
+		if (value) {
+			return YES;
+		}
+		return NO;
 	}
-
 }
