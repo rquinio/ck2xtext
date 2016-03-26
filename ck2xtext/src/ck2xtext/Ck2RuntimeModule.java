@@ -5,9 +5,13 @@ package ck2xtext;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.formatting.IFormatter;
+import org.eclipse.xtext.resource.IResourceFactory;
+import org.eclipse.xtext.resource.IResourceServiceProvider;
 
 import ck2xtext.conversion.Ck2ValueConverterService;
 import ck2xtext.formatting.Ck2Formatter;
+import ck2xtext.resource.Ck2ResourceFactory;
+import ck2xtext.resource.Ck2ResourceServiceProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -28,5 +32,17 @@ public class Ck2RuntimeModule extends AbstractCk2RuntimeModule {
 	@Override
 	public Class<? extends IFormatter> bindIFormatter() {
 		return Ck2Formatter.class;
+	}
+
+	/**
+	 * Override the @ImplementedBy in {@link IResourceServiceProvider}
+	 */
+	public Class<? extends IResourceServiceProvider> bindIResourceServiceProvider() {
+		return Ck2ResourceServiceProvider.class;
+	}
+
+	@Override
+	public Class<? extends IResourceFactory> bindIResourceFactory() {
+		return Ck2ResourceFactory.class;
 	}
 }

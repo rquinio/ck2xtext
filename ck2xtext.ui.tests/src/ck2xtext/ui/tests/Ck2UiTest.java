@@ -1,16 +1,18 @@
 package ck2xtext.ui.tests;
 
-import java.util.Collections;
+import static org.eclipse.xtext.junit4.ui.util.IResourcesSetupUtil.*;
 
+import java.lang.reflect.InvocationTargetException;
+
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.junit4.ui.AbstractAutoEditTest;
 import org.eclipse.xtext.resource.FileExtensionProvider;
 import org.eclipse.xtext.ui.editor.XtextEditor;
-import org.eclipse.xtext.ui.util.PluginProjectFactory;
+import org.eclipse.xtext.ui.util.ProjectFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,11 +31,16 @@ public class Ck2UiTest extends AbstractAutoEditTest {
 	FileExtensionProvider extensionProvider;
 
 	@Inject
-	PluginProjectFactory projectFactory;
+	ProjectFactory projectFactory;
+
+	private IProject project;
+
+	private IFile file;
 
 	@Before
-	public void doSetUp() throws CoreException {
-		createPluginProject("foo");
+	public void doSetUp() throws CoreException, InvocationTargetException, InterruptedException {
+		project = createProject("myMod");
+		file = createFile("common/landed_titles/my_titles.txt", "");
 	}
 
 	@After
@@ -42,7 +49,7 @@ public class Ck2UiTest extends AbstractAutoEditTest {
 
 	@Test
 	public void test() throws Exception {
-		XtextEditor editor = openEditor("Hello!");
+		XtextEditor editor = openEditor(file);
 		pressKey(editor, '\n');
 		pressKey(editor, '\n');
 		pressKey(editor, '\n');
@@ -57,14 +64,5 @@ public class Ck2UiTest extends AbstractAutoEditTest {
 	@Override
 	protected String getFileExtension() {
 		return "txt";
-	}
-
-	protected IProject createPluginProject(String name) throws CoreException {
-		projectFactory.setProjectName(name);
-		projectFactory.addFolders(Collections.singletonList("src"));
-		projectFactory.addBuilderIds();
-		projectFactory.addProjectNatures();
-		IProject result = projectFactory.createProject(new NullProgressMonitor(), null);
-		return result;
 	}
 }

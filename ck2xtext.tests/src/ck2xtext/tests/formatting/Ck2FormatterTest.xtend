@@ -16,10 +16,13 @@ import com.google.inject.Inject;
 import ck2xtext.services.Ck2GrammarAccess;
 import ck2xtext.tests.Ck2InjectorProvider;
 import org.junit.Ignore
+import org.eclipse.emf.common.util.URI
 
 @RunWith(XtextRunner)
 @InjectWith(Ck2InjectorProvider)
 public class Ck2FormatterTest {
+	
+	private static final URI DEFAULT = URI.createFileURI("common/test.txt");
 
 	@Inject
 	ISerializer serializer;
@@ -198,7 +201,7 @@ public class Ck2FormatterTest {
 	}
 
 	def private String format(String source) throws Exception {
-		val Resource res = resourceHelper.resource(source);
+		val Resource res = resourceHelper.resource(source, DEFAULT);
 		return serializer.serialize(res.getContents().get(0), FORMAT);
 	}
 

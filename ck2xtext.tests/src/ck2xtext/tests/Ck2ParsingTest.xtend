@@ -18,10 +18,13 @@ import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.Ignore
 import org.eclipse.emf.ecore.resource.Resource
 import ck2xtext.tests.Ck2InjectorProvider
+import org.eclipse.emf.common.util.URI
 
 @RunWith(XtextRunner)
 @InjectWith(Ck2InjectorProvider)
 class Ck2ParsingTest{
+	
+	private static final URI DEFAULT = URI.createFileURI("common/test.txt");
 
 	@Inject
 	ParseHelper<Model> parseHelper;
@@ -34,21 +37,21 @@ class Ck2ParsingTest{
 	
 	@Test
 	def void floatValueShouldBeParsed(){
-		val Resource resource = resourceHelper.resource('''scale = 1.0''');
+		val Resource resource = resourceHelper.resource('''scale = 1.0''', DEFAULT);
 		
 		validationHelper.assertNoIssues(resource);
 	}
 	
 	@Test
 	def void floatValueWithSuffixShouldBeParsed(){
-		val Resource resource = resourceHelper.resource('''scale = 1.0f''');
+		val Resource resource = resourceHelper.resource('''scale = 1.0f''', DEFAULT);
 		
 		validationHelper.assertNoIssues(resource);
 	}
 	
 	@Test
 	def void hexadecimalValueShouldBeParsed(){
-		val Resource resource = resourceHelper.resource('''color = 0xff0000''');
+		val Resource resource = resourceHelper.resource('''color = 0xff0000''', DEFAULT);
 		
 		validationHelper.assertNoIssues(resource);
 	}
@@ -56,7 +59,7 @@ class Ck2ParsingTest{
 	@Ignore("FIXME")
 	@Test
 	def void valueStartingWithZeroShouldBeParsed(){
-		val Resource resource = resourceHelper.resource('''properties = 0c0cbd000000''');
+		val Resource resource = resourceHelper.resource('''properties = 0c0cbd000000''', DEFAULT);
 		
 		validationHelper.assertNoIssues(resource);
 	}
@@ -81,7 +84,7 @@ class Ck2ParsingTest{
 					seafarer = yes
 				}
 			}
-		''');
+		''', DEFAULT);
 		
 		validationHelper.assertNoIssues(resource);
 	}
@@ -106,7 +109,7 @@ class Ck2ParsingTest{
 					seafarer = yes
 				}
 			}
-		''')
+		''');
 
 		assertNotNull(result);
 		validationHelper.assertNoIssues(result);

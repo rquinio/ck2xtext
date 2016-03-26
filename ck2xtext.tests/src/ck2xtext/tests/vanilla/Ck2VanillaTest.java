@@ -195,7 +195,7 @@ public class Ck2VanillaTest extends AbstractXtextTests {
 	 */
 	private void validateTestResource(String path) throws IOException {
 		InputStream stream = this.getClass().getResourceAsStream(path);
-		Resource resource = resourceHelper.resource(stream);
+		Resource resource = resourceHelper.resource(stream, path);
 		validationHelper.assertNoIssues(resource);
 	}
 
