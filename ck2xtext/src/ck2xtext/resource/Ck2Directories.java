@@ -13,6 +13,8 @@ public class Ck2Directories implements ICk2Directories {
 	private static List<String> managedDirectories = new ArrayList<String>();
 
 	static {
+		managedDirectories.add("common/artifact_spawns");
+		managedDirectories.add("common/artifacts");
 		managedDirectories.add("common/bookmarks");
 		managedDirectories.add("common/buildings");
 		managedDirectories.add("common/cb_types");
@@ -20,12 +22,17 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("common/council_positions");
 		managedDirectories.add("common/council_voting");
 		managedDirectories.add("common/cultures");
+		managedDirectories.add("common/death");
+		managedDirectories.add("common/death_text");
 		managedDirectories.add("common/disease");
 		managedDirectories.add("common/dynasties");
 		managedDirectories.add("common/event_modifiers");
+		managedDirectories.add("common/execution_methods");
+		managedDirectories.add("common/game_rules");
 		managedDirectories.add("common/government_flavor");
 		managedDirectories.add("common/governments");
 		managedDirectories.add("common/graphicalculturetypes");
+		managedDirectories.add("common/heir_text");
 		managedDirectories.add("common/job_actions");
 		managedDirectories.add("common/job_titles");
 		managedDirectories.add("common/landed_titles");
@@ -42,8 +49,10 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("common/religions");
 		managedDirectories.add("common/religious_titles");
 		managedDirectories.add("common/retinue_subunits");
+		managedDirectories.add("common/save_conversion");
 		managedDirectories.add("common/scripted_effects");
 		managedDirectories.add("common/scripted_triggers");
+		managedDirectories.add("common/societies");
 		managedDirectories.add("common/special_troops");
 		managedDirectories.add("common/trade_routes");
 		managedDirectories.add("common/traits");
@@ -58,7 +67,12 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("history/titles");
 		managedDirectories.add("history/wars");
 		managedDirectories.add("interface");
+		managedDirectories.add("interface/portraits");
+		managedDirectories.add("interface/portrait_properties");
+		managedDirectories.add("interface/portrait_offsets");
+		managedDirectories.add("localisation/customizable_localisation");
 		managedDirectories.add("map");
+		managedDirectories.add("map/statics");
 		managedDirectories.add("music");
 	}
 
