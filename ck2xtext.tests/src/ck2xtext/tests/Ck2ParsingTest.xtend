@@ -63,6 +63,27 @@ class Ck2ParsingTest{
 		
 		validationHelper.assertNoIssues(resource);
 	}
+	
+	@Test
+	def void IntegerEqualityComparisonShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''rank == 3''', DEFAULT);
+		
+		validationHelper.assertNoIssues(resource);
+	}
+	
+	@Test
+	def void IntegerSuperiorComparisonShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''rank >= 3''', DEFAULT);
+		
+		validationHelper.assertNoIssues(resource);
+	}
+	
+	@Test
+	def void IntegerInferiorComparisonShouldBeParsed(){
+		val Resource resource = resourceHelper.resource('''rank <= 3''', DEFAULT);
+		
+		validationHelper.assertNoIssues(resource);
+	}
 
 	@Ignore
 	@Test

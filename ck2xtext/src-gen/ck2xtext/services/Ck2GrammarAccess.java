@@ -442,70 +442,322 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class IntegerPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.IntegerProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIntegerParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cKeyAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0_0 = (RuleCall)cKeyAssignment_0_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cKeyAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_1_0_0 = (RuleCall)cKeyAssignment_1_0.eContents().get(0);
+		private final Keyword cEqualsSignEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cKeyAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_2_0_0 = (RuleCall)cKeyAssignment_2_0.eContents().get(0);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cValueAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_2_2_0 = (RuleCall)cValueAssignment_2_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Assignment cKeyAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_3_0_0 = (RuleCall)cKeyAssignment_3_0.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cValueAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_3_2_0 = (RuleCall)cValueAssignment_3_2.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Assignment cKeyAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_4_0_0 = (RuleCall)cKeyAssignment_4_0.eContents().get(0);
+		private final Keyword cLessThanSignEqualsSignKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Assignment cKeyAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_5_0_0 = (RuleCall)cKeyAssignment_5_0.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cValueAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cValueIntegerParserRuleCall_5_2_0 = (RuleCall)cValueAssignment_5_2.eContents().get(0);
 		
 		///**
 		// * year = 1000
 		// * Note: need to split int vs double, so that formatter doesn't add .0 to int
 		// */ IntegerProperty:
-		//	key=ID '=' value=Integer;
+		//	key=ID '=' value=Integer | key=ID '==' value=Integer | key=ID '>=' value=Integer | key=ID '>' value=Integer | key=ID
+		//	'<=' value=Integer | key=ID '<' value=Integer;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//key=ID '=' value=Integer | key=ID '==' value=Integer | key=ID '>=' value=Integer | key=ID '>' value=Integer | key=ID
+		//'<=' value=Integer | key=ID '<' value=Integer
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//key=ID '=' value=Integer
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//key=ID
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		public Assignment getKeyAssignment_0_0() { return cKeyAssignment_0_0; }
 		
 		//ID
-		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		public RuleCall getKeyIDTerminalRuleCall_0_0_0() { return cKeyIDTerminalRuleCall_0_0_0; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 		
 		//value=Integer
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
 		
 		//Integer
-		public RuleCall getValueIntegerParserRuleCall_2_0() { return cValueIntegerParserRuleCall_2_0; }
+		public RuleCall getValueIntegerParserRuleCall_0_2_0() { return cValueIntegerParserRuleCall_0_2_0; }
+		
+		//key=ID '==' value=Integer
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_1_0() { return cKeyAssignment_1_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_1_0_0() { return cKeyIDTerminalRuleCall_1_0_0; }
+		
+		//'=='
+		public Keyword getEqualsSignEqualsSignKeyword_1_1() { return cEqualsSignEqualsSignKeyword_1_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_1_2_0() { return cValueIntegerParserRuleCall_1_2_0; }
+		
+		//key=ID '>=' value=Integer
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_2_0() { return cKeyAssignment_2_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_2_0_0() { return cKeyIDTerminalRuleCall_2_0_0; }
+		
+		//'>='
+		public Keyword getGreaterThanSignEqualsSignKeyword_2_1() { return cGreaterThanSignEqualsSignKeyword_2_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_2_2() { return cValueAssignment_2_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_2_2_0() { return cValueIntegerParserRuleCall_2_2_0; }
+		
+		//key=ID '>' value=Integer
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_3_0() { return cKeyAssignment_3_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_3_0_0() { return cKeyIDTerminalRuleCall_3_0_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_3_1() { return cGreaterThanSignKeyword_3_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_3_2() { return cValueAssignment_3_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_3_2_0() { return cValueIntegerParserRuleCall_3_2_0; }
+		
+		//key=ID '<=' value=Integer
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_4_0() { return cKeyAssignment_4_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_4_0_0() { return cKeyIDTerminalRuleCall_4_0_0; }
+		
+		//'<='
+		public Keyword getLessThanSignEqualsSignKeyword_4_1() { return cLessThanSignEqualsSignKeyword_4_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_4_2_0() { return cValueIntegerParserRuleCall_4_2_0; }
+		
+		//key=ID '<' value=Integer
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_5_0() { return cKeyAssignment_5_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_5_0_0() { return cKeyIDTerminalRuleCall_5_0_0; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_5_1() { return cLessThanSignKeyword_5_1; }
+		
+		//value=Integer
+		public Assignment getValueAssignment_5_2() { return cValueAssignment_5_2; }
+		
+		//Integer
+		public RuleCall getValueIntegerParserRuleCall_5_2_0() { return cValueIntegerParserRuleCall_5_2_0; }
 	}
 	public class DoublePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.DoubleProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueDoubleParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Assignment cKeyAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0_0 = (RuleCall)cKeyAssignment_0_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_0_2_0 = (RuleCall)cValueAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cKeyAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_1_0_0 = (RuleCall)cKeyAssignment_1_0.eContents().get(0);
+		private final Keyword cEqualsSignEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cKeyAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_2_0_0 = (RuleCall)cKeyAssignment_2_0.eContents().get(0);
+		private final Keyword cGreaterThanSignEqualsSignKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cValueAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_2_2_0 = (RuleCall)cValueAssignment_2_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Assignment cKeyAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_3_0_0 = (RuleCall)cKeyAssignment_3_0.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Assignment cValueAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_3_2_0 = (RuleCall)cValueAssignment_3_2.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Assignment cKeyAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_4_0_0 = (RuleCall)cKeyAssignment_4_0.eContents().get(0);
+		private final Keyword cLessThanSignEqualsSignKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cValueAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_4_2_0 = (RuleCall)cValueAssignment_4_2.eContents().get(0);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Assignment cKeyAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_5_0_0 = (RuleCall)cKeyAssignment_5_0.eContents().get(0);
+		private final Keyword cLessThanSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cValueAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cValueDoubleParserRuleCall_5_2_0 = (RuleCall)cValueAssignment_5_2.eContents().get(0);
 		
 		///**
 		// * factor = 0.9
 		// */ DoubleProperty:
-		//	key=ID '=' value=Double;
+		//	key=ID '=' value=Double | key=ID '==' value=Double | key=ID '>=' value=Double | key=ID '>' value=Double | key=ID '<='
+		//	value=Double | key=ID '<' value=Double;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//key=ID '=' value=Double | key=ID '==' value=Double | key=ID '>=' value=Double | key=ID '>' value=Double | key=ID '<='
+		//value=Double | key=ID '<' value=Double
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//key=ID '=' value=Double
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//key=ID
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		public Assignment getKeyAssignment_0_0() { return cKeyAssignment_0_0; }
 		
 		//ID
-		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		public RuleCall getKeyIDTerminalRuleCall_0_0_0() { return cKeyIDTerminalRuleCall_0_0_0; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 		
 		//value=Double
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_0_2() { return cValueAssignment_0_2; }
 		
 		//Double
-		public RuleCall getValueDoubleParserRuleCall_2_0() { return cValueDoubleParserRuleCall_2_0; }
+		public RuleCall getValueDoubleParserRuleCall_0_2_0() { return cValueDoubleParserRuleCall_0_2_0; }
+		
+		//key=ID '==' value=Double
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_1_0() { return cKeyAssignment_1_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_1_0_0() { return cKeyIDTerminalRuleCall_1_0_0; }
+		
+		//'=='
+		public Keyword getEqualsSignEqualsSignKeyword_1_1() { return cEqualsSignEqualsSignKeyword_1_1; }
+		
+		//value=Double
+		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_1_2_0() { return cValueDoubleParserRuleCall_1_2_0; }
+		
+		//key=ID '>=' value=Double
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_2_0() { return cKeyAssignment_2_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_2_0_0() { return cKeyIDTerminalRuleCall_2_0_0; }
+		
+		//'>='
+		public Keyword getGreaterThanSignEqualsSignKeyword_2_1() { return cGreaterThanSignEqualsSignKeyword_2_1; }
+		
+		//value=Double
+		public Assignment getValueAssignment_2_2() { return cValueAssignment_2_2; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_2_2_0() { return cValueDoubleParserRuleCall_2_2_0; }
+		
+		//key=ID '>' value=Double
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_3_0() { return cKeyAssignment_3_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_3_0_0() { return cKeyIDTerminalRuleCall_3_0_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_3_1() { return cGreaterThanSignKeyword_3_1; }
+		
+		//value=Double
+		public Assignment getValueAssignment_3_2() { return cValueAssignment_3_2; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_3_2_0() { return cValueDoubleParserRuleCall_3_2_0; }
+		
+		//key=ID '<=' value=Double
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_4_0() { return cKeyAssignment_4_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_4_0_0() { return cKeyIDTerminalRuleCall_4_0_0; }
+		
+		//'<='
+		public Keyword getLessThanSignEqualsSignKeyword_4_1() { return cLessThanSignEqualsSignKeyword_4_1; }
+		
+		//value=Double
+		public Assignment getValueAssignment_4_2() { return cValueAssignment_4_2; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_4_2_0() { return cValueDoubleParserRuleCall_4_2_0; }
+		
+		//key=ID '<' value=Double
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_5_0() { return cKeyAssignment_5_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_5_0_0() { return cKeyIDTerminalRuleCall_5_0_0; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_5_1() { return cLessThanSignKeyword_5_1; }
+		
+		//value=Double
+		public Assignment getValueAssignment_5_2() { return cValueAssignment_5_2; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_5_2_0() { return cValueDoubleParserRuleCall_5_2_0; }
 	}
 	public class HexadecimalPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.HexadecimalProperty");
@@ -894,7 +1146,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ID:
-	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | '’' | ':' | '.' | '>')*;
+	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | '’' | ':' | '.' | '>' | '@')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
@@ -1063,7 +1315,8 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	// * year = 1000
 	// * Note: need to split int vs double, so that formatter doesn't add .0 to int
 	// */ IntegerProperty:
-	//	key=ID '=' value=Integer;
+	//	key=ID '=' value=Integer | key=ID '==' value=Integer | key=ID '>=' value=Integer | key=ID '>' value=Integer | key=ID
+	//	'<=' value=Integer | key=ID '<' value=Integer;
 	public IntegerPropertyElements getIntegerPropertyAccess() {
 		return pIntegerProperty;
 	}
@@ -1075,7 +1328,8 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	///**
 	// * factor = 0.9
 	// */ DoubleProperty:
-	//	key=ID '=' value=Double;
+	//	key=ID '=' value=Double | key=ID '==' value=Double | key=ID '>=' value=Double | key=ID '>' value=Double | key=ID '<='
+	//	value=Double | key=ID '<' value=Double;
 	public DoublePropertyElements getDoublePropertyAccess() {
 		return pDoubleProperty;
 	}

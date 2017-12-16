@@ -32,7 +32,7 @@ terminal fragment ID_PART: ('a'..'z'|'A'..'Z'|NON_ASCII_LOW|NON_ASCII_CAP|'<');
  * May be namespaced (namespace.id)
  * Note: Caret is used to escape an identifier if there are conflicts with existing keywords. It is removed by the ID rule's ValueConverter. 
  */
-terminal ID : ('^')?ID_PART (ID_PART|DIGIT|'_'|'-'|'\''|'’'|':'|'.'|'>')*;
+terminal ID : ('^')?ID_PART (ID_PART|DIGIT|'_'|'-'|'\''|'’'|':'|'.'|'>'|'@')*;
 
 terminal STRING	: '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|'\\' */ | !('\\'|'"') )* '"';
 
@@ -123,14 +123,24 @@ DateProperty:
  * Note: need to split int vs double, so that formatter doesn't add .0 to int
  */
 IntegerProperty:
-	key=ID '=' value=Integer
+	key=ID '=' value=Integer |
+	key=ID '==' value=Integer |
+	key=ID '>=' value=Integer |
+	key=ID '>' value=Integer |
+	key=ID '<=' value=Integer |
+	key=ID '<' value=Integer
 ;
 
 /**
  * factor = 0.9
  */
 DoubleProperty:
-	key=ID '=' value=Double
+	key=ID '=' value=Double |
+	key=ID '==' value=Double |
+	key=ID '>=' value=Double |
+	key=ID '>' value=Double |
+	key=ID '<=' value=Double |
+	key=ID '<' value=Double
 ;
 
 /**

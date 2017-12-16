@@ -7,13 +7,13 @@ Bundle-SymbolicName: ck2xtext.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: ck2xtext.ui,
  org.junit;bundle-version="4.12.0",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.ui.testing,
+ org.eclipse.xtext.xbase.testing,
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.junit,
- org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.core.runtime,
- org.eclipse.xtext.xbase.testing,
- org.eclipse.xtext.testing,
- org.eclipse.xtext.ui.testing
+ org.eclipse.ui.workbench;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.ui.tests;x-internal=true
 Import-Package: org.hamcrest.core,

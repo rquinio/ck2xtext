@@ -13,7 +13,6 @@ import org.junit.runner.RunWith;
 
 import com.google.inject.Inject;
 
-import ck2xtext.services.Ck2GrammarAccess;
 import ck2xtext.tests.Ck2InjectorProvider;
 import org.junit.Ignore
 import org.eclipse.emf.common.util.URI

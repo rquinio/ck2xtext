@@ -12,15 +12,12 @@ Require-Bundle: ck2xtext,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
  org.eclipse.ui.ide;bundle-version="3.5.0",
- org.eclipse.compare,
  org.eclipse.ui,
- org.eclipse.xtend.lib;resolution:=optional,
- org.eclipse.xtext.builder,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.ui.internal,
  ck2xtext.ui.contentassist,
- ck2xtext.ui.internal,
  ck2xtext.ui.quickfix
 Bundle-Activator: ck2xtext.ui.internal.Ck2xtextActivator

@@ -182,19 +182,17 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DoubleProperty returns DoubleProperty
 	 *
 	 * Constraint:
-	 *     (key=ID value=Double)
+	 *     (
+	 *         (key=ID value=Double) | 
+	 *         (key=ID value=Double) | 
+	 *         (key=ID value=Double) | 
+	 *         (key=ID value=Double) | 
+	 *         (key=ID value=Double) | 
+	 *         (key=ID value=Double)
+	 *     )
 	 */
 	protected void sequence_DoubleProperty(ISerializationContext context, DoubleProperty semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__KEY));
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.DOUBLE_PROPERTY__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -276,19 +274,17 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IntegerProperty returns IntegerProperty
 	 *
 	 * Constraint:
-	 *     (key=ID value=Integer)
+	 *     (
+	 *         (key=ID value=Integer) | 
+	 *         (key=ID value=Integer) | 
+	 *         (key=ID value=Integer) | 
+	 *         (key=ID value=Integer) | 
+	 *         (key=ID value=Integer) | 
+	 *         (key=ID value=Integer)
+	 *     )
 	 */
 	protected void sequence_IntegerProperty(ISerializationContext context, IntegerProperty semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__KEY));
-			if (transientValues.isValueTransient(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2Package.Literals.INTEGER_PROPERTY__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

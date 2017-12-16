@@ -10,8 +10,8 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.xtext.junit4.util.ResourceHelper;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.testing.util.ResourceHelper;
 
 /**
  * Load a CK2 file as a Resource

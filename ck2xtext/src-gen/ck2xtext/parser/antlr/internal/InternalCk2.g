@@ -819,43 +819,265 @@ ruleIntegerProperty returns [EObject current=null]
 	(
 		(
 			(
-				lv_key_0_0=RULE_ID
-				{
-					newLeafNode(lv_key_0_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+				(
+					lv_key_0_0=RULE_ID
+					{
+						newLeafNode(lv_key_0_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_0_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"key",
-						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_0_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_1='='
+			{
+				newLeafNode(otherlv_1, grammarAccess.getIntegerPropertyAccess().getEqualsSignKeyword_0_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_0_2_0());
+					}
+					lv_value_2_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_2_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getIntegerPropertyAccess().getEqualsSignKeyword_1());
-		}
+		    |
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_2_0());
-				}
-				lv_value_2_0=ruleInteger
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+				(
+					lv_key_3_0=RULE_ID
+					{
+						newLeafNode(lv_key_3_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"value",
-						lv_value_2_0,
-						"ck2xtext.Ck2.Integer");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_3_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_4='=='
+			{
+				newLeafNode(otherlv_4, grammarAccess.getIntegerPropertyAccess().getEqualsSignEqualsSignKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_1_2_0());
+					}
+					lv_value_5_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_5_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_6_0=RULE_ID
+					{
+						newLeafNode(lv_key_6_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_2_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_6_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_7='>='
+			{
+				newLeafNode(otherlv_7, grammarAccess.getIntegerPropertyAccess().getGreaterThanSignEqualsSignKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_2_2_0());
+					}
+					lv_value_8_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_8_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_9_0=RULE_ID
+					{
+						newLeafNode(lv_key_9_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_3_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_9_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_10='>'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getIntegerPropertyAccess().getGreaterThanSignKeyword_3_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_3_2_0());
+					}
+					lv_value_11_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_11_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_12_0=RULE_ID
+					{
+						newLeafNode(lv_key_12_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_4_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_12_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_13='<='
+			{
+				newLeafNode(otherlv_13, grammarAccess.getIntegerPropertyAccess().getLessThanSignEqualsSignKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_4_2_0());
+					}
+					lv_value_14_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_14_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_15_0=RULE_ID
+					{
+						newLeafNode(lv_key_15_0, grammarAccess.getIntegerPropertyAccess().getKeyIDTerminalRuleCall_5_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIntegerPropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_15_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_16='<'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getIntegerPropertyAccess().getLessThanSignKeyword_5_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIntegerPropertyAccess().getValueIntegerParserRuleCall_5_2_0());
+					}
+					lv_value_17_0=ruleInteger
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIntegerPropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_17_0,
+							"ck2xtext.Ck2.Integer");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
@@ -879,43 +1101,265 @@ ruleDoubleProperty returns [EObject current=null]
 	(
 		(
 			(
-				lv_key_0_0=RULE_ID
-				{
-					newLeafNode(lv_key_0_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDoublePropertyRule());
+				(
+					lv_key_0_0=RULE_ID
+					{
+						newLeafNode(lv_key_0_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_0_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"key",
-						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_0_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_1='='
+			{
+				newLeafNode(otherlv_1, grammarAccess.getDoublePropertyAccess().getEqualsSignKeyword_0_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_0_2_0());
+					}
+					lv_value_2_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_2_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDoublePropertyAccess().getEqualsSignKeyword_1());
-		}
+		    |
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_2_0());
-				}
-				lv_value_2_0=ruleDouble
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+				(
+					lv_key_3_0=RULE_ID
+					{
+						newLeafNode(lv_key_3_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"value",
-						lv_value_2_0,
-						"ck2xtext.Ck2.Double");
-					afterParserOrEnumRuleCall();
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_3_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_4='=='
+			{
+				newLeafNode(otherlv_4, grammarAccess.getDoublePropertyAccess().getEqualsSignEqualsSignKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_1_2_0());
+					}
+					lv_value_5_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_5_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_6_0=RULE_ID
+					{
+						newLeafNode(lv_key_6_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_2_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_6_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_7='>='
+			{
+				newLeafNode(otherlv_7, grammarAccess.getDoublePropertyAccess().getGreaterThanSignEqualsSignKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_2_2_0());
+					}
+					lv_value_8_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_8_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_9_0=RULE_ID
+					{
+						newLeafNode(lv_key_9_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_3_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_9_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_10='>'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getDoublePropertyAccess().getGreaterThanSignKeyword_3_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_3_2_0());
+					}
+					lv_value_11_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_11_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_12_0=RULE_ID
+					{
+						newLeafNode(lv_key_12_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_4_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_12_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_13='<='
+			{
+				newLeafNode(otherlv_13, grammarAccess.getDoublePropertyAccess().getLessThanSignEqualsSignKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_4_2_0());
+					}
+					lv_value_14_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_14_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					lv_key_15_0=RULE_ID
+					{
+						newLeafNode(lv_key_15_0, grammarAccess.getDoublePropertyAccess().getKeyIDTerminalRuleCall_5_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDoublePropertyRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"key",
+							lv_key_15_0,
+							"ck2xtext.Ck2.ID");
+					}
+				)
+			)
+			otherlv_16='<'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getDoublePropertyAccess().getLessThanSignKeyword_5_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDoublePropertyAccess().getValueDoubleParserRuleCall_5_2_0());
+					}
+					lv_value_17_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDoublePropertyRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_17_0,
+							"ck2xtext.Ck2.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
@@ -1349,7 +1793,7 @@ fragment RULE_NON_ASCII_LOW : ('\u00E0'|'\u00E1'|'\u00E2'|'\u00E3'|'\u00E4'|'\u0
 
 fragment RULE_ID_PART : ('a'..'z'|'A'..'Z'|RULE_NON_ASCII_LOW|RULE_NON_ASCII_CAP|'<');
 
-RULE_ID : '^'? RULE_ID_PART (RULE_ID_PART|RULE_DIGIT|'_'|'-'|'\''|'\u2019'|':'|'.'|'>')*;
+RULE_ID : '^'? RULE_ID_PART (RULE_ID_PART|RULE_DIGIT|'_'|'-'|'\''|'\u2019'|':'|'.'|'>'|'@')*;
 
 RULE_STRING : '"' ('\\' .|~(('\\'|'"')))* '"';
 
