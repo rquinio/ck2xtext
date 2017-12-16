@@ -7,9 +7,9 @@ Bundle-SymbolicName: ck2xtext.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: ck2xtext,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.ide.contentassist.antlr.internal,
  ck2xtext.ide.contentassist.antlr
-Import-Package: ck2xtext.services
 

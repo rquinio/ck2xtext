@@ -9,9 +9,11 @@ Require-Bundle: ck2xtext,
  org.junit;bundle-version="4.7.0",
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.junit,
- org.eclipse.xtext.xbase.lib
+ org.eclipse.xtext.xbase.lib;bundle-version="2.13.0",
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.testing
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ck2xtext.tests,
+Export-Package: ck2xtext.tests;x-internal=true,
  ck2xtext.tests.vanilla,
  ck2xtext.tests.vanilla.common
 Import-Package: org.junit.runners;version="4.5.0",
@@ -21,4 +23,3 @@ Import-Package: org.junit.runners;version="4.5.0",
  org.junit.runner.notification;version="4.5.0",
  org.junit;version="4.5.0",
  org.junit.runner;version="4.5.0"
-

@@ -3,9 +3,9 @@ package ck2xtext.tests.formatting;
 import static org.junit.Assert.assertEquals;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ResourceHelper;
+import org.eclipse.xtext.testing.InjectWith
+import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.util.ResourceHelper;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.serializer.ISerializer;
 import org.junit.Test;

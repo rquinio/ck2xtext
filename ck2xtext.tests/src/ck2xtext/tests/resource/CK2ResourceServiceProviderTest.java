@@ -3,9 +3,9 @@ package ck2xtext.tests.resource;
 import static org.junit.Assert.*;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

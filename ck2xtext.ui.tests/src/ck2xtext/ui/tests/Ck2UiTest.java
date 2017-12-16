@@ -1,17 +1,17 @@
 package ck2xtext.ui.tests;
 
-import static org.eclipse.xtext.junit4.ui.util.IResourcesSetupUtil.*;
+import static org.eclipse.xtext.ui.testing.util.IResourcesSetupUtil.*;
 
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.ui.AbstractAutoEditTest;
 import org.eclipse.xtext.resource.FileExtensionProvider;
+import org.eclipse.xtext.testing.InjectWith;
+import org.eclipse.xtext.testing.XtextRunner;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.testing.AbstractAutoEditTest;
 import org.eclipse.xtext.ui.util.ProjectFactory;
 import org.junit.After;
 import org.junit.Before;
@@ -22,7 +22,6 @@ import com.google.inject.Inject;
 
 import ck2xtext.ui.internal.Ck2xtextActivator;
 
-@SuppressWarnings("restriction")
 @RunWith(XtextRunner.class)
 @InjectWith(Ck2UiInjectorProvider.class)
 public class Ck2UiTest extends AbstractAutoEditTest {
