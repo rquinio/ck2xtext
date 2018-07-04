@@ -301,6 +301,15 @@
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="ck2xtext.Ck2"
+			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="ck2xtext.Ck2.validator.preferencePage"
+			name="Errors/Warnings">
+			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+		</page>
+	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
@@ -449,12 +458,18 @@
 			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="txt,gui,gfx,sfx,map">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="ck2xtext.Ck2.contenttype"
+			contentViewerId="ck2xtext.Ck2.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="ck2xtext.Ck2.compare.contentMergeViewers"
 			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="txt,gui,gfx,sfx,map" label="Ck2 Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="ck2xtext.Ck2.contenttype"
+			contentMergeViewerId="ck2xtext.Ck2.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="ck2xtext.Ck2.editors.documentProviders"

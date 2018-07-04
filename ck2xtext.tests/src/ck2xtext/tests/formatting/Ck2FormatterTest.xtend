@@ -1,23 +1,23 @@
 package ck2xtext.tests.formatting;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.testing.InjectWith
-import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ResourceHelper;
 import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.serializer.ISerializer;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
 import com.google.inject.Inject;
 
 import ck2xtext.tests.Ck2InjectorProvider;
-import org.junit.Ignore
 import org.eclipse.emf.common.util.URI
+import org.junit.jupiter.api.^extension.ExtendWith
+import org.junit.jupiter.api.Disabled
 
-@RunWith(XtextRunner)
+@ExtendWith(InjectionExtension)
 @InjectWith(Ck2InjectorProvider)
 public class Ck2FormatterTest {
 	
@@ -186,7 +186,7 @@ public class Ck2FormatterTest {
 		assertEquals(source, format(source));
 	}
 	
-	@Ignore("FIXME")
+	@Disabled("FIXME")
 	@Test
 	def public void emptylinesShouldBeIndented() throws Exception {
 		val String source = '''

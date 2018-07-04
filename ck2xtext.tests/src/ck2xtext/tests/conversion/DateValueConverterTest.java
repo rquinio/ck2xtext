@@ -1,6 +1,6 @@
 package ck2xtext.tests.conversion;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.eclipse.xtext.conversion.ValueConverterException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import ck2xtext.conversion.DateValueConverter;
 
@@ -28,9 +28,9 @@ public class DateValueConverterTest {
 		assertEquals(10, calendar.get(Calendar.DAY_OF_MONTH));
 	}
 
-	@Test(expected = ValueConverterException.class)
+	@Test
 	public void invalid() {
-		converter.toValue("1066.1", null);
+		assertThrows(ValueConverterException.class, () -> converter.toValue("1066.1", null));
 	}
 
 	@Test

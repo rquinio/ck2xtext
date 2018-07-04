@@ -9,20 +9,20 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.xtext.resource.FileExtensionProvider;
 import org.eclipse.xtext.testing.InjectWith;
-import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.testing.AbstractAutoEditTest;
 import org.eclipse.xtext.ui.util.ProjectFactory;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.google.inject.Inject;
 
 import ck2xtext.ui.internal.Ck2xtextActivator;
 
-@RunWith(XtextRunner.class)
+@ExtendWith(InjectionExtension.class)
 @InjectWith(Ck2UiInjectorProvider.class)
 public class Ck2UiTest extends AbstractAutoEditTest {
 
@@ -36,13 +36,13 @@ public class Ck2UiTest extends AbstractAutoEditTest {
 
 	private IFile file;
 
-	@Before
+	@BeforeEach
 	public void doSetUp() throws CoreException, InvocationTargetException, InterruptedException {
 		project = createProject("myMod");
 		file = createFile("common/landed_titles/my_titles.txt", "");
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	};
 

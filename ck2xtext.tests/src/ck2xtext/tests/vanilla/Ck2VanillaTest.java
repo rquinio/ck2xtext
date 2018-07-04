@@ -5,26 +5,27 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.junit4.AbstractXtextTests;
 import org.eclipse.xtext.testing.InjectWith;
-import org.eclipse.xtext.testing.XtextRunner;
+import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.validation.ValidationTestHelper;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.google.inject.Inject;
 
 import ck2xtext.tests.Ck2InjectorProvider;
 import ck2xtext.tests.util.FileResourceHelper;
 
+
+
 /**
  * Check that vanilla files don't raise validation errors.
  * 
  * Split into multiple methods for easier failure reporting.
  */
-@RunWith(XtextRunner.class)
+@ExtendWith(InjectionExtension.class)
 @InjectWith(Ck2InjectorProvider.class)
-public class Ck2VanillaTest extends AbstractXtextTests {
+public class Ck2VanillaTest {
 
 	private static final String VANILLA_INSTALL_PATH = "C:/Program Files (x86)/Steam/SteamApps/common/Crusader Kings II/";
 

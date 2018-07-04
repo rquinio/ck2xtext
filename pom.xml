@@ -13,11 +13,17 @@
 		</license>
 	</licenses>
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
-		<xtext-version>2.13.0</xtext-version>
+		<xtext-version>2.14.0</xtext-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- Tycho settings -->
+		<tycho-version>1.2.0</tycho-version>
+		<!-- Define overridable properties for tycho-surefire-plugin -->
+		<platformSystemProperties></platformSystemProperties>
+		<moduleProperties></moduleProperties>
+		<systemProperties></systemProperties>
+		<tycho.testArgLine></tycho.testArgLine>
 	</properties>
 	<modules>
 		<module>ck2xtext</module>
@@ -27,8 +33,7 @@
 		<module>ck2xtext.ui</module>
 		<module>ck2xtext.ui.tests</module>
 		<module>ck2xtext.feature</module>
-		<module>ck2xtext.site</module>
-		<!-- <module>ck2xtext.web</module> -->
+		<module>ck2xtext.repository</module>
 	</modules>
 	<build>
 		<plugins>
@@ -117,6 +122,14 @@
 					<groupId>org.eclipse.xtend</groupId>
 					<artifactId>xtend-maven-plugin</artifactId>
 					<version>${xtext-version}</version>
+					<dependencies>
+						<!-- https://github.com/eclipse/xtext/issues/1231 -->
+						<dependency>
+						    <groupId>org.eclipse.jdt</groupId>
+						    <artifactId>org.eclipse.jdt.core</artifactId>
+						    <version>3.13.102</version>
+						</dependency>
+					</dependencies>
 					<executions>
 						<execution>
 							<goals>
@@ -143,10 +156,6 @@
 								<includes>
 									<include>**/*</include>
 								</includes>
-								<directory>${basedir}/xtend-gen</directory>
-								<includes>
-									<include>**/*</include>
-								</includes>
 							</fileset>
 						</filesets>
 					</configuration>
@@ -158,6 +167,26 @@
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-resources-plugin
+										</artifactId>
+										<versionRange>
+											[2.4.3,)
+										</versionRange>
+										<goals>
+											<goal>resources</goal>
+											<goal>testResources</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
 								<pluginExecution>
 									<pluginExecutionFilter>
 										<groupId>
@@ -221,6 +250,25 @@
 										<ignore></ignore>
 									</action>
 								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-clean-plugin
+										</artifactId>
+										<versionRange>
+											[2.5,)
+										</versionRange>
+										<goals>
+											<goal>clean</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
@@ -233,6 +281,21 @@
 					<configuration>
 						<compilerArgument>-err:-forbidden</compilerArgument>
 						<useProjectSettings>false</useProjectSettings>
+					</configuration>
+				</plugin>
+				<!-- to skip running (and compiling) tests use commandline flag: -Dmaven.test.skip
+					To skip tests, but still compile them, use: -DskipTests
+					To allow all tests in a pom to pass/fail, use commandline flag: -fae (fail
+					at end) -->
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<!-- THE FOLLOWING LINE MUST NOT BE BROKEN BY AUTOFORMATTING -->
+						<argLine>${tycho.testArgLine} ${platformSystemProperties} ${systemProperties} ${moduleProperties}</argLine>
+						<failIfNoTests>false</failIfNoTests>
+						<useUIHarness>false</useUIHarness>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -264,6 +327,17 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	<profiles>
+		<profile>
+			<id>jdk9-or-newer</id>
+			<activation>
+				<jdk>[9,)</jdk>
+			</activation>
+			<properties>
+				<moduleProperties>--add-modules=ALL-SYSTEM</moduleProperties>
+			</properties>
+		</profile>
+	</profiles>
 
 	<dependencies>
 	</dependencies>

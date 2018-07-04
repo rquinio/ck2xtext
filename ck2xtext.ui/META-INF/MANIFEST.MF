@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ck2xtext.ui
-Bundle-Vendor: My Company
+Bundle-SymbolicName: ck2xtext.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-SymbolicName: ck2xtext.ui; singleton:=true
-Bundle-ActivationPolicy: lazy
+Bundle-Activator: ck2xtext.ui.internal.Ck2xtextActivator
+Bundle-Vendor: My Company
 Require-Bundle: ck2xtext,
  ck2xtext.ide,
  org.eclipse.xtext.ui,
@@ -14,10 +14,13 @@ Require-Bundle: ck2xtext,
  org.eclipse.ui.ide;bundle-version="3.5.0",
  org.eclipse.ui,
  org.eclipse.compare,
- org.eclipse.xtext.builder
-Import-Package: org.apache.log4j
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtend.lib;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: ck2xtext.ui
+Import-Package: org.apache.log4j
+Bundle-ActivationPolicy: lazy
 Export-Package: ck2xtext.ui.internal,
- ck2xtext.ui.contentassist,
- ck2xtext.ui.quickfix
-Bundle-Activator: ck2xtext.ui.internal.Ck2xtextActivator
+ ck2xtext.ui.quickfix,
+ ck2xtext.ui.contentassist

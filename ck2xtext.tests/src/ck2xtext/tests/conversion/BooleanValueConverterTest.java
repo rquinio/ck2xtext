@@ -1,10 +1,10 @@
 package ck2xtext.tests.conversion;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.eclipse.xtext.conversion.ValueConverterException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import ck2xtext.conversion.BooleanValueConverter;
 
@@ -25,9 +25,9 @@ public class BooleanValueConverterTest {
 		assertFalse(converter.toValue("no", null));
 	}
 
-	@Test(expected = ValueConverterException.class)
+	@Test
 	public void invalid() {
-		converter.toValue("false", null);
+		assertThrows(ValueConverterException.class, () -> converter.toValue("false", null));
 	}
 
 	@Test

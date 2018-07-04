@@ -104,12 +104,6 @@
 							</includes>
 						</fileset>
 						<fileset>
-							<directory>${basedir}/../ck2xtext.web/src-gen/</directory>
-							<includes>
-								<include>**/*</include>
-							</includes>
-						</fileset>
-						<fileset>
 							<directory>${basedir}/model/generated/</directory>
 						</fileset>
 					</filesets>
@@ -138,6 +132,25 @@
 										</versionRange>
 										<goals>
 											<goal>java</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-clean-plugin
+										</artifactId>
+										<versionRange>
+											[2.5,)
+										</versionRange>
+										<goals>
+											<goal>clean</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>

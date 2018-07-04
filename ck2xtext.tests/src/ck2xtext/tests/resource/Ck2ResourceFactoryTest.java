@@ -1,31 +1,30 @@
 package ck2xtext.tests.resource;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.resource.IResourceFactory;
 import org.eclipse.xtext.testing.InjectWith;
-import org.eclipse.xtext.testing.XtextRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.eclipse.xtext.testing.extensions.InjectionExtension;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.google.inject.Inject;
 
 import ck2xtext.tests.Ck2InjectorProvider;
 
-@RunWith(XtextRunner.class)
+@ExtendWith(InjectionExtension.class)
 @InjectWith(Ck2InjectorProvider.class)
 public class Ck2ResourceFactoryTest {
 
 	@Inject
 	IResourceFactory resourceFactory;
 
-	@Test(expected = IllegalStateException.class)
+	@Test
 	public void changeLogShouldNotBeHandled() {
 		URI uri = URI.createFileURI("/ChangeLog.txt");
-
-		resourceFactory.createResource(uri);
+		assertThrows(IllegalStateException.class, ()-> resourceFactory.createResource(uri));
 	}
 
 	@Test

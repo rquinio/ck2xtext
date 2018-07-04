@@ -3,24 +3,25 @@
  */
 package ck2xtext.tests
 
-import static org.junit.Assert.*
+import static org.junit.jupiter.api.Assertions.*;
 
 import ck2xtext.ck2.Model
 import com.google.inject.Inject
 import org.eclipse.xtext.testing.InjectWith
-import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
 
-import org.junit.Test
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.Test
 import org.eclipse.xtext.testing.util.ResourceHelper
 import org.eclipse.xtext.testing.validation.ValidationTestHelper
-import org.junit.Ignore
 import org.eclipse.emf.ecore.resource.Resource
 import ck2xtext.tests.Ck2InjectorProvider
 import org.eclipse.emf.common.util.URI
+import org.junit.jupiter.api.^extension.ExtendWith
+import org.junit.jupiter.api.Disabled
 
-@RunWith(XtextRunner)
+import org.eclipse.xtext.testing.extensions.InjectionExtension
+
+@ExtendWith(InjectionExtension)
 @InjectWith(Ck2InjectorProvider)
 class Ck2ParsingTest{
 	
@@ -56,7 +57,7 @@ class Ck2ParsingTest{
 		validationHelper.assertNoIssues(resource);
 	}
 	
-	@Ignore("FIXME")
+	@Disabled("FIXME")
 	@Test
 	def void valueStartingWithZeroShouldBeParsed(){
 		val Resource resource = resourceHelper.resource('''properties = 0c0cbd000000''', DEFAULT);
@@ -85,7 +86,7 @@ class Ck2ParsingTest{
 		validationHelper.assertNoIssues(resource);
 	}
 
-	@Ignore
+	@Disabled
 	@Test
 	def void test2(){
 		val Resource resource = resourceHelper.resource('''
@@ -110,7 +111,7 @@ class Ck2ParsingTest{
 		validationHelper.assertNoIssues(resource);
 	}
 
-	@Ignore
+	@Disabled
 	@Test 
 	def void loadModel() {
 		val Model result = parseHelper.parse('''
@@ -144,7 +145,7 @@ class Ck2ParsingTest{
 //		assertTrue(culture.seafarer);
 	}
 	
-	@Ignore
+	@Disabled
 	@Test 
 	def void testSerilization(){
 		//val Culture culture = new CultureImpl();
