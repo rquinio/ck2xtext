@@ -65,6 +65,9 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("common");
 
 		managedDirectories.add("decisions");
+		managedDirectories.add("dlc_metadata");
+		managedDirectories.add("dlc_metadata/dlc_characters");
+		managedDirectories.add("dlc_metadata/dlc_recommendations");
 		managedDirectories.add("events");
 		managedDirectories.add("history/characters");
 		managedDirectories.add("history/offmap_powers");
@@ -73,6 +76,7 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("history/titles");
 		managedDirectories.add("history/wars");
 		managedDirectories.add("interface");
+		managedDirectories.add("interface/coat_of_arms");
 		managedDirectories.add("interface/portraits");
 		managedDirectories.add("interface/portrait_properties");
 		managedDirectories.add("interface/portrait_offsets");
