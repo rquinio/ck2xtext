@@ -47,11 +47,10 @@ Workflow {
 			fragment = serializer.SerializerFragment2 {
 				generateStub = false
 				generateXtendStub = false
-			}
-			
+			}	
 		}
 		language = StandardLanguage {
-			name = "ck2xtext.Ck2"
+			name = "ck2xtext.generic.Ck2"
 			
 			fileExtensions = "txt,gui,gfx,sfx,map"
 

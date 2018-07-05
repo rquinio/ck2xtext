@@ -4,7 +4,7 @@
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package 
 			uri = "http://www.crusaderkings.com"
-			class = "ck2xtext.ck2.Ck2Package"
+			class = "ck2xtext.generic.ck2.Ck2Package"
 			genModel = "model/generated/Ck2.genmodel" />
 	</extension>
 </plugin>

@@ -17,18 +17,19 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: ck2xtext
 Import-Package: org.apache.log4j
 Bundle-ActivationPolicy: lazy
-Export-Package: ck2xtext.serializer,
- ck2xtext.ck2,
- ck2xtext.parser.antlr.internal,
- ck2xtext.generator,
- ck2xtext.ck2.impl,
- ck2xtext.parser.antlr,
- ck2xtext.scoping,
- ck2xtext,
- ck2xtext.services,
- ck2xtext.validation,
- ck2xtext.ck2.util,
- ck2xtext.conversion,
- ck2xtext.common,
+Export-Package: ck2xtext.common,
+ ck2xtext.common.conversion,
+ ck2xtext.common.serializer,
  ck2xtext.common.services,
- ck2xtext.common.serializer
+ ck2xtext.generic,
+ ck2xtext.generic.ck2,
+ ck2xtext.generic.ck2.impl,
+ ck2xtext.generic.ck2.util,
+ ck2xtext.generic.generator,
+ ck2xtext.generic.parser.antlr,
+ ck2xtext.generic.parser.antlr.internal,
+ ck2xtext.generic.scoping,
+ ck2xtext.generic.serializer,
+ ck2xtext.generic.services,
+ ck2xtext.generic.validation
+

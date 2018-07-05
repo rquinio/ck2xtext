@@ -216,48 +216,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="txt,gui,gfx,sfx,map"
-			id="ck2xtext.Ck2"
+			id="ck2xtext.generic.Ck2"
 			name="Ck2 Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="ck2xtext.Ck2.validate">
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="ck2xtext.generic.Ck2.validate">
 		<activeWhen>
 			<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 			</reference>
 		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="ck2xtext.Ck2.Editor.opened" />
+				<reference definitionId="ck2xtext.generic.Ck2.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="ck2xtext.Ck2.XtextEditor.opened" />
+					<reference definitionId="ck2xtext.generic.Ck2.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -266,22 +266,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="ck2xtext.Ck2.Editor.opened">
+		<definition id="ck2xtext.generic.Ck2.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ck2xtext.Ck2"
+						value="ck2xtext.generic.Ck2"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="ck2xtext.Ck2.XtextEditor.opened">
+		<definition id="ck2xtext.generic.Ck2.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ck2xtext.Ck2"
+						value="ck2xtext.generic.Ck2"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -290,33 +290,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ck2xtext.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ck2xtext.generic.Ck2"
 			name="Ck2">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="ck2xtext.Ck2.coloring"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="ck2xtext.generic.Ck2.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="ck2xtext.Ck2.templates"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="ck2xtext.generic.Ck2.templates"
 			name="Templates">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ck2xtext.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ck2xtext.generic.Ck2"
 			name="Ck2">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -326,14 +326,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="ck2xtext.ui.keyword_Ck2"
+			id="ck2xtext.generic.ui.keyword_Ck2"
 			label="Ck2"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 	<command
 			description="Trigger expensive validation"
-			id="ck2xtext.Ck2.validate"
+			id="ck2xtext.generic.Ck2.validate"
 			name="Validate">
 	</command>
 	<!-- copy qualified name -->
@@ -354,12 +354,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			 <command
-				 commandId="ck2xtext.Ck2.validate"
+				 commandId="ck2xtext.generic.Ck2.validate"
 				 style="push"
 				 tooltip="Trigger expensive validation">
 			<visibleWhen checkEnabled="false">
 				<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 				</reference>
 			</visibleWhen>
 		</command>
@@ -369,7 +369,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ck2xtext.Ck2.Editor.opened" />
+					<reference definitionId="ck2xtext.generic.Ck2.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -377,7 +377,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ck2xtext.Ck2.Editor.opened" />
+					<reference definitionId="ck2xtext.generic.Ck2.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -386,7 +386,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="ck2xtext.Ck2.XtextEditor.opened" />
+						<reference definitionId="ck2xtext.generic.Ck2.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -399,7 +399,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ck2xtext.Ck2.Editor.opened">
+					<reference definitionId="ck2xtext.generic.Ck2.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -407,11 +407,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -420,7 +420,7 @@
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
 			file-extensions="txt,gui,gfx,sfx,map"
-			id="ck2xtext.Ck2.contenttype"
+			id="ck2xtext.generic.Ck2.contenttype"
 			name="Ck2 File"
 			priority="normal">
 		</content-type>
@@ -429,69 +429,69 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="txt">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="txt">
 		</resourceServiceProvider>
 	</extension>
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="gui">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="gui">
 		</resourceServiceProvider>
 	</extension>
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="gfx">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="gfx">
 		</resourceServiceProvider>
 	</extension>
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="sfx">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="sfx">
 		</resourceServiceProvider>
 	</extension>
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="map">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="map">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for ck2xtext.Ck2 -->
+	<!-- marker definitions for ck2xtext.generic.Ck2 -->
 	<extension
 			id="ck2.check.fast"
 			name="Ck2 Problem"
@@ -515,34 +515,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="ck2xtext.Ck2.validator.preferencePage"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="ck2xtext.generic.Ck2.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="txt,gui,gfx,sfx,map"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ck2xtext.Ck2.compiler.preferencePage"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ck2xtext.generic.Ck2.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ck2xtext.Ck2.compiler.propertyPage"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ck2xtext.generic.Ck2.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -553,20 +553,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="ck2xtext.Ck2.OpenGeneratedCode"
+				id="ck2xtext.generic.Ck2.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ck2xtext.Ck2.Editor.opened" />
+					<reference definitionId="ck2xtext.generic.Ck2.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="ck2xtext.Ck2.Editor.opened" />
+				<reference definitionId="ck2xtext.generic.Ck2.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -574,11 +574,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -598,16 +598,16 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ck2xtext.Ck2.Editor.opened"/>
+					<reference definitionId="ck2xtext.generic.Ck2.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for ck2xtext.Ck2 -->
+	<!-- quickfix marker resolution generator for ck2xtext.generic.Ck2 -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ck2xtext.ui.ck2.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
@@ -615,7 +615,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ck2xtext.ui.ck2.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
@@ -623,7 +623,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ck2xtext.ui.ck2.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
@@ -634,11 +634,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="ck2xtext.Ck2.Editor.opened">
+					definitionId="ck2xtext.generic.Ck2.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -650,7 +650,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="ck2xtext.Ck2.Editor.opened">
+						definitionId="ck2xtext.generic.Ck2.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -658,34 +658,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ck2xtext.Ck2"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="ck2xtext.Ck2.refactoring"
+			category="ck2xtext.generic.Ck2"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="ck2xtext.generic.Ck2.refactoring"
 			name="Refactoring">
-			<keywordReference id="ck2xtext.ui.keyword_Ck2"/>
+			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="ck2xtext.Ck2.compare.contentViewers"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="ck2xtext.generic.Ck2.compare.contentViewers"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="txt,gui,gfx,sfx,map">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ck2xtext.Ck2.contenttype"
-			contentViewerId="ck2xtext.Ck2.compare.contentViewers" />
+			contentTypeId="ck2xtext.generic.Ck2.contenttype"
+			contentViewerId="ck2xtext.generic.Ck2.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="ck2xtext.Ck2.compare.contentMergeViewers"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="ck2xtext.generic.Ck2.compare.contentMergeViewers"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="txt,gui,gfx,sfx,map" label="Ck2 Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ck2xtext.Ck2.contenttype"
-			contentMergeViewerId="ck2xtext.Ck2.compare.contentMergeViewers" />
+			contentTypeId="ck2xtext.generic.Ck2.contenttype"
+			contentMergeViewerId="ck2xtext.generic.Ck2.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="ck2xtext.Ck2.editors.documentProviders"
-			class="ck2xtext.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="ck2xtext.generic.Ck2.editors.documentProviders"
+			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="txt,gui,gfx,sfx,map">
 		</provider>
 	</extension>

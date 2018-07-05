@@ -3,10 +3,10 @@
  */
 package ck2xtext.ui.internal;
 
-import ck2xtext.Ck2RuntimeModule;
 import ck2xtext.common.Ck2TerminalsRuntimeModule;
 import ck2xtext.common.ui.Ck2TerminalsUiModule;
-import ck2xtext.ui.Ck2UiModule;
+import ck2xtext.generic.Ck2RuntimeModule;
+import ck2xtext.generic.ui.Ck2UiModule;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,7 +26,7 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "ck2xtext.ui";
 	public static final String CK2XTEXT_COMMON_CK2TERMINALS = "ck2xtext.common.Ck2Terminals";
-	public static final String CK2XTEXT_CK2 = "ck2xtext.Ck2";
+	public static final String CK2XTEXT_GENERIC_CK2 = "ck2xtext.generic.Ck2";
 	
 	private static final Logger logger = Logger.getLogger(Ck2xtextActivator.class);
 	
@@ -79,7 +79,7 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 		if (CK2XTEXT_COMMON_CK2TERMINALS.equals(grammar)) {
 			return new Ck2TerminalsRuntimeModule();
 		}
-		if (CK2XTEXT_CK2.equals(grammar)) {
+		if (CK2XTEXT_GENERIC_CK2.equals(grammar)) {
 			return new Ck2RuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
@@ -89,7 +89,7 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 		if (CK2XTEXT_COMMON_CK2TERMINALS.equals(grammar)) {
 			return new Ck2TerminalsUiModule(this);
 		}
-		if (CK2XTEXT_CK2.equals(grammar)) {
+		if (CK2XTEXT_GENERIC_CK2.equals(grammar)) {
 			return new Ck2UiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);

@@ -10,7 +10,7 @@ Require-Bundle: ck2xtext,
  org.antlr.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ck2xtext.ide.contentassist.antlr.internal,
- ck2xtext.ide.contentassist.antlr
+Export-Package: ck2xtext.generic.ide.contentassist.antlr,
+ ck2xtext.generic.ide.contentassist.antlr.internal
 Automatic-Module-Name: ck2xtext.ide
 

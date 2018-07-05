@@ -4,7 +4,7 @@
     modelPluginID="ck2xtext" forceOverwrite="true" modelName="Ck2" updateClasspath="false"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="6.0"
     copyrightFields="false" runtimeVersion="2.14">
-  <genPackages prefix="Ck2" basePackage="ck2xtext" disposableProviderFactory="true"
+  <genPackages prefix="Ck2" basePackage="ck2xtext.generic" disposableProviderFactory="true"
       fileExtensions="txt,gui,gfx,sfx,map" ecorePackage="Ck2.ecore#/">
     <genClasses ecoreClass="Ck2.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ck2.ecore#//Model/properties"/>
