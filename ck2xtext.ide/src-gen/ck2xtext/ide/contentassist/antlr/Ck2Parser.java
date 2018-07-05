@@ -31,15 +31,12 @@ public class Ck2Parser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, Ck2GrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getIntegerAccess().getAlternatives_0(), "rule__Integer__Alternatives_0");
 			builder.put(grammarAccess.getListElemAccess().getAlternatives(), "rule__ListElem__Alternatives");
 			builder.put(grammarAccess.getPropertyAccess().getAlternatives(), "rule__Property__Alternatives");
 			builder.put(grammarAccess.getClauseAccess().getAlternatives(), "rule__Clause__Alternatives");
 			builder.put(grammarAccess.getIntegerPropertyAccess().getAlternatives(), "rule__IntegerProperty__Alternatives");
 			builder.put(grammarAccess.getDoublePropertyAccess().getAlternatives(), "rule__DoubleProperty__Alternatives");
-			builder.put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
-			builder.put(grammarAccess.getIntegerAccess().getGroup(), "rule__Integer__Group__0");
-			builder.put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
+			builder.put(grammarAccess.getIntegerAccess().getAlternatives_0(), "rule__Integer__Alternatives_0");
 			builder.put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
 			builder.put(grammarAccess.getStringPropertyAccess().getGroup(), "rule__StringProperty__Group__0");
 			builder.put(grammarAccess.getIdPropertyAccess().getGroup(), "rule__IdProperty__Group__0");
@@ -64,6 +61,9 @@ public class Ck2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntClausePropertyAccess().getGroup(), "rule__IntClauseProperty__Group__0");
 			builder.put(grammarAccess.getDateClausePropertyAccess().getGroup(), "rule__DateClauseProperty__Group__0");
 			builder.put(grammarAccess.getProbabilityPropertyAccess().getGroup(), "rule__ProbabilityProperty__Group__0");
+			builder.put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
+			builder.put(grammarAccess.getIntegerAccess().getGroup(), "rule__Integer__Group__0");
+			builder.put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
 			builder.put(grammarAccess.getModelAccess().getPropertiesAssignment(), "rule__Model__PropertiesAssignment");
 			builder.put(grammarAccess.getListAccess().getElemsAssignment_1(), "rule__List__ElemsAssignment_1");
 			builder.put(grammarAccess.getStringPropertyAccess().getKeyAssignment_0(), "rule__StringProperty__KeyAssignment_0");

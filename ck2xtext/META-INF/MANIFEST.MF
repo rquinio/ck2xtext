@@ -28,4 +28,7 @@ Export-Package: ck2xtext.serializer,
  ck2xtext.services,
  ck2xtext.validation,
  ck2xtext.ck2.util,
- ck2xtext.conversion
+ ck2xtext.conversion,
+ ck2xtext.common,
+ ck2xtext.common.services,
+ ck2xtext.common.serializer

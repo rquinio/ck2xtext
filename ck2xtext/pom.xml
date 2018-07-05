@@ -10,31 +10,32 @@
 	<packaging>eclipse-plugin</packaging>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<includes>
+					<!-- Needed to import grammars from same project via Maven ! -->
+					<include>**/*.xtext</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.4.0</version>
+				<groupId>org.fornax.toolsupport</groupId>
+				<artifactId>fornax-oaw-m2-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<workflowEngine>mwe2</workflowEngine>
+					<workflowDescriptor>src/GenerateCk2.mwe2</workflowDescriptor>
+				</configuration>
 				<executions>
 					<execution>
-						<id>mwe2Launcher</id>
 						<phase>generate-sources</phase>
 						<goals>
-							<goal>java</goal>
+							<goal>run-workflow</goal>
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
-					<arguments>
-						<argument>/${project.basedir}/src/GenerateCk2.mwe2</argument>
-						<argument>-p</argument>
-						<argument>rootPath=/${project.basedir}/..</argument>
-					</arguments>
-					<classpathScope>compile</classpathScope>
-					<includePluginDependencies>true</includePluginDependencies>
-					<cleanupDaemonThreads>false</cleanupDaemonThreads><!-- see https://bugs.eclipse.org/bugs/show_bug.cgi?id=475098#c3 -->
-				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.eclipse.emf</groupId>
@@ -151,6 +152,25 @@
 										</versionRange>
 										<goals>
 											<goal>clean</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.fornax.toolsupport
+										</groupId>
+										<artifactId>
+											fornax-oaw-m2-plugin
+										</artifactId>
+										<versionRange>
+											[3.6.0,)
+										</versionRange>
+										<goals>
+											<goal>run-workflow</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>

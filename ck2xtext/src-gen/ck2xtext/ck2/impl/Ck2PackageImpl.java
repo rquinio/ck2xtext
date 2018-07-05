@@ -186,7 +186,7 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
 
   /**
    * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-   * 
+   *
    * <p>This method is used to initialize {@link Ck2Package#eINSTANCE} when that field is accessed.
    * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
    * <!-- begin-user-doc -->
@@ -201,7 +201,8 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     if (isInited) return (Ck2Package)EPackage.Registry.INSTANCE.getEPackage(Ck2Package.eNS_URI);
 
     // Obtain or create and register package
-    Ck2PackageImpl theCk2Package = (Ck2PackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof Ck2PackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new Ck2PackageImpl());
+    Object registeredCk2Package = EPackage.Registry.INSTANCE.get(eNS_URI);
+    Ck2PackageImpl theCk2Package = registeredCk2Package instanceof Ck2PackageImpl ? (Ck2PackageImpl)registeredCk2Package : new Ck2PackageImpl();
 
     isInited = true;
 
@@ -214,7 +215,6 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     // Mark meta-data to indicate it can't be changed
     theCk2Package.freeze();
 
-  
     // Update the registry and return the package
     EPackage.Registry.INSTANCE.put(Ck2Package.eNS_URI, theCk2Package);
     return theCk2Package;

@@ -1,9 +1,11 @@
 /**
  * Simple grammar generic to CK2 files
  * 
- * Note: grammar namespace defines the java packages
+ * Note: 
+ * - grammar namespace defines the java packages
+ * - parent grammar is matched by naming convention in classpath, adding .xtext suffix
  */
-grammar ck2xtext.Ck2 hidden(WS, SL_COMMENT)
+grammar ck2xtext.Ck2 with ck2xtext.common.Ck2Terminals
 
 generate ck2 "http://www.crusaderkings.com" 
 
@@ -13,45 +15,7 @@ Model:
 	(properties+= Property)+
 ;
 
-
-terminal fragment DIGIT : ('0'..'9');
-
-terminal BOOL returns ecore::EBoolean: ('yes' | 'no');
-terminal HEX returns ecore::EInt: '0x'(DIGIT|'a'|'b'|'c'|'d'|'e'|'f')+;
-terminal INT returns ecore::EInt: (DIGIT)+;
-
-terminal fragment NON_ASCII_CAP : 'À'|'Á'|'Â'|'Ã'|'Ä'|'Å'|'Æ'|'Ç'|'È'|'É'|'Ê'|'Ë'|'Ì'|'Í'|'Î'|'Ï'|'Ð'|'Ñ'|'Ò'|'Ó'|'Ô'|'Õ'|'Ö'|'Ø'|'Š'|'Ù'|'Ú'|'Û'|'Ü'|'Ý'|'Ÿ'|'Þ'|'ß'|'Œ';
-terminal fragment NON_ASCII_LOW : 'à'|'á'|'â'|'ã'|'ä'|'å'|'æ'|'ç'|'è'|'é'|'ê'|'ë'|'ì'|'í'|'î'|'ï'|'ð'|'ñ'|'ò'|'ó'|'ô'|'õ'|'ö'|'ø'|'š'|'ù'|'ú'|'û'|'ü'|'ý'|'ÿ'|'ž'|'þ'|'œ';
-
-terminal fragment ID_PART: ('a'..'z'|'A'..'Z'|NON_ASCII_LOW|NON_ASCII_CAP|'<');
-
-/**
- * IDs of entities
- * Used in named definitions (<id> = {}), or as an 'id' property on the entity.
- * Cannot start with a digit (would match doubles), nor special characters _,-, etc.
- * May be namespaced (namespace.id)
- * Note: Caret is used to escape an identifier if there are conflicts with existing keywords. It is removed by the ID rule's ValueConverter. 
- */
-terminal ID : ('^')?ID_PART (ID_PART|DIGIT|'_'|'-'|'\''|'’'|':'|'.'|'>'|'@')*;
-
-terminal STRING	: '"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|'\\' */ | !('\\'|'"') )* '"';
-
-terminal SL_COMMENT : '#' !('\n'|'\r')* ('\r'? '\n')?;
-terminal WS			: (' '|'\t'|'\r'|'\n')+;
-
-/**
- * See ck2xtext.conversion.DateValueConverter
- */
-Date returns ecore::EDate : INT'.'INT'.'INT;
-
-Integer returns ecore::EInt : ('-'|'+')?INT;
-
-/**
- * Note: Double do not match integers, for proper formatting
- * 
- * May end with 'f' in some cases
- */
-Double returns ecore::EDouble : Integer'.'INT('f')?;
+ListElem returns ecore::EString : ID | STRING | Integer | Double;
 
 /**
  * data = {0 0 0 3 0 2 2}
@@ -60,8 +24,6 @@ Double returns ecore::EDouble : Integer'.'INT('f')?;
 List:
 	'{' (elems+= ListElem)+ '}'
 ;
-
-ListElem returns ecore::EString : ID | STRING | Integer | Double;
 
 /**
  * Properties follow the pattern: propertyName = propertyValue

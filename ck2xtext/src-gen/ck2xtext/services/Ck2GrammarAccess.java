@@ -3,6 +3,7 @@
  */
 package ck2xtext.services;
 
+import ck2xtext.common.services.Ck2TerminalsGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
@@ -36,97 +37,32 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//Property
 		public RuleCall getPropertiesPropertyParserRuleCall_0() { return cPropertiesPropertyParserRuleCall_0; }
 	}
-	public class DateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Date");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+	public class ListElemElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.ListElem");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIntegerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cDoubleParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		///**
-		// * See ck2xtext.conversion.DateValueConverter
-		// */ Date ecore::EDate:
-		//	INT '.' INT '.' INT;
+		//ListElem:
+		//	ID | STRING | Integer | Double;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//INT '.' INT '.' INT
-		public Group getGroup() { return cGroup; }
+		//ID | STRING | Integer | Double
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 		
-		//'.'
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_4() { return cINTTerminalRuleCall_4; }
-	}
-	public class IntegerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Integer");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cPlusSignKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//Integer ecore::EInt:
-		//	('-' | '+')? INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//('-' | '+')? INT
-		public Group getGroup() { return cGroup; }
-		
-		//('-' | '+')?
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_0_0() { return cHyphenMinusKeyword_0_0; }
-		
-		//'+'
-		public Keyword getPlusSignKeyword_0_1() { return cPlusSignKeyword_0_1; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
-	public class DoubleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Double");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIntegerParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Keyword cFKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		///**
-		// * Note: Double do not match integers, for proper formatting
-		// * 
-		// * May end with 'f' in some cases
-		// */ Double
-		//ecore::EDouble:
-		//	Integer '.' INT 'f'?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Integer '.' INT 'f'?
-		public Group getGroup() { return cGroup; }
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
 		
 		//Integer
-		public RuleCall getIntegerParserRuleCall_0() { return cIntegerParserRuleCall_0; }
+		public RuleCall getIntegerParserRuleCall_2() { return cIntegerParserRuleCall_2; }
 		
-		//'.'
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-		
-		//'f'?
-		public Keyword getFKeyword_3() { return cFKeyword_3; }
+		//Double
+		public RuleCall getDoubleParserRuleCall_3() { return cDoubleParserRuleCall_3; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.List");
@@ -157,33 +93,6 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
-	}
-	public class ListElemElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.ListElem");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cIntegerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cDoubleParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		
-		//ListElem:
-		//	ID | STRING | Integer | Double;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//ID | STRING | Integer | Double
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
-		
-		//Integer
-		public RuleCall getIntegerParserRuleCall_2() { return cIntegerParserRuleCall_2; }
-		
-		//Double
-		public RuleCall getDoubleParserRuleCall_3() { return cDoubleParserRuleCall_3; }
 	}
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.Property");
@@ -998,22 +907,8 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
-	private final TerminalRule tDIGIT;
-	private final TerminalRule tBOOL;
-	private final TerminalRule tHEX;
-	private final TerminalRule tINT;
-	private final TerminalRule tNON_ASCII_CAP;
-	private final TerminalRule tNON_ASCII_LOW;
-	private final TerminalRule tID_PART;
-	private final TerminalRule tID;
-	private final TerminalRule tSTRING;
-	private final TerminalRule tSL_COMMENT;
-	private final TerminalRule tWS;
-	private final DateElements pDate;
-	private final IntegerElements pInteger;
-	private final DoubleElements pDouble;
-	private final ListElements pList;
 	private final ListElemElements pListElem;
+	private final ListElements pList;
 	private final PropertyElements pProperty;
 	private final ClauseElements pClause;
 	private final StringPropertyElements pStringProperty;
@@ -1031,27 +926,17 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	private final ProbabilityPropertyElements pProbabilityProperty;
 	
 	private final Grammar grammar;
+	
+	private final Ck2TerminalsGrammarAccess gaCk2Terminals;
 
 	@Inject
-	public Ck2GrammarAccess(GrammarProvider grammarProvider) {
+	public Ck2GrammarAccess(GrammarProvider grammarProvider,
+			Ck2TerminalsGrammarAccess gaCk2Terminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.gaCk2Terminals = gaCk2Terminals;
 		this.pModel = new ModelElements();
-		this.tDIGIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.DIGIT");
-		this.tBOOL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.BOOL");
-		this.tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.HEX");
-		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.INT");
-		this.tNON_ASCII_CAP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.NON_ASCII_CAP");
-		this.tNON_ASCII_LOW = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.NON_ASCII_LOW");
-		this.tID_PART = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.ID_PART");
-		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.ID");
-		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.STRING");
-		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.SL_COMMENT");
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.Ck2.WS");
-		this.pDate = new DateElements();
-		this.pInteger = new IntegerElements();
-		this.pDouble = new DoubleElements();
-		this.pList = new ListElements();
 		this.pListElem = new ListElemElements();
+		this.pList = new ListElements();
 		this.pProperty = new PropertyElements();
 		this.pClause = new ClauseElements();
 		this.pStringProperty = new StringPropertyElements();
@@ -1090,6 +975,10 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return grammar;
 	}
 	
+	
+	public Ck2TerminalsGrammarAccess getCk2TerminalsGrammarAccess() {
+		return gaCk2Terminals;
+	}
 
 	
 	//Model:
@@ -1102,109 +991,14 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//terminal fragment DIGIT:
-	//	'0'..'9';
-	public TerminalRule getDIGITRule() {
-		return tDIGIT;
+	//ListElem:
+	//	ID | STRING | Integer | Double;
+	public ListElemElements getListElemAccess() {
+		return pListElem;
 	}
 	
-	//terminal BOOL returns ecore::EBoolean:
-	//	'yes' | 'no';
-	public TerminalRule getBOOLRule() {
-		return tBOOL;
-	}
-	
-	//terminal HEX returns ecore::EInt:
-	//	'0x' (DIGIT | 'a' | 'b' | 'c' | 'd' | 'e' | 'f')+;
-	public TerminalRule getHEXRule() {
-		return tHEX;
-	}
-	
-	//terminal INT returns ecore::EInt:
-	//	DIGIT+;
-	public TerminalRule getINTRule() {
-		return tINT;
-	}
-	
-	//terminal fragment NON_ASCII_CAP:
-	//	'À' | 'Á' | 'Â' | 'Ã' | 'Ä' | 'Å' | 'Æ' | 'Ç' | 'È' | 'É' | 'Ê' | 'Ë' | 'Ì' | 'Í' | 'Î' | 'Ï' | 'Ð' | 'Ñ' | 'Ò' | 'Ó'
-	//	| 'Ô' | 'Õ' | 'Ö' | 'Ø' | 'Š' | 'Ù' | 'Ú' | 'Û' | 'Ü' | 'Ý' | 'Ÿ' | 'Þ' | 'ß' | 'Œ';
-	public TerminalRule getNON_ASCII_CAPRule() {
-		return tNON_ASCII_CAP;
-	}
-	
-	//terminal fragment NON_ASCII_LOW:
-	//	'à' | 'á' | 'â' | 'ã' | 'ä' | 'å' | 'æ' | 'ç' | 'è' | 'é' | 'ê' | 'ë' | 'ì' | 'í' | 'î' | 'ï' | 'ð' | 'ñ' | 'ò' | 'ó'
-	//	| 'ô' | 'õ' | 'ö' | 'ø' | 'š' | 'ù' | 'ú' | 'û' | 'ü' | 'ý' | 'ÿ' | 'ž' | 'þ' | 'œ';
-	public TerminalRule getNON_ASCII_LOWRule() {
-		return tNON_ASCII_LOW;
-	}
-	
-	//terminal fragment ID_PART:
-	//	'a'..'z' | 'A'..'Z' | NON_ASCII_LOW | NON_ASCII_CAP | '<';
-	public TerminalRule getID_PARTRule() {
-		return tID_PART;
-	}
-	
-	//terminal ID:
-	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | '’' | ':' | '.' | '>' | '@')*;
-	public TerminalRule getIDRule() {
-		return tID;
-	}
-	
-	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"';
-	public TerminalRule getSTRINGRule() {
-		return tSTRING;
-	}
-	
-	//terminal SL_COMMENT:
-	//	'#' !('\n' | '\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return tSL_COMMENT;
-	}
-	
-	//terminal WS:
-	//	' ' | '\t' | '\r' | '\n'+;
-	public TerminalRule getWSRule() {
-		return tWS;
-	}
-	
-	///**
-	// * See ck2xtext.conversion.DateValueConverter
-	// */ Date ecore::EDate:
-	//	INT '.' INT '.' INT;
-	public DateElements getDateAccess() {
-		return pDate;
-	}
-	
-	public ParserRule getDateRule() {
-		return getDateAccess().getRule();
-	}
-	
-	//Integer ecore::EInt:
-	//	('-' | '+')? INT;
-	public IntegerElements getIntegerAccess() {
-		return pInteger;
-	}
-	
-	public ParserRule getIntegerRule() {
-		return getIntegerAccess().getRule();
-	}
-	
-	///**
-	// * Note: Double do not match integers, for proper formatting
-	// * 
-	// * May end with 'f' in some cases
-	// */ Double
-	//ecore::EDouble:
-	//	Integer '.' INT 'f'?;
-	public DoubleElements getDoubleAccess() {
-		return pDouble;
-	}
-	
-	public ParserRule getDoubleRule() {
-		return getDoubleAccess().getRule();
+	public ParserRule getListElemRule() {
+		return getListElemAccess().getRule();
 	}
 	
 	///**
@@ -1218,16 +1012,6 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getListRule() {
 		return getListAccess().getRule();
-	}
-	
-	//ListElem:
-	//	ID | STRING | Integer | Double;
-	public ListElemElements getListElemAccess() {
-		return pListElem;
-	}
-	
-	public ParserRule getListElemRule() {
-		return getListElemAccess().getRule();
 	}
 	
 	///**
@@ -1411,5 +1195,110 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getProbabilityPropertyRule() {
 		return getProbabilityPropertyAccess().getRule();
+	}
+	
+	//terminal fragment DIGIT:
+	//	'0'..'9';
+	public TerminalRule getDIGITRule() {
+		return gaCk2Terminals.getDIGITRule();
+	}
+	
+	//terminal BOOL returns ecore::EBoolean:
+	//	'yes' | 'no';
+	public TerminalRule getBOOLRule() {
+		return gaCk2Terminals.getBOOLRule();
+	}
+	
+	//terminal HEX returns ecore::EInt:
+	//	'0x' (DIGIT | 'a' | 'b' | 'c' | 'd' | 'e' | 'f')+;
+	public TerminalRule getHEXRule() {
+		return gaCk2Terminals.getHEXRule();
+	}
+	
+	//terminal INT returns ecore::EInt:
+	//	DIGIT+;
+	public TerminalRule getINTRule() {
+		return gaCk2Terminals.getINTRule();
+	}
+	
+	//terminal fragment NON_ASCII_CAP:
+	//	'À' | 'Á' | 'Â' | 'Ã' | 'Ä' | 'Å' | 'Æ' | 'Ç' | 'È' | 'É' | 'Ê' | 'Ë' | 'Ì' | 'Í' | 'Î' | 'Ï' | 'Ð' | 'Ñ' | 'Ò' | 'Ó'
+	//	| 'Ô' | 'Õ' | 'Ö' | 'Ø' | 'Š' | 'Ù' | 'Ú' | 'Û' | 'Ü' | 'Ý' | 'Ÿ' | 'Þ' | 'ß' | 'Œ';
+	public TerminalRule getNON_ASCII_CAPRule() {
+		return gaCk2Terminals.getNON_ASCII_CAPRule();
+	}
+	
+	//terminal fragment NON_ASCII_LOW:
+	//	'à' | 'á' | 'â' | 'ã' | 'ä' | 'å' | 'æ' | 'ç' | 'è' | 'é' | 'ê' | 'ë' | 'ì' | 'í' | 'î' | 'ï' | 'ð' | 'ñ' | 'ò' | 'ó'
+	//	| 'ô' | 'õ' | 'ö' | 'ø' | 'š' | 'ù' | 'ú' | 'û' | 'ü' | 'ý' | 'ÿ' | 'ž' | 'þ' | 'œ';
+	public TerminalRule getNON_ASCII_LOWRule() {
+		return gaCk2Terminals.getNON_ASCII_LOWRule();
+	}
+	
+	//terminal fragment ID_PART:
+	//	'a'..'z' | 'A'..'Z' | NON_ASCII_LOW | NON_ASCII_CAP | '<';
+	public TerminalRule getID_PARTRule() {
+		return gaCk2Terminals.getID_PARTRule();
+	}
+	
+	//terminal ID:
+	//	'^'? ID_PART (ID_PART | DIGIT | '_' | '-' | '\'' | '’' | ':' | '.' | '>' | '@')*;
+	public TerminalRule getIDRule() {
+		return gaCk2Terminals.getIDRule();
+	}
+	
+	//terminal STRING:
+	//	'"' ('\\' . | !('\\' | '"'))* '"';
+	public TerminalRule getSTRINGRule() {
+		return gaCk2Terminals.getSTRINGRule();
+	}
+	
+	//terminal SL_COMMENT:
+	//	'#' !('\n' | '\r')* ('\r'? '\n')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return gaCk2Terminals.getSL_COMMENTRule();
+	}
+	
+	//terminal WS:
+	//	' ' | '\t' | '\r' | '\n'+;
+	public TerminalRule getWSRule() {
+		return gaCk2Terminals.getWSRule();
+	}
+	
+	///**
+	// * See ck2xtext.conversion.DateValueConverter
+	// */ Date ecore::EDate:
+	//	INT '.' INT '.' INT;
+	public Ck2TerminalsGrammarAccess.DateElements getDateAccess() {
+		return gaCk2Terminals.getDateAccess();
+	}
+	
+	public ParserRule getDateRule() {
+		return getDateAccess().getRule();
+	}
+	
+	//Integer ecore::EInt:
+	//	('-' | '+')? INT;
+	public Ck2TerminalsGrammarAccess.IntegerElements getIntegerAccess() {
+		return gaCk2Terminals.getIntegerAccess();
+	}
+	
+	public ParserRule getIntegerRule() {
+		return getIntegerAccess().getRule();
+	}
+	
+	///**
+	// * Note: Double do not match integers, for proper formatting
+	// * 
+	// * May end with 'f' in some cases
+	// */ Double
+	//ecore::EDouble:
+	//	Integer '.' INT 'f'?;
+	public Ck2TerminalsGrammarAccess.DoubleElements getDoubleAccess() {
+		return gaCk2Terminals.getDoubleAccess();
+	}
+	
+	public ParserRule getDoubleRule() {
+		return getDoubleAccess().getRule();
 	}
 }

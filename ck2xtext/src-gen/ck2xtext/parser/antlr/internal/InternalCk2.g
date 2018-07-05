@@ -96,189 +96,6 @@ ruleModel returns [EObject current=null]
 	)+
 ;
 
-// Entry rule entryRuleDate
-entryRuleDate returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getDateRule()); }
-	iv_ruleDate=ruleDate
-	{ $current=$iv_ruleDate.current.getText(); }
-	EOF;
-
-// Rule Date
-ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_INT_0=RULE_INT
-		{
-			$current.merge(this_INT_0);
-		}
-		{
-			newLeafNode(this_INT_0, grammarAccess.getDateAccess().getINTTerminalRuleCall_0());
-		}
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDateAccess().getFullStopKeyword_1());
-		}
-		this_INT_2=RULE_INT
-		{
-			$current.merge(this_INT_2);
-		}
-		{
-			newLeafNode(this_INT_2, grammarAccess.getDateAccess().getINTTerminalRuleCall_2());
-		}
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDateAccess().getFullStopKeyword_3());
-		}
-		this_INT_4=RULE_INT
-		{
-			$current.merge(this_INT_4);
-		}
-		{
-			newLeafNode(this_INT_4, grammarAccess.getDateAccess().getINTTerminalRuleCall_4());
-		}
-	)
-;
-
-// Entry rule entryRuleInteger
-entryRuleInteger returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getIntegerRule()); }
-	iv_ruleInteger=ruleInteger
-	{ $current=$iv_ruleInteger.current.getText(); }
-	EOF;
-
-// Rule Integer
-ruleInteger returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getIntegerAccess().getHyphenMinusKeyword_0_0());
-			}
-			    |
-			kw='+'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getIntegerAccess().getPlusSignKeyword_0_1());
-			}
-		)?
-		this_INT_2=RULE_INT
-		{
-			$current.merge(this_INT_2);
-		}
-		{
-			newLeafNode(this_INT_2, grammarAccess.getIntegerAccess().getINTTerminalRuleCall_1());
-		}
-	)
-;
-
-// Entry rule entryRuleDouble
-entryRuleDouble returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getDoubleRule()); }
-	iv_ruleDouble=ruleDouble
-	{ $current=$iv_ruleDouble.current.getText(); }
-	EOF;
-
-// Rule Double
-ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getDoubleAccess().getIntegerParserRuleCall_0());
-		}
-		this_Integer_0=ruleInteger
-		{
-			$current.merge(this_Integer_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		kw='.'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getDoubleAccess().getFullStopKeyword_1());
-		}
-		this_INT_2=RULE_INT
-		{
-			$current.merge(this_INT_2);
-		}
-		{
-			newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_2());
-		}
-		(
-			kw='f'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getDoubleAccess().getFKeyword_3());
-			}
-		)?
-	)
-;
-
-// Entry rule entryRuleList
-entryRuleList returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getListRule()); }
-	iv_ruleList=ruleList
-	{ $current=$iv_ruleList.current; }
-	EOF;
-
-// Rule List
-ruleList returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='{'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getListAccess().getLeftCurlyBracketKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getListAccess().getElemsListElemParserRuleCall_1_0());
-				}
-				lv_elems_1_0=ruleListElem
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getListRule());
-					}
-					add(
-						$current,
-						"elems",
-						lv_elems_1_0,
-						"ck2xtext.Ck2.ListElem");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)+
-		otherlv_2='}'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getListAccess().getRightCurlyBracketKeyword_2());
-		}
-	)
-;
-
 // Entry rule entryRuleListElem
 entryRuleListElem returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getListElemRule()); }
@@ -331,6 +148,52 @@ ruleListElem returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 		}
 		{
 			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleList
+entryRuleList returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListRule()); }
+	iv_ruleList=ruleList
+	{ $current=$iv_ruleList.current; }
+	EOF;
+
+// Rule List
+ruleList returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='{'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getListAccess().getLeftCurlyBracketKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getListAccess().getElemsListElemParserRuleCall_1_0());
+				}
+				lv_elems_1_0=ruleListElem
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getListRule());
+					}
+					add(
+						$current,
+						"elems",
+						lv_elems_1_0,
+						"ck2xtext.Ck2.ListElem");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
+		otherlv_2='}'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getListAccess().getRightCurlyBracketKeyword_2());
 		}
 	)
 ;
@@ -527,7 +390,7 @@ ruleStringProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -549,7 +412,7 @@ ruleStringProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"ck2xtext.Ck2.STRING");
+						"ck2xtext.common.Ck2Terminals.STRING");
 				}
 			)
 		)
@@ -586,7 +449,7 @@ ruleIdProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -608,7 +471,7 @@ ruleIdProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -645,7 +508,7 @@ ruleCommandProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -671,7 +534,7 @@ ruleCommandProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_3_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -712,7 +575,7 @@ ruleBoolProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -734,7 +597,7 @@ ruleBoolProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"ck2xtext.Ck2.BOOL");
+						"ck2xtext.common.Ck2Terminals.BOOL");
 				}
 			)
 		)
@@ -771,7 +634,7 @@ ruleDateProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -793,7 +656,7 @@ ruleDateProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"ck2xtext.Ck2.Date");
+						"ck2xtext.common.Ck2Terminals.Date");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -832,7 +695,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_0_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -854,7 +717,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -876,7 +739,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_3_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -898,7 +761,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_5_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -920,7 +783,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_6_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -942,7 +805,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_8_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -964,7 +827,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_9_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -986,7 +849,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_11_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1008,7 +871,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_12_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1030,7 +893,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_14_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1052,7 +915,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_15_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1074,7 +937,7 @@ ruleIntegerProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_17_0,
-							"ck2xtext.Ck2.Integer");
+							"ck2xtext.common.Ck2Terminals.Integer");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1114,7 +977,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_0_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1136,7 +999,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_2_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1158,7 +1021,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_3_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1180,7 +1043,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_5_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1202,7 +1065,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_6_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1224,7 +1087,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_8_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1246,7 +1109,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_9_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1268,7 +1131,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_11_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1290,7 +1153,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_12_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1312,7 +1175,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_14_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1334,7 +1197,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"key",
 							lv_key_15_0,
-							"ck2xtext.Ck2.ID");
+							"ck2xtext.common.Ck2Terminals.ID");
 					}
 				)
 			)
@@ -1356,7 +1219,7 @@ ruleDoubleProperty returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_17_0,
-							"ck2xtext.Ck2.Double");
+							"ck2xtext.common.Ck2Terminals.Double");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1395,7 +1258,7 @@ ruleHexadecimalProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -1417,7 +1280,7 @@ ruleHexadecimalProperty returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"ck2xtext.Ck2.HEX");
+						"ck2xtext.common.Ck2Terminals.HEX");
 				}
 			)
 		)
@@ -1454,7 +1317,7 @@ ruleListProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -1514,7 +1377,7 @@ ruleIdClauseProperty returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_0_0,
-						"ck2xtext.Ck2.ID");
+						"ck2xtext.common.Ck2Terminals.ID");
 				}
 			)
 		)
@@ -1592,7 +1455,7 @@ ruleIntClauseProperty returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_0_0,
-						"ck2xtext.Ck2.INT");
+						"ck2xtext.common.Ck2Terminals.INT");
 				}
 			)
 		)
@@ -1670,7 +1533,7 @@ ruleDateClauseProperty returns [EObject current=null]
 						$current,
 						"name",
 						lv_name_0_0,
-						"ck2xtext.Ck2.Date");
+						"ck2xtext.common.Ck2Terminals.Date");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1749,7 +1612,7 @@ ruleProbabilityProperty returns [EObject current=null]
 						$current,
 						"key",
 						lv_key_0_0,
-						"ck2xtext.Ck2.INT");
+						"ck2xtext.common.Ck2Terminals.INT");
 				}
 			)
 		)
@@ -1776,6 +1639,143 @@ ruleProbabilityProperty returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleDate
+entryRuleDate returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDateRule()); }
+	iv_ruleDate=ruleDate
+	{ $current=$iv_ruleDate.current.getText(); }
+	EOF;
+
+// Rule Date
+ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getDateAccess().getINTTerminalRuleCall_0());
+		}
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDateAccess().getFullStopKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getDateAccess().getINTTerminalRuleCall_2());
+		}
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDateAccess().getFullStopKeyword_3());
+		}
+		this_INT_4=RULE_INT
+		{
+			$current.merge(this_INT_4);
+		}
+		{
+			newLeafNode(this_INT_4, grammarAccess.getDateAccess().getINTTerminalRuleCall_4());
+		}
+	)
+;
+
+// Entry rule entryRuleInteger
+entryRuleInteger returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getIntegerRule()); }
+	iv_ruleInteger=ruleInteger
+	{ $current=$iv_ruleInteger.current.getText(); }
+	EOF;
+
+// Rule Integer
+ruleInteger returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getIntegerAccess().getHyphenMinusKeyword_0_0());
+			}
+			    |
+			kw='+'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getIntegerAccess().getPlusSignKeyword_0_1());
+			}
+		)?
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getIntegerAccess().getINTTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleDouble
+entryRuleDouble returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDoubleRule()); }
+	iv_ruleDouble=ruleDouble
+	{ $current=$iv_ruleDouble.current.getText(); }
+	EOF;
+
+// Rule Double
+ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getDoubleAccess().getIntegerParserRuleCall_0());
+		}
+		this_Integer_0=ruleInteger
+		{
+			$current.merge(this_Integer_0);
+		}
+		{
+			afterParserOrEnumRuleCall();
+		}
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDoubleAccess().getFullStopKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_2());
+		}
+		(
+			kw='f'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getDoubleAccess().getFKeyword_3());
+			}
+		)?
 	)
 ;
 

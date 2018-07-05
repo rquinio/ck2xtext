@@ -255,7 +255,7 @@ public class ListPropertyImpl extends PropertyImpl implements ListProperty
   {
     if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (key: ");
     result.append(key);
     result.append(')');
