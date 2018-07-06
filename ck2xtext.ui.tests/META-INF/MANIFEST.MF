@@ -17,4 +17,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: ck2xtext.ui.tests
 Import-Package: org.hamcrest.core
 Bundle-ActivationPolicy: lazy
-Export-Package: ck2xtext.generic.ui.tests;x-internal=true
+Export-Package: ck2xtext.generic.ui.tests;x-internal=true,
+ ck2xtext.gfx.ui.tests;x-internal=true

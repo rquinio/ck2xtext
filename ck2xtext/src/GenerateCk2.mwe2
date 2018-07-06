@@ -42,7 +42,7 @@ Workflow {
 			
 			fileExtensions = ""
 			
-			// Useless, but add minimum fragments to please compiler
+			// Useless, but add minimum fragments to please the compiler
 			fragment = grammarAccess.GrammarAccessFragment2 {}
 			fragment = serializer.SerializerFragment2 {
 				generateStub = false
@@ -50,9 +50,35 @@ Workflow {
 			}	
 		}
 		language = StandardLanguage {
+			name = "ck2xtext.gfx.Ck2Gfx"
+			
+			fileExtensions = "gfx"
+
+			contentAssist = {
+				inheritImplementation = false
+			}
+			scopeProvider = {
+				inheritImplementation = false
+			}
+			serializer = {
+				generateStub = false
+			}
+			validator = {
+				inheritImplementation = false
+				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			}
+
+			// New formatter API 
+			// fragment = formatting.Formatter2Fragment2 {}
+			
+			junitSupport = {
+				junitVersion = "5"
+			}
+		}
+		language = StandardLanguage {
 			name = "ck2xtext.generic.Ck2"
 			
-			fileExtensions = "txt,gui,gfx,sfx,map"
+			fileExtensions = "txt,gui,sfx,map"
 
 			contentAssist = {
 				inheritImplementation = false

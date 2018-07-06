@@ -1,6 +1,6 @@
 package ck2xtext.common.tests.conversion;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.eclipse.xtext.conversion.IValueConverter;
 import org.junit.jupiter.api.Test;
@@ -14,6 +14,13 @@ public class HexadecimalValueConverterTest {
 	@Test
 	public void valid() {
 		Integer i = converter.toValue("0xff0000", null);
+
+		assertEquals((int) 16711680, (int) i);
+	}
+	
+	@Test
+	public void extraDigitsShouldBeIgnored() {
+		Integer i = converter.toValue("0xff000000", null);
 
 		assertEquals((int) 16711680, (int) i);
 	}

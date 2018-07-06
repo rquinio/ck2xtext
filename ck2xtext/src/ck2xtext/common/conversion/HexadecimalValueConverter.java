@@ -8,7 +8,7 @@ public class HexadecimalValueConverter implements IValueConverter<Integer> {
 
 	@Override
 	public Integer toValue(String string, INode node) throws ValueConverterException {
-		return Integer.parseInt(string.substring(2), 16);
+		return Integer.parseInt(string.substring(2,8), 16);
 	}
 
 	@Override

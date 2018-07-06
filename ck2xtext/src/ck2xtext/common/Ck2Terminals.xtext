@@ -43,3 +43,10 @@ Integer returns ecore::EInt : ('-'|'+')?INT;
  * May end with 'f' in some cases
  */
 Double returns ecore::EDouble : Integer'.'INT('f')?;
+
+/*
+ * Used when decimals are not used systematically.
+ * 
+ * Warning: formatting might be messed up.
+ */
+Number returns ecore::EDouble: Double | (Integer('f')?);

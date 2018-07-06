@@ -1301,4 +1301,19 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	public ParserRule getDoubleRule() {
 		return getDoubleAccess().getRule();
 	}
+	
+	///*
+	// * Used when decimals are not used systematically.
+	// * 
+	// * Warning: formatting might be messed up.
+	// */ Number
+	//ecore::EDouble:
+	//	Double | Integer 'f'?;
+	public Ck2TerminalsGrammarAccess.NumberElements getNumberAccess() {
+		return gaCk2Terminals.getNumberAccess();
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
+	}
 }

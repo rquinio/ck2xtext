@@ -40,8 +40,6 @@ public class Ck2StandaloneSetupGenerated implements ISetup {
 		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("txt", serviceProvider);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("gui", resourceFactory);
 		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("gui", serviceProvider);
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("gfx", resourceFactory);
-		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("gfx", serviceProvider);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("sfx", resourceFactory);
 		IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("sfx", serviceProvider);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("map", resourceFactory);

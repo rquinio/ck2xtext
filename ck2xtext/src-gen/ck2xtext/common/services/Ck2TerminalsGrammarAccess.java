@@ -112,6 +112,38 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 		//'f'?
 		public Keyword getFKeyword_3() { return cFKeyword_3; }
 	}
+	public class NumberElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.common.Ck2Terminals.Number");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDoubleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cIntegerParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Keyword cFKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		
+		///*
+		// * Used when decimals are not used systematically.
+		// * 
+		// * Warning: formatting might be messed up.
+		// */ Number
+		//ecore::EDouble:
+		//	Double | Integer 'f'?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Double | Integer 'f'?
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Double
+		public RuleCall getDoubleParserRuleCall_0() { return cDoubleParserRuleCall_0; }
+		
+		//Integer 'f'?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//Integer
+		public RuleCall getIntegerParserRuleCall_1_0() { return cIntegerParserRuleCall_1_0; }
+		
+		//'f'?
+		public Keyword getFKeyword_1_1() { return cFKeyword_1_1; }
+	}
 	
 	
 	private final TerminalRule tDIGIT;
@@ -128,6 +160,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 	private final DateElements pDate;
 	private final IntegerElements pInteger;
 	private final DoubleElements pDouble;
+	private final NumberElements pNumber;
 	
 	private final Grammar grammar;
 
@@ -148,6 +181,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDate = new DateElements();
 		this.pInteger = new IntegerElements();
 		this.pDouble = new DoubleElements();
+		this.pNumber = new NumberElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -276,5 +310,20 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDoubleRule() {
 		return getDoubleAccess().getRule();
+	}
+	
+	///*
+	// * Used when decimals are not used systematically.
+	// * 
+	// * Warning: formatting might be messed up.
+	// */ Number
+	//ecore::EDouble:
+	//	Double | Integer 'f'?;
+	public NumberElements getNumberAccess() {
+		return pNumber;
+	}
+	
+	public ParserRule getNumberRule() {
+		return getNumberAccess().getRule();
 	}
 }

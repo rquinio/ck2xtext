@@ -31,5 +31,16 @@ Export-Package: ck2xtext.common,
  ck2xtext.generic.scoping,
  ck2xtext.generic.serializer,
  ck2xtext.generic.services,
- ck2xtext.generic.validation
+ ck2xtext.generic.validation,
+ ck2xtext.gfx.services,
+ ck2xtext.gfx.ck2gfx.util,
+ ck2xtext.gfx.parser.antlr,
+ ck2xtext.gfx.scoping,
+ ck2xtext.gfx.ck2gfx.impl,
+ ck2xtext.gfx.validation,
+ ck2xtext.gfx.generator,
+ ck2xtext.gfx.parser.antlr.internal,
+ ck2xtext.gfx,
+ ck2xtext.gfx.ck2gfx,
+ ck2xtext.gfx.serializer
 

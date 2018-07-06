@@ -1,20 +1,11 @@
 package ck2xtext.generic.tests;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
-import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.google.inject.Inject;
-
-import ck2xtext.generic.tests.Ck2InjectorProvider;
-import ck2xtext.tests.util.FileResourceHelper;
+import ck2xtext.tests.vanilla.VanillaTest;
 
 
 
@@ -25,17 +16,7 @@ import ck2xtext.tests.util.FileResourceHelper;
  */
 @ExtendWith(InjectionExtension.class)
 @InjectWith(Ck2InjectorProvider.class)
-public class Ck2VanillaTest {
-
-	private static final String VANILLA_INSTALL_PATH = "C:/Program Files (x86)/Steam/SteamApps/common/Crusader Kings II/";
-
-	@Inject
-	private FileResourceHelper resourceHelper;
-
-	@Inject
-	private ValidationTestHelper validationHelper;
-
-	private boolean useVanilaInstallPath = false;
+public class Ck2VanillaTest extends VanillaTest {
 
 	@Test
 	public void validateTechnology() {
@@ -176,51 +157,4 @@ public class Ck2VanillaTest {
 		validate("map/default.map");
 	}
 
-	/**
-	 * Check the file at given path trigger no validation errors.
-	 */
-	private void validate(String path) {
-		try {
-			if (useVanilaInstallPath) {
-				validateVanillaResource(path);
-			} else {
-				validateTestResource("../../tests/vanilla/" + path);
-			}
-		} catch (IOException e) {
-			throw new IllegalArgumentException(e);
-		}
-	}
-
-	/**
-	 * eclipse-test-plugin resources can only be loaded as streams from classpath
-	 */
-	private void validateTestResource(String path) throws IOException {
-		InputStream stream = this.getClass().getResourceAsStream(path);
-		Resource resource = resourceHelper.resource(stream, path);
-		validationHelper.assertNoIssues(resource);
-	}
-
-	/**
-	 * Load from file system.
-	 * 
-	 * Supports scanning directory and validating all files.
-	 */
-	private void validateVanillaResource(String path) throws IOException {
-		File[] files = getFiles(new File(VANILLA_INSTALL_PATH + path));
-		for (File file : files) {
-			Resource resource = resourceHelper.resource(file);
-			validationHelper.assertNoIssues(resource);
-		}
-
-	}
-
-	private File[] getFiles(File file) {
-		File[] files;
-		if (file.isFile()) {
-			files = new File[] { file };
-		} else {
-			files = file.listFiles();
-		}
-		return files;
-	}
 }

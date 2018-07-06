@@ -23,4 +23,6 @@ Import-Package: org.apache.log4j
 Bundle-ActivationPolicy: lazy
 Export-Package: ck2xtext.generic.ui.contentassist,
  ck2xtext.generic.ui.quickfix,
- ck2xtext.ui.internal
+ ck2xtext.ui.internal,
+ ck2xtext.gfx.ui.quickfix,
+ ck2xtext.gfx.ui.contentassist

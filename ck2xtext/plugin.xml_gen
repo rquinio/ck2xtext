@@ -3,6 +3,12 @@
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package 
+			uri = "http://www.crusaderkings.com/gfx"
+			class = "ck2xtext.gfx.ck2gfx.Ck2gfxPackage"
+			genModel = "model/generated/Ck2Gfx.genmodel" />
+	</extension>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
 			uri = "http://www.crusaderkings.com"
 			class = "ck2xtext.generic.ck2.Ck2Package"
 			genModel = "model/generated/Ck2.genmodel" />

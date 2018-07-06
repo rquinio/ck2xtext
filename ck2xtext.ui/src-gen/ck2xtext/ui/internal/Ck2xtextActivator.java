@@ -7,6 +7,8 @@ import ck2xtext.common.Ck2TerminalsRuntimeModule;
 import ck2xtext.common.ui.Ck2TerminalsUiModule;
 import ck2xtext.generic.Ck2RuntimeModule;
 import ck2xtext.generic.ui.Ck2UiModule;
+import ck2xtext.gfx.Ck2GfxRuntimeModule;
+import ck2xtext.gfx.ui.Ck2GfxUiModule;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -26,6 +28,7 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "ck2xtext.ui";
 	public static final String CK2XTEXT_COMMON_CK2TERMINALS = "ck2xtext.common.Ck2Terminals";
+	public static final String CK2XTEXT_GFX_CK2GFX = "ck2xtext.gfx.Ck2Gfx";
 	public static final String CK2XTEXT_GENERIC_CK2 = "ck2xtext.generic.Ck2";
 	
 	private static final Logger logger = Logger.getLogger(Ck2xtextActivator.class);
@@ -79,6 +82,9 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 		if (CK2XTEXT_COMMON_CK2TERMINALS.equals(grammar)) {
 			return new Ck2TerminalsRuntimeModule();
 		}
+		if (CK2XTEXT_GFX_CK2GFX.equals(grammar)) {
+			return new Ck2GfxRuntimeModule();
+		}
 		if (CK2XTEXT_GENERIC_CK2.equals(grammar)) {
 			return new Ck2RuntimeModule();
 		}
@@ -88,6 +94,9 @@ public class Ck2xtextActivator extends AbstractUIPlugin {
 	protected com.google.inject.Module getUiModule(String grammar) {
 		if (CK2XTEXT_COMMON_CK2TERMINALS.equals(grammar)) {
 			return new Ck2TerminalsUiModule(this);
+		}
+		if (CK2XTEXT_GFX_CK2GFX.equals(grammar)) {
+			return new Ck2GfxUiModule(this);
 		}
 		if (CK2XTEXT_GENERIC_CK2.equals(grammar)) {
 			return new Ck2UiModule(this);

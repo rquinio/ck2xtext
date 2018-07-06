@@ -1,0 +1,247 @@
+/**
+ * Grammar for .gfx files
+ */
+grammar ck2xtext.gfx.Ck2Gfx with ck2xtext.common.Ck2Terminals
+
+generate ck2gfx "http://www.crusaderkings.com/gfx" 
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+
+Model:
+	(types+= (SpriteTypes | ObjectTypes | BitmapFonts))* // Allow empty file
+;
+
+
+/*
+ * RGB color 0-255
+ */
+Color:
+	'{' r=INT g=INT b=INT '}'
+;
+
+/*
+ * RGB color 0-1
+ */
+ColorRatio:
+	'{' r=Double g=Double b=Double '}'
+;
+
+/*
+ * 2D coordinates
+ */
+Coordinates:
+	'{' 'x' '=' x=Number 'y' '=' y=Number '}'
+;
+
+SpriteTypes:{SpriteTypes}
+	'spriteTypes' '=' '{'
+		(types+= (
+			SpriteType 
+			| AnimatedSpriteType 
+			| CorneredTileSpriteType 
+			| ProgressbarType 
+			| CoatOfArmsType 
+			| PortraitType 
+			| MaskedShieldType
+			| LineChartType
+		))*
+	'}'
+;
+
+/*
+ * A sprite is composed by 1 or many frames.
+ */
+SpriteType:
+	('spriteType'|'textSpriteType') '=' '{'
+		'name' '=' name=STRING
+		&('texturefile' '=' texturefile=STRING)?
+		&('textureFile' '=' texturefile=STRING)? // Needs to be optional, as alias
+		&('effectFile' '=' effectFile=STRING)?
+		&('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		&('noOfFrames' '=' noOfFrames=INT)?
+		&('noOfframes' '=' noOfFrames=INT)?
+		&('norefcount' '=' noRefCount=BOOL)?
+		&('noRefCount' '=' noRefCount=BOOL)?
+		&('transparencecheck' '=' transparenceCheck=BOOL)?
+		&('can_be_lowres' '=' canBeLowres=BOOL)?
+		&('clicksound' '=' clickSound=ID)?
+		&('loadType' '=' loadType=STRING)?
+	'}'
+;
+
+AnimatedSpriteType:
+	('frameAnimatedSpriteType') '=' '{'
+		'name' '=' name=STRING
+		'texturefile' '=' texturefile=STRING
+		'noOfFrames' '=' noOfFrames=INT
+		'animation_rate_fps' '=' animationRateFps=Number
+		'looping' '=' looping=BOOL
+		'play_on_show' '=' playOnShow=BOOL
+	'}'
+;
+
+CorneredTileSpriteType:
+	('corneredTileSpriteType') '=' '{'
+		'name' '=' name=STRING
+		('size' '=' size=Coordinates)?
+		('texturefile' '=' texturefile=STRING)?
+		('textureFile' '=' texturefile=STRING)? // Alias, needs to be optional
+		'borderSize' '=' borderSize=Coordinates
+		('loadType' '=' loadType=STRING)?
+		('tilingCenter' '=' tilingCenter=BOOL)?
+	'}'
+;
+
+ProgressbarType:
+	'progressbartype' '=' '{'
+		'name' '=' name=STRING
+		'color' '=' color=ColorRatio
+		'colortwo' '=' color2=ColorRatio
+		('textureFile1' '=' textureFile1=STRING)?
+		('textureFile2' '=' textureFile2=STRING)?
+		'size' '=' size=Coordinates
+		('horizontal' '=' horizontal=BOOL)?
+		'effectFile' '=' effectFile=STRING
+		('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		('maxValue' '=' maxValue=Number)?
+	'}'
+;
+
+PortraitType:
+	'portraitType' '=' '{'
+		'name' '=' name=STRING
+		'effectFile' '=' effectFile=STRING
+		'layer' '=' '{'
+			(layers+=STRING)+
+		'}'
+		('hair_color_index' '=' hairColorIndex=INT)?
+		('hair_color' '=' '{'
+			(hairColor+=Color)+
+		'}')?
+		('eye_color_index' '=' eyeColorIndex=INT)?
+		('eye_color' '=' '{'
+			(eyeColor+=Color)+
+		'}')?
+		('headgear_that_hides_hair' '=' '{' (headgearThatHidesHair+=INT)* '}')?
+	'}'
+;
+
+MaskedShieldType:
+	'maskedShieldType' '=' '{'
+		'name' '=' name=STRING
+		'textureFile1' '=' textureFile1=STRING
+		'textureFile2' '=' textureFile2=STRING	
+		'effectFile' '=' effectFile=STRING
+		('allwaystransparent' '=' allwaysTransparent=BOOL)?
+	'}'
+;
+
+LineChartType:
+	'LineChartType' '=' '{'
+		'name' '=' name=STRING
+		'size' '=' size=Coordinates
+		'linewidth' '=' lineWidth=INT
+	'}'
+;
+
+CoatOfArmsType:
+	'CoatOfArmsType' '=' '{'
+		'name' '=' name=STRING
+		'frame' '=' frame=STRING
+		'mask' '=' mask=STRING
+		'seal_overlay' '=' sealOverlay=STRING
+		'effect' '=' effect=STRING
+		(layers+=CoatOfArmsLayer)+
+	'}'
+;
+
+CoatOfArmsLayer:
+	'layer' '=' '{'
+		'mask' '=' mask=STRING
+		'center' '=' center=Coordinates
+		'scale' '=' scale=Number
+	'}'
+;
+
+ObjectTypes:{ObjectTypes}
+	'objectTypes' '=' '{'
+		(types+= (EMFXActorType | Pdxmesh | ArrowType))*
+	'}'
+;
+
+EMFXActorType:
+	'EMFXActorType' '=' '{'
+		'name' '=' name=STRING
+		'actorfile' '=' actorFile=STRING
+		
+		(animation=Animation)?
+		
+		&('idle' '=' idle=STRING)?
+		('move' '=' move=STRING)?
+		('attack' '=' attack=STRING)?
+
+		'scale' '=' scale=Double
+		('use_animation' '=' useAnimation=BOOL)?
+		('cull_distance' '=' cullDistance=Double)?
+		('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?
+	'}'
+;
+
+Animation:
+	'animation' '=' '{'
+		'name' '=' name=STRING
+		'file' '=' file=STRING
+		'defaultAnimationTime' '=' defaultAnimationTime=Number
+	'}'
+;
+
+Pdxmesh:
+	'pdxmesh' '=' '{'
+		'name' '=' name=STRING
+		'file' '=' actorFile=STRING
+		'scale' '=' scale=Double
+		'cull_distance' '=' cullDistance=Double
+	'}'
+;
+
+ArrowType:
+	'arrowType' '=' '{'
+		'name' '=' name=STRING
+		'size' '=' size=Double
+		'textureFile' '=' textureFile=STRING
+		'bodytexture' '=' bodyTexture=STRING
+		'color' '=' color=ColorRatio
+		'colortwo' '=' color2=ColorRatio
+		'endAt' '=' endAt=Double
+		'height' '=' height=Double
+		'type' '=' type=INT
+		'heading' '=' heading=Double
+		'effect' '=' effect=STRING
+	'}'
+;
+
+BitmapFonts:{BitmapFonts}
+	'bitmapfonts' '=' '{'
+		(types+= (BitmapFont))*
+	'}'
+;
+
+BitmapFont:
+	'bitmapfont' '=' '{'
+		'name' '=' name=STRING
+		'fontname' '=' fontName=STRING
+		'color' '=' color=HEX
+		('effect' '=' effect=BOOL)?
+		('colorcodes' '=' '{'
+			colorcodes+= ColorCode+
+		'}')?
+		('color_override' '=' '{'
+			colorcodes+= ColorCode+
+		'}')?
+	'}'
+;
+
+ColorCode:
+	key=ID '=' value=Color
+;

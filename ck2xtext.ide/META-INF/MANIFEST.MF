@@ -11,6 +11,8 @@ Require-Bundle: ck2xtext,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.generic.ide.contentassist.antlr,
- ck2xtext.generic.ide.contentassist.antlr.internal
+ ck2xtext.generic.ide.contentassist.antlr.internal,
+ ck2xtext.gfx.ide.contentassist.antlr.internal,
+ ck2xtext.gfx.ide.contentassist.antlr
 Automatic-Module-Name: ck2xtext.ide
 
