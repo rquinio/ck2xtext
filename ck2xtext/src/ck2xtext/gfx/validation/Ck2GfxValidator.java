@@ -3,6 +3,17 @@
  */
 package ck2xtext.gfx.validation;
 
+import java.io.File;
+
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.validation.Check;
+
+import ck2xtext.gfx.ck2gfx.Ck2gfxPackage;
+import ck2xtext.gfx.ck2gfx.SpriteType;
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +22,53 @@ package ck2xtext.gfx.validation;
  */
 public class Ck2GfxValidator extends AbstractCk2GfxValidator {
 	
-//	public static final INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					Ck2GfxPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
+	public static final String CK2_BASE_DIR = "ck2.base.dir";
+
+	/**
+	 * Works via unit test - validation is relative to a CK2 base directory
+	 */
+	@Check
+	public void check(SpriteType spriteType) {
+		String base = System.getProperty(CK2_BASE_DIR);
+		File textureFile = new File(base + "/" + spriteType.getTextureFile());
+		if(!textureFile.exists()) {
+			String alternateName = getAlternateFileName(spriteType.getTextureFile());
+			File alternateFile = new File(base + "/" + alternateName);
+			if(!alternateFile.exists()) {
+				warning("Neither "+ textureFile.getAbsolutePath() + " nor " + alternateFile.getAbsolutePath() +" files exist", Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
+			}
+		}
+	}
 	
+	/**
+	 * Works via Eclipse plugin - validation is relative to the project
+	 */
+	//@Check
+	public void check2(SpriteType spriteType) {
+		IProject project = getProject(spriteType);
+		IFile textureFile = project.getFile(spriteType.getTextureFile());
+		if(!textureFile.exists()) {
+			String alternateName = getAlternateFileName(spriteType.getTextureFile());
+			IFile alternateFile = project.getFile(alternateName);
+			if(!alternateFile.exists()) {
+				warning("Neither "+ textureFile.getLocationURI().toString() + " nor " + alternateFile.getLocationURI().toString() +" files exist", Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
+			}
+		}
+	}
+
+	private IProject getProject(EObject eObject) {
+		String validatedFileUri = eObject.eResource().getURI().toPlatformString(true);
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(validatedFileUri)).getProject();
+		return project;
+	}
+
+	/**
+	 * Engine support fallback to .tga or .dds
+	 */
+	private String getAlternateFileName(String fileName) {
+		if(fileName.endsWith(".tga")) {
+			return fileName.replace(".tga", ".dds");
+		} 
+		return fileName.replace(".dds", ".tga");
+	}
 }

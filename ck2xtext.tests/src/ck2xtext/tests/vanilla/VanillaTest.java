@@ -9,6 +9,7 @@ import org.eclipse.xtext.testing.validation.ValidationTestHelper;
 
 import com.google.inject.Inject;
 
+import ck2xtext.gfx.validation.Ck2GfxValidator;
 import ck2xtext.tests.util.FileResourceHelper;
 
 public abstract class VanillaTest {
@@ -25,6 +26,7 @@ public abstract class VanillaTest {
 	 * Used for classpath resources validation.
 	 */
 	protected void validate(String path) {
+		System.setProperty(Ck2GfxValidator.CK2_BASE_DIR, new File("src/ck2xtext/tests/vanilla").getAbsolutePath());
 		try {
 			validateTestResource("../../tests/vanilla/" + path);
 		} catch (IOException e) {
@@ -60,6 +62,7 @@ public abstract class VanillaTest {
 	}
 	
 	protected static File[] getFiles(String path, String extension) {
+		System.setProperty(Ck2GfxValidator.CK2_BASE_DIR, Ck2InstalledCondition.getInstallationPath());
 		return getFiles(new File(Ck2InstalledCondition.getInstallationPath() + path), extension);
 	}
 

@@ -2,17 +2,17 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_alerticon_background"
-		texturefile = "gfx\\interface\\alerticon_background.tga"
+		texturefile = "gfx\\interface\\icon.tga"
 	}
 	
 	spriteType = {
 		name = "GFX_alerticon_chains"
-		texturefile = "gfx\\interface\\alerticon_chains.tga"
+		texturefile = "gfx\\interface\\icon.tga"
 	}
 
 	spriteType = {
 		name = "GFX_alerticons"
-		texturefile = "gfx\\interface\\alerticons.tga"
+		texturefile = "gfx\\interface\\icon.tga"
 		noOfFrames = 47
 		loadType = "INGAME"
 	}
@@ -20,14 +20,14 @@ spriteTypes = {
 	spriteType = 
 	{
 		name = "GFX_alerticon_dismiss"
-		texturefile = "gfx\\interface\\alerticon_dismiss.tga"
+		texturefile = "gfx\\interface\\icon.tga"
 		clicksound = generic_click_04
 	}
 	
 	spriteType = 
 	{
 		name = "GFX_alerticon_dismiss_always"
-		texturefile = "gfx\\interface\\alerticon_dismiss_always.tga"
+		texturefile = "gfx\\interface\\icon.tga"
 		clicksound = generic_click_04
 	}
 }

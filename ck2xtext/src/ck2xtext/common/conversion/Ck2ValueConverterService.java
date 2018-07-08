@@ -25,5 +25,10 @@ public class Ck2ValueConverterService extends AbstractDeclarativeValueConverterS
 	public IValueConverter<Integer> HEX() {
 		return new HexadecimalValueConverter();
 	}
+	
+	@ValueConverter(rule = "STRING")
+	public IValueConverter<String> STRING() {
+		return new StringValueConverter();
+	}
 
 }

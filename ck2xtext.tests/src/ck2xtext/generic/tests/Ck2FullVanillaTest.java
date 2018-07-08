@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -40,14 +39,12 @@ public class Ck2FullVanillaTest extends VanillaTest {
 		return Arrays.stream(VanillaTest.getFiles("interface", ".gui"));
 	}
 
-	@Disabled
 	@ParameterizedTest
 	@MethodSource
 	public void validateEvents(File file) throws IOException {
 		validate(file);
 	}
 	
-	@Disabled
 	@ParameterizedTest
 	@MethodSource
 	public void validateDecisions(File file) throws IOException {
@@ -60,14 +57,12 @@ public class Ck2FullVanillaTest extends VanillaTest {
 		validate(file);
 	}
 	
-	@Disabled
 	@ParameterizedTest
 	@MethodSource
 	public void validateInterfaceGfx(File file) throws IOException {
 		validate(file);
 	}
 	
-	@Disabled
 	@ParameterizedTest
 	@MethodSource
 	public void validateInterfaceGui(File file) throws IOException {

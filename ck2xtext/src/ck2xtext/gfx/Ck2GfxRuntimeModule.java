@@ -4,6 +4,8 @@
 package ck2xtext.gfx;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.service.SingletonBinding;
+import org.eclipse.xtext.validation.impl.ConcreteSyntaxEValidator;
 
 import ck2xtext.common.conversion.Ck2ValueConverterService;
 
@@ -18,5 +20,10 @@ public class Ck2GfxRuntimeModule extends AbstractCk2GfxRuntimeModule {
 	@Override
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return Ck2ValueConverterService.class;
+	}
+	
+	@SingletonBinding(eager = true)
+	public Class<? extends ConcreteSyntaxEValidator> bindConcreteSyntaxEValidator() {
+	    return ConcreteSyntaxEValidator.class;
 	}
 }
