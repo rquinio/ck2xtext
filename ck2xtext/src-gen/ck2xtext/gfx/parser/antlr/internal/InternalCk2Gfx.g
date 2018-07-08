@@ -568,493 +568,174 @@ ruleSpriteType returns [EObject current=null]
 }:
 	(
 		(
-			{ 
-			  getUnorderedGroupHelper().enter(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
+			otherlv_0='spriteType'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getSpriteTypeAccess().getSpriteTypeKeyword_0_0());
 			}
+			    |
+			otherlv_1='textSpriteType'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getSpriteTypeAccess().getTextSpriteTypeKeyword_0_1());
+			}
+		)
+		otherlv_2='='
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_1());
+		}
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSpriteTypeAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
 			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+				}
 				(
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 0)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 0);
-				}
-							({true}?=>((
-								otherlv_1='spriteType'
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 0);
+					}
+								({true}?=>(otherlv_5='name'
 								{
-									newLeafNode(otherlv_1, grammarAccess.getSpriteTypeAccess().getSpriteTypeKeyword_0_0_0());
+									newLeafNode(otherlv_5, grammarAccess.getSpriteTypeAccess().getNameKeyword_3_0_0());
 								}
-								    |
-								otherlv_2='textSpriteType'
+								otherlv_6='='
 								{
-									newLeafNode(otherlv_2, grammarAccess.getSpriteTypeAccess().getTextSpriteTypeKeyword_0_0_1());
-								}
-							)
-							otherlv_3='='
-							{
-								newLeafNode(otherlv_3, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_0_1());
-							}
-							otherlv_4='{'
-							{
-								newLeafNode(otherlv_4, grammarAccess.getSpriteTypeAccess().getLeftCurlyBracketKeyword_0_2());
-							}
-							otherlv_5='name'
-							{
-								newLeafNode(otherlv_5, grammarAccess.getSpriteTypeAccess().getNameKeyword_0_3());
-							}
-							otherlv_6='='
-							{
-								newLeafNode(otherlv_6, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_0_4());
-							}
-							(
-								(
-									lv_name_7_0=RULE_STRING
-									{
-										newLeafNode(lv_name_7_0, grammarAccess.getSpriteTypeAccess().getNameSTRINGTerminalRuleCall_0_5_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"name",
-											lv_name_7_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 1)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 1);
-				}
-							({true}?=>(otherlv_8='texturefile'
-							{
-								newLeafNode(otherlv_8, grammarAccess.getSpriteTypeAccess().getTexturefileKeyword_1_0());
-							}
-							otherlv_9='='
-							{
-								newLeafNode(otherlv_9, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_1_1());
-							}
-							(
-								(
-									lv_texturefile_10_0=RULE_STRING
-									{
-										newLeafNode(lv_texturefile_10_0, grammarAccess.getSpriteTypeAccess().getTexturefileSTRINGTerminalRuleCall_1_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"texturefile",
-											lv_texturefile_10_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 2)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 2);
-				}
-							({true}?=>(otherlv_11='textureFile'
-							{
-								newLeafNode(otherlv_11, grammarAccess.getSpriteTypeAccess().getTextureFileKeyword_2_0());
-							}
-							otherlv_12='='
-							{
-								newLeafNode(otherlv_12, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_2_1());
-							}
-							(
-								(
-									lv_texturefile_13_0=RULE_STRING
-									{
-										newLeafNode(lv_texturefile_13_0, grammarAccess.getSpriteTypeAccess().getTexturefileSTRINGTerminalRuleCall_2_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"texturefile",
-											lv_texturefile_13_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 3)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 3);
-				}
-							({true}?=>(otherlv_14='effectFile'
-							{
-								newLeafNode(otherlv_14, grammarAccess.getSpriteTypeAccess().getEffectFileKeyword_3_0());
-							}
-							otherlv_15='='
-							{
-								newLeafNode(otherlv_15, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_1());
-							}
-							(
-								(
-									lv_effectFile_16_0=RULE_STRING
-									{
-										newLeafNode(lv_effectFile_16_0, grammarAccess.getSpriteTypeAccess().getEffectFileSTRINGTerminalRuleCall_3_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"effectFile",
-											lv_effectFile_16_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 4)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 4);
-				}
-							({true}?=>(otherlv_17='allwaystransparent'
-							{
-								newLeafNode(otherlv_17, grammarAccess.getSpriteTypeAccess().getAllwaystransparentKeyword_4_0());
-							}
-							otherlv_18='='
-							{
-								newLeafNode(otherlv_18, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_4_1());
-							}
-							(
-								(
-									lv_allwaysTransparent_19_0=RULE_BOOL
-									{
-										newLeafNode(lv_allwaysTransparent_19_0, grammarAccess.getSpriteTypeAccess().getAllwaysTransparentBOOLTerminalRuleCall_4_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"allwaysTransparent",
-											lv_allwaysTransparent_19_0,
-											"ck2xtext.common.Ck2Terminals.BOOL");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 5)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 5);
-				}
-							({true}?=>(otherlv_20='noOfFrames'
-							{
-								newLeafNode(otherlv_20, grammarAccess.getSpriteTypeAccess().getNoOfFramesKeyword_5_0());
-							}
-							otherlv_21='='
-							{
-								newLeafNode(otherlv_21, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_5_1());
-							}
-							(
-								(
-									lv_noOfFrames_22_0=RULE_INT
-									{
-										newLeafNode(lv_noOfFrames_22_0, grammarAccess.getSpriteTypeAccess().getNoOfFramesINTTerminalRuleCall_5_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"noOfFrames",
-											lv_noOfFrames_22_0,
-											"ck2xtext.common.Ck2Terminals.INT");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 6)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 6);
-				}
-							({true}?=>(otherlv_23='noOfframes'
-							{
-								newLeafNode(otherlv_23, grammarAccess.getSpriteTypeAccess().getNoOfframesKeyword_6_0());
-							}
-							otherlv_24='='
-							{
-								newLeafNode(otherlv_24, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_6_1());
-							}
-							(
-								(
-									lv_noOfFrames_25_0=RULE_INT
-									{
-										newLeafNode(lv_noOfFrames_25_0, grammarAccess.getSpriteTypeAccess().getNoOfFramesINTTerminalRuleCall_6_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"noOfFrames",
-											lv_noOfFrames_25_0,
-											"ck2xtext.common.Ck2Terminals.INT");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 7)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 7);
-				}
-							({true}?=>(otherlv_26='norefcount'
-							{
-								newLeafNode(otherlv_26, grammarAccess.getSpriteTypeAccess().getNorefcountKeyword_7_0());
-							}
-							otherlv_27='='
-							{
-								newLeafNode(otherlv_27, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_7_1());
-							}
-							(
-								(
-									lv_noRefCount_28_0=RULE_BOOL
-									{
-										newLeafNode(lv_noRefCount_28_0, grammarAccess.getSpriteTypeAccess().getNoRefCountBOOLTerminalRuleCall_7_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"noRefCount",
-											lv_noRefCount_28_0,
-											"ck2xtext.common.Ck2Terminals.BOOL");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 8)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 8);
-				}
-							({true}?=>(otherlv_29='noRefCount'
-							{
-								newLeafNode(otherlv_29, grammarAccess.getSpriteTypeAccess().getNoRefCountKeyword_8_0());
-							}
-							otherlv_30='='
-							{
-								newLeafNode(otherlv_30, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_8_1());
-							}
-							(
-								(
-									lv_noRefCount_31_0=RULE_BOOL
-									{
-										newLeafNode(lv_noRefCount_31_0, grammarAccess.getSpriteTypeAccess().getNoRefCountBOOLTerminalRuleCall_8_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"noRefCount",
-											lv_noRefCount_31_0,
-											"ck2xtext.common.Ck2Terminals.BOOL");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 9)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 9);
-				}
-							({true}?=>(otherlv_32='transparencecheck'
-							{
-								newLeafNode(otherlv_32, grammarAccess.getSpriteTypeAccess().getTransparencecheckKeyword_9_0());
-							}
-							otherlv_33='='
-							{
-								newLeafNode(otherlv_33, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_9_1());
-							}
-							(
-								(
-									lv_transparenceCheck_34_0=RULE_BOOL
-									{
-										newLeafNode(lv_transparenceCheck_34_0, grammarAccess.getSpriteTypeAccess().getTransparenceCheckBOOLTerminalRuleCall_9_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"transparenceCheck",
-											lv_transparenceCheck_34_0,
-											"ck2xtext.common.Ck2Terminals.BOOL");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 10)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 10);
-				}
-							({true}?=>(otherlv_35='can_be_lowres'
-							{
-								newLeafNode(otherlv_35, grammarAccess.getSpriteTypeAccess().getCan_be_lowresKeyword_10_0());
-							}
-							otherlv_36='='
-							{
-								newLeafNode(otherlv_36, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_10_1());
-							}
-							(
-								(
-									lv_canBeLowres_37_0=RULE_BOOL
-									{
-										newLeafNode(lv_canBeLowres_37_0, grammarAccess.getSpriteTypeAccess().getCanBeLowresBOOLTerminalRuleCall_10_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"canBeLowres",
-											lv_canBeLowres_37_0,
-											"ck2xtext.common.Ck2Terminals.BOOL");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 11)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 11);
-				}
-							({true}?=>(otherlv_38='clicksound'
-							{
-								newLeafNode(otherlv_38, grammarAccess.getSpriteTypeAccess().getClicksoundKeyword_11_0());
-							}
-							otherlv_39='='
-							{
-								newLeafNode(otherlv_39, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_11_1());
-							}
-							(
-								(
-									lv_clickSound_40_0=RULE_ID
-									{
-										newLeafNode(lv_clickSound_40_0, grammarAccess.getSpriteTypeAccess().getClickSoundIDTerminalRuleCall_11_2_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getSpriteTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"clickSound",
-											lv_clickSound_40_0,
-											"ck2xtext.common.Ck2Terminals.ID");
-									}
-								)
-							)
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-				}
-			)
-		)|
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 12)}?=>(
-				{
-					getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup(), 12);
-				}
-							({true}?=>((
-								otherlv_41='loadType'
-								{
-									newLeafNode(otherlv_41, grammarAccess.getSpriteTypeAccess().getLoadTypeKeyword_12_0_0());
-								}
-								otherlv_42='='
-								{
-									newLeafNode(otherlv_42, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_12_0_1());
+									newLeafNode(otherlv_6, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_0_1());
 								}
 								(
 									(
-										lv_loadType_43_0=RULE_STRING
+										lv_name_7_0=RULE_STRING
 										{
-											newLeafNode(lv_loadType_43_0, grammarAccess.getSpriteTypeAccess().getLoadTypeSTRINGTerminalRuleCall_12_0_2_0());
+											newLeafNode(lv_name_7_0, grammarAccess.getSpriteTypeAccess().getNameSTRINGTerminalRuleCall_3_0_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"name",
+												lv_name_7_0,
+												"ck2xtext.common.Ck2Terminals.STRING");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 1);
+					}
+								({true}?=>((
+									otherlv_8='texturefile'
+									{
+										newLeafNode(otherlv_8, grammarAccess.getSpriteTypeAccess().getTexturefileKeyword_3_1_0_0());
+									}
+									    |
+									otherlv_9='textureFile'
+									{
+										newLeafNode(otherlv_9, grammarAccess.getSpriteTypeAccess().getTextureFileKeyword_3_1_0_1());
+									}
+								)
+								otherlv_10='='
+								{
+									newLeafNode(otherlv_10, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_1_1());
+								}
+								(
+									(
+										lv_textureFile_11_0=RULE_STRING
+										{
+											newLeafNode(lv_textureFile_11_0, grammarAccess.getSpriteTypeAccess().getTextureFileSTRINGTerminalRuleCall_3_1_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"textureFile",
+												lv_textureFile_11_0,
+												"ck2xtext.common.Ck2Terminals.STRING");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 2);
+					}
+								({true}?=>((
+									otherlv_12='noOfFrames'
+									{
+										newLeafNode(otherlv_12, grammarAccess.getSpriteTypeAccess().getNoOfFramesKeyword_3_2_0_0());
+									}
+									    |
+									otherlv_13='noOfframes'
+									{
+										newLeafNode(otherlv_13, grammarAccess.getSpriteTypeAccess().getNoOfframesKeyword_3_2_0_1());
+									}
+								)
+								otherlv_14='='
+								{
+									newLeafNode(otherlv_14, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_2_1());
+								}
+								(
+									(
+										lv_noOfFrames_15_0=RULE_INT
+										{
+											newLeafNode(lv_noOfFrames_15_0, grammarAccess.getSpriteTypeAccess().getNoOfFramesINTTerminalRuleCall_3_2_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"noOfFrames",
+												lv_noOfFrames_15_0,
+												"ck2xtext.common.Ck2Terminals.INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 3);
+					}
+								({true}?=>(otherlv_16='loadType'
+								{
+									newLeafNode(otherlv_16, grammarAccess.getSpriteTypeAccess().getLoadTypeKeyword_3_3_0());
+								}
+								otherlv_17='='
+								{
+									newLeafNode(otherlv_17, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_3_1());
+								}
+								(
+									(
+										lv_loadType_18_0=RULE_STRING
+										{
+											newLeafNode(lv_loadType_18_0, grammarAccess.getSpriteTypeAccess().getLoadTypeSTRINGTerminalRuleCall_3_3_2_0());
 										}
 										{
 											if ($current==null) {
@@ -1063,29 +744,258 @@ ruleSpriteType returns [EObject current=null]
 											setWithLastConsumed(
 												$current,
 												"loadType",
-												lv_loadType_43_0,
+												lv_loadType_18_0,
 												"ck2xtext.common.Ck2Terminals.STRING");
 										}
 									)
 								)
-							)?
-							otherlv_44='}'
-							{
-								newLeafNode(otherlv_44, grammarAccess.getSpriteTypeAccess().getRightCurlyBracketKeyword_12_1());
-							}
-							))
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 4);
+					}
+								({true}?=>(otherlv_19='allwaystransparent'
+								{
+									newLeafNode(otherlv_19, grammarAccess.getSpriteTypeAccess().getAllwaystransparentKeyword_3_4_0());
+								}
+								otherlv_20='='
+								{
+									newLeafNode(otherlv_20, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_4_1());
+								}
+								(
+									(
+										lv_allwaysTransparent_21_0=RULE_BOOL
+										{
+											newLeafNode(lv_allwaysTransparent_21_0, grammarAccess.getSpriteTypeAccess().getAllwaysTransparentBOOLTerminalRuleCall_3_4_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"allwaysTransparent",
+												lv_allwaysTransparent_21_0,
+												"ck2xtext.common.Ck2Terminals.BOOL");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 5);
+					}
+								({true}?=>((
+									otherlv_22='noRefCount'
+									{
+										newLeafNode(otherlv_22, grammarAccess.getSpriteTypeAccess().getNoRefCountKeyword_3_5_0_0());
+									}
+									    |
+									otherlv_23='norefcount'
+									{
+										newLeafNode(otherlv_23, grammarAccess.getSpriteTypeAccess().getNorefcountKeyword_3_5_0_1());
+									}
+								)
+								otherlv_24='='
+								{
+									newLeafNode(otherlv_24, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_5_1());
+								}
+								(
+									(
+										lv_noRefCount_25_0=RULE_BOOL
+										{
+											newLeafNode(lv_noRefCount_25_0, grammarAccess.getSpriteTypeAccess().getNoRefCountBOOLTerminalRuleCall_3_5_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"noRefCount",
+												lv_noRefCount_25_0,
+												"ck2xtext.common.Ck2Terminals.BOOL");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 6);
+					}
+								({true}?=>(otherlv_26='effectFile'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getSpriteTypeAccess().getEffectFileKeyword_3_6_0());
+								}
+								otherlv_27='='
+								{
+									newLeafNode(otherlv_27, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_6_1());
+								}
+								(
+									(
+										lv_effectFile_28_0=RULE_STRING
+										{
+											newLeafNode(lv_effectFile_28_0, grammarAccess.getSpriteTypeAccess().getEffectFileSTRINGTerminalRuleCall_3_6_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"effectFile",
+												lv_effectFile_28_0,
+												"ck2xtext.common.Ck2Terminals.STRING");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 7);
+					}
+								({true}?=>(otherlv_29='transparencecheck'
+								{
+									newLeafNode(otherlv_29, grammarAccess.getSpriteTypeAccess().getTransparencecheckKeyword_3_7_0());
+								}
+								otherlv_30='='
+								{
+									newLeafNode(otherlv_30, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_7_1());
+								}
+								(
+									(
+										lv_transparenceCheck_31_0=RULE_BOOL
+										{
+											newLeafNode(lv_transparenceCheck_31_0, grammarAccess.getSpriteTypeAccess().getTransparenceCheckBOOLTerminalRuleCall_3_7_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"transparenceCheck",
+												lv_transparenceCheck_31_0,
+												"ck2xtext.common.Ck2Terminals.BOOL");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 8)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 8);
+					}
+								({true}?=>(otherlv_32='can_be_lowres'
+								{
+									newLeafNode(otherlv_32, grammarAccess.getSpriteTypeAccess().getCan_be_lowresKeyword_3_8_0());
+								}
+								otherlv_33='='
+								{
+									newLeafNode(otherlv_33, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_8_1());
+								}
+								(
+									(
+										lv_canBeLowres_34_0=RULE_BOOL
+										{
+											newLeafNode(lv_canBeLowres_34_0, grammarAccess.getSpriteTypeAccess().getCanBeLowresBOOLTerminalRuleCall_3_8_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"canBeLowres",
+												lv_canBeLowres_34_0,
+												"ck2xtext.common.Ck2Terminals.BOOL");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 9)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3(), 9);
+					}
+								({true}?=>(otherlv_35='clicksound'
+								{
+									newLeafNode(otherlv_35, grammarAccess.getSpriteTypeAccess().getClicksoundKeyword_3_9_0());
+								}
+								otherlv_36='='
+								{
+									newLeafNode(otherlv_36, grammarAccess.getSpriteTypeAccess().getEqualsSignKeyword_3_9_1());
+								}
+								(
+									(
+										lv_clickSound_37_0=RULE_ID
+										{
+											newLeafNode(lv_clickSound_37_0, grammarAccess.getSpriteTypeAccess().getClickSoundIDTerminalRuleCall_3_9_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getSpriteTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"clickSound",
+												lv_clickSound_37_0,
+												"ck2xtext.common.Ck2Terminals.ID");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
+					}
+				)
+			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3())}?
+				)
+			)
 				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
+				  getUnorderedGroupHelper().leave(grammarAccess.getSpriteTypeAccess().getUnorderedGroup_3());
 				}
-			)
 		)
-				)+
-				{getUnorderedGroupHelper().canLeave(grammarAccess.getSpriteTypeAccess().getUnorderedGroup())}?
-			)
-		)
-			{ 
-			  getUnorderedGroupHelper().leave(grammarAccess.getSpriteTypeAccess().getUnorderedGroup());
-			}
+		otherlv_38='}'
+		{
+			newLeafNode(otherlv_38, grammarAccess.getSpriteTypeAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 
@@ -1420,47 +1330,105 @@ ruleCorneredTileSpriteType returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_15='borderSize'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getCorneredTileSpriteTypeAccess().getBorderSizeKeyword_9());
-		}
-		otherlv_16='='
-		{
-			newLeafNode(otherlv_16, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_10());
-		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCorneredTileSpriteTypeAccess().getBorderSizeCoordinatesParserRuleCall_11_0());
-				}
-				lv_borderSize_17_0=ruleCoordinates
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCorneredTileSpriteTypeRule());
-					}
-					set(
-						$current,
-						"borderSize",
-						lv_borderSize_17_0,
-						"ck2xtext.gfx.Ck2Gfx.Coordinates");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_18='loadType'
+			otherlv_15='borderSize'
 			{
-				newLeafNode(otherlv_18, grammarAccess.getCorneredTileSpriteTypeAccess().getLoadTypeKeyword_12_0());
+				newLeafNode(otherlv_15, grammarAccess.getCorneredTileSpriteTypeAccess().getBorderSizeKeyword_9_0());
 			}
-			otherlv_19='='
+			otherlv_16='='
 			{
-				newLeafNode(otherlv_19, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_12_1());
+				newLeafNode(otherlv_16, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_9_1());
 			}
 			(
 				(
-					lv_loadType_20_0=RULE_STRING
 					{
-						newLeafNode(lv_loadType_20_0, grammarAccess.getCorneredTileSpriteTypeAccess().getLoadTypeSTRINGTerminalRuleCall_12_2_0());
+						newCompositeNode(grammarAccess.getCorneredTileSpriteTypeAccess().getBorderSizeCoordinatesParserRuleCall_9_2_0());
+					}
+					lv_borderSize_17_0=ruleCoordinates
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCorneredTileSpriteTypeRule());
+						}
+						set(
+							$current,
+							"borderSize",
+							lv_borderSize_17_0,
+							"ck2xtext.gfx.Ck2Gfx.Coordinates");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_18='allwaystransparent'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getCorneredTileSpriteTypeAccess().getAllwaystransparentKeyword_10_0());
+			}
+			otherlv_19='='
+			{
+				newLeafNode(otherlv_19, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_10_1());
+			}
+			(
+				(
+					lv_allwaysTransparent_20_0=RULE_BOOL
+					{
+						newLeafNode(lv_allwaysTransparent_20_0, grammarAccess.getCorneredTileSpriteTypeAccess().getAllwaysTransparentBOOLTerminalRuleCall_10_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCorneredTileSpriteTypeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"allwaysTransparent",
+							lv_allwaysTransparent_20_0,
+							"ck2xtext.common.Ck2Terminals.BOOL");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_21='noRefCount'
+			{
+				newLeafNode(otherlv_21, grammarAccess.getCorneredTileSpriteTypeAccess().getNoRefCountKeyword_11_0());
+			}
+			otherlv_22='='
+			{
+				newLeafNode(otherlv_22, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_11_1());
+			}
+			(
+				(
+					lv_noRefCount_23_0=RULE_BOOL
+					{
+						newLeafNode(lv_noRefCount_23_0, grammarAccess.getCorneredTileSpriteTypeAccess().getNoRefCountBOOLTerminalRuleCall_11_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCorneredTileSpriteTypeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"noRefCount",
+							lv_noRefCount_23_0,
+							"ck2xtext.common.Ck2Terminals.BOOL");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_24='loadType'
+			{
+				newLeafNode(otherlv_24, grammarAccess.getCorneredTileSpriteTypeAccess().getLoadTypeKeyword_12_0());
+			}
+			otherlv_25='='
+			{
+				newLeafNode(otherlv_25, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_12_1());
+			}
+			(
+				(
+					lv_loadType_26_0=RULE_STRING
+					{
+						newLeafNode(lv_loadType_26_0, grammarAccess.getCorneredTileSpriteTypeAccess().getLoadTypeSTRINGTerminalRuleCall_12_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1469,26 +1437,26 @@ ruleCorneredTileSpriteType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"loadType",
-							lv_loadType_20_0,
+							lv_loadType_26_0,
 							"ck2xtext.common.Ck2Terminals.STRING");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_21='tilingCenter'
+			otherlv_27='tilingCenter'
 			{
-				newLeafNode(otherlv_21, grammarAccess.getCorneredTileSpriteTypeAccess().getTilingCenterKeyword_13_0());
+				newLeafNode(otherlv_27, grammarAccess.getCorneredTileSpriteTypeAccess().getTilingCenterKeyword_13_0());
 			}
-			otherlv_22='='
+			otherlv_28='='
 			{
-				newLeafNode(otherlv_22, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_13_1());
+				newLeafNode(otherlv_28, grammarAccess.getCorneredTileSpriteTypeAccess().getEqualsSignKeyword_13_1());
 			}
 			(
 				(
-					lv_tilingCenter_23_0=RULE_BOOL
+					lv_tilingCenter_29_0=RULE_BOOL
 					{
-						newLeafNode(lv_tilingCenter_23_0, grammarAccess.getCorneredTileSpriteTypeAccess().getTilingCenterBOOLTerminalRuleCall_13_2_0());
+						newLeafNode(lv_tilingCenter_29_0, grammarAccess.getCorneredTileSpriteTypeAccess().getTilingCenterBOOLTerminalRuleCall_13_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1497,15 +1465,15 @@ ruleCorneredTileSpriteType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"tilingCenter",
-							lv_tilingCenter_23_0,
+							lv_tilingCenter_29_0,
 							"ck2xtext.common.Ck2Terminals.BOOL");
 					}
 				)
 			)
 		)?
-		otherlv_24='}'
+		otherlv_30='}'
 		{
-			newLeafNode(otherlv_24, grammarAccess.getCorneredTileSpriteTypeAccess().getRightCurlyBracketKeyword_14());
+			newLeafNode(otherlv_30, grammarAccess.getCorneredTileSpriteTypeAccess().getRightCurlyBracketKeyword_14());
 		}
 	)
 ;
@@ -1674,74 +1642,109 @@ ruleProgressbarType returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_18='size'
-		{
-			newLeafNode(otherlv_18, grammarAccess.getProgressbarTypeAccess().getSizeKeyword_14());
-		}
-		otherlv_19='='
-		{
-			newLeafNode(otherlv_19, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_15());
-		}
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getProgressbarTypeAccess().getSizeCoordinatesParserRuleCall_16_0());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14());
 				}
-				lv_size_20_0=ruleCoordinates
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getProgressbarTypeRule());
-					}
-					set(
-						$current,
-						"size",
-						lv_size_20_0,
-						"ck2xtext.gfx.Ck2Gfx.Coordinates");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			otherlv_21='horizontal'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getProgressbarTypeAccess().getHorizontalKeyword_17_0());
-			}
-			otherlv_22='='
-			{
-				newLeafNode(otherlv_22, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_17_1());
-			}
-			(
 				(
-					lv_horizontal_23_0=RULE_BOOL
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14(), 0)}?=>(
 					{
-						newLeafNode(lv_horizontal_23_0, grammarAccess.getProgressbarTypeAccess().getHorizontalBOOLTerminalRuleCall_17_2_0());
+						getUnorderedGroupHelper().select(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14(), 0);
 					}
+								({true}?=>(otherlv_19='size'
+								{
+									newLeafNode(otherlv_19, grammarAccess.getProgressbarTypeAccess().getSizeKeyword_14_0_0());
+								}
+								otherlv_20='='
+								{
+									newLeafNode(otherlv_20, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_14_0_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getProgressbarTypeAccess().getSizeCoordinatesParserRuleCall_14_0_2_0());
+										}
+										lv_size_21_0=ruleCoordinates
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getProgressbarTypeRule());
+											}
+											set(
+												$current,
+												"size",
+												lv_size_21_0,
+												"ck2xtext.gfx.Ck2Gfx.Coordinates");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14(), 1)}?=>(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getProgressbarTypeRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"horizontal",
-							lv_horizontal_23_0,
-							"ck2xtext.common.Ck2Terminals.BOOL");
+						getUnorderedGroupHelper().select(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14(), 1);
+					}
+								({true}?=>(otherlv_22='horizontal'
+								{
+									newLeafNode(otherlv_22, grammarAccess.getProgressbarTypeAccess().getHorizontalKeyword_14_1_0());
+								}
+								otherlv_23='='
+								{
+									newLeafNode(otherlv_23, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_14_1_1());
+								}
+								(
+									(
+										lv_horizontal_24_0=RULE_BOOL
+										{
+											newLeafNode(lv_horizontal_24_0, grammarAccess.getProgressbarTypeAccess().getHorizontalBOOLTerminalRuleCall_14_1_2_0());
+										}
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getProgressbarTypeRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"horizontal",
+												lv_horizontal_24_0,
+												"ck2xtext.common.Ck2Terminals.BOOL");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14());
 					}
 				)
 			)
-		)?
-		otherlv_24='effectFile'
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14())}?
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getProgressbarTypeAccess().getUnorderedGroup_14());
+				}
+		)
+		otherlv_25='effectFile'
 		{
-			newLeafNode(otherlv_24, grammarAccess.getProgressbarTypeAccess().getEffectFileKeyword_18());
+			newLeafNode(otherlv_25, grammarAccess.getProgressbarTypeAccess().getEffectFileKeyword_15());
 		}
-		otherlv_25='='
+		otherlv_26='='
 		{
-			newLeafNode(otherlv_25, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_19());
+			newLeafNode(otherlv_26, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_16());
 		}
 		(
 			(
-				lv_effectFile_26_0=RULE_STRING
+				lv_effectFile_27_0=RULE_STRING
 				{
-					newLeafNode(lv_effectFile_26_0, grammarAccess.getProgressbarTypeAccess().getEffectFileSTRINGTerminalRuleCall_20_0());
+					newLeafNode(lv_effectFile_27_0, grammarAccess.getProgressbarTypeAccess().getEffectFileSTRINGTerminalRuleCall_17_0());
 				}
 				{
 					if ($current==null) {
@@ -1750,25 +1753,25 @@ ruleProgressbarType returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"effectFile",
-						lv_effectFile_26_0,
+						lv_effectFile_27_0,
 						"ck2xtext.common.Ck2Terminals.STRING");
 				}
 			)
 		)
 		(
-			otherlv_27='allwaystransparent'
+			otherlv_28='allwaystransparent'
 			{
-				newLeafNode(otherlv_27, grammarAccess.getProgressbarTypeAccess().getAllwaystransparentKeyword_21_0());
+				newLeafNode(otherlv_28, grammarAccess.getProgressbarTypeAccess().getAllwaystransparentKeyword_18_0());
 			}
-			otherlv_28='='
+			otherlv_29='='
 			{
-				newLeafNode(otherlv_28, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_21_1());
+				newLeafNode(otherlv_29, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_18_1());
 			}
 			(
 				(
-					lv_allwaysTransparent_29_0=RULE_BOOL
+					lv_allwaysTransparent_30_0=RULE_BOOL
 					{
-						newLeafNode(lv_allwaysTransparent_29_0, grammarAccess.getProgressbarTypeAccess().getAllwaysTransparentBOOLTerminalRuleCall_21_2_0());
+						newLeafNode(lv_allwaysTransparent_30_0, grammarAccess.getProgressbarTypeAccess().getAllwaysTransparentBOOLTerminalRuleCall_18_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1777,27 +1780,27 @@ ruleProgressbarType returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"allwaysTransparent",
-							lv_allwaysTransparent_29_0,
+							lv_allwaysTransparent_30_0,
 							"ck2xtext.common.Ck2Terminals.BOOL");
 					}
 				)
 			)
 		)?
 		(
-			otherlv_30='maxValue'
+			otherlv_31='maxValue'
 			{
-				newLeafNode(otherlv_30, grammarAccess.getProgressbarTypeAccess().getMaxValueKeyword_22_0());
+				newLeafNode(otherlv_31, grammarAccess.getProgressbarTypeAccess().getMaxValueKeyword_19_0());
 			}
-			otherlv_31='='
+			otherlv_32='='
 			{
-				newLeafNode(otherlv_31, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_22_1());
+				newLeafNode(otherlv_32, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_19_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getProgressbarTypeAccess().getMaxValueNumberParserRuleCall_22_2_0());
+						newCompositeNode(grammarAccess.getProgressbarTypeAccess().getMaxValueNumberParserRuleCall_19_2_0());
 					}
-					lv_maxValue_32_0=ruleNumber
+					lv_maxValue_33_0=ruleNumber
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getProgressbarTypeRule());
@@ -1805,16 +1808,72 @@ ruleProgressbarType returns [EObject current=null]
 						set(
 							$current,
 							"maxValue",
-							lv_maxValue_32_0,
+							lv_maxValue_33_0,
 							"ck2xtext.common.Ck2Terminals.Number");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_33='}'
+		(
+			otherlv_34='loadType'
+			{
+				newLeafNode(otherlv_34, grammarAccess.getProgressbarTypeAccess().getLoadTypeKeyword_20_0());
+			}
+			otherlv_35='='
+			{
+				newLeafNode(otherlv_35, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_20_1());
+			}
+			(
+				(
+					lv_loadType_36_0=RULE_STRING
+					{
+						newLeafNode(lv_loadType_36_0, grammarAccess.getProgressbarTypeAccess().getLoadTypeSTRINGTerminalRuleCall_20_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getProgressbarTypeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"loadType",
+							lv_loadType_36_0,
+							"ck2xtext.common.Ck2Terminals.STRING");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_37='norefcount'
+			{
+				newLeafNode(otherlv_37, grammarAccess.getProgressbarTypeAccess().getNorefcountKeyword_21_0());
+			}
+			otherlv_38='='
+			{
+				newLeafNode(otherlv_38, grammarAccess.getProgressbarTypeAccess().getEqualsSignKeyword_21_1());
+			}
+			(
+				(
+					lv_noRefCount_39_0=RULE_BOOL
+					{
+						newLeafNode(lv_noRefCount_39_0, grammarAccess.getProgressbarTypeAccess().getNoRefCountBOOLTerminalRuleCall_21_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getProgressbarTypeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"noRefCount",
+							lv_noRefCount_39_0,
+							"ck2xtext.common.Ck2Terminals.BOOL");
+					}
+				)
+			)
+		)?
+		otherlv_40='}'
 		{
-			newLeafNode(otherlv_33, grammarAccess.getProgressbarTypeAccess().getRightCurlyBracketKeyword_23());
+			newLeafNode(otherlv_40, grammarAccess.getProgressbarTypeAccess().getRightCurlyBracketKeyword_22());
 		}
 	)
 ;
@@ -2266,9 +2325,37 @@ ruleMaskedShieldType returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_18='}'
+		(
+			otherlv_18='clicksound'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getMaskedShieldTypeAccess().getClicksoundKeyword_16_0());
+			}
+			otherlv_19='='
+			{
+				newLeafNode(otherlv_19, grammarAccess.getMaskedShieldTypeAccess().getEqualsSignKeyword_16_1());
+			}
+			(
+				(
+					lv_clickSound_20_0=RULE_ID
+					{
+						newLeafNode(lv_clickSound_20_0, grammarAccess.getMaskedShieldTypeAccess().getClickSoundIDTerminalRuleCall_16_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMaskedShieldTypeRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"clickSound",
+							lv_clickSound_20_0,
+							"ck2xtext.common.Ck2Terminals.ID");
+					}
+				)
+			)
+		)?
+		otherlv_21='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getMaskedShieldTypeAccess().getRightCurlyBracketKeyword_16());
+			newLeafNode(otherlv_21, grammarAccess.getMaskedShieldTypeAccess().getRightCurlyBracketKeyword_17());
 		}
 	)
 ;
@@ -2797,125 +2884,114 @@ ruleEMFXActorType returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='EMFXActorType'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEMFXActorTypeAccess().getEMFXActorTypeKeyword_0());
+		}
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getEMFXActorTypeAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_3='name'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEMFXActorTypeAccess().getNameKeyword_3());
+		}
+		otherlv_4='='
+		{
+			newLeafNode(otherlv_4, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_4());
+		}
 		(
-			{ 
-			  getUnorderedGroupHelper().enter(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup());
-			}
 			(
-				(
-		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup(), 0)}?=>(
+				lv_name_5_0=RULE_STRING
 				{
-					getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup(), 0);
+					newLeafNode(lv_name_5_0, grammarAccess.getEMFXActorTypeAccess().getNameSTRINGTerminalRuleCall_5_0());
 				}
-							({true}?=>(otherlv_1='EMFXActorType'
-							{
-								newLeafNode(otherlv_1, grammarAccess.getEMFXActorTypeAccess().getEMFXActorTypeKeyword_0_0());
-							}
-							otherlv_2='='
-							{
-								newLeafNode(otherlv_2, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_0_1());
-							}
-							otherlv_3='{'
-							{
-								newLeafNode(otherlv_3, grammarAccess.getEMFXActorTypeAccess().getLeftCurlyBracketKeyword_0_2());
-							}
-							otherlv_4='name'
-							{
-								newLeafNode(otherlv_4, grammarAccess.getEMFXActorTypeAccess().getNameKeyword_0_3());
-							}
-							otherlv_5='='
-							{
-								newLeafNode(otherlv_5, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_0_4());
-							}
-							(
-								(
-									lv_name_6_0=RULE_STRING
-									{
-										newLeafNode(lv_name_6_0, grammarAccess.getEMFXActorTypeAccess().getNameSTRINGTerminalRuleCall_0_5_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getEMFXActorTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"name",
-											lv_name_6_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							otherlv_7='actorfile'
-							{
-								newLeafNode(otherlv_7, grammarAccess.getEMFXActorTypeAccess().getActorfileKeyword_0_6());
-							}
-							otherlv_8='='
-							{
-								newLeafNode(otherlv_8, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_0_7());
-							}
-							(
-								(
-									lv_actorFile_9_0=RULE_STRING
-									{
-										newLeafNode(lv_actorFile_9_0, grammarAccess.getEMFXActorTypeAccess().getActorFileSTRINGTerminalRuleCall_0_8_0());
-									}
-									{
-										if ($current==null) {
-											$current = createModelElement(grammarAccess.getEMFXActorTypeRule());
-										}
-										setWithLastConsumed(
-											$current,
-											"actorFile",
-											lv_actorFile_9_0,
-											"ck2xtext.common.Ck2Terminals.STRING");
-									}
-								)
-							)
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getAnimationAnimationParserRuleCall_0_9_0());
-									}
-									lv_animation_10_0=ruleAnimation
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getEMFXActorTypeRule());
-										}
-										set(
-											$current,
-											"animation",
-											lv_animation_10_0,
-											"ck2xtext.gfx.Ck2Gfx.Animation");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)?
-							))
-				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup());
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEMFXActorTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_5_0,
+						"ck2xtext.common.Ck2Terminals.STRING");
 				}
 			)
-		)|
+		)
+		otherlv_6='actorfile'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getEMFXActorTypeAccess().getActorfileKeyword_6());
+		}
+		otherlv_7='='
+		{
+			newLeafNode(otherlv_7, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_7());
+		}
 		(
-			{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup(), 1)}?=>(
+			(
+				lv_actorFile_8_0=RULE_STRING
 				{
-					getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup(), 1);
+					newLeafNode(lv_actorFile_8_0, grammarAccess.getEMFXActorTypeAccess().getActorFileSTRINGTerminalRuleCall_8_0());
 				}
-							({true}?=>((
-								otherlv_11='idle'
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEMFXActorTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"actorFile",
+						lv_actorFile_8_0,
+						"ck2xtext.common.Ck2Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getAnimationAnimationParserRuleCall_9_0());
+				}
+				lv_animation_9_0=ruleAnimation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEMFXActorTypeRule());
+					}
+					set(
+						$current,
+						"animation",
+						lv_animation_9_0,
+						"ck2xtext.gfx.Ck2Gfx.Animation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+				}
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 0);
+					}
+								({true}?=>(otherlv_11='idle'
 								{
-									newLeafNode(otherlv_11, grammarAccess.getEMFXActorTypeAccess().getIdleKeyword_1_0_0());
+									newLeafNode(otherlv_11, grammarAccess.getEMFXActorTypeAccess().getIdleKeyword_10_0_0());
 								}
 								otherlv_12='='
 								{
-									newLeafNode(otherlv_12, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_0_1());
+									newLeafNode(otherlv_12, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_0_1());
 								}
 								(
 									(
 										lv_idle_13_0=RULE_STRING
 										{
-											newLeafNode(lv_idle_13_0, grammarAccess.getEMFXActorTypeAccess().getIdleSTRINGTerminalRuleCall_1_0_2_0());
+											newLeafNode(lv_idle_13_0, grammarAccess.getEMFXActorTypeAccess().getIdleSTRINGTerminalRuleCall_10_0_2_0());
 										}
 										{
 											if ($current==null) {
@@ -2929,21 +3005,30 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							(
-								otherlv_14='move'
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 1);
+					}
+								({true}?=>(otherlv_14='move'
 								{
-									newLeafNode(otherlv_14, grammarAccess.getEMFXActorTypeAccess().getMoveKeyword_1_1_0());
+									newLeafNode(otherlv_14, grammarAccess.getEMFXActorTypeAccess().getMoveKeyword_10_1_0());
 								}
 								otherlv_15='='
 								{
-									newLeafNode(otherlv_15, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_1_1());
+									newLeafNode(otherlv_15, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_1_1());
 								}
 								(
 									(
 										lv_move_16_0=RULE_STRING
 										{
-											newLeafNode(lv_move_16_0, grammarAccess.getEMFXActorTypeAccess().getMoveSTRINGTerminalRuleCall_1_1_2_0());
+											newLeafNode(lv_move_16_0, grammarAccess.getEMFXActorTypeAccess().getMoveSTRINGTerminalRuleCall_10_1_2_0());
 										}
 										{
 											if ($current==null) {
@@ -2957,21 +3042,30 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							(
-								otherlv_17='attack'
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 2);
+					}
+								({true}?=>(otherlv_17='attack'
 								{
-									newLeafNode(otherlv_17, grammarAccess.getEMFXActorTypeAccess().getAttackKeyword_1_2_0());
+									newLeafNode(otherlv_17, grammarAccess.getEMFXActorTypeAccess().getAttackKeyword_10_2_0());
 								}
 								otherlv_18='='
 								{
-									newLeafNode(otherlv_18, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_2_1());
+									newLeafNode(otherlv_18, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_2_1());
 								}
 								(
 									(
 										lv_attack_19_0=RULE_STRING
 										{
-											newLeafNode(lv_attack_19_0, grammarAccess.getEMFXActorTypeAccess().getAttackSTRINGTerminalRuleCall_1_2_2_0());
+											newLeafNode(lv_attack_19_0, grammarAccess.getEMFXActorTypeAccess().getAttackSTRINGTerminalRuleCall_10_2_2_0());
 										}
 										{
 											if ($current==null) {
@@ -2985,48 +3079,68 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							otherlv_20='scale'
-							{
-								newLeafNode(otherlv_20, grammarAccess.getEMFXActorTypeAccess().getScaleKeyword_1_3());
-							}
-							otherlv_21='='
-							{
-								newLeafNode(otherlv_21, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_4());
-							}
-							(
-								(
-									{
-										newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getScaleDoubleParserRuleCall_1_5_0());
-									}
-									lv_scale_22_0=ruleDouble
-									{
-										if ($current==null) {
-											$current = createModelElementForParent(grammarAccess.getEMFXActorTypeRule());
-										}
-										set(
-											$current,
-											"scale",
-											lv_scale_22_0,
-											"ck2xtext.common.Ck2Terminals.Double");
-										afterParserOrEnumRuleCall();
-									}
-								)
-							)
-							(
-								otherlv_23='use_animation'
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 3)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 3);
+					}
+								({true}?=>(otherlv_20='scale'
 								{
-									newLeafNode(otherlv_23, grammarAccess.getEMFXActorTypeAccess().getUse_animationKeyword_1_6_0());
+									newLeafNode(otherlv_20, grammarAccess.getEMFXActorTypeAccess().getScaleKeyword_10_3_0());
+								}
+								otherlv_21='='
+								{
+									newLeafNode(otherlv_21, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_3_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getScaleDoubleParserRuleCall_10_3_2_0());
+										}
+										lv_scale_22_0=ruleDouble
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getEMFXActorTypeRule());
+											}
+											set(
+												$current,
+												"scale",
+												lv_scale_22_0,
+												"ck2xtext.common.Ck2Terminals.Double");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 4)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 4);
+					}
+								({true}?=>(otherlv_23='use_animation'
+								{
+									newLeafNode(otherlv_23, grammarAccess.getEMFXActorTypeAccess().getUse_animationKeyword_10_4_0());
 								}
 								otherlv_24='='
 								{
-									newLeafNode(otherlv_24, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_6_1());
+									newLeafNode(otherlv_24, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_4_1());
 								}
 								(
 									(
 										lv_useAnimation_25_0=RULE_BOOL
 										{
-											newLeafNode(lv_useAnimation_25_0, grammarAccess.getEMFXActorTypeAccess().getUseAnimationBOOLTerminalRuleCall_1_6_2_0());
+											newLeafNode(lv_useAnimation_25_0, grammarAccess.getEMFXActorTypeAccess().getUseAnimationBOOLTerminalRuleCall_10_4_2_0());
 										}
 										{
 											if ($current==null) {
@@ -3040,20 +3154,29 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							(
-								otherlv_26='cull_distance'
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 5)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 5);
+					}
+								({true}?=>(otherlv_26='cull_distance'
 								{
-									newLeafNode(otherlv_26, grammarAccess.getEMFXActorTypeAccess().getCull_distanceKeyword_1_7_0());
+									newLeafNode(otherlv_26, grammarAccess.getEMFXActorTypeAccess().getCull_distanceKeyword_10_5_0());
 								}
 								otherlv_27='='
 								{
-									newLeafNode(otherlv_27, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_7_1());
+									newLeafNode(otherlv_27, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_5_1());
 								}
 								(
 									(
 										{
-											newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getCullDistanceDoubleParserRuleCall_1_7_2_0());
+											newCompositeNode(grammarAccess.getEMFXActorTypeAccess().getCullDistanceDoubleParserRuleCall_10_5_2_0());
 										}
 										lv_cullDistance_28_0=ruleDouble
 										{
@@ -3069,21 +3192,30 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							(
-								otherlv_29='scale_on_cull_distance'
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 6)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10(), 6);
+					}
+								({true}?=>(otherlv_29='scale_on_cull_distance'
 								{
-									newLeafNode(otherlv_29, grammarAccess.getEMFXActorTypeAccess().getScale_on_cull_distanceKeyword_1_8_0());
+									newLeafNode(otherlv_29, grammarAccess.getEMFXActorTypeAccess().getScale_on_cull_distanceKeyword_10_6_0());
 								}
 								otherlv_30='='
 								{
-									newLeafNode(otherlv_30, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_1_8_1());
+									newLeafNode(otherlv_30, grammarAccess.getEMFXActorTypeAccess().getEqualsSignKeyword_10_6_1());
 								}
 								(
 									(
 										lv_scaleOnCullDistance_31_0=RULE_BOOL
 										{
-											newLeafNode(lv_scaleOnCullDistance_31_0, grammarAccess.getEMFXActorTypeAccess().getScaleOnCullDistanceBOOLTerminalRuleCall_1_8_2_0());
+											newLeafNode(lv_scaleOnCullDistance_31_0, grammarAccess.getEMFXActorTypeAccess().getScaleOnCullDistanceBOOLTerminalRuleCall_10_6_2_0());
 										}
 										{
 											if ($current==null) {
@@ -3097,24 +3229,24 @@ ruleEMFXActorType returns [EObject current=null]
 										}
 									)
 								)
-							)?
-							otherlv_32='}'
-							{
-								newLeafNode(otherlv_32, grammarAccess.getEMFXActorTypeAccess().getRightCurlyBracketKeyword_1_9());
-							}
-							))
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
+					}
+				)
+			)
+					)+
+					{getUnorderedGroupHelper().canLeave(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10())}?
+				)
+			)
 				{ 
-					getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup());
+				  getUnorderedGroupHelper().leave(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup_10());
 				}
-			)
 		)
-				)+
-				{getUnorderedGroupHelper().canLeave(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup())}?
-			)
-		)
-			{ 
-			  getUnorderedGroupHelper().leave(grammarAccess.getEMFXActorTypeAccess().getUnorderedGroup());
-			}
+		otherlv_32='}'
+		{
+			newLeafNode(otherlv_32, grammarAccess.getEMFXActorTypeAccess().getRightCurlyBracketKeyword_11());
+		}
 	)
 ;
 
@@ -3323,9 +3455,9 @@ rulePdxmesh returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPdxmeshAccess().getScaleDoubleParserRuleCall_11_0());
+					newCompositeNode(grammarAccess.getPdxmeshAccess().getScaleNumberParserRuleCall_11_0());
 				}
-				lv_scale_11_0=ruleDouble
+				lv_scale_11_0=ruleNumber
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPdxmeshRule());
@@ -3334,41 +3466,71 @@ rulePdxmesh returns [EObject current=null]
 						$current,
 						"scale",
 						lv_scale_11_0,
-						"ck2xtext.common.Ck2Terminals.Double");
+						"ck2xtext.common.Ck2Terminals.Number");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_12='cull_distance'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getPdxmeshAccess().getCull_distanceKeyword_12());
-		}
-		otherlv_13='='
-		{
-			newLeafNode(otherlv_13, grammarAccess.getPdxmeshAccess().getEqualsSignKeyword_13());
-		}
 		(
+			otherlv_12='cull_distance'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getPdxmeshAccess().getCull_distanceKeyword_12_0());
+			}
+			otherlv_13='='
+			{
+				newLeafNode(otherlv_13, grammarAccess.getPdxmeshAccess().getEqualsSignKeyword_12_1());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getPdxmeshAccess().getCullDistanceDoubleParserRuleCall_14_0());
-				}
-				lv_cullDistance_14_0=ruleDouble
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPdxmeshRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getPdxmeshAccess().getCullDistanceDoubleParserRuleCall_12_2_0());
 					}
-					set(
-						$current,
-						"cullDistance",
-						lv_cullDistance_14_0,
-						"ck2xtext.common.Ck2Terminals.Double");
-					afterParserOrEnumRuleCall();
-				}
+					lv_cullDistance_14_0=ruleDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getPdxmeshRule());
+						}
+						set(
+							$current,
+							"cullDistance",
+							lv_cullDistance_14_0,
+							"ck2xtext.common.Ck2Terminals.Double");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
-		otherlv_15='}'
+		)?
+		(
+			otherlv_15='scale_on_cull_distance'
+			{
+				newLeafNode(otherlv_15, grammarAccess.getPdxmeshAccess().getScale_on_cull_distanceKeyword_13_0());
+			}
+			otherlv_16='='
+			{
+				newLeafNode(otherlv_16, grammarAccess.getPdxmeshAccess().getEqualsSignKeyword_13_1());
+			}
+			(
+				(
+					lv_scaleOnCullDistance_17_0=RULE_BOOL
+					{
+						newLeafNode(lv_scaleOnCullDistance_17_0, grammarAccess.getPdxmeshAccess().getScaleOnCullDistanceBOOLTerminalRuleCall_13_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPdxmeshRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"scaleOnCullDistance",
+							lv_scaleOnCullDistance_17_0,
+							"ck2xtext.common.Ck2Terminals.BOOL");
+					}
+				)
+			)
+		)?
+		otherlv_18='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getPdxmeshAccess().getRightCurlyBracketKeyword_15());
+			newLeafNode(otherlv_18, grammarAccess.getPdxmeshAccess().getRightCurlyBracketKeyword_14());
 		}
 	)
 ;

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#getTextureFile2 <em>Texture File2</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#getClickSound <em>Click Sound</em>}</li>
  * </ul>
  *
  * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getMaskedShieldType()
@@ -156,5 +157,31 @@ public interface MaskedShieldType extends EObject
    * @generated
    */
   void setAllwaysTransparent(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Click Sound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Click Sound</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Click Sound</em>' attribute.
+   * @see #setClickSound(String)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getMaskedShieldType_ClickSound()
+   * @model
+   * @generated
+   */
+  String getClickSound();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#getClickSound <em>Click Sound</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Click Sound</em>' attribute.
+   * @see #getClickSound()
+   * @generated
+   */
+  void setClickSound(String value);
 
 } // MaskedShieldType

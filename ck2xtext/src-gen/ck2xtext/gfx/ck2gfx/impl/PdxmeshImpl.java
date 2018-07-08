@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.PdxmeshImpl#getActorFile <em>Actor File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.PdxmeshImpl#getScale <em>Scale</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.PdxmeshImpl#getCullDistance <em>Cull Distance</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.PdxmeshImpl#isScaleOnCullDistance <em>Scale On Cull Distance</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,6 +111,26 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
    * @ordered
    */
   protected double cullDistance = CULL_DISTANCE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isScaleOnCullDistance() <em>Scale On Cull Distance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isScaleOnCullDistance()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean SCALE_ON_CULL_DISTANCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isScaleOnCullDistance() <em>Scale On Cull Distance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isScaleOnCullDistance()
+   * @generated
+   * @ordered
+   */
+  protected boolean scaleOnCullDistance = SCALE_ON_CULL_DISTANCE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -229,6 +250,29 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isScaleOnCullDistance()
+  {
+    return scaleOnCullDistance;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setScaleOnCullDistance(boolean newScaleOnCullDistance)
+  {
+    boolean oldScaleOnCullDistance = scaleOnCullDistance;
+    scaleOnCullDistance = newScaleOnCullDistance;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.PDXMESH__SCALE_ON_CULL_DISTANCE, oldScaleOnCullDistance, scaleOnCullDistance));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -242,6 +286,8 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
         return getScale();
       case Ck2gfxPackage.PDXMESH__CULL_DISTANCE:
         return getCullDistance();
+      case Ck2gfxPackage.PDXMESH__SCALE_ON_CULL_DISTANCE:
+        return isScaleOnCullDistance();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -267,6 +313,9 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
         return;
       case Ck2gfxPackage.PDXMESH__CULL_DISTANCE:
         setCullDistance((Double)newValue);
+        return;
+      case Ck2gfxPackage.PDXMESH__SCALE_ON_CULL_DISTANCE:
+        setScaleOnCullDistance((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -294,6 +343,9 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
       case Ck2gfxPackage.PDXMESH__CULL_DISTANCE:
         setCullDistance(CULL_DISTANCE_EDEFAULT);
         return;
+      case Ck2gfxPackage.PDXMESH__SCALE_ON_CULL_DISTANCE:
+        setScaleOnCullDistance(SCALE_ON_CULL_DISTANCE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -316,6 +368,8 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
         return scale != SCALE_EDEFAULT;
       case Ck2gfxPackage.PDXMESH__CULL_DISTANCE:
         return cullDistance != CULL_DISTANCE_EDEFAULT;
+      case Ck2gfxPackage.PDXMESH__SCALE_ON_CULL_DISTANCE:
+        return scaleOnCullDistance != SCALE_ON_CULL_DISTANCE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -339,6 +393,8 @@ public class PdxmeshImpl extends MinimalEObjectImpl.Container implements Pdxmesh
     result.append(scale);
     result.append(", cullDistance: ");
     result.append(cullDistance);
+    result.append(", scaleOnCullDistance: ");
+    result.append(scaleOnCullDistance);
     result.append(')');
     return result.toString();
   }

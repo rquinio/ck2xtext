@@ -22,15 +22,15 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getTexturefile <em>Texturefile</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getEffectFile <em>Effect File</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getTextureFile <em>Texture File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getNoOfFrames <em>No Of Frames</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getLoadType <em>Load Type</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#isAllwaysTransparent <em>Allways Transparent</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#isNoRefCount <em>No Ref Count</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#isTransparenceCheck <em>Transparence Check</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#isCanBeLowres <em>Can Be Lowres</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getClickSound <em>Click Sound</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.impl.SpriteTypeImpl#getLoadType <em>Load Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -58,64 +58,24 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTexturefile() <em>Texturefile</em>}' attribute.
+   * The default value of the '{@link #getTextureFile() <em>Texture File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTexturefile()
+   * @see #getTextureFile()
    * @generated
    * @ordered
    */
-  protected static final String TEXTUREFILE_EDEFAULT = null;
+  protected static final String TEXTURE_FILE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTexturefile() <em>Texturefile</em>}' attribute.
+   * The cached value of the '{@link #getTextureFile() <em>Texture File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTexturefile()
+   * @see #getTextureFile()
    * @generated
    * @ordered
    */
-  protected String texturefile = TEXTUREFILE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEffectFile() <em>Effect File</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEffectFile()
-   * @generated
-   * @ordered
-   */
-  protected static final String EFFECT_FILE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEffectFile() <em>Effect File</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEffectFile()
-   * @generated
-   * @ordered
-   */
-  protected String effectFile = EFFECT_FILE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isAllwaysTransparent()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean ALLWAYS_TRANSPARENT_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isAllwaysTransparent()
-   * @generated
-   * @ordered
-   */
-  protected boolean allwaysTransparent = ALLWAYS_TRANSPARENT_EDEFAULT;
+  protected String textureFile = TEXTURE_FILE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNoOfFrames() <em>No Of Frames</em>}' attribute.
@@ -138,6 +98,46 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
   protected int noOfFrames = NO_OF_FRAMES_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoadType()
+   * @generated
+   * @ordered
+   */
+  protected static final String LOAD_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoadType()
+   * @generated
+   * @ordered
+   */
+  protected String loadType = LOAD_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAllwaysTransparent()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ALLWAYS_TRANSPARENT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAllwaysTransparent()
+   * @generated
+   * @ordered
+   */
+  protected boolean allwaysTransparent = ALLWAYS_TRANSPARENT_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isNoRefCount() <em>No Ref Count</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -156,6 +156,26 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
    * @ordered
    */
   protected boolean noRefCount = NO_REF_COUNT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEffectFile() <em>Effect File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEffectFile()
+   * @generated
+   * @ordered
+   */
+  protected static final String EFFECT_FILE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEffectFile() <em>Effect File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEffectFile()
+   * @generated
+   * @ordered
+   */
+  protected String effectFile = EFFECT_FILE_EDEFAULT;
 
   /**
    * The default value of the '{@link #isTransparenceCheck() <em>Transparence Check</em>}' attribute.
@@ -218,26 +238,6 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
   protected String clickSound = CLICK_SOUND_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLoadType()
-   * @generated
-   * @ordered
-   */
-  protected static final String LOAD_TYPE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLoadType()
-   * @generated
-   * @ordered
-   */
-  protected String loadType = LOAD_TYPE_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -286,9 +286,9 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTexturefile()
+  public String getTextureFile()
   {
-    return texturefile;
+    return textureFile;
   }
 
   /**
@@ -296,58 +296,12 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTexturefile(String newTexturefile)
+  public void setTextureFile(String newTextureFile)
   {
-    String oldTexturefile = texturefile;
-    texturefile = newTexturefile;
+    String oldTextureFile = textureFile;
+    textureFile = newTextureFile;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__TEXTUREFILE, oldTexturefile, texturefile));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getEffectFile()
-  {
-    return effectFile;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEffectFile(String newEffectFile)
-  {
-    String oldEffectFile = effectFile;
-    effectFile = newEffectFile;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE, oldEffectFile, effectFile));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isAllwaysTransparent()
-  {
-    return allwaysTransparent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAllwaysTransparent(boolean newAllwaysTransparent)
-  {
-    boolean oldAllwaysTransparent = allwaysTransparent;
-    allwaysTransparent = newAllwaysTransparent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT, oldAllwaysTransparent, allwaysTransparent));
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__TEXTURE_FILE, oldTextureFile, textureFile));
   }
 
   /**
@@ -378,6 +332,52 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getLoadType()
+  {
+    return loadType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLoadType(String newLoadType)
+  {
+    String oldLoadType = loadType;
+    loadType = newLoadType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE, oldLoadType, loadType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isAllwaysTransparent()
+  {
+    return allwaysTransparent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAllwaysTransparent(boolean newAllwaysTransparent)
+  {
+    boolean oldAllwaysTransparent = allwaysTransparent;
+    allwaysTransparent = newAllwaysTransparent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT, oldAllwaysTransparent, allwaysTransparent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isNoRefCount()
   {
     return noRefCount;
@@ -394,6 +394,29 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
     noRefCount = newNoRefCount;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__NO_REF_COUNT, oldNoRefCount, noRefCount));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getEffectFile()
+  {
+    return effectFile;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEffectFile(String newEffectFile)
+  {
+    String oldEffectFile = effectFile;
+    effectFile = newEffectFile;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE, oldEffectFile, effectFile));
   }
 
   /**
@@ -470,29 +493,6 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLoadType()
-  {
-    return loadType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLoadType(String newLoadType)
-  {
-    String oldLoadType = loadType;
-    loadType = newLoadType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE, oldLoadType, loadType));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -500,24 +500,24 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
     {
       case Ck2gfxPackage.SPRITE_TYPE__NAME:
         return getName();
-      case Ck2gfxPackage.SPRITE_TYPE__TEXTUREFILE:
-        return getTexturefile();
-      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
-        return getEffectFile();
-      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
-        return isAllwaysTransparent();
+      case Ck2gfxPackage.SPRITE_TYPE__TEXTURE_FILE:
+        return getTextureFile();
       case Ck2gfxPackage.SPRITE_TYPE__NO_OF_FRAMES:
         return getNoOfFrames();
+      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
+        return getLoadType();
+      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        return isAllwaysTransparent();
       case Ck2gfxPackage.SPRITE_TYPE__NO_REF_COUNT:
         return isNoRefCount();
+      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
+        return getEffectFile();
       case Ck2gfxPackage.SPRITE_TYPE__TRANSPARENCE_CHECK:
         return isTransparenceCheck();
       case Ck2gfxPackage.SPRITE_TYPE__CAN_BE_LOWRES:
         return isCanBeLowres();
       case Ck2gfxPackage.SPRITE_TYPE__CLICK_SOUND:
         return getClickSound();
-      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
-        return getLoadType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -535,20 +535,23 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
       case Ck2gfxPackage.SPRITE_TYPE__NAME:
         setName((String)newValue);
         return;
-      case Ck2gfxPackage.SPRITE_TYPE__TEXTUREFILE:
-        setTexturefile((String)newValue);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
-        setEffectFile((String)newValue);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
-        setAllwaysTransparent((Boolean)newValue);
+      case Ck2gfxPackage.SPRITE_TYPE__TEXTURE_FILE:
+        setTextureFile((String)newValue);
         return;
       case Ck2gfxPackage.SPRITE_TYPE__NO_OF_FRAMES:
         setNoOfFrames((Integer)newValue);
         return;
+      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
+        setLoadType((String)newValue);
+        return;
+      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        setAllwaysTransparent((Boolean)newValue);
+        return;
       case Ck2gfxPackage.SPRITE_TYPE__NO_REF_COUNT:
         setNoRefCount((Boolean)newValue);
+        return;
+      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
+        setEffectFile((String)newValue);
         return;
       case Ck2gfxPackage.SPRITE_TYPE__TRANSPARENCE_CHECK:
         setTransparenceCheck((Boolean)newValue);
@@ -558,9 +561,6 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
         return;
       case Ck2gfxPackage.SPRITE_TYPE__CLICK_SOUND:
         setClickSound((String)newValue);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
-        setLoadType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -579,20 +579,23 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
       case Ck2gfxPackage.SPRITE_TYPE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case Ck2gfxPackage.SPRITE_TYPE__TEXTUREFILE:
-        setTexturefile(TEXTUREFILE_EDEFAULT);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
-        setEffectFile(EFFECT_FILE_EDEFAULT);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
-        setAllwaysTransparent(ALLWAYS_TRANSPARENT_EDEFAULT);
+      case Ck2gfxPackage.SPRITE_TYPE__TEXTURE_FILE:
+        setTextureFile(TEXTURE_FILE_EDEFAULT);
         return;
       case Ck2gfxPackage.SPRITE_TYPE__NO_OF_FRAMES:
         setNoOfFrames(NO_OF_FRAMES_EDEFAULT);
         return;
+      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
+        setLoadType(LOAD_TYPE_EDEFAULT);
+        return;
+      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        setAllwaysTransparent(ALLWAYS_TRANSPARENT_EDEFAULT);
+        return;
       case Ck2gfxPackage.SPRITE_TYPE__NO_REF_COUNT:
         setNoRefCount(NO_REF_COUNT_EDEFAULT);
+        return;
+      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
+        setEffectFile(EFFECT_FILE_EDEFAULT);
         return;
       case Ck2gfxPackage.SPRITE_TYPE__TRANSPARENCE_CHECK:
         setTransparenceCheck(TRANSPARENCE_CHECK_EDEFAULT);
@@ -602,9 +605,6 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
         return;
       case Ck2gfxPackage.SPRITE_TYPE__CLICK_SOUND:
         setClickSound(CLICK_SOUND_EDEFAULT);
-        return;
-      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
-        setLoadType(LOAD_TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -622,24 +622,24 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
     {
       case Ck2gfxPackage.SPRITE_TYPE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Ck2gfxPackage.SPRITE_TYPE__TEXTUREFILE:
-        return TEXTUREFILE_EDEFAULT == null ? texturefile != null : !TEXTUREFILE_EDEFAULT.equals(texturefile);
-      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
-        return EFFECT_FILE_EDEFAULT == null ? effectFile != null : !EFFECT_FILE_EDEFAULT.equals(effectFile);
-      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
-        return allwaysTransparent != ALLWAYS_TRANSPARENT_EDEFAULT;
+      case Ck2gfxPackage.SPRITE_TYPE__TEXTURE_FILE:
+        return TEXTURE_FILE_EDEFAULT == null ? textureFile != null : !TEXTURE_FILE_EDEFAULT.equals(textureFile);
       case Ck2gfxPackage.SPRITE_TYPE__NO_OF_FRAMES:
         return noOfFrames != NO_OF_FRAMES_EDEFAULT;
+      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
+        return LOAD_TYPE_EDEFAULT == null ? loadType != null : !LOAD_TYPE_EDEFAULT.equals(loadType);
+      case Ck2gfxPackage.SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        return allwaysTransparent != ALLWAYS_TRANSPARENT_EDEFAULT;
       case Ck2gfxPackage.SPRITE_TYPE__NO_REF_COUNT:
         return noRefCount != NO_REF_COUNT_EDEFAULT;
+      case Ck2gfxPackage.SPRITE_TYPE__EFFECT_FILE:
+        return EFFECT_FILE_EDEFAULT == null ? effectFile != null : !EFFECT_FILE_EDEFAULT.equals(effectFile);
       case Ck2gfxPackage.SPRITE_TYPE__TRANSPARENCE_CHECK:
         return transparenceCheck != TRANSPARENCE_CHECK_EDEFAULT;
       case Ck2gfxPackage.SPRITE_TYPE__CAN_BE_LOWRES:
         return canBeLowres != CAN_BE_LOWRES_EDEFAULT;
       case Ck2gfxPackage.SPRITE_TYPE__CLICK_SOUND:
         return CLICK_SOUND_EDEFAULT == null ? clickSound != null : !CLICK_SOUND_EDEFAULT.equals(clickSound);
-      case Ck2gfxPackage.SPRITE_TYPE__LOAD_TYPE:
-        return LOAD_TYPE_EDEFAULT == null ? loadType != null : !LOAD_TYPE_EDEFAULT.equals(loadType);
     }
     return super.eIsSet(featureID);
   }
@@ -657,24 +657,24 @@ public class SpriteTypeImpl extends MinimalEObjectImpl.Container implements Spri
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", texturefile: ");
-    result.append(texturefile);
-    result.append(", effectFile: ");
-    result.append(effectFile);
-    result.append(", allwaysTransparent: ");
-    result.append(allwaysTransparent);
+    result.append(", textureFile: ");
+    result.append(textureFile);
     result.append(", noOfFrames: ");
     result.append(noOfFrames);
+    result.append(", loadType: ");
+    result.append(loadType);
+    result.append(", allwaysTransparent: ");
+    result.append(allwaysTransparent);
     result.append(", noRefCount: ");
     result.append(noRefCount);
+    result.append(", effectFile: ");
+    result.append(effectFile);
     result.append(", transparenceCheck: ");
     result.append(transparenceCheck);
     result.append(", canBeLowres: ");
     result.append(canBeLowres);
     result.append(", clickSound: ");
     result.append(clickSound);
-    result.append(", loadType: ");
-    result.append(loadType);
     result.append(')');
     return result.toString();
   }

@@ -23,17 +23,19 @@ public class Ck2GfxSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected Ck2GfxGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_PortraitType___Headgear_that_hides_hairKeyword_18_0_EqualsSignKeyword_18_1_LeftCurlyBracketKeyword_18_2_RightCurlyBracketKeyword_18_4__q;
-	protected AbstractElementAlias match_SpriteType_RightCurlyBracketKeyword_12_1_a;
-	protected AbstractElementAlias match_SpriteType_RightCurlyBracketKeyword_12_1_p;
-	protected AbstractElementAlias match_SpriteType_SpriteTypeKeyword_0_0_0_or_TextSpriteTypeKeyword_0_0_1;
+	protected AbstractElementAlias match_SpriteType_NoOfFramesKeyword_3_2_0_0_or_NoOfframesKeyword_3_2_0_1;
+	protected AbstractElementAlias match_SpriteType_NoRefCountKeyword_3_5_0_0_or_NorefcountKeyword_3_5_0_1;
+	protected AbstractElementAlias match_SpriteType_SpriteTypeKeyword_0_0_or_TextSpriteTypeKeyword_0_1;
+	protected AbstractElementAlias match_SpriteType_TextureFileKeyword_3_1_0_1_or_TexturefileKeyword_3_1_0_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (Ck2GfxGrammarAccess) access;
 		match_PortraitType___Headgear_that_hides_hairKeyword_18_0_EqualsSignKeyword_18_1_LeftCurlyBracketKeyword_18_2_RightCurlyBracketKeyword_18_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPortraitTypeAccess().getHeadgear_that_hides_hairKeyword_18_0()), new TokenAlias(false, false, grammarAccess.getPortraitTypeAccess().getEqualsSignKeyword_18_1()), new TokenAlias(false, false, grammarAccess.getPortraitTypeAccess().getLeftCurlyBracketKeyword_18_2()), new TokenAlias(false, false, grammarAccess.getPortraitTypeAccess().getRightCurlyBracketKeyword_18_4()));
-		match_SpriteType_RightCurlyBracketKeyword_12_1_a = new TokenAlias(true, true, grammarAccess.getSpriteTypeAccess().getRightCurlyBracketKeyword_12_1());
-		match_SpriteType_RightCurlyBracketKeyword_12_1_p = new TokenAlias(true, false, grammarAccess.getSpriteTypeAccess().getRightCurlyBracketKeyword_12_1());
-		match_SpriteType_SpriteTypeKeyword_0_0_0_or_TextSpriteTypeKeyword_0_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getSpriteTypeKeyword_0_0_0()), new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getTextSpriteTypeKeyword_0_0_1()));
+		match_SpriteType_NoOfFramesKeyword_3_2_0_0_or_NoOfframesKeyword_3_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getNoOfFramesKeyword_3_2_0_0()), new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getNoOfframesKeyword_3_2_0_1()));
+		match_SpriteType_NoRefCountKeyword_3_5_0_0_or_NorefcountKeyword_3_5_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getNoRefCountKeyword_3_5_0_0()), new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getNorefcountKeyword_3_5_0_1()));
+		match_SpriteType_SpriteTypeKeyword_0_0_or_TextSpriteTypeKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getSpriteTypeKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getTextSpriteTypeKeyword_0_1()));
+		match_SpriteType_TextureFileKeyword_3_1_0_1_or_TexturefileKeyword_3_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getTextureFileKeyword_3_1_0_1()), new TokenAlias(false, false, grammarAccess.getSpriteTypeAccess().getTexturefileKeyword_3_1_0_0()));
 	}
 	
 	@Override
@@ -50,12 +52,14 @@ public class Ck2GfxSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_PortraitType___Headgear_that_hides_hairKeyword_18_0_EqualsSignKeyword_18_1_LeftCurlyBracketKeyword_18_2_RightCurlyBracketKeyword_18_4__q.equals(syntax))
 				emit_PortraitType___Headgear_that_hides_hairKeyword_18_0_EqualsSignKeyword_18_1_LeftCurlyBracketKeyword_18_2_RightCurlyBracketKeyword_18_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SpriteType_RightCurlyBracketKeyword_12_1_a.equals(syntax))
-				emit_SpriteType_RightCurlyBracketKeyword_12_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SpriteType_RightCurlyBracketKeyword_12_1_p.equals(syntax))
-				emit_SpriteType_RightCurlyBracketKeyword_12_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SpriteType_SpriteTypeKeyword_0_0_0_or_TextSpriteTypeKeyword_0_0_1.equals(syntax))
-				emit_SpriteType_SpriteTypeKeyword_0_0_0_or_TextSpriteTypeKeyword_0_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SpriteType_NoOfFramesKeyword_3_2_0_0_or_NoOfframesKeyword_3_2_0_1.equals(syntax))
+				emit_SpriteType_NoOfFramesKeyword_3_2_0_0_or_NoOfframesKeyword_3_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SpriteType_NoRefCountKeyword_3_5_0_0_or_NorefcountKeyword_3_5_0_1.equals(syntax))
+				emit_SpriteType_NoRefCountKeyword_3_5_0_0_or_NorefcountKeyword_3_5_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SpriteType_SpriteTypeKeyword_0_0_or_TextSpriteTypeKeyword_0_1.equals(syntax))
+				emit_SpriteType_SpriteTypeKeyword_0_0_or_TextSpriteTypeKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SpriteType_TextureFileKeyword_3_1_0_1_or_TexturefileKeyword_3_1_0_0.equals(syntax))
+				emit_SpriteType_TextureFileKeyword_3_1_0_1_or_TexturefileKeyword_3_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -77,176 +81,43 @@ public class Ck2GfxSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '}'*
+	 *     'noOfFrames' | 'noOfframes'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     (rule start) (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     (rule start) (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     (rule start) (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     (rule start) (ambiguity) 'loadType' '=' loadType=STRING
-	 *     (rule start) (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     (rule start) (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     (rule start) (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     (rule start) (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     (rule start) (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     (rule start) (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     (rule start) (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     (rule start) (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     (rule start) (ambiguity) (rule start)
-	 *     allwaysTransparent=BOOL (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     allwaysTransparent=BOOL (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     allwaysTransparent=BOOL (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     allwaysTransparent=BOOL (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     allwaysTransparent=BOOL (ambiguity) 'loadType' '=' loadType=STRING
-	 *     allwaysTransparent=BOOL (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     allwaysTransparent=BOOL (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     allwaysTransparent=BOOL (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     allwaysTransparent=BOOL (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     allwaysTransparent=BOOL (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     allwaysTransparent=BOOL (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     allwaysTransparent=BOOL (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     allwaysTransparent=BOOL (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     allwaysTransparent=BOOL (ambiguity) (rule end)
-	 *     canBeLowres=BOOL (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     canBeLowres=BOOL (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     canBeLowres=BOOL (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     canBeLowres=BOOL (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     canBeLowres=BOOL (ambiguity) 'loadType' '=' loadType=STRING
-	 *     canBeLowres=BOOL (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     canBeLowres=BOOL (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     canBeLowres=BOOL (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     canBeLowres=BOOL (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     canBeLowres=BOOL (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     canBeLowres=BOOL (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     canBeLowres=BOOL (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     canBeLowres=BOOL (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     canBeLowres=BOOL (ambiguity) (rule end)
-	 *     clickSound=ID (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     clickSound=ID (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     clickSound=ID (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     clickSound=ID (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     clickSound=ID (ambiguity) 'loadType' '=' loadType=STRING
-	 *     clickSound=ID (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     clickSound=ID (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     clickSound=ID (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     clickSound=ID (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     clickSound=ID (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     clickSound=ID (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     clickSound=ID (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     clickSound=ID (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     clickSound=ID (ambiguity) (rule end)
-	 *     effectFile=STRING (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     effectFile=STRING (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     effectFile=STRING (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     effectFile=STRING (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     effectFile=STRING (ambiguity) 'loadType' '=' loadType=STRING
-	 *     effectFile=STRING (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     effectFile=STRING (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     effectFile=STRING (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     effectFile=STRING (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     effectFile=STRING (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     effectFile=STRING (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     effectFile=STRING (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     effectFile=STRING (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     effectFile=STRING (ambiguity) (rule end)
-	 *     name=STRING (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     name=STRING (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     name=STRING (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     name=STRING (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     name=STRING (ambiguity) 'loadType' '=' loadType=STRING
-	 *     name=STRING (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     name=STRING (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     name=STRING (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     name=STRING (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     name=STRING (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     name=STRING (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     name=STRING (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     name=STRING (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     name=STRING (ambiguity) (rule end)
-	 *     noOfFrames=INT (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     noOfFrames=INT (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     noOfFrames=INT (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     noOfFrames=INT (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     noOfFrames=INT (ambiguity) 'loadType' '=' loadType=STRING
-	 *     noOfFrames=INT (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     noOfFrames=INT (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     noOfFrames=INT (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     noOfFrames=INT (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     noOfFrames=INT (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     noOfFrames=INT (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     noOfFrames=INT (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     noOfFrames=INT (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     noOfFrames=INT (ambiguity) (rule end)
-	 *     noRefCount=BOOL (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     noRefCount=BOOL (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     noRefCount=BOOL (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     noRefCount=BOOL (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     noRefCount=BOOL (ambiguity) 'loadType' '=' loadType=STRING
-	 *     noRefCount=BOOL (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     noRefCount=BOOL (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     noRefCount=BOOL (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     noRefCount=BOOL (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     noRefCount=BOOL (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     noRefCount=BOOL (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     noRefCount=BOOL (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     noRefCount=BOOL (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     noRefCount=BOOL (ambiguity) (rule end)
-	 *     texturefile=STRING (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     texturefile=STRING (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     texturefile=STRING (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     texturefile=STRING (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     texturefile=STRING (ambiguity) 'loadType' '=' loadType=STRING
-	 *     texturefile=STRING (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     texturefile=STRING (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     texturefile=STRING (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     texturefile=STRING (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     texturefile=STRING (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     texturefile=STRING (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     texturefile=STRING (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     texturefile=STRING (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     texturefile=STRING (ambiguity) (rule end)
-	 *     transparenceCheck=BOOL (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     transparenceCheck=BOOL (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     transparenceCheck=BOOL (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     transparenceCheck=BOOL (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     transparenceCheck=BOOL (ambiguity) 'loadType' '=' loadType=STRING
-	 *     transparenceCheck=BOOL (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     transparenceCheck=BOOL (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     transparenceCheck=BOOL (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     transparenceCheck=BOOL (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     transparenceCheck=BOOL (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     transparenceCheck=BOOL (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     transparenceCheck=BOOL (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     transparenceCheck=BOOL (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     transparenceCheck=BOOL (ambiguity) (rule end)
+	 *     (rule start) ('spriteType' | 'textSpriteType') '=' '{' (ambiguity) '=' noOfFrames=INT
+	 *     allwaysTransparent=BOOL (ambiguity) '=' noOfFrames=INT
+	 *     canBeLowres=BOOL (ambiguity) '=' noOfFrames=INT
+	 *     clickSound=ID (ambiguity) '=' noOfFrames=INT
+	 *     effectFile=STRING (ambiguity) '=' noOfFrames=INT
+	 *     loadType=STRING (ambiguity) '=' noOfFrames=INT
+	 *     name=STRING (ambiguity) '=' noOfFrames=INT
+	 *     noOfFrames=INT (ambiguity) '=' noOfFrames=INT
+	 *     noRefCount=BOOL (ambiguity) '=' noOfFrames=INT
+	 *     textureFile=STRING (ambiguity) '=' noOfFrames=INT
+	 *     transparenceCheck=BOOL (ambiguity) '=' noOfFrames=INT
 	 */
-	protected void emit_SpriteType_RightCurlyBracketKeyword_12_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SpriteType_NoOfFramesKeyword_3_2_0_0_or_NoOfframesKeyword_3_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '}'+
+	 *     'noRefCount' | 'norefcount'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 *     loadType=STRING (ambiguity) 'allwaystransparent' '=' allwaysTransparent=BOOL
-	 *     loadType=STRING (ambiguity) 'can_be_lowres' '=' canBeLowres=BOOL
-	 *     loadType=STRING (ambiguity) 'clicksound' '=' clickSound=ID
-	 *     loadType=STRING (ambiguity) 'effectFile' '=' effectFile=STRING
-	 *     loadType=STRING (ambiguity) 'loadType' '=' loadType=STRING
-	 *     loadType=STRING (ambiguity) 'noOfFrames' '=' noOfFrames=INT
-	 *     loadType=STRING (ambiguity) 'noOfframes' '=' noOfFrames=INT
-	 *     loadType=STRING (ambiguity) 'noRefCount' '=' noRefCount=BOOL
-	 *     loadType=STRING (ambiguity) 'norefcount' '=' noRefCount=BOOL
-	 *     loadType=STRING (ambiguity) 'textureFile' '=' texturefile=STRING
-	 *     loadType=STRING (ambiguity) 'texturefile' '=' texturefile=STRING
-	 *     loadType=STRING (ambiguity) 'transparencecheck' '=' transparenceCheck=BOOL
-	 *     loadType=STRING (ambiguity) ('spriteType' | 'textSpriteType') '=' '{' 'name' '=' name=STRING
-	 *     loadType=STRING (ambiguity) (rule end)
+	 *     (rule start) ('spriteType' | 'textSpriteType') '=' '{' (ambiguity) '=' noRefCount=BOOL
+	 *     allwaysTransparent=BOOL (ambiguity) '=' noRefCount=BOOL
+	 *     canBeLowres=BOOL (ambiguity) '=' noRefCount=BOOL
+	 *     clickSound=ID (ambiguity) '=' noRefCount=BOOL
+	 *     effectFile=STRING (ambiguity) '=' noRefCount=BOOL
+	 *     loadType=STRING (ambiguity) '=' noRefCount=BOOL
+	 *     name=STRING (ambiguity) '=' noRefCount=BOOL
+	 *     noOfFrames=INT (ambiguity) '=' noRefCount=BOOL
+	 *     noRefCount=BOOL (ambiguity) '=' noRefCount=BOOL
+	 *     textureFile=STRING (ambiguity) '=' noRefCount=BOOL
+	 *     transparenceCheck=BOOL (ambiguity) '=' noRefCount=BOOL
 	 */
-	protected void emit_SpriteType_RightCurlyBracketKeyword_12_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SpriteType_NoRefCountKeyword_3_5_0_0_or_NorefcountKeyword_3_5_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -255,19 +126,40 @@ public class Ck2GfxSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'spriteType' | 'textSpriteType'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     allwaysTransparent=BOOL '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     canBeLowres=BOOL '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     clickSound=ID '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     effectFile=STRING '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     loadType=STRING '}'+ (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     name=STRING '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     noOfFrames=INT '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     noRefCount=BOOL '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     texturefile=STRING '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
-	 *     transparenceCheck=BOOL '}'* (ambiguity) '=' '{' 'name' '=' name=STRING
+	 *     (rule start) (ambiguity) '=' '{' 'allwaystransparent' '=' allwaysTransparent=BOOL
+	 *     (rule start) (ambiguity) '=' '{' 'can_be_lowres' '=' canBeLowres=BOOL
+	 *     (rule start) (ambiguity) '=' '{' 'clicksound' '=' clickSound=ID
+	 *     (rule start) (ambiguity) '=' '{' 'effectFile' '=' effectFile=STRING
+	 *     (rule start) (ambiguity) '=' '{' 'loadType' '=' loadType=STRING
+	 *     (rule start) (ambiguity) '=' '{' 'name' '=' name=STRING
+	 *     (rule start) (ambiguity) '=' '{' 'transparencecheck' '=' transparenceCheck=BOOL
+	 *     (rule start) (ambiguity) '=' '{' '}' (rule start)
+	 *     (rule start) (ambiguity) '=' '{' ('noOfFrames' | 'noOfframes') '=' noOfFrames=INT
+	 *     (rule start) (ambiguity) '=' '{' ('noRefCount' | 'norefcount') '=' noRefCount=BOOL
+	 *     (rule start) (ambiguity) '=' '{' ('texturefile' | 'textureFile') '=' textureFile=STRING
 	 */
-	protected void emit_SpriteType_SpriteTypeKeyword_0_0_0_or_TextSpriteTypeKeyword_0_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SpriteType_SpriteTypeKeyword_0_0_or_TextSpriteTypeKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'texturefile' | 'textureFile'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('spriteType' | 'textSpriteType') '=' '{' (ambiguity) '=' textureFile=STRING
+	 *     allwaysTransparent=BOOL (ambiguity) '=' textureFile=STRING
+	 *     canBeLowres=BOOL (ambiguity) '=' textureFile=STRING
+	 *     clickSound=ID (ambiguity) '=' textureFile=STRING
+	 *     effectFile=STRING (ambiguity) '=' textureFile=STRING
+	 *     loadType=STRING (ambiguity) '=' textureFile=STRING
+	 *     name=STRING (ambiguity) '=' textureFile=STRING
+	 *     noOfFrames=INT (ambiguity) '=' textureFile=STRING
+	 *     noRefCount=BOOL (ambiguity) '=' textureFile=STRING
+	 *     textureFile=STRING (ambiguity) '=' textureFile=STRING
+	 *     transparenceCheck=BOOL (ambiguity) '=' textureFile=STRING
+	 */
+	protected void emit_SpriteType_TextureFileKeyword_3_1_0_1_or_TexturefileKeyword_3_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

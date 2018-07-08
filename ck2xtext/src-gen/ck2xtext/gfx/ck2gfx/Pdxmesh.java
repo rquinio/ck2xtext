@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ck2xtext.gfx.ck2gfx.Pdxmesh#getActorFile <em>Actor File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.Pdxmesh#getScale <em>Scale</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.Pdxmesh#getCullDistance <em>Cull Distance</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.Pdxmesh#isScaleOnCullDistance <em>Scale On Cull Distance</em>}</li>
  * </ul>
  *
  * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getPdxmesh()
@@ -129,5 +130,31 @@ public interface Pdxmesh extends EObject
    * @generated
    */
   void setCullDistance(double value);
+
+  /**
+   * Returns the value of the '<em><b>Scale On Cull Distance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Scale On Cull Distance</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Scale On Cull Distance</em>' attribute.
+   * @see #setScaleOnCullDistance(boolean)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getPdxmesh_ScaleOnCullDistance()
+   * @model
+   * @generated
+   */
+  boolean isScaleOnCullDistance();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.Pdxmesh#isScaleOnCullDistance <em>Scale On Cull Distance</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Scale On Cull Distance</em>' attribute.
+   * @see #isScaleOnCullDistance()
+   * @generated
+   */
+  void setScaleOnCullDistance(boolean value);
 
 } // Pdxmesh

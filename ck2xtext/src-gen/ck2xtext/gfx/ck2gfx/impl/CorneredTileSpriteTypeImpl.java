@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#getSize <em>Size</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#getTexturefile <em>Texturefile</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#getBorderSize <em>Border Size</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#isNoRefCount <em>No Ref Count</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#getLoadType <em>Load Type</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.CorneredTileSpriteTypeImpl#isTilingCenter <em>Tiling Center</em>}</li>
  * </ul>
@@ -95,6 +97,46 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
    * @ordered
    */
   protected Coordinates borderSize;
+
+  /**
+   * The default value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAllwaysTransparent()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ALLWAYS_TRANSPARENT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAllwaysTransparent() <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAllwaysTransparent()
+   * @generated
+   * @ordered
+   */
+  protected boolean allwaysTransparent = ALLWAYS_TRANSPARENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isNoRefCount() <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoRefCount()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NO_REF_COUNT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNoRefCount() <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoRefCount()
+   * @generated
+   * @ordered
+   */
+  protected boolean noRefCount = NO_REF_COUNT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
@@ -304,6 +346,52 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isAllwaysTransparent()
+  {
+    return allwaysTransparent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAllwaysTransparent(boolean newAllwaysTransparent)
+  {
+    boolean oldAllwaysTransparent = allwaysTransparent;
+    allwaysTransparent = newAllwaysTransparent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT, oldAllwaysTransparent, allwaysTransparent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isNoRefCount()
+  {
+    return noRefCount;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNoRefCount(boolean newNoRefCount)
+  {
+    boolean oldNoRefCount = noRefCount;
+    noRefCount = newNoRefCount;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT, oldNoRefCount, noRefCount));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getLoadType()
   {
     return loadType;
@@ -381,6 +469,10 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
         return getTexturefile();
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE:
         return getBorderSize();
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        return isAllwaysTransparent();
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT:
+        return isNoRefCount();
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE:
         return getLoadType();
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__TILING_CENTER:
@@ -410,6 +502,12 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
         return;
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE:
         setBorderSize((Coordinates)newValue);
+        return;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        setAllwaysTransparent((Boolean)newValue);
+        return;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT:
+        setNoRefCount((Boolean)newValue);
         return;
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE:
         setLoadType((String)newValue);
@@ -443,6 +541,12 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE:
         setBorderSize((Coordinates)null);
         return;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        setAllwaysTransparent(ALLWAYS_TRANSPARENT_EDEFAULT);
+        return;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT:
+        setNoRefCount(NO_REF_COUNT_EDEFAULT);
+        return;
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE:
         setLoadType(LOAD_TYPE_EDEFAULT);
         return;
@@ -471,6 +575,10 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
         return TEXTUREFILE_EDEFAULT == null ? texturefile != null : !TEXTUREFILE_EDEFAULT.equals(texturefile);
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE:
         return borderSize != null;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT:
+        return allwaysTransparent != ALLWAYS_TRANSPARENT_EDEFAULT;
+      case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT:
+        return noRefCount != NO_REF_COUNT_EDEFAULT;
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE:
         return LOAD_TYPE_EDEFAULT == null ? loadType != null : !LOAD_TYPE_EDEFAULT.equals(loadType);
       case Ck2gfxPackage.CORNERED_TILE_SPRITE_TYPE__TILING_CENTER:
@@ -494,6 +602,10 @@ public class CorneredTileSpriteTypeImpl extends MinimalEObjectImpl.Container imp
     result.append(name);
     result.append(", texturefile: ");
     result.append(texturefile);
+    result.append(", allwaysTransparent: ");
+    result.append(allwaysTransparent);
+    result.append(", noRefCount: ");
+    result.append(noRefCount);
     result.append(", loadType: ");
     result.append(loadType);
     result.append(", tilingCenter: ");

@@ -422,7 +422,9 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         size=Coordinates? 
 	 *         texturefile=STRING? 
 	 *         texturefile=STRING? 
-	 *         borderSize=Coordinates 
+	 *         borderSize=Coordinates? 
+	 *         allwaysTransparent=BOOL? 
+	 *         noRefCount=BOOL? 
 	 *         loadType=STRING? 
 	 *         tilingCenter=BOOL?
 	 *     )
@@ -438,17 +440,19 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *
 	 * Constraint:
 	 *     (
-	 *         (name=STRING actorFile=STRING animation=Animation?) | 
+	 *         name=STRING 
+	 *         actorFile=STRING 
+	 *         animation=Animation? 
 	 *         (
-	 *             idle=STRING? 
-	 *             move=STRING? 
-	 *             attack=STRING? 
-	 *             scale=Double 
-	 *             useAnimation=BOOL? 
-	 *             cullDistance=Double? 
-	 *             scaleOnCullDistance=BOOL?
-	 *         )
-	 *     )+
+	 *             idle=STRING | 
+	 *             move=STRING | 
+	 *             attack=STRING | 
+	 *             scale=Double | 
+	 *             useAnimation=BOOL | 
+	 *             cullDistance=Double | 
+	 *             scaleOnCullDistance=BOOL
+	 *         )*
+	 *     )
 	 */
 	protected void sequence_EMFXActorType(ISerializationContext context, EMFXActorType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,7 +488,14 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MaskedShieldType returns MaskedShieldType
 	 *
 	 * Constraint:
-	 *     (name=STRING textureFile1=STRING textureFile2=STRING effectFile=STRING allwaysTransparent=BOOL?)
+	 *     (
+	 *         name=STRING 
+	 *         textureFile1=STRING 
+	 *         textureFile2=STRING 
+	 *         effectFile=STRING 
+	 *         allwaysTransparent=BOOL? 
+	 *         clickSound=ID?
+	 *     )
 	 */
 	protected void sequence_MaskedShieldType(ISerializationContext context, MaskedShieldType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -520,25 +531,10 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Pdxmesh returns Pdxmesh
 	 *
 	 * Constraint:
-	 *     (name=STRING actorFile=STRING scale=Double cullDistance=Double)
+	 *     (name=STRING actorFile=STRING scale=Number cullDistance=Double? scaleOnCullDistance=BOOL?)
 	 */
 	protected void sequence_Pdxmesh(ISerializationContext context, Pdxmesh semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Ck2gfxPackage.Literals.PDXMESH__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2gfxPackage.Literals.PDXMESH__NAME));
-			if (transientValues.isValueTransient(semanticObject, Ck2gfxPackage.Literals.PDXMESH__ACTOR_FILE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2gfxPackage.Literals.PDXMESH__ACTOR_FILE));
-			if (transientValues.isValueTransient(semanticObject, Ck2gfxPackage.Literals.PDXMESH__SCALE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2gfxPackage.Literals.PDXMESH__SCALE));
-			if (transientValues.isValueTransient(semanticObject, Ck2gfxPackage.Literals.PDXMESH__CULL_DISTANCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ck2gfxPackage.Literals.PDXMESH__CULL_DISTANCE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPdxmeshAccess().getNameSTRINGTerminalRuleCall_5_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getPdxmeshAccess().getActorFileSTRINGTerminalRuleCall_8_0(), semanticObject.getActorFile());
-		feeder.accept(grammarAccess.getPdxmeshAccess().getScaleDoubleParserRuleCall_11_0(), semanticObject.getScale());
-		feeder.accept(grammarAccess.getPdxmeshAccess().getCullDistanceDoubleParserRuleCall_14_0(), semanticObject.getCullDistance());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -574,11 +570,12 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         color2=ColorRatio 
 	 *         textureFile1=STRING? 
 	 *         textureFile2=STRING? 
-	 *         size=Coordinates 
-	 *         horizontal=BOOL? 
+	 *         (size=Coordinates | horizontal=BOOL)* 
 	 *         effectFile=STRING 
 	 *         allwaysTransparent=BOOL? 
-	 *         maxValue=Number?
+	 *         maxValue=Number? 
+	 *         loadType=STRING? 
+	 *         noRefCount=BOOL?
 	 *     )
 	 */
 	protected void sequence_ProgressbarType(ISerializationContext context, ProgressbarType semanticObject) {
@@ -593,19 +590,16 @@ public class Ck2GfxSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Constraint:
 	 *     (
 	 *         name=STRING | 
-	 *         texturefile=STRING | 
-	 *         texturefile=STRING | 
-	 *         effectFile=STRING | 
+	 *         textureFile=STRING | 
+	 *         noOfFrames=INT | 
+	 *         loadType=STRING | 
 	 *         allwaysTransparent=BOOL | 
-	 *         noOfFrames=INT | 
-	 *         noOfFrames=INT | 
 	 *         noRefCount=BOOL | 
-	 *         noRefCount=BOOL | 
+	 *         effectFile=STRING | 
 	 *         transparenceCheck=BOOL | 
 	 *         canBeLowres=BOOL | 
-	 *         clickSound=ID | 
-	 *         loadType=STRING
-	 *     )*
+	 *         clickSound=ID
+	 *     )+
 	 */
 	protected void sequence_SpriteType(ISerializationContext context, SpriteType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

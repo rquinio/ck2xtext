@@ -435,7 +435,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_Texturefile()
+  public EAttribute getSpriteType_TextureFile()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(1);
   }
@@ -445,7 +445,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_EffectFile()
+  public EAttribute getSpriteType_NoOfFrames()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(2);
   }
@@ -455,7 +455,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_AllwaysTransparent()
+  public EAttribute getSpriteType_LoadType()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(3);
   }
@@ -465,7 +465,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_NoOfFrames()
+  public EAttribute getSpriteType_AllwaysTransparent()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(4);
   }
@@ -485,7 +485,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_TransparenceCheck()
+  public EAttribute getSpriteType_EffectFile()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(6);
   }
@@ -495,7 +495,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_CanBeLowres()
+  public EAttribute getSpriteType_TransparenceCheck()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(7);
   }
@@ -505,7 +505,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_ClickSound()
+  public EAttribute getSpriteType_CanBeLowres()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(8);
   }
@@ -515,7 +515,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpriteType_LoadType()
+  public EAttribute getSpriteType_ClickSound()
   {
     return (EAttribute)spriteTypeEClass.getEStructuralFeatures().get(9);
   }
@@ -645,7 +645,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCorneredTileSpriteType_LoadType()
+  public EAttribute getCorneredTileSpriteType_AllwaysTransparent()
   {
     return (EAttribute)corneredTileSpriteTypeEClass.getEStructuralFeatures().get(4);
   }
@@ -655,9 +655,29 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCorneredTileSpriteType_TilingCenter()
+  public EAttribute getCorneredTileSpriteType_NoRefCount()
   {
     return (EAttribute)corneredTileSpriteTypeEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCorneredTileSpriteType_LoadType()
+  {
+    return (EAttribute)corneredTileSpriteTypeEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCorneredTileSpriteType_TilingCenter()
+  {
+    return (EAttribute)corneredTileSpriteTypeEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -768,6 +788,26 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
   public EAttribute getProgressbarType_MaxValue()
   {
     return (EAttribute)progressbarTypeEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProgressbarType_LoadType()
+  {
+    return (EAttribute)progressbarTypeEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProgressbarType_NoRefCount()
+  {
+    return (EAttribute)progressbarTypeEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -918,6 +958,16 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
   public EAttribute getMaskedShieldType_AllwaysTransparent()
   {
     return (EAttribute)maskedShieldTypeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMaskedShieldType_ClickSound()
+  {
+    return (EAttribute)maskedShieldTypeEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1295,6 +1345,16 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPdxmesh_ScaleOnCullDistance()
+  {
+    return (EAttribute)pdxmeshEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getArrowType()
   {
     return arrowTypeEClass;
@@ -1572,15 +1632,15 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
 
     spriteTypeEClass = createEClass(SPRITE_TYPE);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__NAME);
-    createEAttribute(spriteTypeEClass, SPRITE_TYPE__TEXTUREFILE);
-    createEAttribute(spriteTypeEClass, SPRITE_TYPE__EFFECT_FILE);
-    createEAttribute(spriteTypeEClass, SPRITE_TYPE__ALLWAYS_TRANSPARENT);
+    createEAttribute(spriteTypeEClass, SPRITE_TYPE__TEXTURE_FILE);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__NO_OF_FRAMES);
+    createEAttribute(spriteTypeEClass, SPRITE_TYPE__LOAD_TYPE);
+    createEAttribute(spriteTypeEClass, SPRITE_TYPE__ALLWAYS_TRANSPARENT);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__NO_REF_COUNT);
+    createEAttribute(spriteTypeEClass, SPRITE_TYPE__EFFECT_FILE);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__TRANSPARENCE_CHECK);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__CAN_BE_LOWRES);
     createEAttribute(spriteTypeEClass, SPRITE_TYPE__CLICK_SOUND);
-    createEAttribute(spriteTypeEClass, SPRITE_TYPE__LOAD_TYPE);
 
     animatedSpriteTypeEClass = createEClass(ANIMATED_SPRITE_TYPE);
     createEAttribute(animatedSpriteTypeEClass, ANIMATED_SPRITE_TYPE__NAME);
@@ -1595,6 +1655,8 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     createEReference(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__SIZE);
     createEAttribute(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__TEXTUREFILE);
     createEReference(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE);
+    createEAttribute(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT);
+    createEAttribute(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT);
     createEAttribute(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE);
     createEAttribute(corneredTileSpriteTypeEClass, CORNERED_TILE_SPRITE_TYPE__TILING_CENTER);
 
@@ -1609,6 +1671,8 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     createEAttribute(progressbarTypeEClass, PROGRESSBAR_TYPE__EFFECT_FILE);
     createEAttribute(progressbarTypeEClass, PROGRESSBAR_TYPE__ALLWAYS_TRANSPARENT);
     createEAttribute(progressbarTypeEClass, PROGRESSBAR_TYPE__MAX_VALUE);
+    createEAttribute(progressbarTypeEClass, PROGRESSBAR_TYPE__LOAD_TYPE);
+    createEAttribute(progressbarTypeEClass, PROGRESSBAR_TYPE__NO_REF_COUNT);
 
     portraitTypeEClass = createEClass(PORTRAIT_TYPE);
     createEAttribute(portraitTypeEClass, PORTRAIT_TYPE__NAME);
@@ -1626,6 +1690,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     createEAttribute(maskedShieldTypeEClass, MASKED_SHIELD_TYPE__TEXTURE_FILE2);
     createEAttribute(maskedShieldTypeEClass, MASKED_SHIELD_TYPE__EFFECT_FILE);
     createEAttribute(maskedShieldTypeEClass, MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT);
+    createEAttribute(maskedShieldTypeEClass, MASKED_SHIELD_TYPE__CLICK_SOUND);
 
     lineChartTypeEClass = createEClass(LINE_CHART_TYPE);
     createEAttribute(lineChartTypeEClass, LINE_CHART_TYPE__NAME);
@@ -1670,6 +1735,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     createEAttribute(pdxmeshEClass, PDXMESH__ACTOR_FILE);
     createEAttribute(pdxmeshEClass, PDXMESH__SCALE);
     createEAttribute(pdxmeshEClass, PDXMESH__CULL_DISTANCE);
+    createEAttribute(pdxmeshEClass, PDXMESH__SCALE_ON_CULL_DISTANCE);
 
     arrowTypeEClass = createEClass(ARROW_TYPE);
     createEAttribute(arrowTypeEClass, ARROW_TYPE__NAME);
@@ -1752,15 +1818,15 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
 
     initEClass(spriteTypeEClass, SpriteType.class, "SpriteType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpriteType_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSpriteType_Texturefile(), ecorePackage.getEString(), "texturefile", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSpriteType_EffectFile(), ecorePackage.getEString(), "effectFile", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSpriteType_AllwaysTransparent(), ecorePackage.getEBoolean(), "allwaysTransparent", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpriteType_TextureFile(), ecorePackage.getEString(), "textureFile", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpriteType_NoOfFrames(), ecorePackage.getEInt(), "noOfFrames", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpriteType_LoadType(), ecorePackage.getEString(), "loadType", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpriteType_AllwaysTransparent(), ecorePackage.getEBoolean(), "allwaysTransparent", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpriteType_NoRefCount(), ecorePackage.getEBoolean(), "noRefCount", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpriteType_EffectFile(), ecorePackage.getEString(), "effectFile", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpriteType_TransparenceCheck(), ecorePackage.getEBoolean(), "transparenceCheck", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpriteType_CanBeLowres(), ecorePackage.getEBoolean(), "canBeLowres", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpriteType_ClickSound(), ecorePackage.getEString(), "clickSound", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSpriteType_LoadType(), ecorePackage.getEString(), "loadType", null, 0, 1, SpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(animatedSpriteTypeEClass, AnimatedSpriteType.class, "AnimatedSpriteType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAnimatedSpriteType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AnimatedSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1775,6 +1841,8 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     initEReference(getCorneredTileSpriteType_Size(), this.getCoordinates(), null, "size", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCorneredTileSpriteType_Texturefile(), ecorePackage.getEString(), "texturefile", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCorneredTileSpriteType_BorderSize(), this.getCoordinates(), null, "borderSize", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCorneredTileSpriteType_AllwaysTransparent(), ecorePackage.getEBoolean(), "allwaysTransparent", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCorneredTileSpriteType_NoRefCount(), ecorePackage.getEBoolean(), "noRefCount", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCorneredTileSpriteType_LoadType(), ecorePackage.getEString(), "loadType", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCorneredTileSpriteType_TilingCenter(), ecorePackage.getEBoolean(), "tilingCenter", null, 0, 1, CorneredTileSpriteType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1789,6 +1857,8 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     initEAttribute(getProgressbarType_EffectFile(), ecorePackage.getEString(), "effectFile", null, 0, 1, ProgressbarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProgressbarType_AllwaysTransparent(), ecorePackage.getEBoolean(), "allwaysTransparent", null, 0, 1, ProgressbarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProgressbarType_MaxValue(), ecorePackage.getEDouble(), "maxValue", null, 0, 1, ProgressbarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProgressbarType_LoadType(), ecorePackage.getEString(), "loadType", null, 0, 1, ProgressbarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProgressbarType_NoRefCount(), ecorePackage.getEBoolean(), "noRefCount", null, 0, 1, ProgressbarType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portraitTypeEClass, PortraitType.class, "PortraitType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPortraitType_Name(), ecorePackage.getEString(), "name", null, 0, 1, PortraitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1806,6 +1876,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     initEAttribute(getMaskedShieldType_TextureFile2(), ecorePackage.getEString(), "textureFile2", null, 0, 1, MaskedShieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMaskedShieldType_EffectFile(), ecorePackage.getEString(), "effectFile", null, 0, 1, MaskedShieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMaskedShieldType_AllwaysTransparent(), ecorePackage.getEBoolean(), "allwaysTransparent", null, 0, 1, MaskedShieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMaskedShieldType_ClickSound(), ecorePackage.getEString(), "clickSound", null, 0, 1, MaskedShieldType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lineChartTypeEClass, LineChartType.class, "LineChartType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLineChartType_Name(), ecorePackage.getEString(), "name", null, 0, 1, LineChartType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1850,6 +1921,7 @@ public class Ck2gfxPackageImpl extends EPackageImpl implements Ck2gfxPackage
     initEAttribute(getPdxmesh_ActorFile(), ecorePackage.getEString(), "actorFile", null, 0, 1, Pdxmesh.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPdxmesh_Scale(), ecorePackage.getEDouble(), "scale", null, 0, 1, Pdxmesh.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPdxmesh_CullDistance(), ecorePackage.getEDouble(), "cullDistance", null, 0, 1, Pdxmesh.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPdxmesh_ScaleOnCullDistance(), ecorePackage.getEBoolean(), "scaleOnCullDistance", null, 0, 1, Pdxmesh.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(arrowTypeEClass, ArrowType.class, "ArrowType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArrowType_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArrowType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

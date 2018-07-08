@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.MaskedShieldTypeImpl#getTextureFile2 <em>Texture File2</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.MaskedShieldTypeImpl#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.MaskedShieldTypeImpl#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.MaskedShieldTypeImpl#getClickSound <em>Click Sound</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +132,26 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected boolean allwaysTransparent = ALLWAYS_TRANSPARENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClickSound() <em>Click Sound</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClickSound()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLICK_SOUND_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClickSound() <em>Click Sound</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClickSound()
+   * @generated
+   * @ordered
+   */
+  protected String clickSound = CLICK_SOUND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,6 +294,29 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getClickSound()
+  {
+    return clickSound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClickSound(String newClickSound)
+  {
+    String oldClickSound = clickSound;
+    clickSound = newClickSound;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.MASKED_SHIELD_TYPE__CLICK_SOUND, oldClickSound, clickSound));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -288,6 +332,8 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
         return getEffectFile();
       case Ck2gfxPackage.MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT:
         return isAllwaysTransparent();
+      case Ck2gfxPackage.MASKED_SHIELD_TYPE__CLICK_SOUND:
+        return getClickSound();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -316,6 +362,9 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
         return;
       case Ck2gfxPackage.MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT:
         setAllwaysTransparent((Boolean)newValue);
+        return;
+      case Ck2gfxPackage.MASKED_SHIELD_TYPE__CLICK_SOUND:
+        setClickSound((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -346,6 +395,9 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
       case Ck2gfxPackage.MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT:
         setAllwaysTransparent(ALLWAYS_TRANSPARENT_EDEFAULT);
         return;
+      case Ck2gfxPackage.MASKED_SHIELD_TYPE__CLICK_SOUND:
+        setClickSound(CLICK_SOUND_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -370,6 +422,8 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
         return EFFECT_FILE_EDEFAULT == null ? effectFile != null : !EFFECT_FILE_EDEFAULT.equals(effectFile);
       case Ck2gfxPackage.MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT:
         return allwaysTransparent != ALLWAYS_TRANSPARENT_EDEFAULT;
+      case Ck2gfxPackage.MASKED_SHIELD_TYPE__CLICK_SOUND:
+        return CLICK_SOUND_EDEFAULT == null ? clickSound != null : !CLICK_SOUND_EDEFAULT.equals(clickSound);
     }
     return super.eIsSet(featureID);
   }
@@ -395,6 +449,8 @@ public class MaskedShieldTypeImpl extends MinimalEObjectImpl.Container implement
     result.append(effectFile);
     result.append(", allwaysTransparent: ");
     result.append(allwaysTransparent);
+    result.append(", clickSound: ");
+    result.append(clickSound);
     result.append(')');
     return result.toString();
   }

@@ -54,19 +54,18 @@ SpriteTypes:{SpriteTypes}
  */
 SpriteType:
 	('spriteType'|'textSpriteType') '=' '{'
-		'name' '=' name=STRING
-		&('texturefile' '=' texturefile=STRING)?
-		&('textureFile' '=' texturefile=STRING)? // Needs to be optional, as alias
-		&('effectFile' '=' effectFile=STRING)?
-		&('allwaystransparent' '=' allwaysTransparent=BOOL)?
-		&('noOfFrames' '=' noOfFrames=INT)?
-		&('noOfframes' '=' noOfFrames=INT)?
-		&('norefcount' '=' noRefCount=BOOL)?
-		&('noRefCount' '=' noRefCount=BOOL)?
-		&('transparencecheck' '=' transparenceCheck=BOOL)?
-		&('can_be_lowres' '=' canBeLowres=BOOL)?
-		&('clicksound' '=' clickSound=ID)?
-		&('loadType' '=' loadType=STRING)?
+		(
+			'name' '=' name=STRING
+			& ('texturefile'|'textureFile') '=' textureFile=STRING
+			& (('noOfFrames'|'noOfframes') '=' noOfFrames=INT)?
+			& ('loadType' '=' loadType=STRING)?
+			& ('allwaystransparent' '=' allwaysTransparent=BOOL)?
+			& (('noRefCount'|'norefcount') '=' noRefCount=BOOL)?
+			& ('effectFile' '=' effectFile=STRING)?
+			& ('transparencecheck' '=' transparenceCheck=BOOL)?
+			& ('can_be_lowres' '=' canBeLowres=BOOL)?
+			& ('clicksound' '=' clickSound=ID)?
+		)
 	'}'
 ;
 
@@ -87,7 +86,9 @@ CorneredTileSpriteType:
 		('size' '=' size=Coordinates)?
 		('texturefile' '=' texturefile=STRING)?
 		('textureFile' '=' texturefile=STRING)? // Alias, needs to be optional
-		'borderSize' '=' borderSize=Coordinates
+		('borderSize' '=' borderSize=Coordinates)?
+		('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		('noRefCount' '=' noRefCount=BOOL)?
 		('loadType' '=' loadType=STRING)?
 		('tilingCenter' '=' tilingCenter=BOOL)?
 	'}'
@@ -100,11 +101,15 @@ ProgressbarType:
 		'colortwo' '=' color2=ColorRatio
 		('textureFile1' '=' textureFile1=STRING)?
 		('textureFile2' '=' textureFile2=STRING)?
-		'size' '=' size=Coordinates
-		('horizontal' '=' horizontal=BOOL)?
+		(
+			'size' '=' size=Coordinates
+			& ('horizontal' '=' horizontal=BOOL)?
+		)
 		'effectFile' '=' effectFile=STRING
 		('allwaystransparent' '=' allwaysTransparent=BOOL)?
 		('maxValue' '=' maxValue=Number)?
+		('loadType' '=' loadType=STRING)?
+		('norefcount' '=' noRefCount=BOOL)?
 	'}'
 ;
 
@@ -134,6 +139,7 @@ MaskedShieldType:
 		'textureFile2' '=' textureFile2=STRING	
 		'effectFile' '=' effectFile=STRING
 		('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		('clicksound' '=' clickSound=ID)?
 	'}'
 ;
 
@@ -177,14 +183,16 @@ EMFXActorType:
 		
 		(animation=Animation)?
 		
-		&('idle' '=' idle=STRING)?
-		('move' '=' move=STRING)?
-		('attack' '=' attack=STRING)?
+		(
+			('idle' '=' idle=STRING)?
+			&('move' '=' move=STRING)?
+			&('attack' '=' attack=STRING)?
 
-		'scale' '=' scale=Double
-		('use_animation' '=' useAnimation=BOOL)?
-		('cull_distance' '=' cullDistance=Double)?
-		('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?
+			&'scale' '=' scale=Double
+			&('use_animation' '=' useAnimation=BOOL)?
+			&('cull_distance' '=' cullDistance=Double)?
+			&('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?
+		)
 	'}'
 ;
 
@@ -200,8 +208,9 @@ Pdxmesh:
 	'pdxmesh' '=' '{'
 		'name' '=' name=STRING
 		'file' '=' actorFile=STRING
-		'scale' '=' scale=Double
-		'cull_distance' '=' cullDistance=Double
+		'scale' '=' scale=Number
+		('cull_distance' '=' cullDistance=Double)?
+		('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?
 	'}'
 ;
 

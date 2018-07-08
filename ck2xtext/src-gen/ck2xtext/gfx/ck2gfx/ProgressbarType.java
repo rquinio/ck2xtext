@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ck2xtext.gfx.ck2gfx.ProgressbarType#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.ProgressbarType#isAllwaysTransparent <em>Allways Transparent</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.ProgressbarType#getMaxValue <em>Max Value</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.ProgressbarType#getLoadType <em>Load Type</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.ProgressbarType#isNoRefCount <em>No Ref Count</em>}</li>
  * </ul>
  *
  * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getProgressbarType()
@@ -291,5 +293,57 @@ public interface ProgressbarType extends EObject
    * @generated
    */
   void setMaxValue(double value);
+
+  /**
+   * Returns the value of the '<em><b>Load Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Load Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Load Type</em>' attribute.
+   * @see #setLoadType(String)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getProgressbarType_LoadType()
+   * @model
+   * @generated
+   */
+  String getLoadType();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.ProgressbarType#getLoadType <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Load Type</em>' attribute.
+   * @see #getLoadType()
+   * @generated
+   */
+  void setLoadType(String value);
+
+  /**
+   * Returns the value of the '<em><b>No Ref Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>No Ref Count</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>No Ref Count</em>' attribute.
+   * @see #setNoRefCount(boolean)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getProgressbarType_NoRefCount()
+   * @model
+   * @generated
+   */
+  boolean isNoRefCount();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.ProgressbarType#isNoRefCount <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>No Ref Count</em>' attribute.
+   * @see #isNoRefCount()
+   * @generated
+   */
+  void setNoRefCount(boolean value);
 
 } // ProgressbarType

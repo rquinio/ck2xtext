@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl#isAllwaysTransparent <em>Allways Transparent</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl#getMaxValue <em>Max Value</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl#getLoadType <em>Load Type</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl#isNoRefCount <em>No Ref Count</em>}</li>
  * </ul>
  *
  * @generated
@@ -210,6 +212,46 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected double maxValue = MAX_VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoadType()
+   * @generated
+   * @ordered
+   */
+  protected static final String LOAD_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLoadType() <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLoadType()
+   * @generated
+   * @ordered
+   */
+  protected String loadType = LOAD_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isNoRefCount() <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoRefCount()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NO_REF_COUNT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNoRefCount() <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoRefCount()
+   * @generated
+   * @ordered
+   */
+  protected boolean noRefCount = NO_REF_COUNT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -542,6 +584,52 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getLoadType()
+  {
+    return loadType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLoadType(String newLoadType)
+  {
+    String oldLoadType = loadType;
+    loadType = newLoadType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.PROGRESSBAR_TYPE__LOAD_TYPE, oldLoadType, loadType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isNoRefCount()
+  {
+    return noRefCount;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNoRefCount(boolean newNoRefCount)
+  {
+    boolean oldNoRefCount = noRefCount;
+    noRefCount = newNoRefCount;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ck2gfxPackage.PROGRESSBAR_TYPE__NO_REF_COUNT, oldNoRefCount, noRefCount));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -587,6 +675,10 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
         return isAllwaysTransparent();
       case Ck2gfxPackage.PROGRESSBAR_TYPE__MAX_VALUE:
         return getMaxValue();
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__LOAD_TYPE:
+        return getLoadType();
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__NO_REF_COUNT:
+        return isNoRefCount();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -630,6 +722,12 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
         return;
       case Ck2gfxPackage.PROGRESSBAR_TYPE__MAX_VALUE:
         setMaxValue((Double)newValue);
+        return;
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__LOAD_TYPE:
+        setLoadType((String)newValue);
+        return;
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__NO_REF_COUNT:
+        setNoRefCount((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -675,6 +773,12 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
       case Ck2gfxPackage.PROGRESSBAR_TYPE__MAX_VALUE:
         setMaxValue(MAX_VALUE_EDEFAULT);
         return;
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__LOAD_TYPE:
+        setLoadType(LOAD_TYPE_EDEFAULT);
+        return;
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__NO_REF_COUNT:
+        setNoRefCount(NO_REF_COUNT_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -709,6 +813,10 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
         return allwaysTransparent != ALLWAYS_TRANSPARENT_EDEFAULT;
       case Ck2gfxPackage.PROGRESSBAR_TYPE__MAX_VALUE:
         return maxValue != MAX_VALUE_EDEFAULT;
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__LOAD_TYPE:
+        return LOAD_TYPE_EDEFAULT == null ? loadType != null : !LOAD_TYPE_EDEFAULT.equals(loadType);
+      case Ck2gfxPackage.PROGRESSBAR_TYPE__NO_REF_COUNT:
+        return noRefCount != NO_REF_COUNT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -738,6 +846,10 @@ public class ProgressbarTypeImpl extends MinimalEObjectImpl.Container implements
     result.append(allwaysTransparent);
     result.append(", maxValue: ");
     result.append(maxValue);
+    result.append(", loadType: ");
+    result.append(loadType);
+    result.append(", noRefCount: ");
+    result.append(noRefCount);
     result.append(')');
     return result.toString();
   }

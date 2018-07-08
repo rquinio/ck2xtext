@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#getSize <em>Size</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#getTexturefile <em>Texturefile</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#getBorderSize <em>Border Size</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isNoRefCount <em>No Ref Count</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#getLoadType <em>Load Type</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isTilingCenter <em>Tiling Center</em>}</li>
  * </ul>
@@ -131,6 +133,58 @@ public interface CorneredTileSpriteType extends EObject
    * @generated
    */
   void setBorderSize(Coordinates value);
+
+  /**
+   * Returns the value of the '<em><b>Allways Transparent</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Allways Transparent</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Allways Transparent</em>' attribute.
+   * @see #setAllwaysTransparent(boolean)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getCorneredTileSpriteType_AllwaysTransparent()
+   * @model
+   * @generated
+   */
+  boolean isAllwaysTransparent();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isAllwaysTransparent <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Allways Transparent</em>' attribute.
+   * @see #isAllwaysTransparent()
+   * @generated
+   */
+  void setAllwaysTransparent(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>No Ref Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>No Ref Count</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>No Ref Count</em>' attribute.
+   * @see #setNoRefCount(boolean)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getCorneredTileSpriteType_NoRefCount()
+   * @model
+   * @generated
+   */
+  boolean isNoRefCount();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isNoRefCount <em>No Ref Count</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>No Ref Count</em>' attribute.
+   * @see #isNoRefCount()
+   * @generated
+   */
+  void setNoRefCount(boolean value);
 
   /**
    * Returns the value of the '<em><b>Load Type</b></em>' attribute.

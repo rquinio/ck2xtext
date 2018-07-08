@@ -183,6 +183,23 @@ class Ck2GfxParsingTest {
 		validationHelper.assertNoIssues(resource);
 	}
 	
+	def void EMFXActorTypeWithUnordered(){
+		val Resource resource = resourceHelper.resource('''
+			objectTypes = { 
+				EMFXActorType = {
+					name = "westerngfx_tradepost_flag"
+					actorfile = "gfx\models\Settlements\Western\Republic_flag.xac"
+					scale = 0.8f
+					use_animation = yes
+					cull_distance = 300.0f
+					
+					idle   = "gfx\models\Settlements\Western\Flag_anim.xsm"
+				}
+			}''', DEFAULT);
+		
+		validationHelper.assertNoIssues(resource);
+	}
+
 	@Test
 	def void minimalPdxmesh(){
 		val Resource resource = resourceHelper.resource('''

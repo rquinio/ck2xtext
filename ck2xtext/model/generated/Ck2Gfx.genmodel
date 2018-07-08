@@ -28,15 +28,15 @@
     </genClasses>
     <genClasses ecoreClass="Ck2Gfx.ecore#//SpriteType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/texturefile"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/effectFile"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/allwaysTransparent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/textureFile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/noOfFrames"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/loadType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/allwaysTransparent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/noRefCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/effectFile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/transparenceCheck"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/canBeLowres"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/clickSound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//SpriteType/loadType"/>
     </genClasses>
     <genClasses ecoreClass="Ck2Gfx.ecore#//AnimatedSpriteType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//AnimatedSpriteType/name"/>
@@ -51,6 +51,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ck2Gfx.ecore#//CorneredTileSpriteType/size"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//CorneredTileSpriteType/texturefile"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ck2Gfx.ecore#//CorneredTileSpriteType/borderSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//CorneredTileSpriteType/allwaysTransparent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//CorneredTileSpriteType/noRefCount"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//CorneredTileSpriteType/loadType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//CorneredTileSpriteType/tilingCenter"/>
     </genClasses>
@@ -65,6 +67,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ProgressbarType/effectFile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ProgressbarType/allwaysTransparent"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ProgressbarType/maxValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ProgressbarType/loadType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ProgressbarType/noRefCount"/>
     </genClasses>
     <genClasses ecoreClass="Ck2Gfx.ecore#//PortraitType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//PortraitType/name"/>
@@ -82,6 +86,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//MaskedShieldType/textureFile2"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//MaskedShieldType/effectFile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//MaskedShieldType/allwaysTransparent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//MaskedShieldType/clickSound"/>
     </genClasses>
     <genClasses ecoreClass="Ck2Gfx.ecore#//LineChartType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//LineChartType/name"/>
@@ -126,6 +131,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//Pdxmesh/actorFile"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//Pdxmesh/scale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//Pdxmesh/cullDistance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//Pdxmesh/scaleOnCullDistance"/>
     </genClasses>
     <genClasses ecoreClass="Ck2Gfx.ecore#//ArrowType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2Gfx.ecore#//ArrowType/name"/>

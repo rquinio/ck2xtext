@@ -22,12 +22,12 @@ public class Ck2GfxFullVanillaTest extends VanillaTest {
 
 	@Disabled
 	@ParameterizedTest
-	@MethodSource("allGfx")
+	@MethodSource
 	public void validateInterface(File file) throws IOException {
 		validate(file);
 	}
 	
-	static Stream<File> allGfx() {
+	static Stream<File> validateInterface() {
 		return Arrays.stream(VanillaTest.getFiles("interface", ".gfx"));
 	}
 }

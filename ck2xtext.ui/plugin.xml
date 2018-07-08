@@ -677,19 +677,6 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="gfx">
-		</parser>
-	</extension>
-	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
-		<resourceServiceProvider
-			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-			uriExtension="gfx">
-		</resourceServiceProvider>
-	</extension>
-	<extension
-		point="org.eclipse.emf.ecore.extension_parser">
-		<parser
-			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="sfx">
 		</parser>
 	</extension>
@@ -917,10 +904,6 @@
 		</fileTypes>
 		<fileTypes
 			extension="gui"
-			type="text">
-		</fileTypes>
-		<fileTypes
-			extension="gfx"
 			type="text">
 		</fileTypes>
 		<fileTypes

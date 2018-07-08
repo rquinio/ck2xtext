@@ -15,15 +15,15 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getName <em>Name</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getTexturefile <em>Texturefile</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getTextureFile <em>Texture File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getNoOfFrames <em>No Of Frames</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#isNoRefCount <em>No Ref Count</em>}</li>
+ *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#isTransparenceCheck <em>Transparence Check</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#isCanBeLowres <em>Can Be Lowres</em>}</li>
  *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getClickSound <em>Click Sound</em>}</li>
- *   <li>{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}</li>
  * </ul>
  *
  * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType()
@@ -59,82 +59,30 @@ public interface SpriteType extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Texturefile</b></em>' attribute.
+   * Returns the value of the '<em><b>Texture File</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Texturefile</em>' attribute isn't clear,
+   * If the meaning of the '<em>Texture File</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Texturefile</em>' attribute.
-   * @see #setTexturefile(String)
-   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_Texturefile()
+   * @return the value of the '<em>Texture File</em>' attribute.
+   * @see #setTextureFile(String)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_TextureFile()
    * @model
    * @generated
    */
-  String getTexturefile();
+  String getTextureFile();
 
   /**
-   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getTexturefile <em>Texturefile</em>}' attribute.
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getTextureFile <em>Texture File</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Texturefile</em>' attribute.
-   * @see #getTexturefile()
+   * @param value the new value of the '<em>Texture File</em>' attribute.
+   * @see #getTextureFile()
    * @generated
    */
-  void setTexturefile(String value);
-
-  /**
-   * Returns the value of the '<em><b>Effect File</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Effect File</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Effect File</em>' attribute.
-   * @see #setEffectFile(String)
-   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_EffectFile()
-   * @model
-   * @generated
-   */
-  String getEffectFile();
-
-  /**
-   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Effect File</em>' attribute.
-   * @see #getEffectFile()
-   * @generated
-   */
-  void setEffectFile(String value);
-
-  /**
-   * Returns the value of the '<em><b>Allways Transparent</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Allways Transparent</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Allways Transparent</em>' attribute.
-   * @see #setAllwaysTransparent(boolean)
-   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_AllwaysTransparent()
-   * @model
-   * @generated
-   */
-  boolean isAllwaysTransparent();
-
-  /**
-   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Allways Transparent</em>' attribute.
-   * @see #isAllwaysTransparent()
-   * @generated
-   */
-  void setAllwaysTransparent(boolean value);
+  void setTextureFile(String value);
 
   /**
    * Returns the value of the '<em><b>No Of Frames</b></em>' attribute.
@@ -163,6 +111,58 @@ public interface SpriteType extends EObject
   void setNoOfFrames(int value);
 
   /**
+   * Returns the value of the '<em><b>Load Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Load Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Load Type</em>' attribute.
+   * @see #setLoadType(String)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_LoadType()
+   * @model
+   * @generated
+   */
+  String getLoadType();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Load Type</em>' attribute.
+   * @see #getLoadType()
+   * @generated
+   */
+  void setLoadType(String value);
+
+  /**
+   * Returns the value of the '<em><b>Allways Transparent</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Allways Transparent</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Allways Transparent</em>' attribute.
+   * @see #setAllwaysTransparent(boolean)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_AllwaysTransparent()
+   * @model
+   * @generated
+   */
+  boolean isAllwaysTransparent();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Allways Transparent</em>' attribute.
+   * @see #isAllwaysTransparent()
+   * @generated
+   */
+  void setAllwaysTransparent(boolean value);
+
+  /**
    * Returns the value of the '<em><b>No Ref Count</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -187,6 +187,32 @@ public interface SpriteType extends EObject
    * @generated
    */
   void setNoRefCount(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Effect File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Effect File</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Effect File</em>' attribute.
+   * @see #setEffectFile(String)
+   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_EffectFile()
+   * @model
+   * @generated
+   */
+  String getEffectFile();
+
+  /**
+   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Effect File</em>' attribute.
+   * @see #getEffectFile()
+   * @generated
+   */
+  void setEffectFile(String value);
 
   /**
    * Returns the value of the '<em><b>Transparence Check</b></em>' attribute.
@@ -265,31 +291,5 @@ public interface SpriteType extends EObject
    * @generated
    */
   void setClickSound(String value);
-
-  /**
-   * Returns the value of the '<em><b>Load Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Load Type</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Load Type</em>' attribute.
-   * @see #setLoadType(String)
-   * @see ck2xtext.gfx.ck2gfx.Ck2gfxPackage#getSpriteType_LoadType()
-   * @model
-   * @generated
-   */
-  String getLoadType();
-
-  /**
-   * Sets the value of the '{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Load Type</em>' attribute.
-   * @see #getLoadType()
-   * @generated
-   */
-  void setLoadType(String value);
 
 } // SpriteType

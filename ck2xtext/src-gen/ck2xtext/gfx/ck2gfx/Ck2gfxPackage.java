@@ -262,31 +262,13 @@ public interface Ck2gfxPackage extends EPackage
   int SPRITE_TYPE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Texturefile</b></em>' attribute.
+   * The feature id for the '<em><b>Texture File</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPRITE_TYPE__TEXTUREFILE = 1;
-
-  /**
-   * The feature id for the '<em><b>Effect File</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPRITE_TYPE__EFFECT_FILE = 2;
-
-  /**
-   * The feature id for the '<em><b>Allways Transparent</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPRITE_TYPE__ALLWAYS_TRANSPARENT = 3;
+  int SPRITE_TYPE__TEXTURE_FILE = 1;
 
   /**
    * The feature id for the '<em><b>No Of Frames</b></em>' attribute.
@@ -295,7 +277,25 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPRITE_TYPE__NO_OF_FRAMES = 4;
+  int SPRITE_TYPE__NO_OF_FRAMES = 2;
+
+  /**
+   * The feature id for the '<em><b>Load Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE_TYPE__LOAD_TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Allways Transparent</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE_TYPE__ALLWAYS_TRANSPARENT = 4;
 
   /**
    * The feature id for the '<em><b>No Ref Count</b></em>' attribute.
@@ -307,13 +307,22 @@ public interface Ck2gfxPackage extends EPackage
   int SPRITE_TYPE__NO_REF_COUNT = 5;
 
   /**
+   * The feature id for the '<em><b>Effect File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPRITE_TYPE__EFFECT_FILE = 6;
+
+  /**
    * The feature id for the '<em><b>Transparence Check</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPRITE_TYPE__TRANSPARENCE_CHECK = 6;
+  int SPRITE_TYPE__TRANSPARENCE_CHECK = 7;
 
   /**
    * The feature id for the '<em><b>Can Be Lowres</b></em>' attribute.
@@ -322,7 +331,7 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPRITE_TYPE__CAN_BE_LOWRES = 7;
+  int SPRITE_TYPE__CAN_BE_LOWRES = 8;
 
   /**
    * The feature id for the '<em><b>Click Sound</b></em>' attribute.
@@ -331,16 +340,7 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPRITE_TYPE__CLICK_SOUND = 8;
-
-  /**
-   * The feature id for the '<em><b>Load Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPRITE_TYPE__LOAD_TYPE = 9;
+  int SPRITE_TYPE__CLICK_SOUND = 9;
 
   /**
    * The number of structural features of the '<em>Sprite Type</em>' class.
@@ -471,13 +471,31 @@ public interface Ck2gfxPackage extends EPackage
   int CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE = 3;
 
   /**
+   * The feature id for the '<em><b>Allways Transparent</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT = 4;
+
+  /**
+   * The feature id for the '<em><b>No Ref Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT = 5;
+
+  /**
    * The feature id for the '<em><b>Load Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE = 4;
+  int CORNERED_TILE_SPRITE_TYPE__LOAD_TYPE = 6;
 
   /**
    * The feature id for the '<em><b>Tiling Center</b></em>' attribute.
@@ -486,7 +504,7 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CORNERED_TILE_SPRITE_TYPE__TILING_CENTER = 5;
+  int CORNERED_TILE_SPRITE_TYPE__TILING_CENTER = 7;
 
   /**
    * The number of structural features of the '<em>Cornered Tile Sprite Type</em>' class.
@@ -495,7 +513,7 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CORNERED_TILE_SPRITE_TYPE_FEATURE_COUNT = 6;
+  int CORNERED_TILE_SPRITE_TYPE_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link ck2xtext.gfx.ck2gfx.impl.ProgressbarTypeImpl <em>Progressbar Type</em>}' class.
@@ -598,13 +616,31 @@ public interface Ck2gfxPackage extends EPackage
   int PROGRESSBAR_TYPE__MAX_VALUE = 9;
 
   /**
+   * The feature id for the '<em><b>Load Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRESSBAR_TYPE__LOAD_TYPE = 10;
+
+  /**
+   * The feature id for the '<em><b>No Ref Count</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRESSBAR_TYPE__NO_REF_COUNT = 11;
+
+  /**
    * The number of structural features of the '<em>Progressbar Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRESSBAR_TYPE_FEATURE_COUNT = 10;
+  int PROGRESSBAR_TYPE_FEATURE_COUNT = 12;
 
   /**
    * The meta object id for the '{@link ck2xtext.gfx.ck2gfx.impl.PortraitTypeImpl <em>Portrait Type</em>}' class.
@@ -753,13 +789,22 @@ public interface Ck2gfxPackage extends EPackage
   int MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT = 4;
 
   /**
+   * The feature id for the '<em><b>Click Sound</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MASKED_SHIELD_TYPE__CLICK_SOUND = 5;
+
+  /**
    * The number of structural features of the '<em>Masked Shield Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MASKED_SHIELD_TYPE_FEATURE_COUNT = 5;
+  int MASKED_SHIELD_TYPE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link ck2xtext.gfx.ck2gfx.impl.LineChartTypeImpl <em>Line Chart Type</em>}' class.
@@ -1156,13 +1201,22 @@ public interface Ck2gfxPackage extends EPackage
   int PDXMESH__CULL_DISTANCE = 3;
 
   /**
+   * The feature id for the '<em><b>Scale On Cull Distance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PDXMESH__SCALE_ON_CULL_DISTANCE = 4;
+
+  /**
    * The number of structural features of the '<em>Pdxmesh</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PDXMESH_FEATURE_COUNT = 4;
+  int PDXMESH_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link ck2xtext.gfx.ck2gfx.impl.ArrowTypeImpl <em>Arrow Type</em>}' class.
@@ -1594,37 +1648,15 @@ public interface Ck2gfxPackage extends EPackage
   EAttribute getSpriteType_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getTexturefile <em>Texturefile</em>}'.
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getTextureFile <em>Texture File</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Texturefile</em>'.
-   * @see ck2xtext.gfx.ck2gfx.SpriteType#getTexturefile()
+   * @return the meta object for the attribute '<em>Texture File</em>'.
+   * @see ck2xtext.gfx.ck2gfx.SpriteType#getTextureFile()
    * @see #getSpriteType()
    * @generated
    */
-  EAttribute getSpriteType_Texturefile();
-
-  /**
-   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Effect File</em>'.
-   * @see ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile()
-   * @see #getSpriteType()
-   * @generated
-   */
-  EAttribute getSpriteType_EffectFile();
-
-  /**
-   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Allways Transparent</em>'.
-   * @see ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent()
-   * @see #getSpriteType()
-   * @generated
-   */
-  EAttribute getSpriteType_AllwaysTransparent();
+  EAttribute getSpriteType_TextureFile();
 
   /**
    * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getNoOfFrames <em>No Of Frames</em>}'.
@@ -1638,6 +1670,28 @@ public interface Ck2gfxPackage extends EPackage
   EAttribute getSpriteType_NoOfFrames();
 
   /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Load Type</em>'.
+   * @see ck2xtext.gfx.ck2gfx.SpriteType#getLoadType()
+   * @see #getSpriteType()
+   * @generated
+   */
+  EAttribute getSpriteType_LoadType();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent <em>Allways Transparent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Allways Transparent</em>'.
+   * @see ck2xtext.gfx.ck2gfx.SpriteType#isAllwaysTransparent()
+   * @see #getSpriteType()
+   * @generated
+   */
+  EAttribute getSpriteType_AllwaysTransparent();
+
+  /**
    * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#isNoRefCount <em>No Ref Count</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1647,6 +1701,17 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EAttribute getSpriteType_NoRefCount();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile <em>Effect File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Effect File</em>'.
+   * @see ck2xtext.gfx.ck2gfx.SpriteType#getEffectFile()
+   * @see #getSpriteType()
+   * @generated
+   */
+  EAttribute getSpriteType_EffectFile();
 
   /**
    * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#isTransparenceCheck <em>Transparence Check</em>}'.
@@ -1680,17 +1745,6 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EAttribute getSpriteType_ClickSound();
-
-  /**
-   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.SpriteType#getLoadType <em>Load Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Load Type</em>'.
-   * @see ck2xtext.gfx.ck2gfx.SpriteType#getLoadType()
-   * @see #getSpriteType()
-   * @generated
-   */
-  EAttribute getSpriteType_LoadType();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.gfx.ck2gfx.AnimatedSpriteType <em>Animated Sprite Type</em>}'.
@@ -1821,6 +1875,28 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EReference getCorneredTileSpriteType_BorderSize();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isAllwaysTransparent <em>Allways Transparent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Allways Transparent</em>'.
+   * @see ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isAllwaysTransparent()
+   * @see #getCorneredTileSpriteType()
+   * @generated
+   */
+  EAttribute getCorneredTileSpriteType_AllwaysTransparent();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isNoRefCount <em>No Ref Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>No Ref Count</em>'.
+   * @see ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#isNoRefCount()
+   * @see #getCorneredTileSpriteType()
+   * @generated
+   */
+  EAttribute getCorneredTileSpriteType_NoRefCount();
 
   /**
    * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.CorneredTileSpriteType#getLoadType <em>Load Type</em>}'.
@@ -1963,6 +2039,28 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EAttribute getProgressbarType_MaxValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.ProgressbarType#getLoadType <em>Load Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Load Type</em>'.
+   * @see ck2xtext.gfx.ck2gfx.ProgressbarType#getLoadType()
+   * @see #getProgressbarType()
+   * @generated
+   */
+  EAttribute getProgressbarType_LoadType();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.ProgressbarType#isNoRefCount <em>No Ref Count</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>No Ref Count</em>'.
+   * @see ck2xtext.gfx.ck2gfx.ProgressbarType#isNoRefCount()
+   * @see #getProgressbarType()
+   * @generated
+   */
+  EAttribute getProgressbarType_NoRefCount();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.gfx.ck2gfx.PortraitType <em>Portrait Type</em>}'.
@@ -2126,6 +2224,17 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EAttribute getMaskedShieldType_AllwaysTransparent();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.MaskedShieldType#getClickSound <em>Click Sound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Click Sound</em>'.
+   * @see ck2xtext.gfx.ck2gfx.MaskedShieldType#getClickSound()
+   * @see #getMaskedShieldType()
+   * @generated
+   */
+  EAttribute getMaskedShieldType_ClickSound();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.gfx.ck2gfx.LineChartType <em>Line Chart Type</em>}'.
@@ -2526,6 +2635,17 @@ public interface Ck2gfxPackage extends EPackage
    * @generated
    */
   EAttribute getPdxmesh_CullDistance();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.gfx.ck2gfx.Pdxmesh#isScaleOnCullDistance <em>Scale On Cull Distance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Scale On Cull Distance</em>'.
+   * @see ck2xtext.gfx.ck2gfx.Pdxmesh#isScaleOnCullDistance()
+   * @see #getPdxmesh()
+   * @generated
+   */
+  EAttribute getPdxmesh_ScaleOnCullDistance();
 
   /**
    * Returns the meta object for class '{@link ck2xtext.gfx.ck2gfx.ArrowType <em>Arrow Type</em>}'.
@@ -2948,28 +3068,12 @@ public interface Ck2gfxPackage extends EPackage
     EAttribute SPRITE_TYPE__NAME = eINSTANCE.getSpriteType_Name();
 
     /**
-     * The meta object literal for the '<em><b>Texturefile</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Texture File</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SPRITE_TYPE__TEXTUREFILE = eINSTANCE.getSpriteType_Texturefile();
-
-    /**
-     * The meta object literal for the '<em><b>Effect File</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SPRITE_TYPE__EFFECT_FILE = eINSTANCE.getSpriteType_EffectFile();
-
-    /**
-     * The meta object literal for the '<em><b>Allways Transparent</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SPRITE_TYPE__ALLWAYS_TRANSPARENT = eINSTANCE.getSpriteType_AllwaysTransparent();
+    EAttribute SPRITE_TYPE__TEXTURE_FILE = eINSTANCE.getSpriteType_TextureFile();
 
     /**
      * The meta object literal for the '<em><b>No Of Frames</b></em>' attribute feature.
@@ -2980,12 +3084,36 @@ public interface Ck2gfxPackage extends EPackage
     EAttribute SPRITE_TYPE__NO_OF_FRAMES = eINSTANCE.getSpriteType_NoOfFrames();
 
     /**
+     * The meta object literal for the '<em><b>Load Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPRITE_TYPE__LOAD_TYPE = eINSTANCE.getSpriteType_LoadType();
+
+    /**
+     * The meta object literal for the '<em><b>Allways Transparent</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPRITE_TYPE__ALLWAYS_TRANSPARENT = eINSTANCE.getSpriteType_AllwaysTransparent();
+
+    /**
      * The meta object literal for the '<em><b>No Ref Count</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute SPRITE_TYPE__NO_REF_COUNT = eINSTANCE.getSpriteType_NoRefCount();
+
+    /**
+     * The meta object literal for the '<em><b>Effect File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPRITE_TYPE__EFFECT_FILE = eINSTANCE.getSpriteType_EffectFile();
 
     /**
      * The meta object literal for the '<em><b>Transparence Check</b></em>' attribute feature.
@@ -3010,14 +3138,6 @@ public interface Ck2gfxPackage extends EPackage
      * @generated
      */
     EAttribute SPRITE_TYPE__CLICK_SOUND = eINSTANCE.getSpriteType_ClickSound();
-
-    /**
-     * The meta object literal for the '<em><b>Load Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SPRITE_TYPE__LOAD_TYPE = eINSTANCE.getSpriteType_LoadType();
 
     /**
      * The meta object literal for the '{@link ck2xtext.gfx.ck2gfx.impl.AnimatedSpriteTypeImpl <em>Animated Sprite Type</em>}' class.
@@ -3118,6 +3238,22 @@ public interface Ck2gfxPackage extends EPackage
      * @generated
      */
     EReference CORNERED_TILE_SPRITE_TYPE__BORDER_SIZE = eINSTANCE.getCorneredTileSpriteType_BorderSize();
+
+    /**
+     * The meta object literal for the '<em><b>Allways Transparent</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CORNERED_TILE_SPRITE_TYPE__ALLWAYS_TRANSPARENT = eINSTANCE.getCorneredTileSpriteType_AllwaysTransparent();
+
+    /**
+     * The meta object literal for the '<em><b>No Ref Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CORNERED_TILE_SPRITE_TYPE__NO_REF_COUNT = eINSTANCE.getCorneredTileSpriteType_NoRefCount();
 
     /**
      * The meta object literal for the '<em><b>Load Type</b></em>' attribute feature.
@@ -3224,6 +3360,22 @@ public interface Ck2gfxPackage extends EPackage
      * @generated
      */
     EAttribute PROGRESSBAR_TYPE__MAX_VALUE = eINSTANCE.getProgressbarType_MaxValue();
+
+    /**
+     * The meta object literal for the '<em><b>Load Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROGRESSBAR_TYPE__LOAD_TYPE = eINSTANCE.getProgressbarType_LoadType();
+
+    /**
+     * The meta object literal for the '<em><b>No Ref Count</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROGRESSBAR_TYPE__NO_REF_COUNT = eINSTANCE.getProgressbarType_NoRefCount();
 
     /**
      * The meta object literal for the '{@link ck2xtext.gfx.ck2gfx.impl.PortraitTypeImpl <em>Portrait Type</em>}' class.
@@ -3348,6 +3500,14 @@ public interface Ck2gfxPackage extends EPackage
      * @generated
      */
     EAttribute MASKED_SHIELD_TYPE__ALLWAYS_TRANSPARENT = eINSTANCE.getMaskedShieldType_AllwaysTransparent();
+
+    /**
+     * The meta object literal for the '<em><b>Click Sound</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MASKED_SHIELD_TYPE__CLICK_SOUND = eINSTANCE.getMaskedShieldType_ClickSound();
 
     /**
      * The meta object literal for the '{@link ck2xtext.gfx.ck2gfx.impl.LineChartTypeImpl <em>Line Chart Type</em>}' class.
@@ -3658,6 +3818,14 @@ public interface Ck2gfxPackage extends EPackage
      * @generated
      */
     EAttribute PDXMESH__CULL_DISTANCE = eINSTANCE.getPdxmesh_CullDistance();
+
+    /**
+     * The meta object literal for the '<em><b>Scale On Cull Distance</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PDXMESH__SCALE_ON_CULL_DISTANCE = eINSTANCE.getPdxmesh_ScaleOnCullDistance();
 
     /**
      * The meta object literal for the '{@link ck2xtext.gfx.ck2gfx.impl.ArrowTypeImpl <em>Arrow Type</em>}' class.
