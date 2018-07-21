@@ -16,12 +16,12 @@ import ck2xtext.gfx.ck2gfx.Ck2gfxPackage;
 import ck2xtext.gfx.ck2gfx.SpriteType;
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class Ck2GfxValidator extends AbstractCk2GfxValidator {
-	
+
 	public static final String CK2_BASE_DIR = "ck2.base.dir";
 
 	/**
@@ -30,30 +30,38 @@ public class Ck2GfxValidator extends AbstractCk2GfxValidator {
 	@Check
 	public void check(SpriteType spriteType) {
 		String base = System.getProperty(CK2_BASE_DIR);
-		File textureFile = new File(base + "/" + spriteType.getTextureFile());
-		if(!textureFile.exists()) {
-			String alternateName = getAlternateFileName(spriteType.getTextureFile());
-			File alternateFile = new File(base + "/" + alternateName);
-			if(!alternateFile.exists()) {
-				warning("Neither "+ textureFile.getAbsolutePath() + " nor " + alternateFile.getAbsolutePath() +" files exist", Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
+		String textureFilePath = sanitize(spriteType.getTextureFile());
+		File textureFile = new File(base + File.separatorChar + textureFilePath);
+		if (!textureFile.exists()) {
+			String alternateName = getAlternateFileName(textureFilePath);
+			File alternateFile = new File(base + File.separatorChar + alternateName);
+			if (!alternateFile.exists()) {
+				warning("Neither " + textureFile.getAbsolutePath() + " nor " + alternateFile.getAbsolutePath() + " files exist",
+						Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
 			}
 		}
 	}
-	
+
 	/**
 	 * Works via Eclipse plugin - validation is relative to the project
 	 */
-	//@Check
+	// @Check
 	public void check2(SpriteType spriteType) {
 		IProject project = getProject(spriteType);
 		IFile textureFile = project.getFile(spriteType.getTextureFile());
-		if(!textureFile.exists()) {
+		if (!textureFile.exists()) {
 			String alternateName = getAlternateFileName(spriteType.getTextureFile());
 			IFile alternateFile = project.getFile(alternateName);
-			if(!alternateFile.exists()) {
-				warning("Neither "+ textureFile.getLocationURI().toString() + " nor " + alternateFile.getLocationURI().toString() +" files exist", Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
+			if (!alternateFile.exists()) {
+				warning("Neither " + textureFile.getLocationURI().toString() + " nor "
+						+ alternateFile.getLocationURI().toString() + " files exist",
+						Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
 			}
 		}
+	}
+
+	private String sanitize(String path) {
+		return path.replace('\\', File.separatorChar);
 	}
 
 	private IProject getProject(EObject eObject) {
@@ -66,9 +74,9 @@ public class Ck2GfxValidator extends AbstractCk2GfxValidator {
 	 * Engine support fallback to .tga or .dds
 	 */
 	private String getAlternateFileName(String fileName) {
-		if(fileName.endsWith(".tga")) {
+		if (fileName.endsWith(".tga")) {
 			return fileName.replace(".tga", ".dds");
-		} 
+		}
 		return fileName.replace(".dds", ".tga");
 	}
 }

@@ -215,8 +215,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SpriteTypes:
-		//	{SpriteTypes} 'spriteTypes' '=' '{' types+=(SpriteType | AnimatedSpriteType | CorneredTileSpriteType |
-		//	ProgressbarType | CoatOfArmsType | PortraitType | MaskedShieldType | LineChartType)* '}';
+		//	{SpriteTypes}
+		//	'spriteTypes' '=' '{'
+		//	types+=(SpriteType
+		//	| AnimatedSpriteType
+		//	| CorneredTileSpriteType
+		//	| ProgressbarType
+		//	| CoatOfArmsType
+		//	| PortraitType
+		//	| MaskedShieldType
+		//	| LineChartType)*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{SpriteTypes} 'spriteTypes' '=' '{' types+=(SpriteType | AnimatedSpriteType | CorneredTileSpriteType | ProgressbarType |
@@ -340,11 +349,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		///*
 		// * A sprite is composed by 1 or many frames.
 		// */ SpriteType:
-		//	('spriteType' | 'textSpriteType') '=' '{' ('name' '=' name=STRING & ('texturefile' | 'textureFile') '='
-		//	textureFile=STRING & (('noOfFrames' | 'noOfframes') '=' noOfFrames=INT)? & ('loadType' '=' loadType=STRING)? &
-		//	('allwaystransparent' '=' allwaysTransparent=BOOL)? & (('noRefCount' | 'norefcount') '=' noRefCount=BOOL)? &
-		//	('effectFile' '=' effectFile=STRING)? & ('transparencecheck' '=' transparenceCheck=BOOL)? & ('can_be_lowres' '='
-		//	canBeLowres=BOOL)? & ('clicksound' '=' clickSound=ID)?) '}';
+		//	('spriteType' | 'textSpriteType') '=' '{' ('name' '=' name=STRING
+		//	& ('texturefile' | 'textureFile') '=' textureFile=STRING
+		//	& (('noOfFrames' | 'noOfframes') '=' noOfFrames=INT)?
+		//	& ('loadType' '=' loadType=STRING)?
+		//	& ('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		//	& (('noRefCount' | 'norefcount') '=' noRefCount=BOOL)?
+		//	& ('effectFile' '=' effectFile=STRING)?
+		//	& ('transparencecheck' '=' transparenceCheck=BOOL)?
+		//	& ('can_be_lowres' '=' canBeLowres=BOOL)?
+		//	& ('clicksound' '=' clickSound=ID)?)
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//('spriteType' | 'textSpriteType') '=' '{' ('name' '=' name=STRING & ('texturefile' | 'textureFile') '='
@@ -579,9 +594,14 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
 		
 		//AnimatedSpriteType:
-		//	'frameAnimatedSpriteType' '=' '{' 'name' '=' name=STRING 'texturefile' '=' texturefile=STRING 'noOfFrames' '='
-		//	noOfFrames=INT 'animation_rate_fps' '=' animationRateFps=Number 'looping' '=' looping=BOOL 'play_on_show' '='
-		//	playOnShow=BOOL '}';
+		//	'frameAnimatedSpriteType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'texturefile' '=' texturefile=STRING
+		//	'noOfFrames' '=' noOfFrames=INT
+		//	'animation_rate_fps' '=' animationRateFps=Number
+		//	'looping' '=' looping=BOOL
+		//	'play_on_show' '=' playOnShow=BOOL
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'frameAnimatedSpriteType' '=' '{' 'name' '=' name=STRING 'texturefile' '=' texturefile=STRING 'noOfFrames' '='
@@ -726,10 +746,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//CorneredTileSpriteType:
-		//	'corneredTileSpriteType' '=' '{' 'name' '=' name=STRING ('size' '=' size=Coordinates)? ('texturefile' '='
-		//	texturefile=STRING)? ('textureFile' '=' texturefile=STRING)? ('borderSize' '=' borderSize=Coordinates)?
-		//	('allwaystransparent' '=' allwaysTransparent=BOOL)? ('noRefCount' '=' noRefCount=BOOL)? ('loadType' '='
-		//	loadType=STRING)? ('tilingCenter' '=' tilingCenter=BOOL)? '}';
+		//	'corneredTileSpriteType' '=' '{'
+		//	'name' '=' name=STRING ('size' '=' size=Coordinates)? ('texturefile' '=' texturefile=STRING)? ('textureFile' '='
+		//	texturefile=STRING)? ('borderSize' '=' borderSize=Coordinates)? ('allwaystransparent' '=' allwaysTransparent=BOOL)?
+		//	('noRefCount' '=' noRefCount=BOOL)? ('loadType' '=' loadType=STRING)? ('tilingCenter' '=' tilingCenter=BOOL)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'corneredTileSpriteType' '=' '{' 'name' '=' name=STRING ('size' '=' size=Coordinates)? ('texturefile' '='
@@ -948,11 +969,15 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_22 = (Keyword)cGroup.eContents().get(22);
 		
 		//ProgressbarType:
-		//	'progressbartype' '=' '{' 'name' '=' name=STRING 'color' '=' color=ColorRatio 'colortwo' '=' color2=ColorRatio
-		//	('textureFile1' '=' textureFile1=STRING)? ('textureFile2' '=' textureFile2=STRING)? ('size' '=' size=Coordinates &
-		//	('horizontal' '=' horizontal=BOOL)?) 'effectFile' '=' effectFile=STRING ('allwaystransparent' '='
-		//	allwaysTransparent=BOOL)? ('maxValue' '=' maxValue=Number)? ('loadType' '=' loadType=STRING)? ('norefcount' '='
-		//	noRefCount=BOOL)? '}';
+		//	'progressbartype' '=' '{'
+		//	'name' '=' name=STRING
+		//	'color' '=' color=ColorRatio
+		//	'colortwo' '=' color2=ColorRatio ('textureFile1' '=' textureFile1=STRING)? ('textureFile2' '=' textureFile2=STRING)?
+		//	('size' '=' size=Coordinates
+		//	& ('horizontal' '=' horizontal=BOOL)?)
+		//	'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)? ('maxValue' '='
+		//	maxValue=Number)? ('loadType' '=' loadType=STRING)? ('norefcount' '=' noRefCount=BOOL)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'progressbartype' '=' '{' 'name' '=' name=STRING 'color' '=' color=ColorRatio 'colortwo' '=' color2=ColorRatio
@@ -1199,10 +1224,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//PortraitType:
-		//	'portraitType' '=' '{' 'name' '=' name=STRING 'effectFile' '=' effectFile=STRING 'layer' '=' '{' layers+=STRING+ '}'
-		//	('hair_color_index' '=' hairColorIndex=INT)? ('hair_color' '=' '{' hairColor+=Color+ '}')? ('eye_color_index' '='
-		//	eyeColorIndex=INT)? ('eye_color' '=' '{' eyeColor+=Color+ '}')? ('headgear_that_hides_hair' '=' '{'
-		//	headgearThatHidesHair+=INT* '}')? '}';
+		//	'portraitType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'effectFile' '=' effectFile=STRING
+		//	'layer' '=' '{'
+		//	layers+=STRING+
+		//	'}' ('hair_color_index' '=' hairColorIndex=INT)? ('hair_color' '=' '{'
+		//	hairColor+=Color+
+		//	'}')? ('eye_color_index' '=' eyeColorIndex=INT)? ('eye_color' '=' '{'
+		//	eyeColor+=Color+
+		//	'}')? ('headgear_that_hides_hair' '=' '{' headgearThatHidesHair+=INT* '}')?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'portraitType' '=' '{' 'name' '=' name=STRING 'effectFile' '=' effectFile=STRING 'layer' '=' '{' layers+=STRING+ '}'
@@ -1393,9 +1425,13 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//MaskedShieldType:
-		//	'maskedShieldType' '=' '{' 'name' '=' name=STRING 'textureFile1' '=' textureFile1=STRING 'textureFile2' '='
-		//	textureFile2=STRING 'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)?
-		//	('clicksound' '=' clickSound=ID)? '}';
+		//	'maskedShieldType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'textureFile1' '=' textureFile1=STRING
+		//	'textureFile2' '=' textureFile2=STRING
+		//	'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)? ('clicksound' '='
+		//	clickSound=ID)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'maskedShieldType' '=' '{' 'name' '=' name=STRING 'textureFile1' '=' textureFile1=STRING 'textureFile2' '='
@@ -1514,7 +1550,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//LineChartType:
-		//	'LineChartType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Coordinates 'linewidth' '=' lineWidth=INT '}';
+		//	'LineChartType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'size' '=' size=Coordinates
+		//	'linewidth' '=' lineWidth=INT
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'LineChartType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Coordinates 'linewidth' '=' lineWidth=INT '}'
@@ -1599,8 +1639,14 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//CoatOfArmsType:
-		//	'CoatOfArmsType' '=' '{' 'name' '=' name=STRING 'frame' '=' frame=STRING 'mask' '=' mask=STRING 'seal_overlay' '='
-		//	sealOverlay=STRING 'effect' '=' effect=STRING layers+=CoatOfArmsLayer+ '}';
+		//	'CoatOfArmsType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'frame' '=' frame=STRING
+		//	'mask' '=' mask=STRING
+		//	'seal_overlay' '=' sealOverlay=STRING
+		//	'effect' '=' effect=STRING
+		//	layers+=CoatOfArmsLayer+
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'CoatOfArmsType' '=' '{' 'name' '=' name=STRING 'frame' '=' frame=STRING 'mask' '=' mask=STRING 'seal_overlay' '='
@@ -1706,7 +1752,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//CoatOfArmsLayer:
-		//	'layer' '=' '{' 'mask' '=' mask=STRING 'center' '=' center=Coordinates 'scale' '=' scale=Number '}';
+		//	'layer' '=' '{'
+		//	'mask' '=' mask=STRING
+		//	'center' '=' center=Coordinates
+		//	'scale' '=' scale=Number
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'layer' '=' '{' 'mask' '=' mask=STRING 'center' '=' center=Coordinates 'scale' '=' scale=Number '}'
@@ -1775,7 +1825,10 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ObjectTypes:
-		//	{ObjectTypes} 'objectTypes' '=' '{' types+=(EMFXActorType | Pdxmesh | ArrowType)* '}';
+		//	{ObjectTypes}
+		//	'objectTypes' '=' '{'
+		//	types+=(EMFXActorType | Pdxmesh | ArrowType)*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ObjectTypes} 'objectTypes' '=' '{' types+=(EMFXActorType | Pdxmesh | ArrowType)* '}'
@@ -1866,10 +1919,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//EMFXActorType:
-		//	'EMFXActorType' '=' '{' 'name' '=' name=STRING 'actorfile' '=' actorFile=STRING animation=Animation? (('idle' '='
-		//	idle=STRING)? & ('move' '=' move=STRING)? & ('attack' '=' attack=STRING)? & 'scale' '=' scale=Double &
-		//	('use_animation' '=' useAnimation=BOOL)? & ('cull_distance' '=' cullDistance=Double)? & ('scale_on_cull_distance' '='
-		//	scaleOnCullDistance=BOOL)?) '}';
+		//	'EMFXActorType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'actorfile' '=' actorFile=STRING
+		//	animation=Animation? (('idle' '=' idle=STRING)?
+		//	& ('move' '=' move=STRING)?
+		//	& ('attack' '=' attack=STRING)?
+		//	& 'scale' '=' scale=Double
+		//	& ('use_animation' '=' useAnimation=BOOL)?
+		//	& ('cull_distance' '=' cullDistance=Double)?
+		//	& ('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?)
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'EMFXActorType' '=' '{' 'name' '=' name=STRING 'actorfile' '=' actorFile=STRING animation=Animation? (('idle' '='
@@ -2051,8 +2111,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Animation:
-		//	'animation' '=' '{' 'name' '=' name=STRING 'file' '=' file=STRING 'defaultAnimationTime' '='
-		//	defaultAnimationTime=Number '}';
+		//	'animation' '=' '{'
+		//	'name' '=' name=STRING
+		//	'file' '=' file=STRING
+		//	'defaultAnimationTime' '=' defaultAnimationTime=Number
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'animation' '=' '{' 'name' '=' name=STRING 'file' '=' file=STRING 'defaultAnimationTime' '=' defaultAnimationTime=Number
@@ -2138,8 +2201,12 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//Pdxmesh:
-		//	'pdxmesh' '=' '{' 'name' '=' name=STRING 'file' '=' actorFile=STRING 'scale' '=' scale=Number ('cull_distance' '='
-		//	cullDistance=Double)? ('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)? '}';
+		//	'pdxmesh' '=' '{'
+		//	'name' '=' name=STRING
+		//	'file' '=' actorFile=STRING
+		//	'scale' '=' scale=Number ('cull_distance' '=' cullDistance=Double)? ('scale_on_cull_distance' '='
+		//	scaleOnCullDistance=BOOL)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'pdxmesh' '=' '{' 'name' '=' name=STRING 'file' '=' actorFile=STRING 'scale' '=' scale=Number ('cull_distance' '='
@@ -2277,9 +2344,19 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_36 = (Keyword)cGroup.eContents().get(36);
 		
 		//ArrowType:
-		//	'arrowType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Double 'textureFile' '=' textureFile=STRING 'bodytexture'
-		//	'=' bodyTexture=STRING 'color' '=' color=ColorRatio 'colortwo' '=' color2=ColorRatio 'endAt' '=' endAt=Double
-		//	'height' '=' height=Double 'type' '=' type=INT 'heading' '=' heading=Double 'effect' '=' effect=STRING '}';
+		//	'arrowType' '=' '{'
+		//	'name' '=' name=STRING
+		//	'size' '=' size=Double
+		//	'textureFile' '=' textureFile=STRING
+		//	'bodytexture' '=' bodyTexture=STRING
+		//	'color' '=' color=ColorRatio
+		//	'colortwo' '=' color2=ColorRatio
+		//	'endAt' '=' endAt=Double
+		//	'height' '=' height=Double
+		//	'type' '=' type=INT
+		//	'heading' '=' heading=Double
+		//	'effect' '=' effect=STRING
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'arrowType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Double 'textureFile' '=' textureFile=STRING 'bodytexture' '='
@@ -2443,7 +2520,10 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//BitmapFonts:
-		//	{BitmapFonts} 'bitmapfonts' '=' '{' types+=BitmapFont* '}';
+		//	{BitmapFonts}
+		//	'bitmapfonts' '=' '{'
+		//	types+=BitmapFont*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BitmapFonts} 'bitmapfonts' '=' '{' types+=BitmapFont* '}'
@@ -2510,9 +2590,15 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//BitmapFont:
-		//	'bitmapfont' '=' '{' 'name' '=' name=STRING 'fontname' '=' fontName=STRING 'color' '=' color=HEX ('effect' '='
-		//	effect=BOOL)? ('colorcodes' '=' '{' colorcodes+=ColorCode+ '}')? ('color_override' '=' '{' colorcodes+=ColorCode+
-		//	'}')? '}';
+		//	'bitmapfont' '=' '{'
+		//	'name' '=' name=STRING
+		//	'fontname' '=' fontName=STRING
+		//	'color' '=' color=HEX ('effect' '=' effect=BOOL)? ('colorcodes' '=' '{'
+		//	colorcodes+=ColorCode+
+		//	'}')? ('color_override' '=' '{'
+		//	colorcodes+=ColorCode+
+		//	'}')?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'bitmapfont' '=' '{' 'name' '=' name=STRING 'fontname' '=' fontName=STRING 'color' '=' color=HEX ('effect' '='
@@ -2789,8 +2875,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SpriteTypes:
-	//	{SpriteTypes} 'spriteTypes' '=' '{' types+=(SpriteType | AnimatedSpriteType | CorneredTileSpriteType |
-	//	ProgressbarType | CoatOfArmsType | PortraitType | MaskedShieldType | LineChartType)* '}';
+	//	{SpriteTypes}
+	//	'spriteTypes' '=' '{'
+	//	types+=(SpriteType
+	//	| AnimatedSpriteType
+	//	| CorneredTileSpriteType
+	//	| ProgressbarType
+	//	| CoatOfArmsType
+	//	| PortraitType
+	//	| MaskedShieldType
+	//	| LineChartType)*
+	//	'}';
 	public SpriteTypesElements getSpriteTypesAccess() {
 		return pSpriteTypes;
 	}
@@ -2802,11 +2897,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	///*
 	// * A sprite is composed by 1 or many frames.
 	// */ SpriteType:
-	//	('spriteType' | 'textSpriteType') '=' '{' ('name' '=' name=STRING & ('texturefile' | 'textureFile') '='
-	//	textureFile=STRING & (('noOfFrames' | 'noOfframes') '=' noOfFrames=INT)? & ('loadType' '=' loadType=STRING)? &
-	//	('allwaystransparent' '=' allwaysTransparent=BOOL)? & (('noRefCount' | 'norefcount') '=' noRefCount=BOOL)? &
-	//	('effectFile' '=' effectFile=STRING)? & ('transparencecheck' '=' transparenceCheck=BOOL)? & ('can_be_lowres' '='
-	//	canBeLowres=BOOL)? & ('clicksound' '=' clickSound=ID)?) '}';
+	//	('spriteType' | 'textSpriteType') '=' '{' ('name' '=' name=STRING
+	//	& ('texturefile' | 'textureFile') '=' textureFile=STRING
+	//	& (('noOfFrames' | 'noOfframes') '=' noOfFrames=INT)?
+	//	& ('loadType' '=' loadType=STRING)?
+	//	& ('allwaystransparent' '=' allwaysTransparent=BOOL)?
+	//	& (('noRefCount' | 'norefcount') '=' noRefCount=BOOL)?
+	//	& ('effectFile' '=' effectFile=STRING)?
+	//	& ('transparencecheck' '=' transparenceCheck=BOOL)?
+	//	& ('can_be_lowres' '=' canBeLowres=BOOL)?
+	//	& ('clicksound' '=' clickSound=ID)?)
+	//	'}';
 	public SpriteTypeElements getSpriteTypeAccess() {
 		return pSpriteType;
 	}
@@ -2816,9 +2917,14 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AnimatedSpriteType:
-	//	'frameAnimatedSpriteType' '=' '{' 'name' '=' name=STRING 'texturefile' '=' texturefile=STRING 'noOfFrames' '='
-	//	noOfFrames=INT 'animation_rate_fps' '=' animationRateFps=Number 'looping' '=' looping=BOOL 'play_on_show' '='
-	//	playOnShow=BOOL '}';
+	//	'frameAnimatedSpriteType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'texturefile' '=' texturefile=STRING
+	//	'noOfFrames' '=' noOfFrames=INT
+	//	'animation_rate_fps' '=' animationRateFps=Number
+	//	'looping' '=' looping=BOOL
+	//	'play_on_show' '=' playOnShow=BOOL
+	//	'}';
 	public AnimatedSpriteTypeElements getAnimatedSpriteTypeAccess() {
 		return pAnimatedSpriteType;
 	}
@@ -2828,10 +2934,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CorneredTileSpriteType:
-	//	'corneredTileSpriteType' '=' '{' 'name' '=' name=STRING ('size' '=' size=Coordinates)? ('texturefile' '='
-	//	texturefile=STRING)? ('textureFile' '=' texturefile=STRING)? ('borderSize' '=' borderSize=Coordinates)?
-	//	('allwaystransparent' '=' allwaysTransparent=BOOL)? ('noRefCount' '=' noRefCount=BOOL)? ('loadType' '='
-	//	loadType=STRING)? ('tilingCenter' '=' tilingCenter=BOOL)? '}';
+	//	'corneredTileSpriteType' '=' '{'
+	//	'name' '=' name=STRING ('size' '=' size=Coordinates)? ('texturefile' '=' texturefile=STRING)? ('textureFile' '='
+	//	texturefile=STRING)? ('borderSize' '=' borderSize=Coordinates)? ('allwaystransparent' '=' allwaysTransparent=BOOL)?
+	//	('noRefCount' '=' noRefCount=BOOL)? ('loadType' '=' loadType=STRING)? ('tilingCenter' '=' tilingCenter=BOOL)?
+	//	'}';
 	public CorneredTileSpriteTypeElements getCorneredTileSpriteTypeAccess() {
 		return pCorneredTileSpriteType;
 	}
@@ -2841,11 +2948,15 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ProgressbarType:
-	//	'progressbartype' '=' '{' 'name' '=' name=STRING 'color' '=' color=ColorRatio 'colortwo' '=' color2=ColorRatio
-	//	('textureFile1' '=' textureFile1=STRING)? ('textureFile2' '=' textureFile2=STRING)? ('size' '=' size=Coordinates &
-	//	('horizontal' '=' horizontal=BOOL)?) 'effectFile' '=' effectFile=STRING ('allwaystransparent' '='
-	//	allwaysTransparent=BOOL)? ('maxValue' '=' maxValue=Number)? ('loadType' '=' loadType=STRING)? ('norefcount' '='
-	//	noRefCount=BOOL)? '}';
+	//	'progressbartype' '=' '{'
+	//	'name' '=' name=STRING
+	//	'color' '=' color=ColorRatio
+	//	'colortwo' '=' color2=ColorRatio ('textureFile1' '=' textureFile1=STRING)? ('textureFile2' '=' textureFile2=STRING)?
+	//	('size' '=' size=Coordinates
+	//	& ('horizontal' '=' horizontal=BOOL)?)
+	//	'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)? ('maxValue' '='
+	//	maxValue=Number)? ('loadType' '=' loadType=STRING)? ('norefcount' '=' noRefCount=BOOL)?
+	//	'}';
 	public ProgressbarTypeElements getProgressbarTypeAccess() {
 		return pProgressbarType;
 	}
@@ -2855,10 +2966,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//PortraitType:
-	//	'portraitType' '=' '{' 'name' '=' name=STRING 'effectFile' '=' effectFile=STRING 'layer' '=' '{' layers+=STRING+ '}'
-	//	('hair_color_index' '=' hairColorIndex=INT)? ('hair_color' '=' '{' hairColor+=Color+ '}')? ('eye_color_index' '='
-	//	eyeColorIndex=INT)? ('eye_color' '=' '{' eyeColor+=Color+ '}')? ('headgear_that_hides_hair' '=' '{'
-	//	headgearThatHidesHair+=INT* '}')? '}';
+	//	'portraitType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'effectFile' '=' effectFile=STRING
+	//	'layer' '=' '{'
+	//	layers+=STRING+
+	//	'}' ('hair_color_index' '=' hairColorIndex=INT)? ('hair_color' '=' '{'
+	//	hairColor+=Color+
+	//	'}')? ('eye_color_index' '=' eyeColorIndex=INT)? ('eye_color' '=' '{'
+	//	eyeColor+=Color+
+	//	'}')? ('headgear_that_hides_hair' '=' '{' headgearThatHidesHair+=INT* '}')?
+	//	'}';
 	public PortraitTypeElements getPortraitTypeAccess() {
 		return pPortraitType;
 	}
@@ -2868,9 +2986,13 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MaskedShieldType:
-	//	'maskedShieldType' '=' '{' 'name' '=' name=STRING 'textureFile1' '=' textureFile1=STRING 'textureFile2' '='
-	//	textureFile2=STRING 'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)?
-	//	('clicksound' '=' clickSound=ID)? '}';
+	//	'maskedShieldType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'textureFile1' '=' textureFile1=STRING
+	//	'textureFile2' '=' textureFile2=STRING
+	//	'effectFile' '=' effectFile=STRING ('allwaystransparent' '=' allwaysTransparent=BOOL)? ('clicksound' '='
+	//	clickSound=ID)?
+	//	'}';
 	public MaskedShieldTypeElements getMaskedShieldTypeAccess() {
 		return pMaskedShieldType;
 	}
@@ -2880,7 +3002,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LineChartType:
-	//	'LineChartType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Coordinates 'linewidth' '=' lineWidth=INT '}';
+	//	'LineChartType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'size' '=' size=Coordinates
+	//	'linewidth' '=' lineWidth=INT
+	//	'}';
 	public LineChartTypeElements getLineChartTypeAccess() {
 		return pLineChartType;
 	}
@@ -2890,8 +3016,14 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CoatOfArmsType:
-	//	'CoatOfArmsType' '=' '{' 'name' '=' name=STRING 'frame' '=' frame=STRING 'mask' '=' mask=STRING 'seal_overlay' '='
-	//	sealOverlay=STRING 'effect' '=' effect=STRING layers+=CoatOfArmsLayer+ '}';
+	//	'CoatOfArmsType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'frame' '=' frame=STRING
+	//	'mask' '=' mask=STRING
+	//	'seal_overlay' '=' sealOverlay=STRING
+	//	'effect' '=' effect=STRING
+	//	layers+=CoatOfArmsLayer+
+	//	'}';
 	public CoatOfArmsTypeElements getCoatOfArmsTypeAccess() {
 		return pCoatOfArmsType;
 	}
@@ -2901,7 +3033,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CoatOfArmsLayer:
-	//	'layer' '=' '{' 'mask' '=' mask=STRING 'center' '=' center=Coordinates 'scale' '=' scale=Number '}';
+	//	'layer' '=' '{'
+	//	'mask' '=' mask=STRING
+	//	'center' '=' center=Coordinates
+	//	'scale' '=' scale=Number
+	//	'}';
 	public CoatOfArmsLayerElements getCoatOfArmsLayerAccess() {
 		return pCoatOfArmsLayer;
 	}
@@ -2911,7 +3047,10 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ObjectTypes:
-	//	{ObjectTypes} 'objectTypes' '=' '{' types+=(EMFXActorType | Pdxmesh | ArrowType)* '}';
+	//	{ObjectTypes}
+	//	'objectTypes' '=' '{'
+	//	types+=(EMFXActorType | Pdxmesh | ArrowType)*
+	//	'}';
 	public ObjectTypesElements getObjectTypesAccess() {
 		return pObjectTypes;
 	}
@@ -2921,10 +3060,17 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//EMFXActorType:
-	//	'EMFXActorType' '=' '{' 'name' '=' name=STRING 'actorfile' '=' actorFile=STRING animation=Animation? (('idle' '='
-	//	idle=STRING)? & ('move' '=' move=STRING)? & ('attack' '=' attack=STRING)? & 'scale' '=' scale=Double &
-	//	('use_animation' '=' useAnimation=BOOL)? & ('cull_distance' '=' cullDistance=Double)? & ('scale_on_cull_distance' '='
-	//	scaleOnCullDistance=BOOL)?) '}';
+	//	'EMFXActorType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'actorfile' '=' actorFile=STRING
+	//	animation=Animation? (('idle' '=' idle=STRING)?
+	//	& ('move' '=' move=STRING)?
+	//	& ('attack' '=' attack=STRING)?
+	//	& 'scale' '=' scale=Double
+	//	& ('use_animation' '=' useAnimation=BOOL)?
+	//	& ('cull_distance' '=' cullDistance=Double)?
+	//	& ('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)?)
+	//	'}';
 	public EMFXActorTypeElements getEMFXActorTypeAccess() {
 		return pEMFXActorType;
 	}
@@ -2934,8 +3080,11 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Animation:
-	//	'animation' '=' '{' 'name' '=' name=STRING 'file' '=' file=STRING 'defaultAnimationTime' '='
-	//	defaultAnimationTime=Number '}';
+	//	'animation' '=' '{'
+	//	'name' '=' name=STRING
+	//	'file' '=' file=STRING
+	//	'defaultAnimationTime' '=' defaultAnimationTime=Number
+	//	'}';
 	public AnimationElements getAnimationAccess() {
 		return pAnimation;
 	}
@@ -2945,8 +3094,12 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Pdxmesh:
-	//	'pdxmesh' '=' '{' 'name' '=' name=STRING 'file' '=' actorFile=STRING 'scale' '=' scale=Number ('cull_distance' '='
-	//	cullDistance=Double)? ('scale_on_cull_distance' '=' scaleOnCullDistance=BOOL)? '}';
+	//	'pdxmesh' '=' '{'
+	//	'name' '=' name=STRING
+	//	'file' '=' actorFile=STRING
+	//	'scale' '=' scale=Number ('cull_distance' '=' cullDistance=Double)? ('scale_on_cull_distance' '='
+	//	scaleOnCullDistance=BOOL)?
+	//	'}';
 	public PdxmeshElements getPdxmeshAccess() {
 		return pPdxmesh;
 	}
@@ -2956,9 +3109,19 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ArrowType:
-	//	'arrowType' '=' '{' 'name' '=' name=STRING 'size' '=' size=Double 'textureFile' '=' textureFile=STRING 'bodytexture'
-	//	'=' bodyTexture=STRING 'color' '=' color=ColorRatio 'colortwo' '=' color2=ColorRatio 'endAt' '=' endAt=Double
-	//	'height' '=' height=Double 'type' '=' type=INT 'heading' '=' heading=Double 'effect' '=' effect=STRING '}';
+	//	'arrowType' '=' '{'
+	//	'name' '=' name=STRING
+	//	'size' '=' size=Double
+	//	'textureFile' '=' textureFile=STRING
+	//	'bodytexture' '=' bodyTexture=STRING
+	//	'color' '=' color=ColorRatio
+	//	'colortwo' '=' color2=ColorRatio
+	//	'endAt' '=' endAt=Double
+	//	'height' '=' height=Double
+	//	'type' '=' type=INT
+	//	'heading' '=' heading=Double
+	//	'effect' '=' effect=STRING
+	//	'}';
 	public ArrowTypeElements getArrowTypeAccess() {
 		return pArrowType;
 	}
@@ -2968,7 +3131,10 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BitmapFonts:
-	//	{BitmapFonts} 'bitmapfonts' '=' '{' types+=BitmapFont* '}';
+	//	{BitmapFonts}
+	//	'bitmapfonts' '=' '{'
+	//	types+=BitmapFont*
+	//	'}';
 	public BitmapFontsElements getBitmapFontsAccess() {
 		return pBitmapFonts;
 	}
@@ -2978,9 +3144,15 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BitmapFont:
-	//	'bitmapfont' '=' '{' 'name' '=' name=STRING 'fontname' '=' fontName=STRING 'color' '=' color=HEX ('effect' '='
-	//	effect=BOOL)? ('colorcodes' '=' '{' colorcodes+=ColorCode+ '}')? ('color_override' '=' '{' colorcodes+=ColorCode+
-	//	'}')? '}';
+	//	'bitmapfont' '=' '{'
+	//	'name' '=' name=STRING
+	//	'fontname' '=' fontName=STRING
+	//	'color' '=' color=HEX ('effect' '=' effect=BOOL)? ('colorcodes' '=' '{'
+	//	colorcodes+=ColorCode+
+	//	'}')? ('color_override' '=' '{'
+	//	colorcodes+=ColorCode+
+	//	'}')?
+	//	'}';
 	public BitmapFontElements getBitmapFontAccess() {
 		return pBitmapFont;
 	}
@@ -3093,8 +3265,7 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	// * Note: Double do not match integers, for proper formatting
 	// * 
 	// * May end with 'f' in some cases
-	// */ Double
-	//ecore::EDouble:
+	// */ Double ecore::EDouble:
 	//	Integer '.' INT 'f'?;
 	public Ck2TerminalsGrammarAccess.DoubleElements getDoubleAccess() {
 		return gaCk2Terminals.getDoubleAccess();
@@ -3108,8 +3279,7 @@ public class Ck2GfxGrammarAccess extends AbstractGrammarElementFinder {
 	// * Used when decimals are not used systematically.
 	// * 
 	// * Warning: formatting might be messed up.
-	// */ Number
-	//ecore::EDouble:
+	// */ Number ecore::EDouble:
 	//	Double | Integer 'f'?;
 	public Ck2TerminalsGrammarAccess.NumberElements getNumberAccess() {
 		return gaCk2Terminals.getNumberAccess();

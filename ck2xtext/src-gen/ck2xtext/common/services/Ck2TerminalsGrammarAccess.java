@@ -92,8 +92,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 		// * Note: Double do not match integers, for proper formatting
 		// * 
 		// * May end with 'f' in some cases
-		// */ Double
-		//ecore::EDouble:
+		// */ Double ecore::EDouble:
 		//	Integer '.' INT 'f'?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -124,8 +123,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 		// * Used when decimals are not used systematically.
 		// * 
 		// * Warning: formatting might be messed up.
-		// */ Number
-		//ecore::EDouble:
+		// */ Number ecore::EDouble:
 		//	Double | Integer 'f'?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -301,8 +299,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 	// * Note: Double do not match integers, for proper formatting
 	// * 
 	// * May end with 'f' in some cases
-	// */ Double
-	//ecore::EDouble:
+	// */ Double ecore::EDouble:
 	//	Integer '.' INT 'f'?;
 	public DoubleElements getDoubleAccess() {
 		return pDouble;
@@ -316,8 +313,7 @@ public class Ck2TerminalsGrammarAccess extends AbstractGrammarElementFinder {
 	// * Used when decimals are not used systematically.
 	// * 
 	// * Warning: formatting might be messed up.
-	// */ Number
-	//ecore::EDouble:
+	// */ Number ecore::EDouble:
 	//	Double | Integer 'f'?;
 	public NumberElements getNumberAccess() {
 		return pNumber;

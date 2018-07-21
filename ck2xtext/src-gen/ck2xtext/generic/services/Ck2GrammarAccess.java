@@ -148,7 +148,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getListPropertyParserRuleCall_8() { return cListPropertyParserRuleCall_8; }
 		
 		////NumericListProperty |
-		// Clause
+		//Clause
 		public RuleCall getClauseParserRuleCall_9() { return cClauseParserRuleCall_9; }
 		
 		//ProbabilityProperty
@@ -1291,8 +1291,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	// * Note: Double do not match integers, for proper formatting
 	// * 
 	// * May end with 'f' in some cases
-	// */ Double
-	//ecore::EDouble:
+	// */ Double ecore::EDouble:
 	//	Integer '.' INT 'f'?;
 	public Ck2TerminalsGrammarAccess.DoubleElements getDoubleAccess() {
 		return gaCk2Terminals.getDoubleAccess();
@@ -1306,8 +1305,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	// * Used when decimals are not used systematically.
 	// * 
 	// * Warning: formatting might be messed up.
-	// */ Number
-	//ecore::EDouble:
+	// */ Number ecore::EDouble:
 	//	Double | Integer 'f'?;
 	public Ck2TerminalsGrammarAccess.NumberElements getNumberAccess() {
 		return gaCk2Terminals.getNumberAccess();
