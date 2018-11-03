@@ -8,8 +8,9 @@ Require-Bundle: ck2xtext,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.eclipse.lsp4j,
- org.eclipse.lsp4j.jsonrpc,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.lsp4j;bundle-version="[0.5.0,0.6.0)";resolution:=optional,
+ org.eclipse.lsp4j.jsonrpc;bundle-version="[0.5.0,0.6.0)";resolution:=optional,
  com.google.gson
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
