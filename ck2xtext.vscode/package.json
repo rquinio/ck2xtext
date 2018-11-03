@@ -1,0 +1,75 @@
+{
+    "name": "ck2xtext-vscode",
+    "displayName": "CK2Xtext VS Code",
+    "description": "VS Code extension for CK2Xtext",
+    "version": "1.0.0",
+    "publisher": "CK2Xtext",
+    "icon": "images/ck2.gif",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rquinio/ck2xtext.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rquinio/ck2xtext/issues"
+    },
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:ck2xtext"
+    ],
+    "main": "out/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "ck2xtext",
+                "aliases": [
+                    "ck2xtext"
+                ],
+                "extensions": [
+                    ".txt",
+                    ".gfx",
+                    ".sfx",
+                    ".gui",
+                    ".map"
+                ],
+                "configuration": "./ck2xtext.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ck2xtext",
+                "scopeName": "text.ck2xtext",
+                "path": "./syntaxes/ck2xtext.tmLanguage"
+            }
+        ],
+        "commands": [
+            {
+                "command": "ck2xtext.a.proxy",
+                "title": "CK2Xtext Command A"
+            },
+            {
+                "command": "ck2xtext.b",
+                "title": "CK2Xtext Command B"
+            }
+        ]
+    },
+    "devDependencies": {
+        "vscode": "^1.1.21",
+        "typescript": "^2.9.2",
+        "@types/node": "^10.11.5"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^5.1.0"
+    },
+    "scripts": {
+        "prepublish": "node ./node_modules/vscode/bin/install && tsc -p ./src",
+        "compile": "tsc -p ./src",
+        "watch": "tsc -w -p ./src",
+        "update-vscode": "node ./node_modules/vscode/bin/install"
+    }
+}

@@ -129,7 +129,8 @@
 					<transformers>
 						<transformer
 							implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-							<mainClass>org.eclipse.xtext.ide.server.ServerLauncher</mainClass>
+							<!-- <mainClass>org.eclipse.xtext.ide.server.ServerLauncher</mainClass> -->
+							<mainClass>ck2xtext.ide.server.SocketServerLauncher</mainClass>
 						</transformer>
 						<transformer
 							implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
@@ -171,7 +172,7 @@
 								<exclude>**/*.tokens</exclude>
 								<exclude>**/*.mwe2</exclude>
 								<exclude>**/*.xtext</exclude>
-								<exclude>**/*.xtextbin</exclude>
+								<!--  <exclude>**/*.xtextbin</exclude>-->
 							</excludes>
 						</filter>
 					</filters>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>*.txt</string>
+		<string>*.gfx</string>
+		<string>*.gui</string>
+		<string>*.sfx</string>
+		<string>*.map</string>
+	</array>
+	<key>name</key>
+	<string>ck2xtext</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>keyword.control.ck2xtext</string>
+			<key>match</key>
+			<string>\b(Hello|from)\b</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.ck2xtext</string>
+</dict>
+</plist>

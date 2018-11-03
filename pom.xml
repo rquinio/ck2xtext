@@ -34,6 +34,7 @@
 		<module>ck2xtext.ui.tests</module>
 		<module>ck2xtext.feature</module>
 		<module>ck2xtext.repository</module>
+		<module>ck2xtext.vscode</module>
 	</modules>
 	<build>
 		<plugins>

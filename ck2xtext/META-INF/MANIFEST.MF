@@ -16,8 +16,7 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: ck2xtext
-Import-Package: org.apache.log4j,
- org.eclipse.core.resources
+Import-Package: org.apache.log4j
 Bundle-ActivationPolicy: lazy
 Export-Package: ck2xtext.common,
  ck2xtext.common.conversion,

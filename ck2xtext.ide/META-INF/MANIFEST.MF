@@ -7,12 +7,15 @@ Bundle-Vendor: My Company
 Require-Bundle: ck2xtext,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.lsp4j,
+ org.eclipse.lsp4j.jsonrpc,
+ com.google.gson
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.generic.ide.contentassist.antlr,
  ck2xtext.generic.ide.contentassist.antlr.internal,
+ ck2xtext.gfx.ide.contentassist.antlr,
  ck2xtext.gfx.ide.contentassist.antlr.internal,
- ck2xtext.gfx.ide.contentassist.antlr
+ ck2xtext.ide.server
 Automatic-Module-Name: ck2xtext.ide
-

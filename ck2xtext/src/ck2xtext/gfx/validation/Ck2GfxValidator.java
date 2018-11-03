@@ -5,11 +5,6 @@ package ck2xtext.gfx.validation;
 
 import java.io.File;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 import ck2xtext.gfx.ck2gfx.Ck2gfxPackage;
@@ -46,29 +41,29 @@ public class Ck2GfxValidator extends AbstractCk2GfxValidator {
 	 * Works via Eclipse plugin - validation is relative to the project
 	 */
 	// @Check
-	public void check2(SpriteType spriteType) {
-		IProject project = getProject(spriteType);
-		IFile textureFile = project.getFile(spriteType.getTextureFile());
-		if (!textureFile.exists()) {
-			String alternateName = getAlternateFileName(spriteType.getTextureFile());
-			IFile alternateFile = project.getFile(alternateName);
-			if (!alternateFile.exists()) {
-				warning("Neither " + textureFile.getLocationURI().toString() + " nor "
-						+ alternateFile.getLocationURI().toString() + " files exist",
-						Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
-			}
-		}
-	}
+	// public void check2(SpriteType spriteType) {
+	// IProject project = getProject(spriteType);
+	// IFile textureFile = project.getFile(spriteType.getTextureFile());
+	// if (!textureFile.exists()) {
+	// String alternateName = getAlternateFileName(spriteType.getTextureFile());
+	// IFile alternateFile = project.getFile(alternateName);
+	// if (!alternateFile.exists()) {
+	// warning("Neither " + textureFile.getLocationURI().toString() + " nor "
+	// + alternateFile.getLocationURI().toString() + " files exist",
+	// Ck2gfxPackage.Literals.SPRITE_TYPE__TEXTURE_FILE);
+	// }
+	// }
+	// }
 
 	private String sanitize(String path) {
 		return path.replace('\\', File.separatorChar);
 	}
 
-	private IProject getProject(EObject eObject) {
-		String validatedFileUri = eObject.eResource().getURI().toPlatformString(true);
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(validatedFileUri)).getProject();
-		return project;
-	}
+	// private IProject getProject(EObject eObject) {
+	// String validatedFileUri = eObject.eResource().getURI().toPlatformString(true);
+	// IProject project = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(validatedFileUri)).getProject();
+	// return project;
+	// }
 
 	/**
 	 * Engine support fallback to .tga or .dds
