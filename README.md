@@ -20,7 +20,7 @@ As such the error detection is minimal, and integrated documentation for scripti
 To be able to use the plugin, the minimum requirements are: 
 
 - Java 8
-- Eclipse 4.4 (Luna)
+- Eclipse Luna (4.4)
 
 The plugin is not hosted on a public update site yet, and so has to be built locally (see below).
 
@@ -30,7 +30,7 @@ To build a clone of this project, the minimum requirements are:
 
 - [Maven](https://maven.apache.org) 3.5
 - Java 8
-- Eclipse Photon (4.8) with [Xtext plugin](https://www.eclipse.org/Xtext/download.html) 2.14
+- Eclipse 2018-09 (4.9) with [Xtext plugin](https://www.eclipse.org/Xtext/download.html) 2.15
 
 To build locally: 
 

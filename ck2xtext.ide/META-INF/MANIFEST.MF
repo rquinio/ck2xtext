@@ -7,7 +7,7 @@ Bundle-Vendor: My Company
 Require-Bundle: ck2xtext,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide,
- org.antlr.runtime
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ck2xtext.generic.ide.contentassist.antlr,

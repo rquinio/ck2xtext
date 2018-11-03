@@ -461,15 +461,6 @@
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
 	</extension>
-	<extension point="org.eclipse.ui.preferencePages">
-		<page
-			category="ck2xtext.gfx.Ck2Gfx"
-			class="ck2xtext.gfx.ui.Ck2GfxExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="ck2xtext.gfx.Ck2Gfx.validator.preferencePage"
-			name="Errors/Warnings">
-			<keywordReference id="ck2xtext.gfx.ui.keyword_Ck2Gfx"/>
-		</page>
-	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="ck2xtext.gfx.ui.Ck2GfxExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
@@ -929,15 +920,6 @@
 			point="org.eclipse.core.resources.markers">
 		<super type="org.eclipse.xtext.ui.check.expensive"/>
 		<persistent value="true"/>
-	</extension>
-	<extension point="org.eclipse.ui.preferencePages">
-		<page
-			category="ck2xtext.generic.Ck2"
-			class="ck2xtext.generic.ui.Ck2ExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="ck2xtext.generic.Ck2.validator.preferencePage"
-			name="Errors/Warnings">
-			<keywordReference id="ck2xtext.generic.ui.keyword_Ck2"/>
-		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
