@@ -161,6 +161,11 @@ public class Ck2AdapterFactory extends AdapterFactoryImpl
         return createProbabilityPropertyAdapter();
       }
       @Override
+      public Adapter caseBoolClauseProperty(BoolClauseProperty object)
+      {
+        return createBoolClausePropertyAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -433,6 +438,21 @@ public class Ck2AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProbabilityPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link ck2xtext.generic.ck2.BoolClauseProperty <em>Bool Clause Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see ck2xtext.generic.ck2.BoolClauseProperty
+   * @generated
+   */
+  public Adapter createBoolClausePropertyAdapter()
   {
     return null;
   }

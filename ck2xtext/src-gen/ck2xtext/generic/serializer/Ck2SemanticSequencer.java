@@ -3,6 +3,7 @@
  */
 package ck2xtext.generic.serializer;
 
+import ck2xtext.generic.ck2.BoolClauseProperty;
 import ck2xtext.generic.ck2.BoolProperty;
 import ck2xtext.generic.ck2.Ck2Package;
 import ck2xtext.generic.ck2.CommandProperty;
@@ -46,6 +47,9 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == Ck2Package.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case Ck2Package.BOOL_CLAUSE_PROPERTY:
+				sequence_BoolClauseProperty(context, (BoolClauseProperty) semanticObject); 
+				return; 
 			case Ck2Package.BOOL_PROPERTY:
 				sequence_BoolProperty(context, (BoolProperty) semanticObject); 
 				return; 
@@ -95,6 +99,19 @@ public class Ck2SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Property returns BoolClauseProperty
+	 *     BoolClauseProperty returns BoolClauseProperty
+	 *
+	 * Constraint:
+	 *     (name=BOOL value='{' properties+=Property*)
+	 */
+	protected void sequence_BoolClauseProperty(ISerializationContext context, BoolClauseProperty semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:

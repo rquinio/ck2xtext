@@ -18,23 +18,43 @@ import ck2xtext.tests.vanilla.VanillaTest;
 @ExtendWith(InjectionExtension.class)
 @InjectWith(Ck2InjectorProvider.class)
 public class Ck2FullVanillaTest extends VanillaTest {
-	
+
 	static Stream<File> validateEvents() {
 		return Arrays.stream(VanillaTest.getFiles("events", ".txt"));
 	}
-	
+
 	static Stream<File> validateDecisions() {
 		return Arrays.stream(VanillaTest.getFiles("decisions", ".txt"));
 	}
-	
+
+	static Stream<File> validateAlternateStart() {
+		return Arrays.stream(VanillaTest.getFiles("common/alternate_start", ".txt"));
+	}
+
+	static Stream<File> validateBloodlines() {
+		return Arrays.stream(VanillaTest.getFiles("common/bloodlines", ".txt"));
+	}
+
 	static Stream<File> validateTraits() {
 		return Arrays.stream(VanillaTest.getFiles("common/traits", ".txt"));
 	}
-	
+
+	static Stream<File> validateReligionFeatures() {
+		return Arrays.stream(VanillaTest.getFiles("common/religion_features", ".txt"));
+	}
+
+	static Stream<File> validateSocieties() {
+		return Arrays.stream(VanillaTest.getFiles("common/societies", ".txt"));
+	}
+
 	static Stream<File> validateInterfaceGfx() {
 		return Arrays.stream(VanillaTest.getFiles("interface", ".gfx"));
 	}
-	
+
+	static Stream<File> validatePortraits() {
+		return Arrays.stream(VanillaTest.getFiles("interface/portraits", ".gfx"));
+	}
+
 	static Stream<File> validateInterfaceGui() {
 		return Arrays.stream(VanillaTest.getFiles("interface", ".gui"));
 	}
@@ -44,25 +64,55 @@ public class Ck2FullVanillaTest extends VanillaTest {
 	public void validateEvents(File file) throws IOException {
 		validate(file);
 	}
-	
+
 	@ParameterizedTest
 	@MethodSource
 	public void validateDecisions(File file) throws IOException {
 		validate(file);
 	}
-	
+
+	@ParameterizedTest
+	@MethodSource
+	public void validateAlternateStart(File file) throws IOException {
+		validate(file);
+	}
+
+	@ParameterizedTest
+	@MethodSource
+	public void validateBloodlines(File file) throws IOException {
+		validate(file);
+	}
+
 	@ParameterizedTest
 	@MethodSource
 	public void validateTraits(File file) throws IOException {
 		validate(file);
 	}
-	
+
+	@ParameterizedTest
+	@MethodSource
+	public void validateSocieties(File file) throws IOException {
+		validate(file);
+	}
+
+	@ParameterizedTest
+	@MethodSource
+	public void validateReligionFeatures(File file) throws IOException {
+		validate(file);
+	}
+
 	@ParameterizedTest
 	@MethodSource
 	public void validateInterfaceGfx(File file) throws IOException {
 		validate(file);
 	}
-	
+
+	@ParameterizedTest
+	@MethodSource
+	public void validatePortraits(File file) throws IOException {
+		validate(file);
+	}
+
 	@ParameterizedTest
 	@MethodSource
 	public void validateInterfaceGui(File file) throws IOException {

@@ -312,6 +312,15 @@ ruleProperty returns [EObject current=null]
 			$current = $this_ProbabilityProperty_10.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getPropertyAccess().getBoolClausePropertyParserRuleCall_11());
+		}
+		this_BoolClauseProperty_11=ruleBoolClauseProperty
+		{
+			$current = $this_BoolClauseProperty_11.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1639,6 +1648,84 @@ ruleProbabilityProperty returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleBoolClauseProperty
+entryRuleBoolClauseProperty returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBoolClausePropertyRule()); }
+	iv_ruleBoolClauseProperty=ruleBoolClauseProperty
+	{ $current=$iv_ruleBoolClauseProperty.current; }
+	EOF;
+
+// Rule BoolClauseProperty
+ruleBoolClauseProperty returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0=RULE_BOOL
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getBoolClausePropertyAccess().getNameBOOLTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBoolClausePropertyRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"ck2xtext.common.Ck2Terminals.BOOL");
+				}
+			)
+		)
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getBoolClausePropertyAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				lv_value_2_0='{'
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getBoolClausePropertyAccess().getValueLeftCurlyBracketKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBoolClausePropertyRule());
+					}
+					setWithLastConsumed($current, "value", lv_value_2_0, "{");
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBoolClausePropertyAccess().getPropertiesPropertyParserRuleCall_3_0());
+				}
+				lv_properties_3_0=ruleProperty
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBoolClausePropertyRule());
+					}
+					add(
+						$current,
+						"properties",
+						lv_properties_3_0,
+						"ck2xtext.generic.Ck2.Property");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getBoolClausePropertyAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 

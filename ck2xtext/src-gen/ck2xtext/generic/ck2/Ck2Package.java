@@ -677,6 +677,52 @@ public interface Ck2Package extends EPackage
    */
   int PROBABILITY_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 2;
 
+  /**
+   * The meta object id for the '{@link ck2xtext.generic.ck2.impl.BoolClausePropertyImpl <em>Bool Clause Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see ck2xtext.generic.ck2.impl.BoolClausePropertyImpl
+   * @see ck2xtext.generic.ck2.impl.Ck2PackageImpl#getBoolClauseProperty()
+   * @generated
+   */
+  int BOOL_CLAUSE_PROPERTY = 17;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CLAUSE_PROPERTY__NAME = PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CLAUSE_PROPERTY__VALUE = PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CLAUSE_PROPERTY__PROPERTIES = PROPERTY_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Bool Clause Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CLAUSE_PROPERTY_FEATURE_COUNT = PROPERTY_FEATURE_COUNT + 3;
+
 
   /**
    * Returns the meta object for class '{@link ck2xtext.generic.ck2.Model <em>Model</em>}'.
@@ -1146,6 +1192,49 @@ public interface Ck2Package extends EPackage
   EAttribute getProbabilityProperty_Value();
 
   /**
+   * Returns the meta object for class '{@link ck2xtext.generic.ck2.BoolClauseProperty <em>Bool Clause Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bool Clause Property</em>'.
+   * @see ck2xtext.generic.ck2.BoolClauseProperty
+   * @generated
+   */
+  EClass getBoolClauseProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.generic.ck2.BoolClauseProperty#isName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see ck2xtext.generic.ck2.BoolClauseProperty#isName()
+   * @see #getBoolClauseProperty()
+   * @generated
+   */
+  EAttribute getBoolClauseProperty_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link ck2xtext.generic.ck2.BoolClauseProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see ck2xtext.generic.ck2.BoolClauseProperty#getValue()
+   * @see #getBoolClauseProperty()
+   * @generated
+   */
+  EAttribute getBoolClauseProperty_Value();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link ck2xtext.generic.ck2.BoolClauseProperty#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see ck2xtext.generic.ck2.BoolClauseProperty#getProperties()
+   * @see #getBoolClauseProperty()
+   * @generated
+   */
+  EReference getBoolClauseProperty_Properties();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1553,6 +1642,40 @@ public interface Ck2Package extends EPackage
      * @generated
      */
     EAttribute PROBABILITY_PROPERTY__VALUE = eINSTANCE.getProbabilityProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link ck2xtext.generic.ck2.impl.BoolClausePropertyImpl <em>Bool Clause Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see ck2xtext.generic.ck2.impl.BoolClausePropertyImpl
+     * @see ck2xtext.generic.ck2.impl.Ck2PackageImpl#getBoolClauseProperty()
+     * @generated
+     */
+    EClass BOOL_CLAUSE_PROPERTY = eINSTANCE.getBoolClauseProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOL_CLAUSE_PROPERTY__NAME = eINSTANCE.getBoolClauseProperty_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOL_CLAUSE_PROPERTY__VALUE = eINSTANCE.getBoolClauseProperty_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOL_CLAUSE_PROPERTY__PROPERTIES = eINSTANCE.getBoolClauseProperty_Properties();
 
   }
 

@@ -3,6 +3,7 @@
  */
 package ck2xtext.generic.ck2.impl;
 
+import ck2xtext.generic.ck2.BoolClauseProperty;
 import ck2xtext.generic.ck2.BoolProperty;
 import ck2xtext.generic.ck2.Ck2Factory;
 import ck2xtext.generic.ck2.Ck2Package;
@@ -156,6 +157,13 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * @generated
    */
   private EClass probabilityPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass boolClausePropertyEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -665,6 +673,46 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBoolClauseProperty()
+  {
+    return boolClausePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBoolClauseProperty_Name()
+  {
+    return (EAttribute)boolClausePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBoolClauseProperty_Value()
+  {
+    return (EAttribute)boolClausePropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBoolClauseProperty_Properties()
+  {
+    return (EReference)boolClausePropertyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Ck2Factory getCk2Factory()
   {
     return (Ck2Factory)getEFactoryInstance();
@@ -750,6 +798,11 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     probabilityPropertyEClass = createEClass(PROBABILITY_PROPERTY);
     createEAttribute(probabilityPropertyEClass, PROBABILITY_PROPERTY__KEY);
     createEAttribute(probabilityPropertyEClass, PROBABILITY_PROPERTY__VALUE);
+
+    boolClausePropertyEClass = createEClass(BOOL_CLAUSE_PROPERTY);
+    createEAttribute(boolClausePropertyEClass, BOOL_CLAUSE_PROPERTY__NAME);
+    createEAttribute(boolClausePropertyEClass, BOOL_CLAUSE_PROPERTY__VALUE);
+    createEReference(boolClausePropertyEClass, BOOL_CLAUSE_PROPERTY__PROPERTIES);
   }
 
   /**
@@ -795,6 +848,7 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     intClausePropertyEClass.getESuperTypes().add(this.getClause());
     dateClausePropertyEClass.getESuperTypes().add(this.getClause());
     probabilityPropertyEClass.getESuperTypes().add(this.getProperty());
+    boolClausePropertyEClass.getESuperTypes().add(this.getProperty());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -857,6 +911,11 @@ public class Ck2PackageImpl extends EPackageImpl implements Ck2Package
     initEClass(probabilityPropertyEClass, ProbabilityProperty.class, "ProbabilityProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProbabilityProperty_Key(), ecorePackage.getEInt(), "key", null, 0, 1, ProbabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProbabilityProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, ProbabilityProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(boolClausePropertyEClass, BoolClauseProperty.class, "BoolClauseProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBoolClauseProperty_Name(), ecorePackage.getEBoolean(), "name", null, 0, 1, BoolClauseProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBoolClauseProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoolClauseProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBoolClauseProperty_Properties(), this.getProperty(), null, "properties", null, 0, -1, BoolClauseProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -13,8 +13,10 @@ public class Ck2Directories implements ICk2Directories {
 	private static List<String> managedDirectories = new ArrayList<String>();
 
 	static {
+		managedDirectories.add("common/alternate_start");
 		managedDirectories.add("common/artifact_spawns");
 		managedDirectories.add("common/artifacts");
+		managedDirectories.add("common/bloodlines");
 		managedDirectories.add("common/bookmarks");
 		managedDirectories.add("common/buildings");
 		managedDirectories.add("common/cb_types");
@@ -49,15 +51,18 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("common/on_actions");
 		managedDirectories.add("common/opinion_modifiers");
 		managedDirectories.add("common/province_setup");
+		managedDirectories.add("common/religion_features");
 		managedDirectories.add("common/religion_modifiers");
 		managedDirectories.add("common/religions");
 		managedDirectories.add("common/religious_titles");
 		managedDirectories.add("common/retinue_subunits");
 		managedDirectories.add("common/save_conversion");
 		managedDirectories.add("common/scripted_effects");
+		managedDirectories.add("common/scripted_score_values");
 		managedDirectories.add("common/scripted_triggers");
 		managedDirectories.add("common/societies");
 		managedDirectories.add("common/special_troops");
+		managedDirectories.add("common/succession_voting");
 		managedDirectories.add("common/trade_routes");
 		managedDirectories.add("common/traits");
 		managedDirectories.add("common/tributary_types");
@@ -84,6 +89,7 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("map");
 		managedDirectories.add("map/statics");
 		managedDirectories.add("music");
+		managedDirectories.add("tutorial");
 	}
 
 	@Override

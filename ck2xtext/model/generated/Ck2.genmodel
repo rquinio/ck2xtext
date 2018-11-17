@@ -66,5 +66,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//ProbabilityProperty/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//ProbabilityProperty/value"/>
     </genClasses>
+    <genClasses ecoreClass="Ck2.ecore#//BoolClauseProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//BoolClauseProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ck2.ecore#//BoolClauseProperty/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ck2.ecore#//BoolClauseProperty/properties"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

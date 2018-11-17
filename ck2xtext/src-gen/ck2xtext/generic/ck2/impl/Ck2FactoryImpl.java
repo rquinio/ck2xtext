@@ -82,6 +82,7 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
       case Ck2Package.INT_CLAUSE_PROPERTY: return createIntClauseProperty();
       case Ck2Package.DATE_CLAUSE_PROPERTY: return createDateClauseProperty();
       case Ck2Package.PROBABILITY_PROPERTY: return createProbabilityProperty();
+      case Ck2Package.BOOL_CLAUSE_PROPERTY: return createBoolClauseProperty();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -272,6 +273,17 @@ public class Ck2FactoryImpl extends EFactoryImpl implements Ck2Factory
   {
     ProbabilityPropertyImpl probabilityProperty = new ProbabilityPropertyImpl();
     return probabilityProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BoolClauseProperty createBoolClauseProperty()
+  {
+    BoolClausePropertyImpl boolClauseProperty = new BoolClausePropertyImpl();
+    return boolClauseProperty;
   }
 
   /**

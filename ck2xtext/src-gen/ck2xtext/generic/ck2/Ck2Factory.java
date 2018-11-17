@@ -177,6 +177,15 @@ public interface Ck2Factory extends EFactory
   ProbabilityProperty createProbabilityProperty();
 
   /**
+   * Returns a new object of class '<em>Bool Clause Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool Clause Property</em>'.
+   * @generated
+   */
+  BoolClauseProperty createBoolClauseProperty();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

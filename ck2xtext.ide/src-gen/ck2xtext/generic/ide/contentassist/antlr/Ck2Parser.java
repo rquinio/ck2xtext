@@ -62,6 +62,7 @@ public class Ck2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntClausePropertyAccess().getGroup(), "rule__IntClauseProperty__Group__0");
 			builder.put(grammarAccess.getDateClausePropertyAccess().getGroup(), "rule__DateClauseProperty__Group__0");
 			builder.put(grammarAccess.getProbabilityPropertyAccess().getGroup(), "rule__ProbabilityProperty__Group__0");
+			builder.put(grammarAccess.getBoolClausePropertyAccess().getGroup(), "rule__BoolClauseProperty__Group__0");
 			builder.put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
 			builder.put(grammarAccess.getIntegerAccess().getGroup(), "rule__Integer__Group__0");
 			builder.put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
@@ -117,6 +118,9 @@ public class Ck2Parser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDateClausePropertyAccess().getPropertiesAssignment_3(), "rule__DateClauseProperty__PropertiesAssignment_3");
 			builder.put(grammarAccess.getProbabilityPropertyAccess().getKeyAssignment_0(), "rule__ProbabilityProperty__KeyAssignment_0");
 			builder.put(grammarAccess.getProbabilityPropertyAccess().getValueAssignment_2(), "rule__ProbabilityProperty__ValueAssignment_2");
+			builder.put(grammarAccess.getBoolClausePropertyAccess().getNameAssignment_0(), "rule__BoolClauseProperty__NameAssignment_0");
+			builder.put(grammarAccess.getBoolClausePropertyAccess().getValueAssignment_2(), "rule__BoolClauseProperty__ValueAssignment_2");
+			builder.put(grammarAccess.getBoolClausePropertyAccess().getPropertiesAssignment_3(), "rule__BoolClauseProperty__PropertiesAssignment_3");
 		}
 	}
 	

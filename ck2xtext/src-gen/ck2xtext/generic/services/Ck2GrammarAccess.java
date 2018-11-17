@@ -108,16 +108,17 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cListPropertyParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		private final RuleCall cClauseParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		private final RuleCall cProbabilityPropertyParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cBoolClausePropertyParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
 		
 		///**
 		// * Properties follow the pattern: propertyName = propertyValue
 		// */ Property:
 		//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
-		//	HexadecimalProperty | ListProperty | Clause | ProbabilityProperty;
+		//	HexadecimalProperty | ListProperty | Clause | ProbabilityProperty | BoolClauseProperty;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
-		//HexadecimalProperty | ListProperty | Clause | ProbabilityProperty
+		//HexadecimalProperty | ListProperty | Clause | ProbabilityProperty | BoolClauseProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//StringProperty
@@ -153,6 +154,9 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ProbabilityProperty
 		public RuleCall getProbabilityPropertyParserRuleCall_10() { return cProbabilityPropertyParserRuleCall_10; }
+		
+		//BoolClauseProperty
+		public RuleCall getBoolClausePropertyParserRuleCall_11() { return cBoolClausePropertyParserRuleCall_11; }
 	}
 	public class ClauseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.generic.Ck2.Clause");
@@ -904,6 +908,53 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		//ListElem
 		public RuleCall getValueListElemParserRuleCall_2_0() { return cValueListElemParserRuleCall_2_0; }
 	}
+	public class BoolClausePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ck2xtext.generic.Ck2.BoolClauseProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameBOOLTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cValueLeftCurlyBracketKeyword_2_0 = (Keyword)cValueAssignment_2.eContents().get(0);
+		private final Assignment cPropertiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPropertiesPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		///**
+		// * on_trigger = is_female
+		// * yes = { }
+		// * no = { }
+		// */ BoolClauseProperty:
+		//	name=BOOL '=' value='{' properties+=Property* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=BOOL '=' value='{' properties+=Property* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//name=BOOL
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//BOOL
+		public RuleCall getNameBOOLTerminalRuleCall_0_0() { return cNameBOOLTerminalRuleCall_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//value='{'
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//'{'
+		public Keyword getValueLeftCurlyBracketKeyword_2_0() { return cValueLeftCurlyBracketKeyword_2_0; }
+		
+		//properties+=Property*
+		public Assignment getPropertiesAssignment_3() { return cPropertiesAssignment_3; }
+		
+		//Property
+		public RuleCall getPropertiesPropertyParserRuleCall_3_0() { return cPropertiesPropertyParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -924,6 +975,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	private final IntClausePropertyElements pIntClauseProperty;
 	private final DateClausePropertyElements pDateClauseProperty;
 	private final ProbabilityPropertyElements pProbabilityProperty;
+	private final BoolClausePropertyElements pBoolClauseProperty;
 	
 	private final Grammar grammar;
 	
@@ -952,6 +1004,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 		this.pIntClauseProperty = new IntClausePropertyElements();
 		this.pDateClauseProperty = new DateClausePropertyElements();
 		this.pProbabilityProperty = new ProbabilityPropertyElements();
+		this.pBoolClauseProperty = new BoolClausePropertyElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1018,7 +1071,7 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	// * Properties follow the pattern: propertyName = propertyValue
 	// */ Property:
 	//	StringProperty | IdProperty | CommandProperty | BoolProperty | DateProperty | IntegerProperty | DoubleProperty |
-	//	HexadecimalProperty | ListProperty | Clause | ProbabilityProperty;
+	//	HexadecimalProperty | ListProperty | Clause | ProbabilityProperty | BoolClauseProperty;
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}
@@ -1195,6 +1248,20 @@ public class Ck2GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getProbabilityPropertyRule() {
 		return getProbabilityPropertyAccess().getRule();
+	}
+	
+	///**
+	// * on_trigger = is_female
+	// * yes = { }
+	// * no = { }
+	// */ BoolClauseProperty:
+	//	name=BOOL '=' value='{' properties+=Property* '}';
+	public BoolClausePropertyElements getBoolClausePropertyAccess() {
+		return pBoolClauseProperty;
+	}
+	
+	public ParserRule getBoolClausePropertyRule() {
+		return getBoolClausePropertyAccess().getRule();
 	}
 	
 	//terminal fragment DIGIT:
