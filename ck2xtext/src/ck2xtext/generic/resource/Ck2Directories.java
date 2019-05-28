@@ -67,6 +67,8 @@ public class Ck2Directories implements ICk2Directories {
 		managedDirectories.add("common/traits");
 		managedDirectories.add("common/tributary_types");
 		managedDirectories.add("common/triggered_modifiers");
+		managedDirectories.add("common/wonder_upgrades");
+		managedDirectories.add("common/wonders");
 		managedDirectories.add("common");
 
 		managedDirectories.add("decisions");
